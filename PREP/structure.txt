@@ -1,0 +1,344 @@
+prep-frontend/
+│
+├── public/
+│   ├── images/
+│   ├── icons/
+│   └── ...
+│
+├── src/
+│   │
+│   ├── app/
+│   │   ├── App.tsx
+│   │   ├── main.tsx
+│   │   ├── router.tsx
+│   │   ├── providers.tsx
+│   │   └── routeConfig.ts
+│   │
+│   ├── layouts/
+│   │   ├── PublicLayout.tsx
+│   │   ├── AuthLayout.tsx
+│   │   ├── CitizenLayout.tsx
+│   │   ├── OfficerLayout.tsx
+│   │   └── AdminLayout.tsx
+│   │
+│   ├── features/
+│   │
+│   │   ├── auth/
+│   │   │   ├── pages/
+│   │   │   │   ├── Login.tsx
+│   │   │   │   ├── Register.tsx
+│   │   │   │   ├── VerifyEmail.tsx
+│   │   │   │   ├── ForgotPassword.tsx
+│   │   │   │   ├── ResetPassword.tsx
+│   │   │   │   └── ChangePassword.tsx
+│   │   │   │
+│   │   │   ├── components/
+│   │   │   │   ├── LoginForm.tsx
+│   │   │   │   ├── RegisterForm.tsx
+│   │   │   │   └── AuthGuard.tsx
+│   │   │   │
+│   │   │   ├── hooks/
+│   │   │   ├── api/
+│   │   │   │   └── authApi.ts
+│   │   │   └── types.ts
+│   │   │
+│   │   ├── profile/
+│   │   │   ├── pages/
+│   │   │   │   └── ProfilePage.tsx
+│   │   │   ├── components/
+│   │   │   │   ├── ProfileHeader.tsx
+│   │   │   │   ├── ProfileForm.tsx
+│   │   │   │   └── AccountSettings.tsx
+│   │   │   ├── api/
+│   │   │   │   └── profileApi.ts
+│   │   │   └── types.ts
+│   │   │
+│   │   ├── incidents/
+│   │   │   ├── pages/
+│   │   │   │   ├── CreateIncidentPage.tsx
+│   │   │   │   ├── IncidentListPage.tsx
+│   │   │   │   ├── IncidentDetailsPage.tsx
+│   │   │   │   └── IncidentHistoryPage.tsx
+│   │   │   │
+│   │   │   ├── components/
+│   │   │   │   ├── IncidentCard.tsx
+│   │   │   │   ├── IncidentForm.tsx
+│   │   │   │   ├── IncidentStatus.tsx
+│   │   │   │   ├── IncidentTimeline.tsx
+│   │   │   │   ├── IncidentHeader.tsx
+│   │   │   │   └── IncidentFilters.tsx
+│   │   │   │
+│   │   │   ├── api/
+│   │   │   │   └── incidentApi.ts
+│   │   │   ├── hooks/
+│   │   │   ├── types.ts
+│   │   │   └── utils/
+│   │   │
+│   │   ├── evidence/
+│   │   │   ├── components/
+│   │   │   │   ├── EvidenceUploader.tsx
+│   │   │   │   ├── EvidencePreview.tsx
+│   │   │   │   ├── EvidenceList.tsx
+│   │   │   │   ├── EvidenceVerificationStatus.tsx
+│   │   │   │   └── EvidenceMetadata.tsx
+│   │   │   ├── pages/
+│   │   │   │   └── EvidencePage.tsx
+│   │   │   ├── api/
+│   │   │   │   └── evidenceApi.ts
+│   │   │   ├── hooks/
+│   │   │   └── types.ts
+│   │   │
+│   │   ├── ai/
+│   │   │   ├── complaint-assistant/
+│   │   │   │   ├── pages/
+│   │   │   │   │   └── ComplaintAssistantPage.tsx
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── ComplaintForm.tsx
+│   │   │   │   │   ├── AIRecommendations.tsx
+│   │   │   │   │   └── ComplaintPreview.tsx
+│   │   │   │   └── api/
+│   │   │   │       └── complaintAssistantApi.ts
+│   │   │   │
+│   │   │   ├── government-form/
+│   │   │   │   ├── pages/
+│   │   │   │   │   ├── FormAssistantPage.tsx
+│   │   │   │   │   └── FormAnalysisPage.tsx
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── FormUploader.tsx
+│   │   │   │   │   ├── FormFieldGuide.tsx
+│   │   │   │   │   └── FormValidationResults.tsx
+│   │   │   │   └── api/
+│   │   │   │       └── formAssistantApi.ts
+│   │   │   │
+│   │   │   ├── issue-classification/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── ClassificationResult.tsx
+│   │   │   │   │   └── CategorySuggestion.tsx
+│   │   │   │   └── api/
+│   │   │   │       └── classificationApi.ts
+│   │   │   │
+│   │   │   ├── document-understanding/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── DocumentUploader.tsx
+│   │   │   │   │   ├── OCRResult.tsx
+│   │   │   │   │   └── ExtractedFields.tsx
+│   │   │   │   └── api/
+│   │   │   │       └── documentApi.ts
+│   │   │   │
+│   │   │   ├── image-understanding/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── ImageUploader.tsx
+│   │   │   │   │   └── ImageAnalysisResult.tsx
+│   │   │   │   └── api/
+│   │   │   │       └── imageUnderstandingApi.ts
+│   │   │   │
+│   │   │   ├── media-verification/
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── AuthenticityResult.tsx
+│   │   │   │   │   ├── ManipulationIndicators.tsx
+│   │   │   │   │   └── VerificationScore.tsx
+│   │   │   │   └── api/
+│   │   │   │       └── mediaVerificationApi.ts
+│   │   │   │
+│   │   │   ├── rights/
+│   │   │   │   ├── pages/
+│   │   │   │   │   └── RightsNavigatorPage.tsx
+│   │   │   │   ├── components/
+│   │   │   │   │   ├── RightsExplanation.tsx
+│   │   │   │   │   └── LegalContext.tsx
+│   │   │   │   └── api/
+│   │   │   │       └── rightsApi.ts
+│   │   │   │
+│   │   │   └── document-generation/
+│   │   │       ├── components/
+│   │   │       │   ├── DocumentGenerator.tsx
+│   │   │       │   └── GeneratedDocumentPreview.tsx
+│   │   │       └── api/
+│   │   │           └── documentGenerationApi.ts
+│   │
+│   ├── government/
+│   │   ├── office-finder/
+│   │   │   ├── pages/
+│   │   │   │   └── OfficeFinderPage.tsx
+│   │   │   ├── components/
+│   │   │   │   ├── OfficeMap.tsx
+│   │   │   │   ├── OfficeCard.tsx
+│   │   │   │   └── OfficeFilters.tsx
+│   │   │   └── api/
+│   │   │       └── officeApi.ts
+│   │   │
+│   │   └── departments/
+│   │       ├── pages/
+│   │       ├── components/
+│   │       └── api/
+│   │
+│   ├── officer/
+│   │   ├── dashboard/
+│   │   │   ├── pages/
+│   │   │   │   └── OfficerDashboardPage.tsx
+│   │   │   └── components/
+│   │   │       ├── AssignmentSummary.tsx
+│   │   │       ├── PendingIncidents.tsx
+│   │   │       └── EscalationAlerts.tsx
+│   │   │
+│   │   ├── incidents/
+│   │   │   ├── pages/
+│   │   │   ├── components/
+│   │   │   │   ├── AssignedIncidentCard.tsx
+│   │   │   │   ├── IncidentActionPanel.tsx
+│   │   │   │   └── StatusUpdateForm.tsx
+│   │   │   └── api/
+│   │   │
+│   │   ├── assignments/
+│   │   │   ├── pages/
+│   │   │   ├── components/
+│   │   │   │   ├── AssignmentQueue.tsx
+│   │   │   │   └── AssignmentDetails.tsx
+│   │   │   └── api/
+│   │   │
+│   │   └── escalations/
+│   │       ├── components/
+│   │       └── api/
+│   │
+│   ├── admin/
+│   │   ├── dashboard/
+│   │   ├── officers/
+│   │   ├── departments/
+│   │   ├── incidents/
+│   │   ├── moderation/
+│   │   ├── audit/
+│   │   ├── analytics/
+│   │   └── system/
+│   │
+│   ├── notifications/
+│   │   ├── components/
+│   │   │   ├── NotificationBell.tsx
+│   │   │   ├── NotificationList.tsx
+│   │   │   └── NotificationItem.tsx
+│   │   ├── pages/
+│   │   │   └── NotificationsPage.tsx
+│   │   ├── api/
+│   │   │   └── notificationApi.ts
+│   │   └── hooks/
+│   │
+│   └── realtime/
+│       ├── socket.ts
+│       ├── socketEvents.ts
+│       ├── realtimeProvider.tsx
+│       └── hooks/
+│           ├── useRealtimeIncident.ts
+│           ├── useRealtimeNotification.ts
+│           └── useRealtimeAssignment.ts
+│
+│
+├── components/
+│   ├── ui/
+│   │   ├── Button.tsx
+│   │   ├── Input.tsx
+│   │   ├── Modal.tsx
+│   │   ├── Dropdown.tsx
+│   │   ├── Badge.tsx
+│   │   ├── Tabs.tsx
+│   │   ├── Table.tsx
+│   │   ├── Skeleton.tsx
+│   │   └── ...
+│   │
+│   ├── feedback/
+│   │   ├── ErrorMessage.tsx
+│   │   ├── LoadingState.tsx
+│   │   ├── EmptyState.tsx
+│   │   └── SuccessMessage.tsx
+│   │
+│   └── common/
+│       ├── Header.tsx
+│       ├── Sidebar.tsx
+│       ├── Navbar.tsx
+│       ├── SearchBar.tsx
+│       └── ConfirmDialog.tsx
+│
+│
+├── services/
+│   ├── api/
+│   │   ├── apiClient.ts
+│   │   ├── apiError.ts
+│   │   └── interceptors.ts
+│   │
+│   ├── storage/
+│   │   ├── localStorage.ts
+│   │   ├── sessionStorage.ts
+│   │   └── indexedDb.ts
+│   │
+│   └── analytics/
+│       └── analyticsService.ts
+│
+│
+├── hooks/
+│   ├── useDebounce.ts
+│   ├── usePagination.ts
+│   ├── useInfiniteScroll.ts
+│   ├── useFileUpload.ts
+│   ├── useGeolocation.ts
+│   ├── useMediaQuery.ts
+│   └── usePermissions.ts
+│
+│
+├── store/
+│   ├── authStore.ts
+│   ├── userStore.ts
+│   ├── incidentStore.ts
+│   ├── notificationStore.ts
+│   └── uiStore.ts
+│
+│
+├── utils/
+│   ├── date/
+│   │   ├── formatDate.ts
+│   │   └── formatRelativeTime.ts
+│   │
+│   ├── validation/
+│   │   ├── validateEmail.ts
+│   │   ├── validateFile.ts
+│   │   └── validateForm.ts
+│   │
+│   ├── files/
+│   │   ├── getFileType.ts
+│   │   ├── formatFileSize.ts
+│   │   └── createFilePreview.ts
+│   │
+│   ├── incident/
+│   │   ├── getIncidentStatusLabel.ts
+│   │   └── getIncidentPriorityLabel.ts
+│   │
+│   ├── permissions/
+│   │   ├── hasPermission.ts
+│   │   └── canPerformAction.ts
+│   │
+│   └── formatting/
+│       ├── formatPhoneNumber.ts
+│       └── formatAddress.ts
+│
+│
+├── constants/
+│   ├── routes.ts
+│   ├── incidentStatuses.ts
+│   ├── incidentCategories.ts
+│   ├── permissions.ts
+│   └── roles.ts
+│
+├── types/
+│   ├── user.ts
+│   ├── incident.ts
+│   ├── evidence.ts
+│   ├── department.ts
+│   ├── officer.ts
+│   ├── notification.ts
+│   └── api.ts
+│
+├── config/
+│   ├── environment.ts
+│   ├── apiEndpoints.ts
+│   └── appConfig.ts
+│
+└── styles/
+    ├── globals.css
+    └── ...
