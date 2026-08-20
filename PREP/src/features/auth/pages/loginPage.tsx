@@ -1,6 +1,7 @@
 import { Link ,useNavigate} from "react-router-dom";
 import { LoginForm } from "../components/loginForm";
 export default function LoginPage() {
+  const navigate=useNavigate();
   return (
     <>
       <div className="*:m-auto mt-6 ">
@@ -17,7 +18,6 @@ export default function LoginPage() {
               className="text-gray-700"
             >
               Sign Up!
-            </Link>
           </h4>
         </div>
         <div className="flex font-[600] bg-gradient-to-r from-mist-200 via-slate-800 to-neutral-950 dark:text-white dark:hover:bg-gradient-to-l dark:hover:from-mist-200 dark:hover:via-slate-200 dark:hover:to-mist-100 dark:hover:text-black 
