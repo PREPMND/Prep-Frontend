@@ -13,10 +13,6 @@ export default function LoginPage() {
             Don't have an account?
           </h6>
           <h4>
-            <Link
-              to="/register"
-              className="text-gray-700"
-            >
               Sign Up!
           </h4>
         </div>
