@@ -71,7 +71,7 @@ export function LoginForm() {
           placeholder="Enter your password"
           autoComplete="current-password"
           required
-          className="w-full rounded-xl border border-slate-300 light:bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-slate-700 dark:bg-neutral-800 dark:white dark:placeholder:text-slate-500 dark:focus:border-blue-400 dark:focus:ring-blue-400/20"
+          className="w-full rounded-xl border border-slate-300 light:bg-white px-4 py-3 text-slate-900 light:placeholder:text-slate-400 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:border-slate-700 dark:bg-neutral-800 dark:white dark:placeholder:text-slate-500 dark:focus:border-blue-400 dark:focus:ring-blue-400/20"
         />
       </div>
 
