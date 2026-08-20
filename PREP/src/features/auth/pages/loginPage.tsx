@@ -14,7 +14,7 @@ export default function LoginPage() {
         <h4>Sign Up!</h4>
       </div>
       <div>
-        <img></img>
+        
         <button >Log in with Github</button>
       </div>
     </div>
