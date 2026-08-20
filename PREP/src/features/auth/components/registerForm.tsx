@@ -1,0 +1,154 @@
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useRegister } from "../hooks/useRegister";
+
+export function RegisterForm() {
+  const navigate = useNavigate();
+  const registerMutation = useRegister();
+
+  const [form, setForm] = useState({
+    name: "",
+    username: "",
+    email: "",
+    phone: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const updateField = (
+    field: keyof typeof form,
+    value: string
+  ) => {
+    setForm((previous) => ({
+      ...previous,
+      [field]: value,
+    }));
+  };
+
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
+    event.preventDefault();
+
+    if (form.password !== form.confirmPassword) {
+      return;
+    }
+
+    try {
+      await registerMutation.mutateAsync(form);
+
+      navigate("/dashboard");
+    } catch {
+      // Error UI later.
+    }
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="mx-auto flex w-full max-w-md flex-col gap-4"
+    >
+      <input
+        value={form.name}
+        onChange={(e) =>
+          updateField("name", e.target.value)
+        }
+        placeholder="Full name"
+        required
+        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
+      />
+
+      <input
+        value={form.username}
+        onChange={(e) =>
+          updateField("username", e.target.value)
+        }
+        placeholder="Username"
+        required
+        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
+      />
+
+      <input
+        type="email"
+        value={form.email}
+        onChange={(e) =>
+          updateField("email", e.target.value)
+        }
+        placeholder="Email"
+        required
+        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
+      />
+
+      <input
+        type="tel"
+        value={form.phone}
+        onChange={(e) =>
+          updateField("phone", e.target.value)
+        }
+        placeholder="Phone number"
+        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
+      />
+
+      <input
+        type="password"
+        value={form.password}
+        onChange={(e) =>
+          updateField("password", e.target.value)
+        }
+        placeholder="Password"
+        autoComplete="new-password"
+        required
+        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
+      />
+
+      <input
+        type="password"
+        value={form.confirmPassword}
+        onChange={(e) =>
+          updateField(
+            "confirmPassword",
+            e.target.value
+          )
+        }
+        placeholder="Confirm password"
+        autoComplete="new-password"
+        required
+        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
+      />
+
+      {form.password &&
+        form.confirmPassword &&
+        form.password !== form.confirmPassword && (
+          <p className="text-sm text-red-500">
+            Passwords do not match.
+          </p>
+        )}
+
+      {registerMutation.isError && (
+        <p className="text-sm text-red-500">
+          Registration failed. Please try again.
+        </p>
+      )}
+
+      <button
+        type="submit"
+        disabled={registerMutation.isPending}
+        className="rounded-lg bg-blue-600 px-4 py-3 font-medium text-white disabled:opacity-50"
+      >
+        {registerMutation.isPending
+          ? "Creating account..."
+          : "Create account"}
+      </button>
+
+      <p className="text-center text-sm">
+        Already have an account?{" "}
+        <Link
+          to="/login"
+          className="text-blue-500"
+        >
+          Sign in
+        </Link>
+      </p>
+    </form>
+  );
+}
