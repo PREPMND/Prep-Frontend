@@ -3,11 +3,11 @@ import { LoginForm } from "../components/loginForm";
 export default function LoginPage() {
   return (
     <>
-      <div className="*:m-auto mt-6 *:mt-7">
+      <div className="*:m-auto mt-6 ">
         <div className="font-bold text-center text-4xl font-lato ">
           Log in to Prep
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex mt-2 justify-center items-center">
           <h6>
             Don't have an account?
           </h6>
