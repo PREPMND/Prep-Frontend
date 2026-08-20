@@ -12,7 +12,7 @@ export default function LoginPage() {
           <div className="text-gray-600 font-[400] text-[15px]">
             Don't have an account?
           </div>
-          <span font>
+          <span className="dark:font-">
               Sign Up!
           </span>
         </div>
