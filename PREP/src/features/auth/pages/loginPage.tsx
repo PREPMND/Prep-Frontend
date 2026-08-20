@@ -14,7 +14,7 @@ export default function LoginPage() {
           <h4>
             <Link
               to="/register"
-              className="text-blue-500"
+              className=""
             >
               Sign Up!
             </Link>
