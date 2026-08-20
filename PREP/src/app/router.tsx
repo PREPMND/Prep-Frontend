@@ -4,6 +4,7 @@ import LoginPage from "../features/auth/pages/loginPage";
 import RegisterPage from "../features/auth/pages/registerPage";
 import { AuthGuard } from "../features/auth/components/authGuard";
 import DashboardPage from "../features/dashboard/pages/dashboardPage";
+import VerifyEmail from "../features/auth/pages/verfiyEmail";
 
 export const router = createBrowserRouter([
   {
@@ -27,8 +28,8 @@ export const router = createBrowserRouter([
     element: <AuthGuard />,
     children: [
       {
-        path: "/",
-        element: <DashboardPage />,
+        path: "/verify-email",
+        element: <VerifyEmail />,
       },
     ],
   },
