@@ -10,7 +10,7 @@ export default function LoginPage() {
           </h1>
 
           <p className="mt-2 text-[var(--color-text-secondary)]">
-            Sign in to continue
+            
           </p>
         </div>
 
