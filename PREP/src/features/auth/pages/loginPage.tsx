@@ -4,7 +4,7 @@ export default function LoginPage() {
   return (
     <>
       <div className="m-auto *:font-[600]">
-        <div className="font-extrabold text-4xl font-lato ">
+        <div className="font-extrabold  text-4xl font-lato ">
           Login To Prep
         </div>
         <div className="">
