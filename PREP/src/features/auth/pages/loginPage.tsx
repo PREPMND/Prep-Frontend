@@ -20,7 +20,7 @@ export default function LoginPage() {
             </Link>
           </h4>
         </div>
-        <div className="flex dark:bg-neutral-800 dark:text-white hover:bg-white  border-1 m-auto md:w-[20%] h-13 items-center justify-evenly rounded-lg transition-transform duration-200 ease ">
+        <div className="flex dark:bg-neutral-800 dark:text-white hover:bg-white  border-1 m-auto md:w-[20%] h-13 items-center justify-evenly rounded-lg transition-transform duration-200 ease-in-out ">
           <i className="bi bi-github"></i>
           <button >Log in with Github</button>
         </div>
