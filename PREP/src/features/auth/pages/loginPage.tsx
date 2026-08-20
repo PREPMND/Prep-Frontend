@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { LoginForm } from "../components/loginForm";
-import { FolderGit, GitCommit } from "lucide-react"
+import { FolderGit } from "lucide-react"
 export default function LoginPage() {
   return (
     <>
