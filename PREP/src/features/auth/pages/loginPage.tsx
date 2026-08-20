@@ -7,7 +7,7 @@ export default function LoginPage() {
         <div className="font-bold text-center text-4xl font-lato ">
           Log in to Prep
         </div>
-        <div className="">
+        <div className=">
           <h6>
             Don't have an account?
           </h6>
