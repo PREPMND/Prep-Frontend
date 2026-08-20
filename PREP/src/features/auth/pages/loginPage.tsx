@@ -16,7 +16,7 @@ export default function LoginPage() {
           </div>
           <span 
           
-          className="dark:text-[white] text-black font-[500]">
+          className="dark:text-[white]  light:text-black font-[500]">
               Sign Up!
           </span>
         </div>
