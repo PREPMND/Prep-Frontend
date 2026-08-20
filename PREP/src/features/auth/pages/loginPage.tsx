@@ -4,7 +4,7 @@ export default function LoginPage() {
   return (
     <>
       <div className="m-auto *:font-[600]">
-        <div className="font-">
+        <div className="font-semibold">
           Login To Prep
         </div>
         <div className="">
