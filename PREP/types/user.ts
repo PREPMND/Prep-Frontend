@@ -1,9 +1,13 @@
-import type { Role } from "../src/constants/roles";
+import type { Role } from "@/constants/roles";
 
 export interface User {
   id: string;
-  name: string;
+  username: string;
   email: string;
+  phone?: string;
+  name: string;
   role: Role;
   avatar?: string;
+  isEmailVerified: boolean;
+  createdAt?: string;
 }
