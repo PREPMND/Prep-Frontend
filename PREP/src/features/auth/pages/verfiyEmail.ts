@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { createElement, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { verifyEmail } from "../api/authApi";
 
@@ -26,7 +26,5 @@ export default function VerifyEmail() {
             });
     }, [searchParams, navigate]);
 
-    return (<div>
-        { status } 
-        </div>)
+    return createElement("div", null, status);
 }
