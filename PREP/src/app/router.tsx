@@ -25,7 +25,6 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    element: <AuthGuard />,
     children: [
       {
         path: "/verify-email",
