@@ -25,12 +25,8 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    children: [
-      {
-        path: "/verify-email",
-        element: <VerifyEmail />,
-      },
-    ],
+    path: "/verify-email",
+    element: <VerifyEmail />,
   },
-  
+
 ]);
