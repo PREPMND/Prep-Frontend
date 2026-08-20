@@ -7,7 +7,7 @@ export default function LoginPage() {
         <div>
           Login To Prep
         </div>
-        <div>
+        <div clas>
           <span>
             Don't have an account?
           </span>
