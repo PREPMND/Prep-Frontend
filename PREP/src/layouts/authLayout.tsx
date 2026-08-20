@@ -6,7 +6,7 @@ export default function AuthLayout() {
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full light:bg-blue-200/40 dark:bg-neutral-950/30 blur-3xl" />
         <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full light:bg-indigo-200/40 dark:bg-indigo-950/30 blur-3xl" />
-        <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full light:bg-violet-100/30 dark:bg--700/20 blur-3xl" />
+        <div className="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full light:bg-violet-100/30 dark:bg-indigo-200-700/20 blur-3xl" />
       </div>
 
       <div className="relative flex min-h-screen items-center justify-center px-4 py-10">
