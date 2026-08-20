@@ -4,8 +4,8 @@ export default function LoginPage() {
   return (
     <>
       <div className="*:m-auto *:font-semibold">
-        <div className="font-extrabold text-center  text-2xl font-lato ">
-          Log in To Prep
+        <div className="font-extrabold text-center text-2xl font-lato ">
+          Log in to Prep
         </div>
         <div className="">
           <h6>
