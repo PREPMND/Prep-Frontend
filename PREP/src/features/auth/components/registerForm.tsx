@@ -10,7 +10,6 @@ export function RegisterForm() {
     name: "",
     username: "",
     email: "",
-    phone: "",
     password: "",
     confirmPassword: "",
   });
