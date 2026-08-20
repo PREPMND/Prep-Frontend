@@ -22,7 +22,7 @@ export function LoginForm() {
 
       navigate("/dashboard");
     } catch {
-      // Error UI can be added here.
+        
     }
   };
 
