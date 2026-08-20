@@ -1,5 +1,5 @@
 import { LoginForm } from "../components/loginForm";
-import {} from "luicide-react"
+import {} from "lucide-react"
 export default function LoginPage() {
   return (
     <>
