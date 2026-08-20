@@ -1,5 +1,5 @@
 import { LoginForm } from "../components/loginForm";
-import {} from "lucide-react"
+import { GitCommit } from "lucide-react"
 export default function LoginPage() {
   return (
     <>
@@ -14,7 +14,7 @@ export default function LoginPage() {
         <h4>Sign Up!</h4>
       </div>
       <div>
-        <Git
+        <GitCommit/>
         <button >Log in with Github</button>
       </div>
       <LoginForm/>
