@@ -9,9 +9,9 @@ export default function LoginPage() {
           Log in to Prep
         </div>
         <div className="flex mt-2 justify-center items-center">
-          <h6>
+          <div>
             Don't have an account?
-          </h6>
+          </div>
           <span>
               Sign Up!
           </span>
