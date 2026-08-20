@@ -17,7 +17,7 @@ export default function LoginPage() {
         
         <button >Log in with Github</button>
       </div>
-      
+      <LoginForm/>
     </div>
     </>
   );
