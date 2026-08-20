@@ -17,7 +17,7 @@ export default function LoginPage() {
               to="/register"
               className="text-blue-500"
             >
-              Create one
+              Sign Up!
             </Link>
           </h4>
         </div>
