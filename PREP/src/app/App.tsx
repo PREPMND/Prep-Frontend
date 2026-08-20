@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import LoginPage from "@/features/auth/pages/LoginPage";
-import RegisterPage from "@/features/auth/pages/RegisterPag";
+import RegisterPage from "../features/auth/pages/RegisterPag";
 import { AuthGuard } from "../features/auth/components/authGuard";
 
 const DashboardPage = () => (
