@@ -11,7 +11,7 @@ export default function LoginPage() {
         <span>
           Don't have an account?
         </span>
-        <h3></h3>
+        <h4>Sign Up!</h4>
       </div>
     </div>
     </>
