@@ -4,7 +4,7 @@ export default function LoginPage() {
   const navigate=useNavigate();
   return (
     <>
-      <div className="*:m-auto mt-6 ">
+      <div className="*:m-auto mt-6 *:cursor-pointer">
         <div className="font-bold text-center text-4xl font-lato ">
           Log in to Prep
         </div>
