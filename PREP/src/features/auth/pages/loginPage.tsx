@@ -13,6 +13,9 @@ export default function LoginPage() {
         </span>
         <h4>Sign Up!</h4>
       </div>
+      <div>
+        <Button/>
+      </div>
     </div>
     </>
   );
