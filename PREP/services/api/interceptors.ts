@@ -1,10 +1,16 @@
-import axios from "axios";
-import { ENV } from "../../config/environment";
+import type { AxiosError } from "axios";
+import { apiClient } from "./apiClient";
 
-export const apiClient = axios.create({
-  baseURL: ENV.API_URL,
-  withCredentials: true,
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
+export const setupApiInterceptors = () => {
+  apiClient.interceptors.response.use(
+    (response) => response,
+
+    async (error: AxiosError) => {
+      if (error.response?.status === 401) {
+        
+      }
+
+      return Promise.reject(error);
+    }
+  );
+};
