@@ -1,6 +1,7 @@
 
 :root {
-  --bp-xs:
+  --bp-xs:420px;
+  --bp-
   --bp-sm: 640px;
   --bp-md: 768px;
   --bp-lg: 1024px;
