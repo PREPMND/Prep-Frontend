@@ -42,3 +42,12 @@ export async function logout(): Promise<void> {
 export async function logoutAll(): Promise<void> {
   await apiClient.post("/auth/logout-all");
 }
+
+export async function verifyEmail(token: string) {
+  const response = await apiClient.post(
+    "/auth/verify-email",
+    { token }
+  );
+
+  return response.data;
+}
