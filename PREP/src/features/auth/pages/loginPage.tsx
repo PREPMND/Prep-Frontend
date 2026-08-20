@@ -21,7 +21,7 @@ export default function LoginPage() {
           </h4>
         </div>
         <div className="flex border-1 md:w-[20%] h-13 items-center justify-evenly ">
-          <i className="bi bi-github text-[18px]"></i>
+          <i className="bi bi-github"></i>
           <button >Log in with Github</button>
         </div>
         <LoginForm />
