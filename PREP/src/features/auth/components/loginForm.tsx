@@ -73,8 +73,8 @@ export function LoginForm() {
         disabled={loginMutation.isPending}
         className="mt-2 bg-neutral-700 w-[70%] m-auto hover:bg-white !rounded-xl px-4 py-3 hover:text-black "
       >
-        {loginMutation.isPending ? <div className="font-bold font-saira text-lg">Logging in...</div> : 
-        <div className="font-bold text-lg font-[Saira]">Log in</div>}
+        {loginMutation.isPending ? <div className="font-bold text-lg">Logging in...</div> : 
+        <div className="font-bold text-lg">Log in</div>}
       </button>
 
       <Link
