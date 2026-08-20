@@ -27,6 +27,6 @@ export default function VerifyEmail() {
     }, [searchParams, navigate]);
 
     return (<div>
-        <h1>{ status } 
+        { status } 
         </div>)
 }
