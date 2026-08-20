@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import App from "./App";
-import { Providers } from "./providers";
+import { Providers } from "./provider";
 import { setupApiInterceptors } from "./services/api";
 import "./styles/global.css";
 
