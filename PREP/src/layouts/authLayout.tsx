@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 export default function AuthLayout() {
   return (
-    <div className="relative min-h-screen overflow-hidden light:bg-white light:text-neutral-900 dark:bg-[#6e46b8] dark:text-neutral-100">
+    <div className="relative min-h-screen overflow-hidden light:bg-white light:text-neutral-900 dark:bg-[#212022] dark:text-neutral-100">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full light:bg-blue-200/40 dark:bg-neutral-950 blur-3xl" />
         <div className="absolute -bottom-32 -right-32 h-44 w-32 md:h-64 md:w-64 rounded-full light:bg-indigo-200/40 dark:bg-mauve-300 blur-3xl" />
