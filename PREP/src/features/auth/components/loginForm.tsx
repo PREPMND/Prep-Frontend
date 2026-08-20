@@ -63,7 +63,7 @@ export function LoginForm() {
       </div>
 
       {loginMutation.isError && (
-        <p className="text-sm light:text-red-600 dark:text-">
+        <p className="text-sm light:text-red-600 dark:text-pink-600">
           Invalid credentials. Please try again.
         </p>
       )}
