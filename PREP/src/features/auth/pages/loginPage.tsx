@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { LoginForm } from "../components/loginForm";
-import { GitCommit } from "lucide-react"
+import { FolderGit, GitCommit } from "lucide-react"
 export default function LoginPage() {
   return (
     <>
@@ -22,7 +22,7 @@ export default function LoginPage() {
           </h4>
         </div>
         <div>
-          <Git />
+          <FolderGit />
           <button >Log in with Github</button>
         </div>
         <LoginForm />
