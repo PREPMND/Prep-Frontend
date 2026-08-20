@@ -8,7 +8,7 @@ interface AuthProviderProps {
 export function AuthProvider({
   children,
 }: AuthProviderProps) {
-  useCurrentUser();
+  //useCurrentUser();
 
   return children;
 }
