@@ -8,11 +8,15 @@ export default function LoginPage() {
         <div className="font-bold text-center text-4xl font-lato ">
           Log in to Prep
         </div>
-        <div className="flex mt-2 justify-center items-center">
+        <div 
+        onClick={*()}
+        className="flex mt-2 justify-center items-center">
           <div className="text-gray-600 font-[400] text-[15px]">
             Don't have an account?
           </div>
-          <span className="dark:text-[white] text-black font-[500]">
+          <span 
+          
+          className="dark:text-[white] text-black font-[500]">
               Sign Up!
           </span>
         </div>
