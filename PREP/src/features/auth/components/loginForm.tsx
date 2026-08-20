@@ -29,8 +29,8 @@ export function LoginForm() {
   return (
     <form onSubmit={handleSubmit} className="mx-auto mt-5 flex w-full max-w-md flex-col gap-4">
       <div>
-        <label htmlFor="identifier" className="mb-2 block text-sm font-medium light:text-neutral-700 dark:text-neutral-300">
-          Email, username or phone
+        <label htmlFor="identifier" className="mb-2 ml-2 block text-sm font-medium light:text-neutral-700 dark:text-neutral-300">
+          Email or Username
         </label>
 
         <input
