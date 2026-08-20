@@ -9,7 +9,7 @@ export default function LoginPage() {
           Log in to Prep
         </div>
         <div className="flex mt-2 justify-center items-center">
-          <div className="text-gray-600 text-[12px]">
+          <div className="text-gray-600 font-medium text-[15px]">
             Don't have an account?
           </div>
           <span>
