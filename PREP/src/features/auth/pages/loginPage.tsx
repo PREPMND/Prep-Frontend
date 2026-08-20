@@ -22,7 +22,7 @@ export default function LoginPage() {
           </h4>
         </div>
         <div>
-          <FolderGit />
+          
           <button >Log in with Github</button>
         </div>
         <LoginForm />
