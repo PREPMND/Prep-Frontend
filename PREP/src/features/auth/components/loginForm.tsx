@@ -78,7 +78,7 @@ export function LoginForm() {
       </button>
 
       <div
-        onClick={"/forgot-password"}
+        onClick={()=>navigate("/forgot-password")}
         className="text-center text-sm font-medium light:text-blue-600 light:hover:text-blue-700 dark:text-amber-900 dark:hover:text-blue-300"
       >
         Forgot password?
