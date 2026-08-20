@@ -1,4 +1,4 @@
-import { Link ,useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import { LoginForm } from "../components/loginForm";
 export default function LoginPage() {
   const navigate=useNavigate();
