@@ -26,5 +26,7 @@ export default function VerifyEmail() {
       });
   }, [searchParams, navigate]);
 
-  return <h1>{status}</h1>;
+  return <div>
+      <h1>{status}</h1>
+  </div>;
 }
