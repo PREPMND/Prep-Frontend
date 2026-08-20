@@ -1,4 +1,4 @@
-@import "tailwindcss"
+@import "tailwindcss";
 :root {
   --bp-xs:420px;
   --bp-xss:510px;
