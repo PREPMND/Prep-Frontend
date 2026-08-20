@@ -98,15 +98,7 @@ export function LoginForm() {
         Forgot password?
       </Link>
 
-      <p className="text-center text-sm">
-        Don't have an account?{" "}
-        <Link
-          to="/register"
-          className="text-blue-500"
-        >
-          Create one
-        </Link>
-      </p>
+      
     </form>
   );
 }
