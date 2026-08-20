@@ -14,7 +14,7 @@ export default function LoginPage() {
         <h4>Sign Up!</h4>
       </div>
       <div>
-        <Button/>
+        <Button
       </div>
     </div>
     </>
