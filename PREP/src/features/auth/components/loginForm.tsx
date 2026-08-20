@@ -71,7 +71,7 @@ export function LoginForm() {
       <button
         type="submit"
         disabled={loginMutation.isPending}
-        className="mt-2  bg-neutral-700 hover:bg-white  px-4 py-3 font-medium rounded-lg hover:text-black transition disabled:cursor-not-allowed disabled:opacity-50"
+        className="mt-2  bg-neutral-700 hover:bg-white  px-4 py-3 font-medium rounded- hover:text-black disabled:cursor-not-allowed disabled:opacity-50"
       >
         {loginMutation.isPending ? "Signing in..." : "Sign in"}
       </button>
