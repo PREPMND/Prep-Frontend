@@ -7,7 +7,7 @@ export default function LoginPage() {
         <div>
           Login To Prep
         </div>
-        <div className="flex rounded-md border-1 ">
+        <div className="">
           <span>
             Don't have an account?
           </span>
