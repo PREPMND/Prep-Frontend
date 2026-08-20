@@ -3,8 +3,8 @@ import { LoginForm } from "../components/loginForm";
 export default function LoginPage() {
   return (
     <>
-      <div className="*:m-auto *:font-semibold">
-        <div className="font- text-center text-2xl font-lato ">
+      <div className="*:m-auto ">
+        <div className="font-bold text-center text-4xl font-lato ">
           Log in to Prep
         </div>
         <div className="">
