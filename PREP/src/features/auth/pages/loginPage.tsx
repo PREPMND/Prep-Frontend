@@ -10,7 +10,7 @@ export default function LoginPage() {
         </div>
         <div 
         onClick={()=>navigate("/register")}
-        className="flex mt-2 justify-center items-center">
+        className="flex mt-2 justify-center gap-2 items-center">
           <div className="text-gray-600 font-[400] text-[15px]">
             Don't have an account?
           </div>
