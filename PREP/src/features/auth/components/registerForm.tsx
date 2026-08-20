@@ -79,15 +79,7 @@ export function RegisterForm() {
         className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
       />
 
-      <input
-        type="tel"
-        value={form.phone}
-        onChange={(e) =>
-          updateField("phone", e.target.value)
-        }
-        placeholder="Phone number"
-        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
-      />
+      
 
       <input
         type="password"
