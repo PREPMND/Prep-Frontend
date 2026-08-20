@@ -20,7 +20,7 @@ export default function LoginPage() {
             </Link>
           </h4>
         </div>
-        <div className="flex bg-gradient-to-r from-mist-200 via-slate-800 to-slate-950 dark:text-white dark:hover:bg-gradient-to-l dark:hover:from-mist dark:hover:text-black hover:font-[500] border-1 m-auto md:w-[20%] h-13 items-center justify-evenly rounded-lg transition-transform duration-200 ease-in-out ">
+        <div className="flex bg-gradient-to-r from-mist-200 via-slate-800 to-slate-950 dark:text-white dark:hover:bg-gradient-to-l dark:hover:from-mist-200 dakr:hover: dark:hover:text-black hover:font-[500] border-1 m-auto md:w-[20%] h-13 items-center justify-evenly rounded-lg transition-transform duration-200 ease-in-out ">
           <i className="bi bi-github"></i>
           <button >Log in with Github</button>
         </div>
