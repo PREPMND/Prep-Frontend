@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useCurrentUser } from "../hooks/useCurrentUser";
+//import { useCurrentUser } from "../hooks/useCurrentUser";
 
 interface AuthProviderProps {
   children: ReactNode;
