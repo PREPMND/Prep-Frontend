@@ -29,7 +29,7 @@ export async function register(
 
 export async function getCurrentUser(): Promise<AuthResponse> {
   const response = await apiClient.get<AuthResponse>(
-    "/auth/me"
+    //"/auth/me"
   );
 
   return response.data;
