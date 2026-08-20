@@ -20,7 +20,7 @@ export default function LoginPage() {
             </Link>
           </h4>
         </div>
-        <div className="flex border-1 w-[40%] h-11">
+        <div className="flex border-1 md:w-[20%] h-13 ">
           <i className="bi bi-github"></i>
           <button >Log in with Github</button>
         </div>
