@@ -8,7 +8,7 @@ export default function RegisterPage() {
         Log in to Prep
       </div>
       <div
-        onClick={() => navigate("/register")}
+        onClick={() => navigate("/login")}
         className="flex mt-2 justify-center gap-2 items-center">
         <div className="text-gray-400 font-[400] text-[15px]">
           Already have an account?
