@@ -54,7 +54,7 @@ export function RegisterForm() {
         }
         placeholder="Full name"
         required
-        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
+        className={style}
       />
 
       <input
@@ -75,7 +75,7 @@ export function RegisterForm() {
         }
         placeholder="Email"
         required
-        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
+        className={style}
       />
 
       
@@ -89,7 +89,7 @@ export function RegisterForm() {
         placeholder="Password"
         autoComplete="new-password"
         required
-        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
+        className={style}
       />
 
       <input
@@ -104,7 +104,7 @@ export function RegisterForm() {
         placeholder="Confirm password"
         autoComplete="new-password"
         required
-        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
+        className={style}
       />
 
       {form.password &&
