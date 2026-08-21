@@ -122,16 +122,6 @@ export function RegisterForm() {
           ? <div className="font-bold text-lg">Creating ...</div> : 
         <div className="font-bold text-lg">Register</div>}
       </button>
-
-      <p className="text-center text-sm">
-        Already have an account?{" "}
-        <Link
-          to="/login"
-          className="text-blue-500"
-        >
-          Sign in
-        </Link>
-      </p>
     </form>
   );
 }
