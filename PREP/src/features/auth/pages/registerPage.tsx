@@ -11,12 +11,12 @@ export default function RegisterPage() {
         onClick={() => navigate("/register")}
         className="flex mt-2 justify-center gap-2 items-center">
         <div className="text-gray-400 font-[400] text-[15px]">
-          Don't have an account?
+          Already have an account?
         </div>
         <span
 
           className="dark:text-[white]  light:text-black font-[500]">
-          Sign Up!
+          Sign U!
         </span>
       </div>
       <div
