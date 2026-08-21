@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useLogin } from "../hooks/useLogin";
 
 export function LoginForm() {
@@ -27,7 +27,7 @@ export function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mx-auto mt-5 flex w-full max-w-md flex-col gap-4">
+    <form onSubmit={handleSubmit} className="mx-auto mt-3 flex w-full max-w-md flex-col gap-4">
       <div>
         <label htmlFor="identifier" className="mb-2 ml-2 block text-sm font-medium light:text-neutral-700 dark:text-neutral-300">
           Email or Username
@@ -71,7 +71,7 @@ export function LoginForm() {
       <button
         type="submit"
         disabled={loginMutation.isPending}
-        className="mt-1 bg-neutral-700 w-[70%] m-auto hover:shadow-md hover:shadow-gray-200 hover:bg-white !rounded-xl px-4 py-3 hover:text-black "
+        className="mt-1 active:scale-[0.97] bg-neutral-700 w-[60%] m-auto hover:shadow-md hover:shadow-gray-200 hover:bg-white !rounded-xl px-3 py-[10px] hover:text-black "
       >
         {loginMutation.isPending ? <div className="font-bold text-lg">Logging in...</div> : 
         <div className="font-bold text-lg">Log in</div>}
