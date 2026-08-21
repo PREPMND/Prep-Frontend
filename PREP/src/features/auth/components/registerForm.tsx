@@ -64,7 +64,7 @@ export function RegisterForm() {
         }
         placeholder="Username"
         required
-        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3"
+        className={style}
       />
 
       <input
