@@ -45,7 +45,7 @@ export function RegisterForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto flex w-full max-w-md flex-col gap-4"
+      className="mx-auto flex w-full max-w-md flex-col gap-4 mt-5"
     >
       <input
         value={form.name}
