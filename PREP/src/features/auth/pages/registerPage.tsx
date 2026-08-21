@@ -16,7 +16,7 @@ export default function RegisterPage() {
         <span
 
           className="dark:text-[white]  light:text-black font-[500]">
-          Sign U!
+          Log in!
         </span>
       </div>
       <div
