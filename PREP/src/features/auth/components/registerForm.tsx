@@ -47,15 +47,7 @@ export function RegisterForm() {
       onSubmit={handleSubmit}
       className="mx-auto flex w-full max-w-md flex-col gap-4 mt-5"
     >
-      <input
-        value={form.name}
-        onChange={(e) =>
-          updateField("name", e.target.value)
-        }
-        placeholder="Full name"
-        required
-        className={style}
-      />
+     
 
       <input
         value={form.username}
