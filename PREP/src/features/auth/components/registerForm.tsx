@@ -119,8 +119,8 @@ export function RegisterForm() {
         className="rounded-lg bg-blue-600 px-4 py-3 font-medium text-white disabled:opacity-50"
       >
         {registerMutation.isPending
-          ? "Creating account..."
-          : "Create account"}
+          ? <div className="font-bold text-lg">Logging in...</div> : 
+        <div className="font-bold text-lg">Log in</div>}
       </button>
 
       <p className="text-center text-sm">
