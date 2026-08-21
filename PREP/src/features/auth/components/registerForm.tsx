@@ -116,7 +116,7 @@ export function RegisterForm() {
       <button
         type="submit"
         disabled={registerMutation.isPending}
-        className="rounded-lg bg-blue-600 px-4 py-3 font-medium text-white disabled:opacity-50"
+        className="mt-1 active:scale-[0.97] bg-neutral-700 w-[60%] m-auto hover:shadow-md hover:shadow-gray-200 hover:bg-white !rounded-xl px-3 py-[10px] hover:text-black "
       >
         {registerMutation.isPending
           ? <div className="font-bold text-lg">Creating ...</div> : 
