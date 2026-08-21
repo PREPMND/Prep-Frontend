@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 export default function RegisterPage() {
   const navigate = useNavigate();
   return (
-    <div className="*:m-auto mt-6 *:cursor-pointer">
+    <div className="*:m-auto mt-4 *:cursor-pointer">
       <div className="font-bold text-center text-4xl font-lato ">
-        Log in to Prep
+        Register to Prep
       </div>
       <div
         onClick={() => navigate("/login")}
