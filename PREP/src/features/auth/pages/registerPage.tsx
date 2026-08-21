@@ -26,7 +26,7 @@ export default function RegisterPage() {
         <i className="bi bi-github"></i>
         <button >Log in with Github</button>
       </div>
-      <LoginForm />
+      <RegisterForm />
     </div>
   );
 }
