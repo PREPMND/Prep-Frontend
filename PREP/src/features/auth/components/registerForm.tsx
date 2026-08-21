@@ -120,7 +120,7 @@ export function RegisterForm() {
       >
         {registerMutation.isPending
           ? <div className="font-bold text-lg">Creating ...</div> : 
-        <div className="font-bold text-lg">Log in</div>}
+        <div className="font-bold text-lg">Register</div>}
       </button>
 
       <p className="text-center text-sm">
