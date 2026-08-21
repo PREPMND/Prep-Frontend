@@ -41,7 +41,7 @@ export function RegisterForm() {
       // Error UI later.
     }
   };
-
+  const style=''
   return (
     <form
       onSubmit={handleSubmit}
