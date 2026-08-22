@@ -15,7 +15,7 @@ export function GithubLoginButton() {
                 <i className="bi bi-github"></i>
                 <button >Log in with Github</button>
             </div>
-        </button>
+        
 
     );
 }
