@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { LoginForm } from "../components/loginForm";
+import { GithubLoginButton } from "../components/githubButton";
 export default function LoginPage() {
   const navigate = useNavigate();
   return (
@@ -20,7 +21,7 @@ export default function LoginPage() {
             Sign Up!
           </span>
         </div>
-        
+        <GithubLoginButton/>
         <LoginForm />
       </div>
     </>
