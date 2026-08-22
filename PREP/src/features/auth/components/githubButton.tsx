@@ -11,5 +11,6 @@ export function GithubLoginButton() {
     >
       Continue with GitHub
     </button>
+    
   );
 }
