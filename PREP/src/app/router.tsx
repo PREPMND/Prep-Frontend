@@ -6,6 +6,7 @@ import { AuthGuard } from "../features/auth/components/authGuard";
 import DashboardPage from "../features/dashboard/pages/dashboardPage";
 import VerifyEmail from "../features/auth/pages/verfiyEmail";
 import AuthLayout from "../layouts/authLayout";
+import ProfilePage from "../features/profile/components/profilePage";
 
 export const router = createBrowserRouter([
   {
@@ -28,10 +29,10 @@ export const router = createBrowserRouter([
         path: "/dashboard",
         element: <DashboardPage />,
       },
-      // {
-      //   path: "/profile",
-      //   element: <ProfilePage />,
-      // },
+      {
+        path: "/profile",
+        element: <ProfilePage />,
+      },
     ],
   },
   {
