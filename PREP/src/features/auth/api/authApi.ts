@@ -33,8 +33,7 @@ export async function getCurrentUser(): Promise<User> {
   return response.data;
 }
 
-  return response.data;
-}
+ 
 
 export async function logout(): Promise<void> {
   await apiClient.post("/auth/logout");
