@@ -12,6 +12,9 @@ const roleDetails: Record<
     title: "Citizen",
     description: "Report and track issues in your community.",
   },
+  admin:{
+
+  },
   dev: {
     title: "Developer",
     description: "Build and contribute to platform solutions.",
