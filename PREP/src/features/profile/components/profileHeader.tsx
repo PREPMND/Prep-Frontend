@@ -13,7 +13,7 @@ export function ProfileHeader({
 
   return (
     <div className="flex items-center gap-4 *:select-none">
-      <div className="flex h-16 w-16 bg-amber-200  items-center justify-center overflow-hidden rounded-full bg-neutral-200 text-xl font-semibold light:text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200">
+      <div className="flex h-16 w-16 bg-amber-200 animate-pulse items-center justify-center overflow-hidden rounded-full bg-neutral-200 text-xl font-semibold light:text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200">
         {user.avatar ? (
           <img
             src={user.avatar}
