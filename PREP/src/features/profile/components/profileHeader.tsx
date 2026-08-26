@@ -30,7 +30,7 @@ export function ProfileHeader({
         <h1 className="text-xl font-semibold">
           {name || "Your Profile"}
         </h1>
-        <p className="text-sm light:text-neutral-500 dark:text-neutral-400">
+        <p className="text-sm hover:underline light:text-neutral-500 dark:text-neutral-400">
           {user.email}
         </p>
       </div>
