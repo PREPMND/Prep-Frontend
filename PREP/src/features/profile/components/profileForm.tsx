@@ -44,7 +44,7 @@ export function ProfileForm({
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           maxLength={100}
-          className=""
+          className={styleInput}
         />
       </div>
 
@@ -56,7 +56,7 @@ export function ProfileForm({
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           maxLength={100}
-          className=""
+          className={styleInput}
         />
       </div>
 
@@ -69,7 +69,7 @@ export function ProfileForm({
           onChange={(e) => setBio(e.target.value)}
           maxLength={500}
           rows={4}
-          className=""
+          className={styleInput}
         />
       </div>
 
