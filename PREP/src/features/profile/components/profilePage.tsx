@@ -6,7 +6,7 @@ import { useMyRole } from "../hooks/useMyRole";
 
 export default function ProfilePage() {
   const user = useAuthStore((state) => state.user);
-  const {data:roleData}=useMyRole();
+  const {data:roleData}=useMyRole(user?.id);
   console.log(roleData)
   if (!user) {
     return null;
