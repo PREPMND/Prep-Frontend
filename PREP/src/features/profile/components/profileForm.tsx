@@ -51,7 +51,7 @@ export function ProfileForm({
       </div>
 
       <div className="flex flex-col">
-        <label className="mb-2 m-auto text-sm font-medium">
+        <label className="mb-2 text-sm font-medium">
           Last name
         </label>
         <input
@@ -63,7 +63,7 @@ export function ProfileForm({
       </div>
 
       <div className="flex flex-col">
-        <label className="mb-2 m-auto block text-sm font-medium">
+        <label className="mb-2 block text-sm font-medium">
           Bio
         </label>
         <textarea
