@@ -27,7 +27,7 @@ export function ProfileHeader({
       </div>
 
       <div>
-        <h1 className="text-xl font-[Lato] font-semibold">
+        <h1 className="text-xl font-semibold">
           {name || "Your Profile"}
         </h1>
         <p className="text-sm hover:underline light:text-neutral-500 dark:text-neutral-400">
