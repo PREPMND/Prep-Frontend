@@ -13,7 +13,8 @@ const roleDetails: Record<
     description: "Report and track issues in your community.",
   },
   admin:{
-
+    title: "Admin",
+    description: "Report and track issues in your community.",
   },
   dev: {
     title: "Developer",
