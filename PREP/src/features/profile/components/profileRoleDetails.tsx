@@ -14,7 +14,7 @@ const roleDetails: Record<
   },
   admin:{
     title: "Admin",
-    description: "Instituional or Organi",
+    description: "Instituional or Organizational admin",
   },
   dev: {
     title: "Developer",
