@@ -31,7 +31,7 @@ export function ProfileForm({
     });
 
   };
-  const styleInput="w-[80%] te m-auto rounded-xl border light:border-neutral-300 light:bg-white light:text-neutral-900 light:placeholder:text-neutral-400 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder:text-neutral-500 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:focus:border-blue-400 dark:focus:ring-blue-400/20";
+  const styleInput="w-[80%] font-sem m-auto rounded-xl border light:border-neutral-300 light:bg-white light:text-neutral-900 light:placeholder:text-neutral-400 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder:text-neutral-500 px-4 py-3 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 dark:focus:border-blue-400 dark:focus:ring-blue-400/20";
 
   return (
     <form
