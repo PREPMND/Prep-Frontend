@@ -15,7 +15,7 @@ export function useCurrentUser() {
 
         setUser(response);
         console.log(response)
-        return response;
+        return responseN;
       } catch (error) {
         clearUser();
         throw error;
