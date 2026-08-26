@@ -8,7 +8,7 @@ const roleDetails: Record<
   Role,
   { title: string; description: string }
 > = {
-  user: {
+  citizen: {
     title: "Citizen",
     description: "Report and track issues in your community.",
   },
