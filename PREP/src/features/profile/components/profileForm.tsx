@@ -30,7 +30,8 @@ export function ProfileForm({
       bio,
     });
   };
-  const styleInput="w-full rounded-lg border light:border-neutral-300 light:bg-white dark:border-neutral-700 dark:bg-neutral-900 px-4 py-3 outline-none"
+  const styleInput="w-full rounded-lg border light:border-neutral-300 light:bg-white dark:border-neutral-700 dark:bg-neutral-900 px-4 py-3 outline-none";
+  
   return (
     <form
       onSubmit={handleSubmit}
