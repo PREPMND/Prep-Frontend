@@ -1,23 +1,25 @@
-export type UserRole =
-  | "user"
-  | "dev"
-  | "officer"
-  | "super_admin";
+import type { User } from "../../types/user";
 
-export interface User {
-  id: string;
+export interface LoginPayload {
+  identifier: string;
+  password: string;
+}
+
+export interface RegisterPayload {
+  name: string;
   username: string;
   email: string;
+  phone?: string;
+  password: string;
+  confirmPassword: string;
+}
 
-  firstName: string | null;
-  lastName: string | null;
-  avatar: string | null;
-  bio: string | null;
+export interface AuthResponse {
+  user: User;
+}
 
-  isVerified: boolean;
-  isActive: boolean;
-  role: UserRole;
-
-  createdAt: string;
-  updatedAt: string;
+export interface AuthState {
+  user: User | null;
+  isAuthenticated: boolean;
+  isLoading: boolean;
 }
