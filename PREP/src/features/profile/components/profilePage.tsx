@@ -10,7 +10,7 @@ export default function ProfilePage() {
   if (!user) {
     return null;
   }
-  const {data:roleData}=useMyRole();
+  const {data?roleData:}=useMyRole();
   return (
     <main className="app-container py-10">
       <div className="mx-auto max-w-2xl">
