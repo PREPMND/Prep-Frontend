@@ -28,7 +28,7 @@ export function ProfileHeader({
         )}
       </div>
 
-      <div>
+      <div className="gap-8">
         <h1 className="text-xl font-semibold">
           {name || "Your Profile"}
         </h1>
