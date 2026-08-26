@@ -37,7 +37,7 @@ export function ProfileForm({
       onSubmit={handleSubmit}
       className="mt-8 flex flex-col gap-5"
     >
-      <div children;>
+      <div className="flex flex-col">
         <label className="mb-2 text-sm font-medium">
           First name
         </label>
