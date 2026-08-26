@@ -77,7 +77,7 @@ export function ProfileForm({
       <button
         type="submit"
         disabled={updateProfile.isPending}
-        className="w-fit rounded-lg bg-neutral-800 px-5 py-3 text-white dark:bg-neutral-100 dark:text-neutral-900 disabled:opacity-50"
+        className="text-center text-sm font-medium light:text-blue-600 light:hover:text-blue-700 dark:text-mauve-100 dark:hover:text-mauve-500"
       >
         {updateProfile.isPending
           ? "Saving..."
