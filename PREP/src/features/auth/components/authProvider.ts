@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
+import { useEffect } from "react";
 import { useCurrentUser } from "../hooks/useCurrentUser";
+import { useAuthStore } from "../store/authStore";
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -8,7 +10,12 @@ interface AuthProviderProps {
 export function AuthProvider({
   children,
 }: AuthProviderProps) {
-  useCurrentUser();
+  const { isLoading } = useCurrentUser();
+  const setLoading = useAuthStore((state) => state.setLoading);
 
-  return children;
+  useEffect(() => {
+    setLoading(isLoading);
+  }, [isLoading, setLoading]);
+
+  return <>{children}</>;
 }
