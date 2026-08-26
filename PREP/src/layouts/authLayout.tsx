@@ -12,7 +12,7 @@ export default function AuthLayout() {
       </div>
 
       <div className="relative flex min-h-screen items-center justify-center px-4 py-10">
-        <div className="w-full max-w-md flex justify">
+        <div className="w-full max-w-md flex justify-center">
           <Outlet />
         </div>
       </div>
