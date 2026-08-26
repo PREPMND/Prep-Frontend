@@ -33,7 +33,7 @@ const roleDetails: Record<
 export function ProfileRole({ role }: ProfileRoleProps) {
   if (!role) {
     return (
-      <section className="mt-8 m-auto">
+      <section className="mt-8 mx-auto text-center">
         <h2 className="text-sm font-semibold">
           Platform role
         </h2>
