@@ -1,6 +1,6 @@
 import { ProfileHeader } from "../components/ProfileHeader";
 import { ProfileForm } from "../components/ProfileForm";
-import { useAuthStore } from "../../auth/store/authStore";
+import { useAuthStore } from "../";
 
 export default function ProfilePage() {
   const user = useAuthStore((state) => state.user);
