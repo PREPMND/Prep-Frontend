@@ -14,7 +14,7 @@ export function useCurrentUser() {
         const response = await getCurrentUser();
 
         setUser(response.user);
-
+        console.log(response)
         return response.user;
       } catch (error) {
         clearUser();
