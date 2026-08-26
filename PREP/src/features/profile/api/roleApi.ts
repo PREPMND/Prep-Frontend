@@ -8,6 +8,6 @@ export async function getMyRole(userId: string,): Promise<UserRoleResponse> {
     const response = await apiClient.get<UserRoleResponse>(
         `/authorization/${userId}`,
     );
-
+    console.log(response.data)
     return response.data;
 }
