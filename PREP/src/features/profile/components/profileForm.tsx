@@ -39,7 +39,7 @@ export function ProfileForm({
       className="mt-4 w-[80%] flex flex-col *:mb-2"
     >
       <div className="flex flex-col ">
-        <label className="mb-2 ml text-sm font-medium">
+        <label className="mb-2 text-sm font-medium">
           First name
         </label>
         <input
