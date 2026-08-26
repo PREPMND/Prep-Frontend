@@ -1,4 +1,4 @@
-import axios, {
+import {
   type AxiosError,
   type InternalAxiosRequestConfig,
 } from "axios";
