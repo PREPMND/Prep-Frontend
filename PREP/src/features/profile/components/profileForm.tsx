@@ -61,7 +61,7 @@ export function ProfileForm({
         />
       </div>
 
-      <div className="">
+      <div className="flex flex-col">
         <label className="mb-2 block text-sm font-medium">
           Bio
         </label>
