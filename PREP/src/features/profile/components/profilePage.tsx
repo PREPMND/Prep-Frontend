@@ -2,6 +2,7 @@ import { ProfileHeader } from "../components/profileHeader";
 import { ProfileForm } from "../components/profileForm";
 import { useAuthStore } from "../../auth/store/authStore";
 import { ProfileRole } from "./profileRoleDetails";
+import { useMyRole } from "../hooks/useMyRole";
 
 export default function ProfilePage() {
   const user = useAuthStore((state) => state.user);
@@ -9,12 +10,12 @@ export default function ProfilePage() {
   if (!user) {
     return null;
   }
-  const 
+  const {data:roleData}=useMyRole();
   return (
     <main className="app-container py-10">
       <div className="mx-auto max-w-2xl">
         <ProfileHeader user={user} />
-        <ProfileRole/>
+        <ProfileRole data/>
         <ProfileForm user={user} />
       </div>
     </main>
