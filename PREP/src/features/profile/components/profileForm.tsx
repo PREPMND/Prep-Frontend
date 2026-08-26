@@ -62,7 +62,7 @@ export function ProfileForm({
       </div>
 
       <div className="flex flex-col">
-        <label className="mb-2 m-autoblock text-sm font-medium">
+        <label className="mb-2 m-auto block text-sm font-medium">
           Bio
         </label>
         <textarea
