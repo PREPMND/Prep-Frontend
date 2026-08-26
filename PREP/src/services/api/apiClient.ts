@@ -8,7 +8,6 @@ export const apiClient = axios.create({
     "Content-Type": "application/json",
   },
 });
-console.log(import.meta.env.API_URL_AUTHORIZATION)
 
 export const apiClientAuthorization = axios.create({
   baseURL:'http://localhost:3001' ,
