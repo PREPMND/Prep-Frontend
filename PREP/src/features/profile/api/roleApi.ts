@@ -10,5 +10,5 @@ export async function getMyRole(): Promise<UserRoleResponse> {
     "/authorization/me",
   );
 
-  return response.data.role;
+  return response.data;
 }
