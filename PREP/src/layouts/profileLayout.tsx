@@ -1,4 +1,4 @@
-import { ProfileHeader } from "../components/ProfileHeader";
+import { ProfileHeader } from "../features/profile/components/profileHeader";
 import { ProfileForm } from "../features/profile/components/profileForm";
 import { useAuthStore } from "../features/auth/store/authStore";
 
