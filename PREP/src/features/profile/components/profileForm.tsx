@@ -44,7 +44,7 @@ export function ProfileForm({
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           maxLength={100}
-          className="w-full rounded-lg border light:border-neutral-300 light:bg-white dark:border-neutral-700 dark:bg-neutral-900 px-4 py-3 outline-none"
+          className=""
         />
       </div>
 
@@ -56,7 +56,7 @@ export function ProfileForm({
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           maxLength={100}
-          className="w-full rounded-lg border light:border-neutral-300 light:bg-white dark:border-neutral-700 dark:bg-neutral-900 px-4 py-3 outline-none"
+          className=""
         />
       </div>
 
@@ -69,7 +69,7 @@ export function ProfileForm({
           onChange={(e) => setBio(e.target.value)}
           maxLength={500}
           rows={4}
-          className="w-full rounded-lg border light:border-neutral-300 light:bg-white dark:border-neutral-700 dark:bg-neutral-900 px-4 py-3 outline-none"
+          className=""
         />
       </div>
 
