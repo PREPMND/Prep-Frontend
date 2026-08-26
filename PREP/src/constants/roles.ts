@@ -1,6 +1,6 @@
 export const ROLES = {
   CITIZEN: "citizen",
-  DEV:
+  DEV:"dev",
   OFFICER: "officer",
   ADMIN: "admin",
   SUPER_ADMIN:"super_admin"
