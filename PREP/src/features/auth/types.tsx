@@ -24,7 +24,7 @@ export interface AuthState {
   isLoading: boolean;
 }
 
-export type UserRole =| "user" | "dev"| "officer"| "super_admin";
+export type UserRole =| "user" | "dev" | "officer" | "super_admin";
 
 export interface User {
   id: string;
