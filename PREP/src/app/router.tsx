@@ -25,15 +25,15 @@ export const router = createBrowserRouter([
   {
     element: <AuthGuard />,
     children: [
-
-      chil{
+      element:<
+      children:[{
         path: "/dashboard",
         element: <DashboardPage />,
       },
       {
         path: "/profile",
         element: <ProfilePage />,
-      },
+      },]
     ],
   },
   {
