@@ -28,7 +28,7 @@ export function ProfileHeader({
         )}
       </div>
 
-      <div className="gap-8">
+      <div className="flex gap-3 flex-col">
         <h1 className="text-xl font-semibold">
           {name || "Your Profile"}
         </h1>
