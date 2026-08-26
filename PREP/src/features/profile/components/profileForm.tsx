@@ -38,7 +38,7 @@ export function ProfileForm({
       className="mt-8 flex flex-col gap-5"
     >
       <div>
-        <label className="mb-2 block text-sm font-medium">
+        <label className="mb-2 flex flex-col text-sm font-medium">
           First name
         </label>
         <input
