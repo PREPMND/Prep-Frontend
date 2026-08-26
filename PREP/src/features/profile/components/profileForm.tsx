@@ -81,7 +81,7 @@ export function ProfileForm({
         className="active:scale-[0.97] mt-4 transition-all duration-300 ease-in-out bg-neutral-700 w-[40%] m-auto hover:shadow-md hover:shadow-gray-200 hover:bg-mauve-300 !rounded-xl px-3 py-[10px] hover:text-black "
       >
         {updateProfile.isPending
-          ? <div className="hover:font-extrabold transition-all duration-200 ease-in-out">Saving...</div>
+          ? <div className="hover:font-extrabold transition-all duration-300 ease-in-out">Saving...</div>
           : <div className="hover:font-extrabold transition-all duration-200 ease-in-out">Save changes</div>}
       </button>
     </form>
