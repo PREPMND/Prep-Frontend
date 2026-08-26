@@ -11,7 +11,7 @@ export const apiClient = axios.create({
 console.log(import.meta.env.API_URL_AUTHORIZATION)
 
 export const apiClientAuthorization = axios.create({
-  baseURL:http://localhost:3001 ,
+  baseURL:'http://localhost:3001' ,
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
