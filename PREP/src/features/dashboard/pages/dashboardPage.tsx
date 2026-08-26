@@ -1,7 +1,7 @@
 import { useCurrentUser } from "../../auth/hooks/useCurrentUser";
 
 export default function DashboardPage() {
-  console.log(useCurrentUser)
+  console.log(()=>useCurrentUser)
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold">
