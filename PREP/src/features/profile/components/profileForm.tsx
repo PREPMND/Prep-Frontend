@@ -35,7 +35,7 @@ export function ProfileForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-5 w-full flex flex-col *:mb-2"
+      className="mt-4 w-full flex flex-col *:mb-2"
     >
       <div className="flex flex-col ">
         <label className="mb-2 text-sm font-medium">
