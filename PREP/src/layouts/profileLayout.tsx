@@ -1,5 +1,5 @@
 import { ProfileHeader } from "../components/ProfileHeader";
-import { ProfileForm } from "../";
+import { ProfileForm } from "../features/profile/components/profileForm";
 import { useAuthStore } from "../features/auth/store/authStore";
 
 export default function ProfilePage() {
