@@ -78,7 +78,7 @@ export function ProfileForm({
       <button
         type="submit"
         disabled={updateProfile.isPending}
-        className="mt-1 active:scale-[0.97] mt-4  bg-neutral-700 w-[40%] m-auto hover:shadow-md hover:shadow-gray-200 hover:bg-white !rounded-xl px-3 py-[10px] hover:text-black "
+        className="active:scale-[0.97] mt-4  bg-neutral-700 w-[40%] m-auto hover:shadow-md hover:shadow-gray-200 hover:bg-white !rounded-xl px-3 py-[10px] hover:text-black "
       >
         {updateProfile.isPending
           ? "Saving..."
