@@ -4,7 +4,7 @@ import type {
   LoginPayload,
   RegisterPayload,
 } from "../types";
-
+import type { User } from "../../../types/user";
 export async function login(
   payload: LoginPayload
 ): Promise<AuthResponse> {
