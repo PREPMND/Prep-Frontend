@@ -21,8 +21,10 @@ export function ProfileHeader({
             className="h-full w-full object-cover"
           />
         ) : (
-          name?.charAt(0).toUpperCase() ||
-          user.email.charAt(0).toUpperCase()
+          <div>
+            {name?.charAt(0).toUpperCase() ||
+            user.email.charAt(0).toUpperCase()}
+          </div>
         )}
       </div>
 
