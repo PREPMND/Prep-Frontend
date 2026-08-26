@@ -49,7 +49,7 @@ export function ProfileForm({
         />
       </div>
 
-      <div>
+      <div className="flex flex-col">
         <label className="mb-2 block text-sm font-medium">
           Last name
         </label>
@@ -61,7 +61,7 @@ export function ProfileForm({
         />
       </div>
 
-      <div>
+      <div className="">
         <label className="mb-2 block text-sm font-medium">
           Bio
         </label>
