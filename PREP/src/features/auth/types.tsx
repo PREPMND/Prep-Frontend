@@ -1,4 +1,3 @@
-import type { UserRole } from "../../types/user";
 
 export interface LoginPayload {
   identifier: string;
