@@ -10,7 +10,7 @@ export const apiClient = axios.create({
 });
 
 export const apiClientAuthorization = axios.create({
-  baseURL: ENV.API_URL_A,
+  baseURL: ENV.API_URL_AUTHORIZATION,
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
