@@ -26,11 +26,12 @@ export async function register(
 
   return response.data;
 }
+import type { User } from "../../../types/user";
 
-export async function getCurrentUser(): Promise<AuthResponse> {
-  const response = await apiClient.get<AuthResponse>(
-    "/auth/me"
-  );
+export async function getCurrentUser(): Promise<User> {
+  const response = await apiClient.get<User>("/auth/me");
+  return response.data;
+}
 
   return response.data;
 }
