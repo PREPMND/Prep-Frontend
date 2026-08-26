@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-export default function Layout() {
+export default function ProfileLayout() {
   return (
     <div className="min-h-screen light:bg-neutral-50 light:text-neutral-900 dark:bg-[#121417] dark:text-neutral-100">
       {/* Subtle background */}
