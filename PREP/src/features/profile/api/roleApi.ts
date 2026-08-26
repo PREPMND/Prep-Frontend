@@ -2,13 +2,14 @@ import { apiClient } from "../../../services/api";
 import type { Role } from "../../../constants/roles";
 
 interface UserRoleResponse {
-  role: Role;
+    role: Role;
 }
+export async function getMyRole(
+    userId: string,
+): Promise<UserRoleResponse> {
+    const response = await apiClient.get<UserRoleResponse>(
+        `/authorization/${userId}`,
+    );
 
-export async function getMyRole(): Promise<UserRoleResponse> {
-  const response = await apiClient.get<UserRoleResponse>(
-    "/authorization/:id",
-  );
-
-  return response.data;
+    return response.data;
 }
