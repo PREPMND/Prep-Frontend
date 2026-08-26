@@ -28,10 +28,10 @@ export const router = createBrowserRouter([
         path: "/dashboard",
         element: <DashboardPage />,
       },
-      {
-        path: "/profile",
-        element: <ProfilePage />,
-      },
+      // {
+      //   path: "/profile",
+      //   element: <ProfilePage />,
+      // },
     ],
   },
   {
