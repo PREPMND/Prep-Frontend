@@ -27,12 +27,12 @@ export async function register(
   return response.data;
 }
 
-// export async function getCurrentUser(): Promise<AuthResponse> {
-//   const response = await apiClient.get<AuthResponse>(
-//     "/auth/me"
-//   );
+export async function getCurrentUser(): Promise<AuthResponse> {
+  const response = await apiClient.get<AuthResponse>(
+    "/auth/me"
+  );
 
-//   return response.data;
+  return response.data;
 }
 
 export async function logout(): Promise<void> {
