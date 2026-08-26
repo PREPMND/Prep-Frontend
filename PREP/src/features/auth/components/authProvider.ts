@@ -17,5 +17,5 @@ export function AuthProvider({
     setLoading(isLoading);
   }, [isLoading, setLoading]);
 
-  return (<div>{children}</div>);
+  return children;
 }
