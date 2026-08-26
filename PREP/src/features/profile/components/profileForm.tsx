@@ -82,7 +82,7 @@ export function ProfileForm({
       >
         {updateProfile.isPending
           ? <div>Saving...</div>
-          : "Save changes"}
+          : <div>Save changes</div>}
       </button>
     </form>
   );
