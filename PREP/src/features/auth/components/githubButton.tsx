@@ -1,6 +1,4 @@
-import { useNavigate } from "react-router-dom";
 export function GithubLoginButton() {
-    const navigate = useNavigate();
     const handleGithubLogin = () => {
         window.location.href = `${import.meta.env.VITE_API_URL}/auth/github`;
     };
