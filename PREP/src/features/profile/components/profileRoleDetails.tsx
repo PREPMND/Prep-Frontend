@@ -24,7 +24,7 @@ const roleDetails: Record<
   },
 };
 
-export function ProfileRole({ role }: ProfileRoleProps) {
+export function ProfileRole({ roleData }: ProfileRoleProps) {
   if (!role || role.length === 0) {
     console.log(role)
     return (
