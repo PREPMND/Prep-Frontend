@@ -1,13 +1,17 @@
+import { useRef } from "react";
+import { motion, useMotionValue, useSpring } from "motion/react";
 import type { Role } from "../../../constants/roles";
-import { DirectionalRoleCard } from "../../../utils/roleCard";
 
 interface ProfileRoleProps {
   roleData: string[] | undefined;
 }
 
-const roleDetails: Partial<
-  Record<Role, { title: string; description: string }>
-> = {
+interface RoleCardProps {
+  title: string;
+  description: string;
+}
+
+const roleDetails: Record<Role, RoleCardProps> = {
   CITIZEN: {
     title: "Citizen",
     description: "Report and track issues in your community.",
@@ -24,7 +28,7 @@ const roleDetails: Partial<
   },
   ADMIN: {
     title: "Admin",
-    description: "Institutional or Organizational admin",
+    description: "Institutional or organizational administrator.",
   },
   OFFICER: {
     title: "Government Officer",
@@ -32,49 +36,6 @@ const roleDetails: Partial<
   },
   SUPER_ADMIN: {
     title: "Super Administrator",
-    description:
-      "Manage the platform, users, and system operations.",
+    description: "Manage the platform, users, and system operations.",
   },
 };
-
-export function ProfileRole({ roleData }: ProfileRoleProps) {
-  if (!roleData || roleData.length === 0) {
-    return (
-      <section className="mt-8 mx-auto mb-12 text-center">
-        <h2 className="text-sm font-semibold">
-          Platform role
-        </h2>
-
-        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-          Role information is loading.
-        </p>
-      </section>
-    );
-  }
-
-  return (
-    <div className="mt-8 space-y-4">
-      {roleData.map((r) => {
-        const details = roleDetails[r as Role];
-
-        if (!details) return null;
-
-        return (
-          <DirectionalRoleCard key={r}>
-            <p className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-              Platform role
-            </p>
-
-            <h2 className="mt-2 font-semibold text-neutral-900 dark:text-white">
-              {details.title}
-            </h2>
-
-            <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-              {details.description}
-            </p>
-          </DirectionalRoleCard>
-        );
-      })}
-    </div>
-  );
-}
