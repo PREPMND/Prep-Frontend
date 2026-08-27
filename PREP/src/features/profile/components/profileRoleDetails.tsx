@@ -54,7 +54,7 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
         return (
           <section
             key={r}
-            className="rounded-xl border p-5 border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900/60"
+            className="rounded-xl border p-5 border-neutral-200 light:bg-white dark:border-neutral-800 dark:bg-neutral-900/60"
           >
             <p className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
               Platform role
