@@ -7,7 +7,7 @@ interface UserRoleResponse {
 }
 export async function getMyRole(userId: string,): Promise<UserRoleResponse> {
     const response = await apiClientAuthorization.get<UserRoleResponse>(
-        `user-roles/${userId}`,
+        `user-roles/me`,
     );
     console.log(response)
     return response.data;
