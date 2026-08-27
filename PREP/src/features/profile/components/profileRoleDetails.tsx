@@ -59,9 +59,7 @@ function RoleCard({ title, description }: RoleCardProps) {
     event: React.PointerEvent<HTMLDivElement>,
   ) => {
     if (!cardRef.current) return;
-
-    const rect = cardRef.current.getBoundingClientRect();
-
+    const rect =cardRef.current.getBoundingClientRect();
     const mouseX =event.clientX - rect.left;
     const mouseY =event.clientY - rect.top;
 
@@ -77,7 +75,6 @@ function RoleCard({ title, description }: RoleCardProps) {
     rotateX.set(0);
     rotateY.set(0);
   };
-
   return (
     <div className="[perspective:1000px]">
       <motion.section
