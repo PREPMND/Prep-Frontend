@@ -7,7 +7,7 @@ import { useMyRole } from "../hooks/useMyRole";
 export default function ProfilePage() {
   const user = useAuthStore((state) => state.user);
   const {data:roleData}=useMyRole(user?.id);
-  console.log(roleData)
+  console.log(roleData.data)
   
   if (!user) {
     return null;
@@ -17,7 +17,7 @@ export default function ProfilePage() {
     <main className="app-container py-10">
       <div className="mx-auto max-w-2xl">
         <ProfileHeader user={user} />
-        <ProfileRole roleData={roleData?.roleData}/>
+        <ProfileRole roleData={roleData?.data}/>
         <ProfileForm user={user} />
       </div>
     </main>
