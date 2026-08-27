@@ -1,7 +1,7 @@
 import type { Role } from "../../../constants/roles";
 
 interface ProfileRoleProps {
-  role?: string[];
+  role: string[];
 }
 
 const roleDetails: Record<

@@ -17,7 +17,7 @@ export default function ProfilePage() {
     <main className="app-container py-10">
       <div className="mx-auto max-w-2xl">
         <ProfileHeader user={user} />
-        <ProfileRole role={roleData || undefined}/>
+        <ProfileRole role={roleData }/>
         <ProfileForm user={user} />
       </div>
     </main>
