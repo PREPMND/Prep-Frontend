@@ -13,6 +13,14 @@ const roleDetails: Record<
     title: "Citizen",
     description: "Report and track issues in your community."
   },
+  STUDENT: { 
+    title: "Student", 
+    description: "Access university resources, view courses, and track academic progress." 
+  },
+  UNIVERSITY_ADMIN: { 
+    title: "University Administrator", 
+    description: "Manage university settings, academic records, and institutional tools." 
+  },
   ADMIN: {
     title: "Admin", description: "Institutional or Organizational admin"
   },
