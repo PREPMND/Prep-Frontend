@@ -7,6 +7,6 @@ export async function getMyRole(): Promise<any> {
     const response = await apiClientAuthorization.get<UserRoleResponse>(
         `user-roles/me`,
     );
-    console.log(response)
+    console.log(response.data)
     return response;
 }
