@@ -62,11 +62,11 @@ function RoleCard({ title, description }: RoleCardProps) {
 
     const rect = cardRef.current.getBoundingClientRect();
 
-    const mouseX = event.clientX - rect.left;
-    const mouseY = event.clientY - rect.top;
+    const mouseX =event.clientX - rect.left;
+    const mouseY =event.clientY - rect.top;
 
     rotateX.set(
-      (mouseY /rect.height-0.5* -12,
+      (mouseY /rect.height-0.5)*-12,
     );
     rotateY.set(
       (mouseX /rect.width-0.5)*12,
