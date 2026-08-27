@@ -10,5 +10,5 @@ export async function getMyRole(userId: string,): Promise<UserRoleResponse> {
         `user-roles/me`,
     );
     console.log(response)
-    return response.data;
+    return response;
 }
