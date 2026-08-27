@@ -2,7 +2,7 @@ import type { Role } from "../../../constants/roles";
 
 interface ProfileRoleProps {
   // FIX: Allow undefined for loading states
-  role: string[] | undefined; 
+  role: string[] | undefined;
 }
 
 const roleDetails: Record<
@@ -10,12 +10,18 @@ const roleDetails: Record<
   { title: string; description: string }
 > = {
   CITIZEN: {
-     title: "Citizen", 
-     description: "Report and track issues in your community." 
-    },
-  ADMIN: { title: "Admin", description: "Institutional or Organizational admin" },
-  OFFICER: { title: "Government Officer", description: "Manage and respond to assigned incidents." },
-  SUPER_ADMIN: { title: "Super Administrator", description: "Manage the platform, users, and system operations." },
+    title: "Citizen",
+    description: "Report and track issues in your community."
+  },
+  ADMIN: {
+    title: "Admin", description: "Institutional or Organizational admin"
+  },
+  OFFICER: {
+    title: "Government Officer", description: "Manage and respond to assigned incidents."
+  },
+  SUPER_ADMIN: {
+    title: "Super Administrator", description: "Manage the platform, users, and system operations."
+  },
 };
 
 export function ProfileRole({ role }: ProfileRoleProps) {
@@ -37,8 +43,8 @@ export function ProfileRole({ role }: ProfileRoleProps) {
         if (!details) return null;
 
         return (
-          <section 
-            key={r} 
+          <section
+            key={r}
             className="rounded-xl border p-5 border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900/60"
           >
             <p className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
