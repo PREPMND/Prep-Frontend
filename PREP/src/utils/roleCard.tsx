@@ -64,7 +64,7 @@ export function DirectionalRoleCard({
     <section
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      className="relative overflow-hidden rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950"
+      className="relative rounded-xl border p-5 border-neutral-200 light:bg-white dark:border-neutral-800  dark:bg-gradient-to-r dark:from-neutral-900 dark:via-neutral-950 dark:to-mauve-800"
     >
       <div
         ref={overlayRef}
