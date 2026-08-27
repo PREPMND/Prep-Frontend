@@ -26,7 +26,7 @@ const roleDetails: Record<
 
 export function ProfileRole({ roleData }: ProfileRoleProps) {
   if (!roleData || roleData.length === 0) {
-    console.log(roleData)
+    console.log(roleData.)
     return (
       <section className="mt-8 mx-auto text-center mb-12">
         <h2 className="text-sm font-semibold">Platform role</h2>
