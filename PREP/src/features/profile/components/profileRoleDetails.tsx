@@ -16,10 +16,7 @@ const roleDetails: Record<
     title: "Admin",
     description: "Instituional or Organizational admin",
   },
-  DEV: {
-    title: "Developer",
-    description: "Build and contribute to platform solutions.",
-  },
+  
   OFFICER: {
     title: "Government Officer",
     description: "Manage and respond to assigned incidents.",
