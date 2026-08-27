@@ -43,7 +43,7 @@ export function ProfileRole({ role }: ProfileRoleProps) {
       </section>
     );
   }
-  console.log(roleDetails);
+  console.log(roleDetails.data);
   
   const details = roleDetails[role];
 
