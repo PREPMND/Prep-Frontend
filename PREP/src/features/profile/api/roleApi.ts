@@ -8,5 +8,5 @@ export async function getMyRole(): Promise<UserRoleResponse> {
         `user-roles/me`,
     );
     console.log(response)
-    return response.data;
+    return response;
 }
