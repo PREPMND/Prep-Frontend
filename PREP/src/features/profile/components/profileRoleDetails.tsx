@@ -4,7 +4,23 @@ interface ProfileRoleProps {
   // FIX: Allow undefined for loading states
   roleData: string[] | undefined;
 }
+import { useState } from "react";
 
+type Direction = "top" | "right" | "bottom" | "left";
+
+function getDirection(
+  event: React.MouseEvent<HTMLElement>,
+): Direction {
+  const rect = event.currentTarget.getBoundingClientRect();
+  const x = event.clientX - rect.left - rect.width / 2;
+  const y = event.clientY - rect.top - rect.height / 2;
+
+  if (Math.abs(x / rect.width) > Math.abs(y / rect.height)) {
+    return x > 0 ? "right" : "left";
+  }
+
+  return y > 0 ? "bottom" : "top";
+}
 const roleDetails: Record<
   Role,
   { title: string; description: string }
@@ -13,13 +29,13 @@ const roleDetails: Record<
     title: "Citizen",
     description: "Report and track issues in your community."
   },
-  STUDENT: { 
-    title: "Student", 
-    description: "Access university resources, view courses, and track academic progress." 
+  STUDENT: {
+    title: "Student",
+    description: "Access university resources, view courses, and track academic progress."
   },
-  UNIVERSITY_ADMIN: { 
-    title: "University Administrator", 
-    description: "Manage university settings, academic records, and institutional tools." 
+  UNIVERSITY_ADMIN: {
+    title: "University Administrator",
+    description: "Manage university settings, academic records, and institutional tools."
   },
   ADMIN: {
     title: "Admin", description: "Institutional or Organizational admin"
