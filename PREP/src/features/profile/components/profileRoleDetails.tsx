@@ -87,7 +87,7 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
           setDirection(getDirection(event));
           setIsHovered(false);
         }}
-        className="relative rounded-xl border p-5 border-neutral-200 light:bg-white dark:border-neutral-800  dark:bg-gradient-to-r dark:from-neutral-900 dark:via-neutral-950 dark:to-mauve-800"
+        className=""
       >
         {direction && (
           <div
