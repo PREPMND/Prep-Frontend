@@ -26,7 +26,7 @@ const roleDetails: Record<
 
 export function ProfileRole({ roleData }: ProfileRoleProps) {
   if (!roleData || roleData.length === 0) {
-    console.log(role)
+    console.log(roleData)
     return (
       <section className="mt-8 mx-auto text-center mb-12">
         <h2 className="text-sm font-semibold">Platform role</h2>
@@ -39,7 +39,7 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
 
   return (
     <div className="space-y-4 mt-8">
-      {role.map((r) => {
+      {roleData.map((r) => {
         const details = roleDetails[r as Role];
         if (!details) return null;
 
