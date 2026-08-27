@@ -43,7 +43,7 @@ export function ProfileRole({ role }: ProfileRoleProps) {
       </section>
     );
   }
-
+  
   const details = roleDetails[role];
 
   return (
