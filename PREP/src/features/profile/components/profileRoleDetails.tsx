@@ -1,10 +1,10 @@
 import type { Role } from "../../../constants/roles";
-
+import { useState } from "react";
 interface ProfileRoleProps {
   // FIX: Allow undefined for loading states
   roleData: string[] | undefined;
 }
-import { useState } from "react";
+
 
 type Direction = "top" | "right" | "bottom" | "left";
 
