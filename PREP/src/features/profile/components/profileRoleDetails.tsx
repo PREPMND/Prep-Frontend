@@ -88,7 +88,7 @@ function RoleCard({ title, description }: RoleCardProps) {
         className="rounded-xl border p-5 border-neutral-200 bg-white
           dark:border-neutral-800
           dark:bg-gradient-to-r dark:from-neutral-900 dark:from-0%
-          dark:via-neutral-950 dark:via-mauve-800 dark:via-95% dark:to-rose-400 dark:to-100%
+          dark:via-neutral-950  dark:via-95% dark:via-mauve-400 dark:to-rose-400 dark:to-100%
           shadow-[0_20px_45px_rgba(0,0,0,.12),inset_0_1px_0_rgba(255,255,255,.7)]
           dark:shadow-[0_20px_45px_rgba(0,0,0,.45),inset_0_1px_0_rgba(255,255,255,.06)]"
       >
