@@ -30,7 +30,7 @@ const roleDetails: Record<
   },
 };
 
-export function ProfileRole({ role }: ProfileRoleProps) {
+export function ProfileRole({ role }: Array<String>) {
   if (!role) {
     return (
       <section className="mt-8 mx-auto text-center mb-12">
