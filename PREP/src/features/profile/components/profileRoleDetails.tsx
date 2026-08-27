@@ -1,5 +1,6 @@
 import type { Role } from "../../../constants/roles";
 import { useState } from "react";
+import { DirectionalRoleCard } from "../../../utils/roleCard";
 interface ProfileRoleProps {
   // FIX: Allow undefined for loading states
   roleData: string[] | undefined;
@@ -62,28 +63,18 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
   }
 
   return (
-    div className="space-y-4 mt-8">
-      {roleData.map((r) => {
-        const details = roleDetails[r as Role];
-        if (!details) return null;
+    <DirectionalRoleCard key={r}>
+      <p className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+        Platform role
+      </p>
 
-        return (
-          <section
-            key={r}
-            className="rounded-xl border p-5 border-neutral-200 light:bg-white dark:border-neutral-800  dark:bg-gradient-to-r dark:from-neutral-900 dark:via-neutral-950 dark:to-mauve-800"
-          >
-            <p className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-              Platform role
-            </p>
-            <h2 className="mt-2 font-semibold text-neutral-900 dark:text-white">
-              {details.title}
-            </h2>
-            <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-              {details.description}
-            </p>
-          </section>
-        );
-      })}
-    </div><
+      <h2 className="mt-2 font-semibold text-neutral-900 dark:text-white">
+        {details.title}
+      </h2>
+
+      <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+        {details.description}
+      </p>
+    </DirectionalRoleCard>
   );
 }
