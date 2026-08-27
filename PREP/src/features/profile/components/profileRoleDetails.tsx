@@ -69,7 +69,7 @@ function RoleCard({ title, description }: RoleCardProps) {
       (mouseY / rect.height - 0.5) * -12,
     );
     rotateY.set(
-      (mouseX / rect.width - 0.5) * 12,
+      (mouseX / rect.width - 0.5)*12,
     );
   };
 
