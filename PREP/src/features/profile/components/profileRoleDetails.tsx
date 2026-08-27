@@ -2,7 +2,7 @@ import type { Role } from "../../../constants/roles";
 
 interface ProfileRoleProps {
   // FIX: Allow undefined for loading states
-  role: string[] | undefined;
+  roleData: string[] | undefined;
 }
 
 const roleDetails: Record<
