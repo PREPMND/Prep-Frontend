@@ -87,7 +87,7 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
           setDirection(getDirection(event));
           setIsHovered(false);
         }}
-        className=""
+        className="relative rounded-xl border p-5 border-neutral-200 light:bg-white dark:border-neutral-800  dark:bg-gradient-to-r dark:from-neutral-900 dark:via-neutral-950 dark:to-mauve-800"
       >
         {direction && (
           <div
@@ -115,20 +115,28 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
     );
   }
   return (
-  <div className="space-y-4 mt-8">
-    {roleData.map((r) => {
-      const details = roleDetails[r as Role];
+    <div className="space-y-4 mt-8">
+      {roleData.map((r) => {
+        const details = roleDetails[r as Role];
+        if (!details) return null;
 
-      if (!details) return null;
-
-      return (
-        <RoleCard
-          key={r}
-          title={details.title}
-          description={details.description}
-        />
-      );
-    })}
-  </div>
-);
+        return (
+          <section
+            key={r}
+            className="rounded-xl border p-5 border-neutral-200 light:bg-white dark:border-neutral-800  dark:bg-gradient-to-r dark:from-neutral-900 dark:via-neutral-950 dark:to-mauve-800"
+          >
+            <p className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+              Platform role
+            </p>
+            <h2 className="mt-2 font-semibold text-neutral-900 dark:text-white">
+              {details.title}
+            </h2>
+            <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
+              {details.description}
+            </p>
+          </section>
+        );
+      })}
+    </div>
+  );
 }
