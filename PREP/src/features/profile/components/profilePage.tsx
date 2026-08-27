@@ -8,8 +8,8 @@ export default function ProfilePage() {
   const user = useAuthStore((state) => state.user);
   const {data:roleData}=useMyRole(user?.id);
   console.log(roleData)
-  if(!roleData){
-    
+  if(roleData){
+    return null;
   }
   if (!user) {
     return null;
