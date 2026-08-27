@@ -52,7 +52,6 @@ export function ProfileRole( {role} : ProfileRoleProps) {
       </h2>
 
       <p className="mt-1 text-sm light:text-neutral-600 dark:text-neutral-400">
-        {details.description}
       </p>
     </section>
   );
