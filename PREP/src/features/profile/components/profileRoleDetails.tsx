@@ -25,7 +25,7 @@ const roleDetails: Record<
 };
 
 export function ProfileRole({ role }: ProfileRoleProps) {
-  if (role.length === 0) {
+  if (role.length === 0||role) {
     return (
       <section className="mt-8 mx-auto text-center mb-12">
         <h2 className="text-sm font-semibold">Platform role</h2>
