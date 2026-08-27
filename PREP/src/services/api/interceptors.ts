@@ -8,7 +8,6 @@ import { apiClient } from "./apiClient";
 interface RetryRequestConfig extends InternalAxiosRequestConfig {
   _retry?: boolean;
 }
-
 let isRefreshing = false;
 
 let failedRequests: Array<{
