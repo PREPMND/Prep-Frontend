@@ -41,7 +41,6 @@ export function ProfileRole( {role} : ProfileRoleProps) {
     );
   }
   
-  const details = roleDetails[role];
 
   return (
     <section className="mt-8 rounded-xl border p-5 light:border-neutral-200 light:bg-white dark:border-neutral-800 dark:bg-neutral-900/60">
@@ -50,7 +49,6 @@ export function ProfileRole( {role} : ProfileRoleProps) {
       </p>
 
       <h2 className="mt-2 font-semibold">
-        {details.title}
       </h2>
 
       <p className="mt-1 text-sm light:text-neutral-600 dark:text-neutral-400">
