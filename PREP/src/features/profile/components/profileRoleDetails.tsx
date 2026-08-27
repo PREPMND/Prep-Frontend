@@ -39,3 +39,34 @@ const roleDetails: Record<Role, RoleCardProps> = {
     description: "Manage the platform, users, and system operations.",
   },
 };
+
+export function ProfileRole({ roleData }: ProfileRoleProps) {
+  if (!roleData || roleData.length === 0) {
+    return (
+      <section className="mt-8 mx-auto text-center mb-12">
+        <h2 className="text-sm font-semibold">Platform role</h2>
+        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+          Role information is loading.
+        </p>
+      </section>
+    );
+  }
+
+  return (
+    <div className="space-y-4 mt-8">
+      {roleData.map((role) => {
+        const details = roleDetails[role as Role];
+
+        if (!details) return null;
+
+        return (
+          <RoleCard
+            key={role}
+            title={details.title}
+            description={details.description}
+          />
+        );
+      })}
+    </div>
+  );
+}
