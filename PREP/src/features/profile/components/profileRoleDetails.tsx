@@ -70,7 +70,6 @@ function RoleCard({ title, description }: RoleCardProps) {
       (mouseX /rect.width-0.5)*12,
     );
   };
-
   const handlePointerLeave = () => {
     rotateX.set(0);
     rotateY.set(0);
