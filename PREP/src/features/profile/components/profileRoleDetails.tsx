@@ -60,60 +60,7 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
       </section>
     );
   }
-  interface RoleCardProps {
-    title: string;
-    description: string;
-  }
 
-  function RoleCard({ title, description }: RoleCardProps) {
-    const [direction, setDirection] =
-      useState<Direction | null>(null);
-    const [isHovered, setIsHovered] = useState(false);
-
-    const positions = {
-      top: "-translate-y-full",
-      right: "translate-x-full",
-      bottom: "translate-y-full",
-      left: "-translate-x-full",
-    };
-
-    return (
-      <section
-        onMouseEnter={(event) => {
-          setDirection(getDirection(event));
-          setIsHovered(true);
-        }}
-        onMouseLeave={(event) => {
-          setDirection(getDirection(event));
-          setIsHovered(false);
-        }}
-        className="relative rounded-xl border p-5 border-neutral-200 light:bg-white dark:border-neutral-800  dark:bg-gradient-to-r dark:from-neutral-900 dark:via-neutral-950 dark:to-mauve-800"
-      >
-        {direction && (
-          <div
-            className={`pointer-events-none absolute inset-0 bg-gradient-to-r from-mauve-700/20 via-mauve-500/10 to-transparent transition-transform duration-500 ${isHovered
-                ? "translate-x-0 translate-y-0"
-                : positions[direction]
-              }`}
-          />
-        )}
-
-        <div className="relative">
-          <p className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-            Platform role
-          </p>
-
-          <h2 className="mt-2 font-semibold text-neutral-900 dark:text-white">
-            {title}
-          </h2>
-
-          <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-            {description}
-          </p>
-        </div>
-      </section>
-    );
-  }
   return (
     <div className="space-y-4 mt-8">
       {roleData.map((r) => {
