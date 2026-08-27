@@ -9,7 +9,10 @@ const roleDetails: Record<
   Role,
   { title: string; description: string }
 > = {
-  CITIZEN: { title: "Citizen", description: "Report and track issues in your community." },
+  CITIZEN: {
+     title: "Citizen", 
+     description: "Report and track issues in your community." 
+    },
   ADMIN: { title: "Admin", description: "Institutional or Organizational admin" },
   OFFICER: { title: "Government Officer", description: "Manage and respond to assigned incidents." },
   SUPER_ADMIN: { title: "Super Administrator", description: "Manage the platform, users, and system operations." },
