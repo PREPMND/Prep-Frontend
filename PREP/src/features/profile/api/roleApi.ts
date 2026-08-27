@@ -3,7 +3,7 @@ import type { Role } from "../../../constants/roles";
 import { apiClientAuthorization } from "../../../services/api/apiClient";
 
 interface UserRoleResponse {
-    role: string[];
+    roleData: string[];
 }
 export async function getMyRole(userId: string,): Promise<UserRoleResponse> {
     const response = await apiClientAuthorization.get<UserRoleResponse>(
