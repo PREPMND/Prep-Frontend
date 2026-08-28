@@ -73,12 +73,12 @@ export function LoginForm() {
         disabled={loginMutation.isPending}
         className="mt-1 active:scale-[0.97] bg-neutral-700 w-[60%] m-auto hover:shadow-md hover:shadow-gray-200 hover:bg-white !rounded-xl px-3 py-[10px] hover:text-black "
       >
-        {loginMutation.isPending ? <div className="font-bold text-lg">Logging in...</div> : 
-        <div className="font-bold text-lg">Log in</div>}
+        {loginMutation.isPending ? <div className="font-bold text-lg">Logging in...</div> :
+          <div className="font-bold text-lg">Log in</div>}
       </button>
 
       <div
-        onClick={()=>navigate("/forgot-password")}
+        onClick={() => navigate("/forgot-password")}
         className="text-center text-sm font-medium light:text-blue-600 light:hover:text-blue-700 dark:text-mauve-100 dark:hover:text-mauve-500"
       >
         Forgot password?
