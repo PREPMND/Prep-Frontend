@@ -6,6 +6,7 @@ import {
     type ChallengeCategory,
     type ChallengeSubcategory,
     type CreateChallengePayload,
+    type CreateChallengeResponse,
 } from "../types/challenge";
 import { CATEGORY_SUBCATEGORIES } from "../constants/challengeCategory";
 
