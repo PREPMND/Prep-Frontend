@@ -20,7 +20,7 @@ export function LoginForm() {
         password,
       });
 
-      navigate("/dashboard");
+      navigate("/profile");
     } catch {
       // Error handling later
     }
