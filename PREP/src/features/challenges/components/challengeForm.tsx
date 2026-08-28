@@ -223,7 +223,7 @@ export function ChallengeForm() {
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full rounded-xl bg-neutral-900 px-4 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-white dark:text-neutral-900"
+                className="w-full rounded-xl light:bg-neutral-800 bg-neutral-900 px-4 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-white dark:text-neutral-900"
             >
                 {isSubmitting ? "Submitting challenge..." : "Submit challenge"}
             </button>
