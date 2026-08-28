@@ -24,3 +24,11 @@ export const apiClientChallenge = axios.create({
     "Content-Type": "application/json",
   },
 });
+
+export const apiClientMedia = axios.create({
+  baseURL:'http://localhost:3011' ,
+  withCredentials: true,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
