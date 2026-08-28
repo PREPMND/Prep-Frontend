@@ -9,6 +9,7 @@ import {
     type CreateChallengeResponse,
 } from "../types/challenge";
 import { CATEGORY_SUBCATEGORIES } from "../constants/challengeCategory";
+import { SimilarChallenges } from "./similarChallenge";
 
 export function ChallengeForm() {
     const [title, setTitle] = useState("");
