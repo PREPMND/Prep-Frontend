@@ -1,4 +1,4 @@
-import { api } from "../a";
+import { api } from "./interceptors";
 
 export async function uploadMedia(
 file: File,
