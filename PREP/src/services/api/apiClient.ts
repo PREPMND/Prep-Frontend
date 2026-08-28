@@ -17,8 +17,8 @@ export const apiClientAuthorization = axios.create({
   },
 });
 
-export const apiClientAuthorization = axios.create({
-  baseURL:'http://localhost:3001' ,
+export const apiClientChallenge = axios.create({
+  baseURL:'http://localhost:3003' ,
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
