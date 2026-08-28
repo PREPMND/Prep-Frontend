@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { uploadMedia } from "../../../services/api/media";
-import { createChallenge } from "../api/challengeApi";
+import { createChallenge, linkChallengeDuplicate } from "../api/challengeApi";
 import {
     CHALLENGE_CATEGORIES,
     type ChallengeCategory,
