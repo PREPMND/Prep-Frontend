@@ -162,7 +162,7 @@ export function ChallengeForm() {
                         setCategory(event.target.value as ChallengeCategory | "");
                         setSubcategory("");
                     }}
-                    className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none dark:border-neutral-800"
+                    className="mt-2 w-full rounded-xl border border-neutral-200 dark:bg- light:bg-transparent px-4 py-3 text-sm outline-none dark:border-neutral-800"
                 >
                     <option value="">Let the platform categorize it</option>
                     {Object.values(CHALLENGE_CATEGORIES).map((value) => (
