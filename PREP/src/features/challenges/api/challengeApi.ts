@@ -33,7 +33,7 @@ export async function linkChallengeDuplicate(
 export async function getChallengeById(
     challengeId: string,
 ): Promise<Challenge> {
-    const response = await apiClient.get<Challenge>(
+    const response = await apiClientChallenge.get<Challenge>(
         `/challenges/${challengeId}`,
     );
 
