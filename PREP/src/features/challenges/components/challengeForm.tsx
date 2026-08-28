@@ -46,7 +46,7 @@ export function ChallengeForm() {
 
             const response = await createChallenge(payload);
 
-            setSubmittedChallenge(response); const response = await createChallenge(payload);
+            setSubmittedChallenge(response); 
 
             console.log(response);
         } catch (error) {
