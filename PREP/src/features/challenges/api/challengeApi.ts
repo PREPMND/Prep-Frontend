@@ -1,4 +1,4 @@
-import { apiClient } from "../../../services/api/apiClient";
+import { apiClient, apiClientChallenge } from "../../../services/api/apiClient";
 import type {
   CreateChallengePayload,
   CreateChallengeResponse,
@@ -7,7 +7,7 @@ import type {
 export async function createChallenge(
   payload: CreateChallengePayload,
 ): Promise<CreateChallengeResponse> {
-  const response = await apiClient.post<CreateChallengeResponse>(
+  const response = await apiClientChallenge.post<CreateChallengeResponse>(
     "/challenges",
     payload,
   );
@@ -19,7 +19,7 @@ export async function linkChallengeDuplicate(
   challengeId: string,
   originalChallengeId: string,
 ) {
-  const response = await apiClient.patch(
+  const response = await apiClientChallenge.patch(
     `/challenges/${challengeId}/duplicate`,
     {
       originalChallengeId,
