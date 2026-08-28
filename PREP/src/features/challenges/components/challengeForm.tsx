@@ -72,41 +72,33 @@ export function ChallengeForm() {
                 </div>
 
                 {submittedChallenge.possibleDuplicates.length > 0 && (
-                    <div className="rounded-xl border border-amber-200 p-5 dark:border-amber-900">
-                        <h2 className="font-medium text-neutral-900 dark:text-white">
-                            A similar challenge may already be under review
-                        </h2>
-                        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-                            Is your report referring to the same issue?
-                        </p>
+                    <SimilarChallenges
+                        challenges={submittedChallenge.possibleDuplicates}
+                        isLinking={isLinkingDuplicate}
+                        onSelectSameIssue={async (originalChallengeId) => {
+                            try {
+                                setIsLinkingDuplicate(true);
 
-                        <div className="mt-4 space-y-2">
-                            {submittedChallenge.possibleDuplicates.map((duplicate) => (
-                                <button
-                                    key={duplicate.challengeId}
-                                    type="button"
-                                    disabled={isLinkingDuplicate}
-                                    className="w-full rounded-lg border border-neutral-200 px-4 py-3 text-left text-sm hover:bg-neutral-50 disabled:opacity-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
-                                    onClick={async () => {
-                                        try {
-                                            setIsLinkingDuplicate(true);
+                                await linkChallengeDuplicate(
+                                    submittedChallenge.challenge.id,
+                                    originalChallengeId,
+                                );
 
-                                            // We'll show challenge details here once the
-                                            // challenge lookup/list UI is added.
-                                            await linkChallengeDuplicate(
-                                                submittedChallenge.challenge.id,
-                                                duplicate.challengeId,
-                                            );
-                                        } finally {
-                                            setIsLinkingDuplicate(false);
+                                setSubmittedChallenge((current) =>
+                                    current
+                                        ? {
+                                            ...current,
+                                            possibleDuplicates: [],
                                         }
-                                    }}
-                                >
-                                    This is the same issue
-                                </button>
-                            ))}
-                        </div>
-                    </div>
+                                        : null,
+                                );
+                            } catch (error) {
+                                console.error("Failed to link duplicate challenge:", error);
+                            } finally {
+                                setIsLinkingDuplicate(false);
+                            }
+                        }}
+                    />
                 )}
             </div>
         );
