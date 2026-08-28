@@ -1,23 +1,114 @@
 "use client";
 
 import { useState } from "react";
-
 import { createChallenge } from "../services/challenges";
 import { uploadMedia } from "../../../services/api/media";
-
 import {
 CHALLENGE_CATEGORIES,
+CHALLENGE_SUBCATEGORIES,
 type ChallengeCategory,
+type ChallengeSubcategory,
 type CreateChallengePayload,
 } from "../types/challenge";
+
+const subcategoriesByCategory: Partial<
+Record<ChallengeCategory, ChallengeSubcategory[]>
+
+> = {
+> infrastructure_transport: [
+> "roads",
+> "bridges",
+> "public_transport",
+> "traffic_infrastructure",
+> "public_infrastructure",
+> ],
+> water_sanitation: [
+> "drinking_water",
+> "water_supply",
+> "drainage",
+> "sanitation",
+> "waste_management",
+> ],
+> healthcare: [
+> "healthcare_access",
+> "healthcare_facilities",
+> "maternal_child_health",
+> "disease_prevention",
+> "mental_health",
+> ],
+> education_skills: [
+> "school_infrastructure",
+> "education_access",
+> "education_quality",
+> "digital_education",
+> "skill_development",
+> ],
+> agriculture_rural: [
+> "farming",
+> "irrigation",
+> "livestock",
+> "rural_infrastructure",
+> "farmer_support",
+> ],
+> environment_climate: [
+> "pollution",
+> "forest_biodiversity",
+> "climate_resilience",
+> "natural_resources",
+> ],
+> public_safety: [
+> "road_safety",
+> "disaster_management",
+> "community_safety",
+> "emergency_response",
+> ],
+> government_public_services: [
+> "public_service_access",
+> "governance_grievances",
+> "digital_government",
+> "civic_services",
+> ],
+> economy_livelihoods: [
+> "employment",
+> "entrepreneurship",
+> "local_livelihoods",
+> "financial_inclusion",
+> ],
+> energy_utilities: [
+> "electricity",
+> "renewable_energy",
+> "energy_access",
+> ],
+> social_inclusion: [
+> "disability_inclusion",
+> "women_empowerment",
+> "senior_citizens",
+> "marginalized_communities",
+> ],
+> };
+
+const formatLabel = (value: string) =>
+value
+.replaceAll("_", " ")
+.replace(/\b\w/g, (letter) => letter.toUpperCase());
 
 export function ChallengeForm() {
 const [title, setTitle] = useState("");
 const [description, setDescription] = useState("");
 const [location, setLocation] = useState("");
 const [category, setCategory] = useState<ChallengeCategory | "">("");
+const [subcategory, setSubcategory] = useState<ChallengeSubcategory | "">("");
 const [files, setFiles] = useState<File[]>([]);
 const [isSubmitting, setIsSubmitting] = useState(false);
+
+const availableSubcategories = category
+? subcategoriesByCategory[category] ?? []
+: [];
+
+const handleCategoryChange = (value: ChallengeCategory | "") => {
+setCategory(value);
+setSubcategory("");
+};
 
 const handleSubmit = async (
 event: React.FormEvent<HTMLFormElement>,
@@ -36,7 +127,6 @@ try {
       "challenge_evidence",
     );
 
-    // Replace with the actual MediaService upload response field.
     if (uploadedMedia?.id) {
       mediaIds.push(uploadedMedia.id);
     }
@@ -47,6 +137,7 @@ try {
     description,
     location: location || undefined,
     category: category || undefined,
+    subcategory: subcategory || undefined,
     mediaIds,
   };
 
@@ -107,30 +198,63 @@ What is the problem? </label>
     />
   </div>
 
-  <div>
-    <label htmlFor="category" className="text-sm font-medium">
-      Category{" "}
-      <span className="text-neutral-400">(optional)</span>
-    </label>
+  <div className="grid gap-4 sm:grid-cols-2">
+    <div>
+      <label htmlFor="category" className="text-sm font-medium">
+        Category{" "}
+        <span className="text-neutral-400">(optional)</span>
+      </label>
 
-    <select
-      id="category"
-      value={category}
-      onChange={(event) =>
-        setCategory(event.target.value as ChallengeCategory)
-      }
-      className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none dark:border-neutral-800"
-    >
-      <option value="">Let the platform suggest a category</option>
+      <select
+        id="category"
+        value={category}
+        onChange={(event) =>
+          handleCategoryChange(
+            event.target.value as ChallengeCategory | "",
+          )
+        }
+        className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none dark:border-neutral-800"
+      >
+        <option value="">Let the platform categorize it</option>
 
-      {Object.entries(CHALLENGE_CATEGORIES).map(
-        ([key, value]) => (
+        {Object.values(CHALLENGE_CATEGORIES).map((value) => (
           <option key={value} value={value}>
-            {key.replaceAll("_", " ")}
+            {formatLabel(value)}
           </option>
-        ),
-      )}
-    </select>
+        ))}
+      </select>
+    </div>
+
+    <div>
+      <label htmlFor="subcategory" className="text-sm font-medium">
+        Subcategory{" "}
+        <span className="text-neutral-400">(optional)</span>
+      </label>
+
+      <select
+        id="subcategory"
+        value={subcategory}
+        disabled={!category}
+        onChange={(event) =>
+          setSubcategory(
+            event.target.value as ChallengeSubcategory | "",
+          )
+        }
+        className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800"
+      >
+        <option value="">
+          {category
+            ? "Select a subcategory"
+            : "Select a category first"}
+        </option>
+
+        {availableSubcategories.map((value) => (
+          <option key={value} value={value}>
+            {formatLabel(value)}
+          </option>
+        ))}
+      </select>
+    </div>
   </div>
 
   <div>
@@ -153,6 +277,12 @@ What is the problem? </label>
       }
       className="mt-3 block text-sm"
     />
+
+    {files.length > 0 && (
+      <p className="mt-2 text-xs text-neutral-500">
+        {files.length} file{files.length > 1 ? "s" : ""} selected
+      </p>
+    )}
   </div>
 
   <button
