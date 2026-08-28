@@ -16,6 +16,47 @@ export const CHALLENGE_CATEGORIES = {
 export type ChallengeCategory =
   (typeof CHALLENGE_CATEGORIES)[keyof typeof CHALLENGE_CATEGORIES];
 
+export interface CreateChallengePayload {
+  title: string;
+  description: string;
+  mediaIds?: string[];
+  category?: ChallengeCategory;
+  subcategory?: string;
+  location?: string;
+  latitude?: number;
+  longitude?: number;
+}
+
+export interface Challenge {
+  id: string;
+  title: string;
+  description: string;
+  category: ChallengeCategory | null;
+  subcategory: string | null;
+  location: string | null;
+  latitude?: number | null;
+  longitude?: number | null;
+  mediaIds: string[];
+  status: string;
+  duplicateOfId?: string | null;
+  aiSuggestedCategory?: ChallengeCategory | null;
+  aiSuggestedSubcategory?: string | null;
+  aiConfidence?: number | null;
+  submittedBy: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface PossibleDuplicate {
+  challengeId: string;
+  score: number;
+}
+
+export interface CreateChallengeResponse {
+  challenge: Challenge;
+  possibleDuplicates: PossibleDuplicate[];
+}
+
 export const CHALLENGE_SUBCATEGORIES = {
   ROADS: "roads",
   BRIDGES: "bridges",
