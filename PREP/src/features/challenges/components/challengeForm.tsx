@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { uploadMedia } from "../../../services/api/media";
 import { createChallenge } from "../services/challenges";
 import {
@@ -15,22 +15,16 @@ const [category, setCategory] = useState<ChallengeCategory | "">("");
 const [files, setFiles] = useState<File[]>([]);
 const [isSubmitting, setIsSubmitting] = useState(false);
 
-const handleSubmit = async (
-event: React.FormEvent<HTMLFormElement>,
-) => {
+const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
 event.preventDefault();
+setIsSubmitting(true);
 
 ```
 try {
-  setIsSubmitting(true);
-
   const mediaIds: string[] = [];
 
   for (const file of files) {
-    const uploadedMedia = await uploadMedia(
-      file,
-      "challenge_evidence",
-    );
+    const uploadedMedia = await uploadMedia(file, "challenge_evidence");
 
     if (uploadedMedia?.id) {
       mediaIds.push(uploadedMedia.id);
@@ -45,9 +39,7 @@ try {
     mediaIds,
   };
 
-  const response = await createChallenge(payload);
-
-  console.log(response);
+  await createChallenge(payload);
 } catch (error) {
   console.error("Failed to submit challenge:", error);
 } finally {
@@ -57,27 +49,23 @@ try {
 
 };
 
-return ( 
-<form onSubmit={handleSubmit} className="space-y-6"> <div> <label htmlFor="title" className="text-sm font-medium">
+return ( <form onSubmit={handleSubmit} className="space-y-6"> <div> <label htmlFor="title" className="text-sm font-medium">
 What is the problem? </label>
+<input
+id="title"
+value={title}
+onChange={(event) => setTitle(event.target.value)}
+maxLength={200}
+required
+placeholder="For example, damaged roads in our village"
+className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800"
+/> </div>
 
 ```
-    <input
-      id="title"
-      value={title}
-      onChange={(event) => setTitle(event.target.value)}
-      maxLength={200}
-      required
-      placeholder="For example, damaged roads in our village"
-      className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800"
-    />
-  </div>
-
   <div>
     <label htmlFor="description" className="text-sm font-medium">
       Describe the challenge
     </label>
-
     <textarea
       id="description"
       value={description}
@@ -93,7 +81,6 @@ What is the problem? </label>
     <label htmlFor="location" className="text-sm font-medium">
       Where is this happening?
     </label>
-
     <input
       id="location"
       value={location}
@@ -105,10 +92,8 @@ What is the problem? </label>
 
   <div>
     <label htmlFor="category" className="text-sm font-medium">
-      Category{" "}
-      <span className="text-neutral-400">(optional)</span>
+      Category <span className="text-neutral-400">(optional)</span>
     </label>
-
     <select
       id="category"
       value={category}
@@ -118,7 +103,6 @@ What is the problem? </label>
       className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none dark:border-neutral-800"
     >
       <option value="">Let the platform categorize it</option>
-
       {Object.values(CHALLENGE_CATEGORIES).map((value) => (
         <option key={value} value={value}>
           {value
@@ -131,14 +115,11 @@ What is the problem? </label>
 
   <div>
     <label htmlFor="evidence" className="text-sm font-medium">
-      Add evidence{" "}
-      <span className="text-neutral-400">(optional)</span>
+      Add evidence <span className="text-neutral-400">(optional)</span>
     </label>
-
     <p className="mt-1 text-xs text-neutral-500">
       Photos, documents, or videos can help explain the challenge.
     </p>
-
     <input
       id="evidence"
       type="file"
