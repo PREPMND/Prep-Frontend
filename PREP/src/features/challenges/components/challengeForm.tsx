@@ -60,10 +60,12 @@ export function ChallengeForm() {
     const availableSubcategories = category
         ? CATEGORY_SUBCATEGORIES[category]
         : [];
+
+    const style='mt-2 w-full rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-800 px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800'
     if (submittedChallenge) {
         return (
-            <div className="space-y-5">
-                <div className="rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
+            <div className="space-y-5 ">
+                <div className="rounded-xl light:bg-white light:text-neutral-900 dark:bg-neutral-700 dark:text-white border border-neutral-200 p-5 dark:border-neutral-800">
                     <p className="text-sm font-medium text-neutral-900 dark:text-white">
                         Challenge submitted successfully
                     </p>
@@ -105,8 +107,8 @@ export function ChallengeForm() {
         );
     }
     return (
-        <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
+        <form onSubmit={handleSubmit} className=" w-full space-y-6 ">
+            <div className="">
                 <label htmlFor="title" className="text-sm font-medium">
                     What is the problem?
                 </label>
@@ -117,7 +119,7 @@ export function ChallengeForm() {
                     maxLength={200}
                     required
                     placeholder="For example, damaged roads in our village"
-                    className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800"
+                    className={style}
                 />
             </div>
 
@@ -132,7 +134,7 @@ export function ChallengeForm() {
                     required
                     rows={6}
                     placeholder="Describe what is happening, who is affected, and any important details."
-                    className="mt-2 w-full resize-none rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800"
+                    className="mt-2 w-full resize-none rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800"
                 />
             </div>
 
@@ -145,7 +147,7 @@ export function ChallengeForm() {
                     value={location}
                     onChange={(event) => setLocation(event.target.value)}
                     placeholder="Village, district, or locality"
-                    className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800"
+                    className={style}
                 />
             </div>
 
@@ -160,7 +162,7 @@ export function ChallengeForm() {
                         setCategory(event.target.value as ChallengeCategory | "");
                         setSubcategory("");
                     }}
-                    className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none dark:border-neutral-800"
+                    className="mt-2 w-full rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-3 text-sm outline-none dark:border-neutral-800"
                 >
                     <option value="">Let the platform categorize it</option>
                     {Object.values(CHALLENGE_CATEGORIES).map((value) => (
