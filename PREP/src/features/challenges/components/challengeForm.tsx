@@ -46,7 +46,7 @@ export function ChallengeForm() {
 
             const response = await createChallenge(payload);
 
-            setSubmittedChallenge(response); 
+            setSubmittedChallenge(response);
 
             console.log(response);
         } catch (error) {
@@ -58,6 +58,58 @@ export function ChallengeForm() {
     const availableSubcategories = category
         ? CATEGORY_SUBCATEGORIES[category]
         : [];
+    if (submittedChallenge) {
+        return (
+            <div className="space-y-5">
+                <div className="rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
+                    <p className="text-sm font-medium text-neutral-900 dark:text-white">
+                        Challenge submitted successfully
+                    </p>
+                    <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                        Your challenge has been submitted and will enter the review workflow.
+                    </p>
+                </div>
+
+                {submittedChallenge.possibleDuplicates.length > 0 && (
+                    <div className="rounded-xl border border-amber-200 p-5 dark:border-amber-900">
+                        <h2 className="font-medium text-neutral-900 dark:text-white">
+                            A similar challenge may already be under review
+                        </h2>
+                        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                            Is your report referring to the same issue?
+                        </p>
+
+                        <div className="mt-4 space-y-2">
+                            {submittedChallenge.possibleDuplicates.map((duplicate) => (
+                                <button
+                                    key={duplicate.challengeId}
+                                    type="button"
+                                    disabled={isLinkingDuplicate}
+                                    className="w-full rounded-lg border border-neutral-200 px-4 py-3 text-left text-sm hover:bg-neutral-50 disabled:opacity-50 dark:border-neutral-800 dark:hover:bg-neutral-900"
+                                    onClick={async () => {
+                                        try {
+                                            setIsLinkingDuplicate(true);
+
+                                            // We'll show challenge details here once the
+                                            // challenge lookup/list UI is added.
+                                            await linkChallengeDuplicate(
+                                                submittedChallenge.challenge.id,
+                                                duplicate.challengeId,
+                                            );
+                                        } finally {
+                                            setIsLinkingDuplicate(false);
+                                        }
+                                    }}
+                                >
+                                    This is the same issue
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </div>
+        );
+    }
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
             <div>
