@@ -8,6 +8,7 @@ import VerifyEmail from "../features/auth/pages/verfiyEmail";
 import AuthLayout from "../layouts/authLayout";
 import ProfilePage from "../features/profile/components/profilePage";
 import ProfileLayout from "../layouts/profileLayout";
+import { ChallengePage } from "../features/challenges/pages/challengePage";
 
 export const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ export const router = createBrowserRouter([
           },
           {
             path: "/challenges/submit",
-            element: <ChallengePage />,
+            element: <ChallengePage/>,
           },
         ],
       },
