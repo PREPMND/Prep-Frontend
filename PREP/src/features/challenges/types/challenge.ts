@@ -50,6 +50,10 @@ export interface Challenge {
 export interface PossibleDuplicate {
   challengeId: string;
   score: number;
+  title: string;
+  description: string;
+  location: string | null;
+  submittedBy: string;
 }
 
 export interface CreateChallengeResponse {
