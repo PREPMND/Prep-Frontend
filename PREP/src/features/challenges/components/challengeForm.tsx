@@ -61,7 +61,7 @@ export function ChallengeForm() {
         ? CATEGORY_SUBCATEGORIES[category]
         : [];
 
-    const syle
+    const style='mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800'
     if (submittedChallenge) {
         return (
             <div className="space-y-5">
