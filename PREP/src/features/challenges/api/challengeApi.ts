@@ -1,4 +1,4 @@
-import { apiClient } from "../../../lib/api/apiClient";
+import { apiClient } from "../";
 import type {
   CreateChallengePayload,
   CreateChallengeResponse,
