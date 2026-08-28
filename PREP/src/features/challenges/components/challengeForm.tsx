@@ -183,7 +183,7 @@ export function ChallengeForm() {
                     onChange={(event) =>
                         setSubcategory(event.target.value as ChallengeSubcategory | "")
                     }
-                    className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent dark:bg-ne px-4 py-3 text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800"
+                    className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent dark:bg-neutral-700 dark:text-white px-4 py-3 text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800"
                 >
                     <option value="">
                         {category
