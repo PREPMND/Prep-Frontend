@@ -17,7 +17,10 @@ export function ChallengeForm() {
     const [subcategory, setSubcategory] = useState<ChallengeSubcategory | "">("");
     const [files, setFiles] = useState<File[]>([]);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submittedChallenge, setSubmittedChallenge] =
+        useState<CreateChallengeResponse | null>(null);
 
+    const [isLinkingDuplicate, setIsLinkingDuplicate] = useState(false);
     const handleSubmit = async (
         event: React.FormEvent<HTMLFormElement>,
     ) => {
