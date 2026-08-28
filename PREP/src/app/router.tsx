@@ -25,6 +25,11 @@ export const router = createBrowserRouter([
       },
     ],
   },
+  //TEMPORARY - FOR VIEWING 
+  {
+    path:"/challenge-preview",
+    element: <ChallengeForm/>,
+  },
   {
     element: <AuthGuard />,
     children: [
