@@ -1,4 +1,4 @@
-import { api } from "./api";
+import { api } from "../a";
 
 export async function uploadMedia(
 file: File,
