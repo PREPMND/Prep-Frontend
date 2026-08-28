@@ -60,6 +60,8 @@ export function ChallengeForm() {
     const availableSubcategories = category
         ? CATEGORY_SUBCATEGORIES[category]
         : [];
+
+    const syle
     if (submittedChallenge) {
         return (
             <div className="space-y-5">
