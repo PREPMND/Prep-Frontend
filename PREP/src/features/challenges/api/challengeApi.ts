@@ -14,3 +14,17 @@ export async function createChallenge(
 
   return response.data;
 }
+
+export async function linkChallengeDuplicate(
+  challengeId: string,
+  originalChallengeId: string,
+) {
+  const response = await apiClient.patch(
+    `/challenges/${challengeId}/duplicate`,
+    {
+      originalChallengeId,
+    },
+  );
+
+  return response.data;
+}
