@@ -1,5 +1,6 @@
 import {  apiClientChallenge } from "../../../services/api/apiClient";
 import type {
+  Challenge,
   CreateChallengePayload,
   CreateChallengeResponse,
 } from "../types/challenge";
@@ -27,4 +28,14 @@ export async function linkChallengeDuplicate(
   );
 
   return response.data;
+}
+
+export async function getChallengeById(
+    challengeId: string,
+): Promise<Challenge> {
+    const response = await apiClient.get<Challenge>(
+        `/challenges/${challengeId}`,
+    );
+
+    return response.data;
 }
