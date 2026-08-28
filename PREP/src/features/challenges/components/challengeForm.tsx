@@ -8,6 +8,7 @@ import {
   type ChallengeSubcategory,
   type CreateChallengePayload,
 } from "../types/challenge";
+import { CATEGORY_SUBCATEGORIES } from "../constants/challengeCategory";
 
 export function ChallengeForm() {
   const [title, setTitle] = useState("");
@@ -50,7 +51,9 @@ export function ChallengeForm() {
       setIsSubmitting(false);
     }
   };
-
+  const availableSubcategories = category
+  ? CATEGORY_SUBCATEGORIES[category]
+  : [];
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
