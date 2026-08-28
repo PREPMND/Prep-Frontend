@@ -64,7 +64,7 @@ export function ChallengeForm() {
     const style='mt-2 w-full rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-800 px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800'
     if (submittedChallenge) {
         return (
-            <div className="space-y-5">
+            <div className="space-y-5 light:text-neutral-900">
                 <div className="rounded-xl border border-neutral-200 p-5 dark:border-neutral-800">
                     <p className="text-sm font-medium text-neutral-900 dark:text-white">
                         Challenge submitted successfully
