@@ -117,7 +117,7 @@ export function ChallengeForm() {
                     maxLength={200}
                     required
                     placeholder="For example, damaged roads in our village"
-                    className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800"
+                    className={style}
                 />
             </div>
 
@@ -145,7 +145,7 @@ export function ChallengeForm() {
                     value={location}
                     onChange={(event) => setLocation(event.target.value)}
                     placeholder="Village, district, or locality"
-                    className="mt-2 w-full rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800"
+                    className={style}
                 />
             </div>
 
