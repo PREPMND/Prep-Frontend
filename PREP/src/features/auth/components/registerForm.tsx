@@ -36,7 +36,7 @@ export function RegisterForm() {
     try {
       await registerMutation.mutateAsync(form);
 
-      navigate("/dashboard");
+      navigate("/profile");
     } catch {
       // Error UI later.
     }
