@@ -1,4 +1,4 @@
-import { apiClient, apiClientMedia } from "./apiClient";
+import { apiClientMedia } from "./apiClient";
 
 export async function uploadMedia(
 file: File,
