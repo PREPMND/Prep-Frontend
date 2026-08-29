@@ -29,6 +29,6 @@ export const apiClientMedia = axios.create({
   baseURL:'http://localhost:3011' ,
   withCredentials: true,
   headers: {
-    "Content-Type": "application/json",
+    'Content-Type': 'multipart/form-data'
   },
 });
