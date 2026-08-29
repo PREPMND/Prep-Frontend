@@ -1,4 +1,4 @@
-import { apiClient } from "./apiClient";
+import { apiClient, apiClientMedia } from "./apiClient";
 
 export async function uploadMedia(
 file: File,
@@ -9,7 +9,7 @@ const formData = new FormData();
 formData.append("file", file);
 formData.append("purpose", purpose);
 
-const response = await apiClient.post(
+const response = await apiClientMedia.post(
 "/media/upload",
 formData,
 );
