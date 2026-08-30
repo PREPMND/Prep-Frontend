@@ -28,7 +28,7 @@ export function OrganizationList({
 
           key={organization.id}
           organization={organization}
-          onClick={() => onSelectOrganization?.(organization)}
+          onClick={handleClick(organization)}
         />
       ))}
     </div>
