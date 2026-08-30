@@ -1,5 +1,5 @@
 import type { Organization } from "../types/organization";
-import { OrganizationCard } from "./OrganizationCard";
+import { OrganizationCard } from "./organizationCard";
 
 interface OrganizationListProps {
   organizations: Organization[];
