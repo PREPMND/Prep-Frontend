@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
             element: <ChallengePage />,
           },
 
-          
+
         ],
       },
     ],
@@ -59,12 +59,16 @@ export const router = createBrowserRouter([
     element: <AuthLayout />,
     children: [
       {
-        path: "/login",
-        element: <LoginPage />,
+        path: "/organizations",
+        element: <OrganizationsPage />,
       },
       {
-        path: "/register",
-        element: <RegisterPage />,
+        path: "/organizations/create",
+        element: <CreateOrganizationPage />,
+      },
+      {
+        path: "/organizations/:id",
+        element: <OrganizationDetailPage />,
       },
     ],
   },
