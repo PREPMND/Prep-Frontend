@@ -59,15 +59,15 @@ function RoleCard({ title, description }: RoleCardProps) {
     event: React.PointerEvent<HTMLDivElement>,
   ) => {
     if (!cardRef.current) return;
-    const rect =cardRef.current.getBoundingClientRect();
-    const mouseX =event.clientX - rect.left;
-    const mouseY =event.clientY - rect.top;
+    const rect = cardRef.current.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
 
     rotateX.set(
-      (mouseY /rect.height-0.5)*-12,
+      (mouseY / rect.height - 0.5) * -12,
     );
     rotateY.set(
-      (mouseX /rect.width-0.5)*12,
+      (mouseX / rect.width - 0.5) * 12,
     );
   };
   const handlePointerLeave = () => {
@@ -128,16 +128,21 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
 
   return (
     <div className="space-y-4 mt-8">
-      {roleData.map((role) => {
-        const details = roleDetails[role as Role];
+      {roleData.map((assignment) => {
+        const details = roleDetails[assignment.roleName as Role];
 
         if (!details) return null;
 
         return (
           <RoleCard
-            key={role}
+            key={assignment.id}
             title={details.title}
             description={details.description}
+            scope={
+              assignment.organizationId
+                ? "Organization role"
+                : "Platform role"
+            }
           />
         );
       })}
