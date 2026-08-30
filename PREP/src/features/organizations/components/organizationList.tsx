@@ -17,7 +17,7 @@ export function OrganizationList({
       </p>
     );
   }
-
+  const navigate=useNavigate();
   function handleClick(){
     
   }
