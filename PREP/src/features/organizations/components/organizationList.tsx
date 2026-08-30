@@ -18,7 +18,7 @@ export function OrganizationList({
     );
   }
   const navigate=useNavigate();
-  function handleClick(){
+  function handleClick(organization){
     onSelectOrganization?.(organization)
   }
   return (
