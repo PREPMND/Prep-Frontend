@@ -56,7 +56,7 @@ export const router = createBrowserRouter([
     element: <VerifyEmail />,
   },
   {
-    element: <AuthLayout />,
+    element: <AuthGuard />,
     children: [
       {
         path: "/organizations",
