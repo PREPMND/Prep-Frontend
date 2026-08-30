@@ -5,7 +5,7 @@ import type {
   Organization,
   OrganizationMembership,
 } from "../types/organization";
-import { OrganizationList } from "./OrganizationList";
+import { OrganizationList } from "./organizationList";
 
 export function MyOrganizations() {
   const [memberships, setMemberships] = useState<OrganizationMembership[]>([]);
