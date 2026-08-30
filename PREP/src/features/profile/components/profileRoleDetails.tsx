@@ -114,6 +114,7 @@ function RoleCard({ title, description }: RoleCardProps) {
           <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
             {description}
           </p>
+          <p>{}</p>
         </div>
       </motion.section>
     </div>
