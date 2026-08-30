@@ -16,10 +16,10 @@ interface ProfileRoleProps {
 interface RoleCardProps {
   title: string;
   description: string;
-  organization:string |null;
+  organizationId: string | null;
 }
 
-const roleDetails: Record<Role, RoleCardProps> = {
+const roleDetails: Record<Role, Omit<RoleCardProps, "organizationId">> = {
   CITIZEN: {
     title: "Citizen",
     description: "Report and track issues in your community.",
@@ -48,9 +48,12 @@ const roleDetails: Record<Role, RoleCardProps> = {
   },
 };
 
-function RoleCard({ title, description,organization }: RoleCardProps) {
+function RoleCard({
+  title,
+  description,
+  organizationId,
+}: RoleCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
-
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
 
@@ -67,21 +70,20 @@ function RoleCard({ title, description,organization }: RoleCardProps) {
     event: React.PointerEvent<HTMLDivElement>,
   ) => {
     if (!cardRef.current) return;
+
     const rect = cardRef.current.getBoundingClientRect();
     const mouseX = event.clientX - rect.left;
     const mouseY = event.clientY - rect.top;
 
-    rotateX.set(
-      (mouseY / rect.height - 0.5) * -12,
-    );
-    rotateY.set(
-      (mouseX / rect.width - 0.5) * 12,
-    );
+    rotateX.set((mouseY / rect.height - 0.5) * -12);
+    rotateY.set((mouseX / rect.width - 0.5) * 12);
   };
+
   const handlePointerLeave = () => {
     rotateX.set(0);
     rotateY.set(0);
   };
+
   return (
     <div className="[perspective:1000px]">
       <motion.section
@@ -96,7 +98,7 @@ function RoleCard({ title, description,organization }: RoleCardProps) {
         className="rounded-xl border p-5 border-neutral-200 bg-white
           dark:border-neutral-800
           dark:bg-gradient-to-r dark:from-neutral-900 dark:from-65%
-           dark:via-80% dark:via-neutral-950 dark:to-mauve-800  dark:to-100%
+          dark:via-80% dark:via-neutral-950 dark:to-mauve-800 dark:to-100%
           shadow-[0_20px_45px_rgba(0,0,0,.12),inset_0_1px_0_rgba(255,255,255,.7)]
           dark:shadow-[0_20px_45px_rgba(0,0,0,.45),inset_0_1px_0_rgba(255,255,255,.06)]"
       >
@@ -105,7 +107,7 @@ function RoleCard({ title, description,organization }: RoleCardProps) {
           style={{ transform: "translateZ(20px)" }}
         >
           <p className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-            Platform role
+            {organizationId ? "Organization role" : "Platform role"}
           </p>
 
           <h2 className="mt-2 font-semibold text-neutral-900 dark:text-white">
@@ -115,38 +117,42 @@ function RoleCard({ title, description,organization }: RoleCardProps) {
           <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
             {description}
           </p>
-          <p>{organization}</p>
+
+          {organizationId && (
+            <p className="mt-3 text-xs text-neutral-500 dark:text-neutral-400">
+              Organization: {organizationId}
+            </p>
+          )}
         </div>
       </motion.section>
     </div>
   );
 }
 
-
 export function ProfileRole({ roleData }: ProfileRoleProps) {
   if (!roleData || roleData.length === 0) {
     return (
       <section className="mt-8 mx-auto text-center mb-12">
-        <h2 className="text-sm font-semibold">Platform role</h2>
+        <h2 className="text-sm font-semibold">Roles</h2>
         <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-          Role information is loading.
+          No roles assigned yet.
         </p>
       </section>
     );
   }
-  console.log(roleData[0])
+
   return (
     <div className="space-y-4 mt-8">
       {roleData.map((assignment) => {
         const details = roleDetails[assignment.roleName as Role];
-        
+        if (!details) return null;
 
         return (
           <RoleCard
             key={assignment.id}
             title={details.title}
             description={details.description}
-            organization={assignment.organizationId}
+            organizationId={assignment.organizationId}
           />
         );
       })}
