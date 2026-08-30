@@ -142,8 +142,8 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
         return (
           <RoleCard
             key={assignment.id}
-            title={assignment.}
-            description={details.description}
+            title={assignment.organizationId}
+            description={details.}
           />
         );
       })}
