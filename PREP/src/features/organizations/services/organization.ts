@@ -3,6 +3,7 @@ import { apiClientOrganization } from "../../../services/api/apiClient";
 import type {
   CreateOrganizationPayload,
   Organization,
+  OrganizationMemberRole,
   OrganizationMembership,
   RequestOrganizationMembershipPayload,
   UpdateOrganizationMemberPayload,
