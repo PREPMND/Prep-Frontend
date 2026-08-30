@@ -132,7 +132,7 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
       </section>
     );
   }
-
+  console.log(roleData[0])
   return (
     <div className="space-y-4 mt-8">
       {roleData.map((assignment) => {
