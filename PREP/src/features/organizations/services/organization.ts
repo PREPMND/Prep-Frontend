@@ -132,3 +132,34 @@ export async function leaveOrganization(
 
   return response.data;
 }
+export async function getOrganizationMembers(
+  organizationId: string,
+): Promise<OrganizationMembership[]> {
+  const response = await apiClientOrganization.get<OrganizationMembership[]>(
+    `/organizations/${organizationId}/members`,
+  );
+
+  return response.data;
+}
+
+export async function updateOrganizationMemberRole(
+  organizationId: string,
+  userId: string,
+  payload: { role: OrganizationMemberRole },
+): Promise<OrganizationMembership> {
+  const response = await apiClientOrganization.patch<OrganizationMembership>(
+    `/organizations/${organizationId}/members/${userId}`,
+    payload,
+  );
+
+  return response.data;
+}
+
+export async function removeOrganizationMember(
+  organizationId: string,
+  userId: string,
+): Promise<void> {
+  await apiClientOrganization.delete(
+    `/organizations/${organizationId}/members/${userId}`,
+  );
+}
