@@ -2,7 +2,7 @@ export const ORGANIZATION_TYPES = {
   NGO: "ngo",
   GOVERNMENT: "government",
   COMMUNITY: "community",
-  EDUCATIONAL: "educational",
+  EDUCATIONAL_INSTITUTION: "educational_institution",
   CORPORATE: "corporate",
   OTHER: "other",
 } as const;
@@ -20,7 +20,6 @@ export type OrganizationVerificationStatus =
   (typeof ORGANIZATION_VERIFICATION_STATUSES)[keyof typeof ORGANIZATION_VERIFICATION_STATUSES];
 
 export const ORGANIZATION_MEMBER_ROLES = {
-  OWNER: "owner",
   ADMIN: "admin",
   MEMBER: "member",
 } as const;
@@ -82,6 +81,10 @@ export interface UpdateOrganizationPayload {
   locationId?: string;
   description?: string;
   logoMediaId?: string;
+}
+
+export interface UpdateOrganizationMemberPayload {
+  role: OrganizationMemberRole;
 }
 
 export interface RequestOrganizationMembershipPayload {
