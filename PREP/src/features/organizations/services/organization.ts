@@ -1,4 +1,5 @@
-import { apiClient } from "../../../services/api/apiClient";
+import { apiClientOrganization } from "../../../services/api/apiClient";
+import { apiClientOrganization } from "../../../services/api/apiClientOrganization";
 
 import type {
   CreateOrganizationPayload,
@@ -11,7 +12,7 @@ import type {
 export async function createOrganization(
   payload: CreateOrganizationPayload,
 ): Promise<Organization> {
-  const response = await apiClient.post<Organization>(
+  const response = await apiClientOrganization.post<Organization>(
     "/organizations",
     payload,
   );
@@ -20,7 +21,7 @@ export async function createOrganization(
 }
 
 export async function getOrganizations(): Promise<Organization[]> {
-  const response = await apiClient.get<Organization[]>("/organizations");
+  const response = await apiClientOrganization.get<Organization[]>("/organizations");
 
   return response.data;
 }
@@ -28,7 +29,7 @@ export async function getOrganizations(): Promise<Organization[]> {
 export async function getOrganizationById(
   organizationId: string,
 ): Promise<Organization> {
-  const response = await apiClient.get<Organization>(
+  const response = await apiClientOrganization.get<Organization>(
     `/organizations/${organizationId}`,
   );
 
@@ -36,7 +37,7 @@ export async function getOrganizationById(
 }
 
 export async function getMyMemberships(): Promise<OrganizationMembership[]> {
-  const response = await apiClient.get<OrganizationMembership[]>(
+  const response = await apiClientOrganization.get<OrganizationMembership[]>(
     "/organizations/me/memberships",
   );
 
@@ -47,7 +48,7 @@ export async function updateOrganization(
   organizationId: string,
   payload: UpdateOrganizationPayload,
 ): Promise<Organization> {
-  const response = await apiClient.patch<Organization>(
+  const response = await apiClientOrganization.patch<Organization>(
     `/organizations/${organizationId}`,
     payload,
   );
@@ -59,7 +60,7 @@ export async function requestToJoinOrganization(
   organizationId: string,
   payload: RequestOrganizationMembershipPayload,
 ): Promise<OrganizationMembership> {
-  const response = await apiClient.post<OrganizationMembership>(
+  const response = await apiClientOrganization.post<OrganizationMembership>(
     `/organizations/${organizationId}/join`,
     payload,
   );
@@ -70,7 +71,7 @@ export async function requestToJoinOrganization(
 export async function leaveOrganization(
   organizationId: string,
 ): Promise<{ message: string }> {
-  const response = await apiClient.patch<{ message: string }>(
+  const response = await apiClientOrganization.patch<{ message: string }>(
     `/organizations/${organizationId}/leave`,
   );
 
