@@ -18,11 +18,12 @@ export function OrganizationList({
     );
   }
 
+  const function 
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {organizations.map((organization) => (
         <OrganizationCard
-        
+
           key={organization.id}
           organization={organization}
           onClick={() => onSelectOrganization?.(organization)}
