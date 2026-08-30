@@ -26,7 +26,7 @@ export default function OrganizationsPage() {
 
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-10">
-      <div className="mb-8 flex items-start justify-between gap-4">
+      <div className="mb-8  flex items-start justify-between gap-4">
         <div>
           <h1 className="text-2xl font-semibold light:text-neutral-900 dark:text-white">
             Organizations
