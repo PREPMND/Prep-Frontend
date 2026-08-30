@@ -145,7 +145,7 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
     <div className="space-y-4 mt-8">
       {roleData.map((assignment) => {
         const details = roleDetails[assignment.roleName as Role];
-        if (!details) return null;
+        
 
         return (
           <RoleCard
