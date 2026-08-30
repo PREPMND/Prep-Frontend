@@ -19,7 +19,7 @@ export default function ProfilePage() {
       <div className="mx-auto max-w-2xl">
         <ProfileHeader user={user} />
         <ProfileRole roleData={roleData} />
-        <div className="mt-10">
+        <div className="mt-10 mx-auto">
           <MyOrganizations />
         </div>
         <ProfileForm user={user} />
