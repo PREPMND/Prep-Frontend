@@ -40,7 +40,20 @@ export const router = createBrowserRouter([
           },
           {
             path: "/challenges/submit",
-            element: <ChallengePage/>,
+            element: <ChallengePage />,
+          },
+
+          {
+            path: "/organizations",
+            element: <OrganizationsPage />,
+          },
+          {
+            path: "/organizations/create",
+            element: <CreateOrganizationPage />,
+          },
+          {
+            path: "/organizations/:id",
+            element: <OrganizationDetailPage />,
           },
         ],
       },
