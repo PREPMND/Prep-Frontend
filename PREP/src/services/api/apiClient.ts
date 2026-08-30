@@ -37,6 +37,6 @@ export const apiClientOrganization = axios.create({
   baseURL:'http://localhost:3004' ,
   withCredentials: true,
   headers: {
-    'Content-Type': 'multipart/form-data'
+    'Content-Type': 'application/json'
   },
 });
