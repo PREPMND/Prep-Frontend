@@ -24,7 +24,12 @@ export function useOrganization(organizationId?: string) {
     enabled: !!organizationId,
   });
 }
-
+export function useOrganizations() {
+  return useQuery({
+    queryKey: ["organizations"],
+    queryFn: getOrganizations,
+  });
+}
 export function useMyMemberships() {
   return useQuery({
     queryKey: ["my-memberships"],
