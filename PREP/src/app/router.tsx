@@ -9,6 +9,9 @@ import AuthLayout from "../layouts/authLayout";
 import ProfilePage from "../features/profile/components/profilePage";
 import ProfileLayout from "../layouts/profileLayout";
 import { ChallengePage } from "../features/challenges/pages/challengePage";
+import OrganizationDetailPage from "../features/organizations/pages/organizationDetailPage";
+import CreateOrganizationPage from "../features/organizations/pages/createOrganizationPage";
+import OrganizationsPage from "../features/organizations/pages/organizationsPage";
 
 export const router = createBrowserRouter([
   {
