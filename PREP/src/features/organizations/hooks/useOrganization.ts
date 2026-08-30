@@ -5,6 +5,7 @@ import {
   getMyMemberships,
   getOrganizationById,
   getOrganizationMembers,
+  getOrganizations,
   leaveOrganization,
   rejectMembershipRequest,
   requestToJoinOrganization,
