@@ -5,7 +5,7 @@ import {
   getOrganizationById,
   leaveOrganization,
   requestToJoinOrganization,
-} from "../services/organizations";
+} from "../services/organization";
 import type { Organization } from "../types/organization";
 
 export default function OrganizationDetailPage() {
