@@ -3,6 +3,7 @@ import { ProfileForm } from "../components/profileForm";
 import { useAuthStore } from "../../auth/store/authStore";
 import { ProfileRole } from "./profileRoleDetails";
 import { useMyRole } from "../hooks/useMyRole";
+import { MyOrganizations } from "../../organizations/components/myOrganizations";
 
 export default function ProfilePage() {
   const user = useAuthStore((state) => state.user);
