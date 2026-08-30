@@ -47,7 +47,7 @@ export function MyOrganizations() {
   );
 
   return (
-    <section className="mx-auto flex justify-center">
+    <section className="mx-auto flex flex-col items-center justify-center">
       <div className="mb-5">
         <h2 className="text-lg font-semibold light:text-neutral-900 dark:text-white">
           My organizations
