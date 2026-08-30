@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { OrganizationList } from "../components/OrganizationList";
-import { getOrganizations } from "../services/organizations";
+import { OrganizationList } from "../components/organizationList";
+import { getOrganizations } from "../services/organization";
 import type { Organization } from "../types/organization";
 
 export default function OrganizationsPage() {
