@@ -153,6 +153,7 @@ export default function OrganizationDetailPage() {
             </div>
           </div>
         )}
+        <OrganizationMembers organizationId={organization.id} />
 
         {isActive && (
           <div className="mt-8 border-t pt-6 light:border-neutral-200 dark:border-neutral-800">
