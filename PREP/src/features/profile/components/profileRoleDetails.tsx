@@ -120,7 +120,7 @@ function RoleCard({ title, description, organization }: RoleCardProps) {
 }
 
 export function ProfileRole({ roleData }: ProfileRoleProps) {
-  const { data: organizations = [] } = useOrganizations();
+  const { data: organizations = [] } = useOrganization();
 
   if (!roleData || roleData.length === 0) {
     return null;
