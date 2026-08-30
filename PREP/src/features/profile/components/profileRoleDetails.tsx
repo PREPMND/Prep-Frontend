@@ -2,8 +2,15 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
 import type { Role } from "../../../constants/roles";
 
+interface RoleAssignment {
+  id: string;
+  roleId: string;
+  roleName: string;
+  organizationId: string | null;
+}
+
 interface ProfileRoleProps {
-  roleData: string[] | undefined;
+  roleData: RoleAssignment[] | undefined;
 }
 
 interface RoleCardProps {
