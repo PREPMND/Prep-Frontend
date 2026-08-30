@@ -20,7 +20,7 @@ export function OrganizationList({
   const navigate=useNavigate();
   function handleClick(organization){
     onSelectOrganization?.(organization);
-    navigate(`organization/${}`)
+    navigate(`organization/${organization.id}`)
   }
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
