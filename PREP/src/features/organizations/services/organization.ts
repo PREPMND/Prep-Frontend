@@ -1,5 +1,4 @@
 import { apiClientOrganization } from "../../../services/api/apiClient";
-import { apiClientOrganization } from "../../../services/api/apiClientOrganization";
 
 import type {
   CreateOrganizationPayload,
