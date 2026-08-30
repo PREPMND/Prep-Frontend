@@ -137,7 +137,7 @@ export function ProfileRole({
             key={assignment.id}
             title={formatRoleName(assignment.role.name)}
             description={assignment.role.description}
-            organizationName={organizationId}
+            organizationName={organization?.name}
           />
         );
       })}
