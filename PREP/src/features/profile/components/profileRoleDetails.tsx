@@ -1,57 +1,44 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
-import type { Role } from "../../../constants/roles";
+import type { Organization } from "../../organizations/types/organization";
+
+interface Role {
+  id: string;
+  name: string;
+  description: string;
+  isActive: boolean;
+}
 
 interface RoleAssignment {
   id: string;
   roleId: string;
-  roleName: string;
   organizationId: string | null;
+  createdAt: string;
+  role: Role;
 }
 
 interface ProfileRoleProps {
   roleData: RoleAssignment[] | undefined;
+  organizations?: Organization[];
 }
 
 interface RoleCardProps {
   title: string;
   description: string;
-  organizationId: string | null;
+  organizationName?: string;
 }
 
-const roleDetails: Record<Role, Omit<RoleCardProps, "organizationId">> = {
-  CITIZEN: {
-    title: "Citizen",
-    description: "Report and track issues in your community.",
-  },
-  STUDENT: {
-    title: "Student",
-    description:
-      "Access university resources, view courses, and track academic progress.",
-  },
-  UNIVERSITY_ADMIN: {
-    title: "University Administrator",
-    description:
-      "Manage university settings, academic records, and institutional tools.",
-  },
-  ADMIN: {
-    title: "Admin",
-    description: "Institutional or organizational administrator.",
-  },
-  OFFICER: {
-    title: "Government Officer",
-    description: "Manage and respond to assigned incidents.",
-  },
-  SUPER_ADMIN: {
-    title: "Super Administrator",
-    description: "Manage the platform, users, and system operations.",
-  },
-};
+function formatRoleName(roleName: string) {
+  return roleName
+    .replaceAll("_", " ")
+    .toLowerCase()
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
 
 function RoleCard({
   title,
   description,
-  organizationId,
+  organizationName,
 }: RoleCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const rotateX = useMotionValue(0);
@@ -72,11 +59,8 @@ function RoleCard({
     if (!cardRef.current) return;
 
     const rect = cardRef.current.getBoundingClientRect();
-    const mouseX = event.clientX - rect.left;
-    const mouseY = event.clientY - rect.top;
-
-    rotateX.set((mouseY / rect.height - 0.5) * -12);
-    rotateY.set((mouseX / rect.width - 0.5) * 12);
+    rotateX.set(((event.clientY - rect.top) / rect.height - 0.5) * -12);
+    rotateY.set(((event.clientX - rect.left) / rect.width - 0.5) * 12);
   };
 
   const handlePointerLeave = () => {
@@ -95,19 +79,14 @@ function RoleCard({
           rotateY: rotateYSpring,
           transformStyle: "preserve-3d",
         }}
-        className="rounded-xl border p-5 border-neutral-200 bg-white
-          dark:border-neutral-800
-          dark:bg-gradient-to-r dark:from-neutral-900 dark:from-65%
-          dark:via-80% dark:via-neutral-950 dark:to-mauve-800 dark:to-100%
-          shadow-[0_20px_45px_rgba(0,0,0,.12),inset_0_1px_0_rgba(255,255,255,.7)]
-          dark:shadow-[0_20px_45px_rgba(0,0,0,.45),inset_0_1px_0_rgba(255,255,255,.06)]"
+        className="rounded-xl border border-neutral-200 bg-white p-5 shadow-[0_20px_45px_rgba(0,0,0,.12),inset_0_1px_0_rgba(255,255,255,.7)] dark:border-neutral-800 dark:bg-gradient-to-r dark:from-neutral-900 dark:from-65% dark:via-neutral-950 dark:via-80% dark:to-mauve-800 dark:to-100% dark:shadow-[0_20px_45px_rgba(0,0,0,.45),inset_0_1px_0_rgba(255,255,255,.06)]"
       >
         <div
           className="pointer-events-none"
           style={{ transform: "translateZ(20px)" }}
         >
           <p className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-            {organizationId ? "Organization role" : "Platform role"}
+            {organizationName ? "Organization role" : "Platform role"}
           </p>
 
           <h2 className="mt-2 font-semibold text-neutral-900 dark:text-white">
@@ -118,9 +97,9 @@ function RoleCard({
             {description}
           </p>
 
-          {organizationId && (
-            <p className="mt-3 text-xs text-neutral-500 dark:text-neutral-400">
-              Organization: {organizationId}
+          {organizationName && (
+            <p className="mt-3 text-sm font-medium text-neutral-700 dark:text-neutral-300">
+              {organizationName}
             </p>
           )}
         </div>
@@ -129,10 +108,13 @@ function RoleCard({
   );
 }
 
-export function ProfileRole({ roleData }: ProfileRoleProps) {
+export function ProfileRole({
+  roleData,
+  organizations = [],
+}: ProfileRoleProps) {
   if (!roleData || roleData.length === 0) {
     return (
-      <section className="mt-8 mx-auto text-center mb-12">
+      <section className="mx-auto mt-8 mb-12 text-center">
         <h2 className="text-sm font-semibold">Roles</h2>
         <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
           No roles assigned yet.
@@ -142,17 +124,20 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
   }
 
   return (
-    <div className="space-y-4 mt-8">
+    <div className="mt-8 space-y-4">
       {roleData.map((assignment) => {
-        const details = roleDetails[assignment.roleName as Role];
-        
+        const organization = assignment.organizationId
+          ? organizations.find(
+              (item) => item.id === assignment.organizationId,
+            )
+          : undefined;
 
         return (
           <RoleCard
             key={assignment.id}
-            title={details.title}
-            description={details.description}
-            organizationId={assignment.organizationId}
+            title={formatRoleName(assignment.role.name)}
+            description={assignment.role.description}
+            organizationName={organization?.name}
           />
         );
       })}
