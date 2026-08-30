@@ -46,18 +46,7 @@ export const router = createBrowserRouter([
             element: <ChallengePage />,
           },
 
-          {
-            path: "/organizations",
-            element: <OrganizationsPage />,
-          },
-          {
-            path: "/organizations/create",
-            element: <CreateOrganizationPage />,
-          },
-          {
-            path: "/organizations/:id",
-            element: <OrganizationDetailPage />,
-          },
+          
         ],
       },
     ],
