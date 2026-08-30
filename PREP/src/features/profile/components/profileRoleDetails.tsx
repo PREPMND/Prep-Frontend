@@ -1,45 +1,57 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
-import type { Organization } from "../../organizations/types/organization";
-
-interface Role {
-  id: string;
-  name: string;
-  description: string;
-  isActive: boolean;
-}
+import type { Role } from "../../../constants/roles";
+import { useOrganizations } from "../../organizations/hooks/useOrganization";
 
 interface RoleAssignment {
   id: string;
   roleId: string;
   organizationId: string | null;
-  createdAt: string;
-  role: Role;
+  role: {
+    name: string;
+  };
 }
 
 interface ProfileRoleProps {
   roleData: RoleAssignment[] | undefined;
-  organizations?: Organization[];
 }
 
 interface RoleCardProps {
   title: string;
   description: string;
-  organizationName?: string;
+  organization?: string;
 }
 
-function formatRoleName(roleName: string) {
-  return roleName
-    .replaceAll("_", " ")
-    .toLowerCase()
-    .replace(/\b\w/g, (letter) => letter.toUpperCase());
-}
+const roleDetails: Record<Role, Omit<RoleCardProps, "organization">> = {
+  CITIZEN: {
+    title: "Citizen",
+    description: "Report and track issues in your community.",
+  },
+  STUDENT: {
+    title: "Student",
+    description:
+      "Access university resources, view courses, and track academic progress.",
+  },
+  UNIVERSITY_ADMIN: {
+    title: "University Administrator",
+    description:
+      "Manage university settings, academic records, and institutional tools.",
+  },
+  ADMIN: {
+    title: "Admin",
+    description: "Institutional or organizational administrator.",
+  },
+  OFFICER: {
+    title: "Government Officer",
+    description: "Manage and respond to assigned incidents.",
+  },
+  SUPER_ADMIN: {
+    title: "Super Administrator",
+    description: "Manage the platform, users, and system operations.",
+  },
+};
 
-function RoleCard({
-  title,
-  description,
-  organizationName,
-}: RoleCardProps) {
+function RoleCard({ title, description, organization }: RoleCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
@@ -53,19 +65,15 @@ function RoleCard({
   const rotateXSpring = useSpring(rotateX, springConfig);
   const rotateYSpring = useSpring(rotateY, springConfig);
 
-  const handlePointerMove = (
-    event: React.PointerEvent<HTMLDivElement>,
-  ) => {
+  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
 
     const rect = cardRef.current.getBoundingClientRect();
-    rotateX.set(((event.clientY - rect.top) / rect.height - 0.5) * -12);
-    rotateY.set(((event.clientX - rect.left) / rect.width - 0.5) * 12);
-  };
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
 
-  const handlePointerLeave = () => {
-    rotateX.set(0);
-    rotateY.set(0);
+    rotateX.set((mouseY / rect.height - 0.5) * -12);
+    rotateY.set((mouseX / rect.width - 0.5) * 12);
   };
 
   return (
@@ -73,20 +81,23 @@ function RoleCard({
       <motion.section
         ref={cardRef}
         onPointerMove={handlePointerMove}
-        onPointerLeave={handlePointerLeave}
+        onPointerLeave={() => {
+          rotateX.set(0);
+          rotateY.set(0);
+        }}
         style={{
           rotateX: rotateXSpring,
           rotateY: rotateYSpring,
           transformStyle: "preserve-3d",
         }}
-        className="rounded-xl border border-neutral-200 bg-white p-5 shadow-[0_20px_45px_rgba(0,0,0,.12),inset_0_1px_0_rgba(255,255,255,.7)] dark:border-neutral-800 dark:bg-gradient-to-r dark:from-neutral-900 dark:from-65% dark:via-neutral-950 dark:via-80% dark:to-mauve-800 dark:to-100% dark:shadow-[0_20px_45px_rgba(0,0,0,.45),inset_0_1px_0_rgba(255,255,255,.06)]"
+        className="rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-900"
       >
         <div
           className="pointer-events-none"
           style={{ transform: "translateZ(20px)" }}
         >
           <p className="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-            {organizationName ? "Organization role" : "Platform role"}
+            {organization ? "Organization role" : "Platform role"}
           </p>
 
           <h2 className="mt-2 font-semibold text-neutral-900 dark:text-white">
@@ -97,9 +108,9 @@ function RoleCard({
             {description}
           </p>
 
-          {organizationName && (
+          {organization && (
             <p className="mt-3 text-sm font-medium text-neutral-700 dark:text-neutral-300">
-              {organizationName}
+              {organization}
             </p>
           )}
         </div>
@@ -108,36 +119,32 @@ function RoleCard({
   );
 }
 
-export function ProfileRole({
-  roleData,
-  organizations = [],
-}: ProfileRoleProps) {
+export function ProfileRole({ roleData }: ProfileRoleProps) {
+  const { data: organizations = [] } = useOrganizations();
+
   if (!roleData || roleData.length === 0) {
-    return (
-      <section className="mx-auto mt-8 mb-12 text-center">
-        <h2 className="text-sm font-semibold">Roles</h2>
-        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-          No roles assigned yet.
-        </p>
-      </section>
-    );
+    return null;
   }
 
   return (
     <div className="mt-8 space-y-4">
       {roleData.map((assignment) => {
+        const roleName = assignment.role.name as Role;
+        const details = roleDetails[roleName];
+
+        if (!details) return null;
+
         const organization = assignment.organizationId
-          ? organizations.find(
-              (item) => item.id === assignment.organizationId,
-            )
+          ? organizations.find((org) => org.id === assignment.organizationId)
+              ?.name
           : undefined;
 
         return (
           <RoleCard
             key={assignment.id}
-            title={formatRoleName(assignment.role.name)}
-            description={assignment.role.description}
-            organizationName={organization?.name}
+            title={details.title}
+            description={details.description}
+            organization={organization}
           />
         );
       })}
