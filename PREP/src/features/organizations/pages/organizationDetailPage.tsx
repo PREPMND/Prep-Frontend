@@ -9,6 +9,7 @@ import {
 import {
   ORGANIZATION_MEMBERSHIP_STATUSES,
 } from "../types/organization";
+import { OrganizationMembers } from "../components/organizationMembers";
 
 export default function OrganizationDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -85,6 +86,7 @@ export default function OrganizationDetailPage() {
                   .replace(/\b\w/g, (letter) => letter.toUpperCase())}
               </p>
             </div>
+            <OrganizationMembers organizationId={organization.id} />
           </div>
 
           {!membership && (
