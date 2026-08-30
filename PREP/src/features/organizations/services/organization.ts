@@ -133,15 +133,7 @@ export async function leaveOrganization(
 
   return response.data;
 }
-export async function getOrganizationMembers(
-  organizationId: string,
-): Promise<OrganizationMembership[]> {
-  const response = await apiClientOrganization.get<OrganizationMembership[]>(
-    `/organizations/${organizationId}/members`,
-  );
 
-  return response.data;
-}
 
 export async function updateOrganizationMemberRole(
   organizationId: string,
