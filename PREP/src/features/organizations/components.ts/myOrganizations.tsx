@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getMyMemberships, getOrganizationById } from "../services/organizations";
+import { getMyMemberships, getOrganizationById } from "../services/organization";
 import type {
   Organization,
   OrganizationMembership,
