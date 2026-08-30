@@ -18,7 +18,9 @@ export function OrganizationList({
     );
   }
 
-  const function 
+  function handleClick(){
+    n
+  }
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {organizations.map((organization) => (
