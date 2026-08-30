@@ -47,8 +47,8 @@ export function MyOrganizations() {
   );
 
   return (
-    <section>
-      <div className="mb-5 mx-auto">
+    <section className="mx-auto">
+      <div className="mb-5">
         <h2 className="text-lg font-semibold light:text-neutral-900 dark:text-white">
           My organizations
         </h2>
