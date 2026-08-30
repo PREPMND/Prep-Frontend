@@ -1,6 +1,6 @@
 import type { Organization } from "../types/organization";
 import { OrganizationCard } from "./organizationCard";
-
+import { useNavigate } from "react-router-dom";
 interface OrganizationListProps {
   organizations: Organization[];
   onSelectOrganization?: (organization: Organization) => void;
@@ -19,7 +19,7 @@ export function OrganizationList({
   }
 
   function handleClick(){
-    n
+    
   }
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
