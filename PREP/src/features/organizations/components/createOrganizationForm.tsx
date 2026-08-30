@@ -16,13 +16,12 @@ export function CreateOrganizationForm() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
     if (!type) return;
 
     try {
       setIsSubmitting(true);
 
-      await createOrganization({
+      const organization = await createOrganization({
         name,
         type,
         description: description || undefined,
@@ -30,11 +29,8 @@ export function CreateOrganizationForm() {
         website: website || undefined,
       });
 
-      setName("");
-      setType("");
-      setDescription("");
-      setOfficialEmail("");
-      setWebsite("");
+      // Next: use organization.id for the organization role/request flow
+      console.log(organization);
     } finally {
       setIsSubmitting(false);
     }
