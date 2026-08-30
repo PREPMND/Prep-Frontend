@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
 import type { Role } from "../../../constants/roles";
-import { useOrganizations } from "../hooks/";
+import { useOrganizations } from "../../organizations/hooks/useOrganization";
 
 interface RoleAssignment {
   id: string;
