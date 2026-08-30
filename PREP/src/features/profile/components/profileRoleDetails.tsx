@@ -47,7 +47,7 @@ const roleDetails: Record<Role, RoleCardProps> = {
   },
 };
 
-function RoleCard({ title, description }: RoleCardProps) {
+function RoleCard({ title, description,organization }: RoleCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const rotateX = useMotionValue(0);
@@ -145,6 +145,7 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
             key={assignment.id}
             title={details.title}
             description={details.description}
+            or
           />
         );
       })}
