@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { createOrganization } from "../services/organizations";
+import { createOrganization } from "../services/organization";
 import {
   ORGANIZATION_TYPES,
   type OrganizationType,
