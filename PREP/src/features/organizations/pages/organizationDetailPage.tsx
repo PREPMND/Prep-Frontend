@@ -86,7 +86,7 @@ export default function OrganizationDetailPage() {
                   .replace(/\b\w/g, (letter) => letter.toUpperCase())}
               </p>
             </div>
-            <OrganizationMembers organizationId={organization.id} />
+            
           </div>
 
           {!membership && (
