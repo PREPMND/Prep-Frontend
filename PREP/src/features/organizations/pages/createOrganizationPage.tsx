@@ -1,4 +1,4 @@
-import { CreateOrganizationForm } from "../components/CreateOrganizationForm";
+import { CreateOrganizationForm } from "../components/createOrganizationForm";
 
 export default function CreateOrganizationPage() {
   return (
