@@ -22,7 +22,7 @@ export default function OrganizationDetailPage() {
 
     async function loadOrganization() {
       try {
-        const response = await getOrganizationById(id);
+        const response = await getOrganizationById(id || '');
         setOrganization(response);
       } finally {
         setIsLoading(false);
