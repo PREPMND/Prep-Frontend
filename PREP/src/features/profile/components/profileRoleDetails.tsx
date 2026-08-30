@@ -145,11 +145,6 @@ export function ProfileRole({ roleData }: ProfileRoleProps) {
             key={assignment.id}
             title={details.title}
             description={details.description}
-            scope={
-              assignment.organizationId
-                ? "Organization role"
-                : "Platform role"
-            }
           />
         );
       })}
