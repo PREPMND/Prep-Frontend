@@ -16,7 +16,7 @@ interface ProfileRoleProps {
 interface RoleCardProps {
   title: string;
   description: string;
-  organization:strinh
+  organization:string |null;
 }
 
 const roleDetails: Record<Role, RoleCardProps> = {
