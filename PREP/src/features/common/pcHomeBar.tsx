@@ -1,3 +1,4 @@
-export const function PcHomeBar(){
+export function PcHomeBar(){
+    
 
 }
