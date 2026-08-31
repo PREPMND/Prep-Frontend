@@ -35,7 +35,7 @@ function ChallengeCard({
             className="mt-2 cursor-pointer rounded-xl flex flex-col border border-neutral-200 light:bg-white py-2 px-4
         text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white"
         >
-            <p className="text-xs font-semibold font-saira h-[5%] text-neutral-300 dark:text-neutral-400">
+            <p className="text-xs font-semibold font-saira h-[5%] text-neutral-200 dark:text-neutral-400">
                 {challenge.category?.replaceAll("_", " ").toUpperCase()}
             </p>
 
