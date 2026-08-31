@@ -1,4 +1,4 @@
-import { BookAlert, CreativeCommonsIcon } from "lucide-react";
+import { BookAlert, CreativeCommonsIcon, PlaneLanding } from "lucide-react";
 
 export function PcHomeBar(){
     return(
@@ -13,7 +13,8 @@ export function PcHomeBar(){
                     <div>Existing Challenges</div>
                 </div>
                 <div>
-                    <Pendin
+                    <PlaneLanding/>
+                    <div></div>
                 </div>
             </div>
         </div>
