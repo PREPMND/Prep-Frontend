@@ -8,6 +8,9 @@ export function PcHomeBar(){
                     <CreativeCommonsIcon/>
                     <div>Submit Challenge</div>
                 </div>
+                <div>
+                    <Boo
+                </div>
             </div>
         </div>
     )
