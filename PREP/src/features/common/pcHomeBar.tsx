@@ -2,7 +2,7 @@ import { BookAlert, CreativeCommonsIcon, PlaneLanding } from "lucide-react";
 
 export function PcHomeBar(){
     return(
-        <div>
+        <div className="w-[30%]">
             <div>
                 <div>
                     <CreativeCommonsIcon/>
