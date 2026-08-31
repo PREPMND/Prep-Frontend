@@ -22,9 +22,9 @@ export function ChallengeFeed() {
                     />
                 ))}
             </div>
-             <div className="sticky top-0 h-screen w-64 shrink-0 hidden lg:block pt-3 pb-4 px-4 overflow-y-auto">
-      <PcHomeBar />
-    </div>
+            <div className="sticky top-0 h-screen w-64 shrink-0 hidden lg:block pt-3 pb-4 px-4 overflow-y-auto">
+                <PcHomeBar />
+            </div>
         </div>
     );
 }
