@@ -62,6 +62,7 @@ function ChallengeCard({
                     </div>
                 </div>
             )}
+            {media.length==0 }
 
             <p className="mt-1 line-clamp-2 text-sm text-neutral-600 dark:text-neutral-400">
                 {challenge.description}
