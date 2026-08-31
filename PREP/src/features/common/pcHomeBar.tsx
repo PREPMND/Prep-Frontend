@@ -6,7 +6,7 @@ export function PcHomeBar(){
             <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 font-Saira font-semibold group ">
                 <div  >
                     <CreativeCommonsIcon className="group-hover:text-amber-400 group-hover:scale-105"/>
-                    <div className="">Submit Challenge</div>
+                    <div className="group-hover:underline">Submit Challenge</div>
                 </div>
                 <div>
                     <BookAlert
