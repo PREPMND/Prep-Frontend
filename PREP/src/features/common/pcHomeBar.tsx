@@ -5,11 +5,7 @@ export function PcHomeBar(){
         <div className="min-w-[15%] flex flex-col ">
             <div className="*:flex *:items-center *:gap-5 *:mt-7 font-Saira font-semibold *:group">
                 <div  >
-                    <CreativeCommonsIcon class name {
-                        constructor(parameters) {
-                            
-                        }
-                    }/>
+                    <CreativeCommonsIcon className="group-hover:text-"/>
                     <div>Submit Challenge</div>
                 </div>
                 <div>
