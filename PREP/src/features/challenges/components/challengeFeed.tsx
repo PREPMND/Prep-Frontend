@@ -40,7 +40,7 @@ function ChallengeCard({
             </p>
 
             <h2 className="mt-1 h-[16%] font-semibold text-[16px]! text-neutral-900 dark:text-white">
-                <span className="block overflow-hidden text-ellipsis [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:1]">
+                <span className="block overflow-hidden text-ellipsis [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
                     {challenge.title.toUpperCase()}
                 </span>
             </h2>
