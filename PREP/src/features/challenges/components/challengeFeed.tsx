@@ -30,7 +30,7 @@ function ChallengeCard({
 
     return (
         <article
-            className=" rounded-xl border border-neutral-200 light:bg-white p-5
+            className=" rounded-xl flex flex-col  border border-neutral-200 light:bg-white p-5
         text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white"
         >
             <p className="text-xs text-neutral-500 dark:text-neutral-400">
