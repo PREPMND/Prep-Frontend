@@ -50,12 +50,7 @@ function ChallengeCard({
                             <div
                                 className={`h-40 w-full overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 animate-pulse `}
                             >
-                                <img
-                                    src={item.url}
-                                    alt={item.originalName}
-                                    onLoad={() => setImageLoaded(true)}
-                                    className="h-40 w-full rounded-lg object-cover"
-                                />
+                                
                             </div>
                         ))}
                     </div>
