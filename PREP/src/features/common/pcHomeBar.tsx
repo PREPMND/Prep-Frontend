@@ -9,11 +9,13 @@ export function PcHomeBar(){
                     <div>Submit Challenge</div>
                 </div>
                 <div>
-                    <BookAlert/>
+                    <BookAlert
+                    className="group-hover:text-amber-100"/>
                     <div>Existing Challenges</div>
                 </div>
                 <div>
-                    <PlaneLanding/>
+                    <PlaneLanding
+                    className="group-hover:text-amber-100"/>
                     <div>Requested To Join</div>
                 </div>
             </div>
