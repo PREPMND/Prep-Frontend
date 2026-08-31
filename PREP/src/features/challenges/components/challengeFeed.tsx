@@ -1,5 +1,5 @@
 import { useChallenges } from "../hooks/useChallenges";
-import { useMedia } from "../../media/hooks/useMedia";
+import { useMedia } from "../hooks/useMedia";
 
 export function ChallengeFeed() {
   const { data: challenges, isLoading } = useChallenges();
