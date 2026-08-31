@@ -13,20 +13,19 @@ export function ChallengeFeed() {
     }
 
     return (
-        <div className="flex min-h-screen ">
-            <div className="grid pt-3 pb-4 px-4 grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+       
+        <div className="flex h-screen w-screen overflow-hidden">
+            <div className="flex-1 h-full overflow-y-auto pt-3 pb-4 px-4 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
                 {challenges?.map((challenge) => (
-                    <ChallengeCard
-                        key={challenge.id}
-                        challenge={challenge}
-                    />
+                    <ChallengeCard key={challenge.id} challenge={challenge} />
                 ))}
             </div>
-            <div className="sticky top-0 h-screen w-52 shrink-0 hidden lg:block pt-3 pb-4 px-4 overflow-y-auto">
+            <div className="w-64 h-full overflow-y-auto hidden lg:block pt-3 pb-4 px-4 border-l border-gray-200">
                 <PcHomeBar />
             </div>
         </div>
     );
+
 }
 
 function ChallengeCard({
