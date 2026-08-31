@@ -10,7 +10,7 @@ export function PcHomeBar(){
                 </div>
                 <div className="group ">
                     <BookAlert
-                    className="group-hover:text--300 group-hover:scale-110"/>
+                    className="group-hover:text-blue-300 group-hover:scale-110"/>
                     <div className="group-hover:underline text-lg">Existing Challenges</div>
                 </div>
                 <div className="group ">
