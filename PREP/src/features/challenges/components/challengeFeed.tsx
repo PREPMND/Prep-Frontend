@@ -48,12 +48,13 @@ function ChallengeCard({
                     <div className="flex">
                         {media.map((item) => (
                             <div
-                                key={item.id}
-                                className="w-full shrink-0 snap-center"
+                                className={`h-40 w-full overflow-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
+                                    }`}
                             >
                                 <img
                                     src={item.url}
                                     alt={item.originalName}
+                                    onLoad={() => setImageLoaded(true)}
                                     className="h-40 w-full rounded-lg object-cover"
                                 />
                             </div>
@@ -68,7 +69,7 @@ function ChallengeCard({
 
             {challenge.location && (
                 <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400 flex gap-2 items-center">
-                    <MapPin size={12}/>
+                    <MapPin size={12} />
                     <div className="hover:underline ">{challenge.location}</div>
                 </p>
             )}
