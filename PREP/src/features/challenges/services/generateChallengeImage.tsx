@@ -1,4 +1,4 @@
-import { generateMedia } from "../../../services/api/media";
+import { generateMedia } from "../../challenges/api/mediaApi";
 
 export async function generateChallengeImage(
   title: string,
