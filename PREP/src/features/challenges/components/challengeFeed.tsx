@@ -20,7 +20,7 @@ export function ChallengeFeed() {
                     <ChallengeCard key={challenge.id} challenge={challenge} />
                 ))}
             </div>
-            <div className="w-64 h-full bg-mauve overflow-y-auto hidden lg:block pt-3 pb-4 px-4 border-gray-200">
+            <div className="w-64 h-full bg-gradient-to-r overflow-y-auto hidden lg:block pt-3 pb-4 px-4 border-gray-200">
                 <PcHomeBar />
             </div>
         </div>
