@@ -37,7 +37,7 @@ function ChallengeCard({
                 {challenge.category?.replaceAll("_", " ")}
             </p>
 
-            <h2 className="mt-1 h-[20%]  font-semibold text-xl! text-neutral-900 dark:text-white">
+            <h2 className="mt-1 line-clamp-2 h-[20%]  font-semibold text-xl! text-neutral-900 dark:text-white">
                 {challenge.title}
             </h2>
 
@@ -60,7 +60,7 @@ function ChallengeCard({
                 </div>
             )}
 
-            <p className="mt-1  text-sm text-neutral-600 dark:text-neutral-400">
+            <p className="mt-1 line-clamp-2 text-sm text-neutral-600 dark:text-neutral-400">
                 {challenge.description}
             </p>
 
