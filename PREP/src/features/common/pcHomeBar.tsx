@@ -14,7 +14,7 @@ export function PcHomeBar(){
                 </div>
                 <div>
                     <PlaneLanding/>
-                    <div></div>
+                    <div>Requested To Join</div>
                 </div>
             </div>
         </div>
