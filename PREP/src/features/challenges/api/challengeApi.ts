@@ -39,3 +39,11 @@ export async function getChallengeById(
 
     return response.data;
 }
+
+export async function getChallenges(): Promise<Challenge[]> {
+  const response = await apiClientChallenge.get<Challenge[]>(
+    "/challenges",
+  );
+
+  return response.data;
+}
