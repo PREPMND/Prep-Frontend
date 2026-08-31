@@ -5,7 +5,7 @@ export function PcHomeBar(){
         <div className="min-w-[15%] flex flex-col ">
             <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 font-Saira font-semibold ">
                 <div className="group " >
-                    <CreativeCommonsIcon className="group-hover:text-amber-400 group-hover:scale-105"/>
+                    <CreativeCommonsIcon className="group-hover:text-amber-300 group-hover:scale-105"/>
                     <div className="group-hover:underline">Submit Challenge</div>
                 </div>
                 <div className="group ">
@@ -15,7 +15,7 @@ export function PcHomeBar(){
                 </div>
                 <div className="group ">
                     <PlaneLanding
-                    className="group-hover:text-amber-400 group-hover:scale-105"/>
+                    className="group-hover:text-amber-300 group-hover:scale-105"/>
                     <div className="group-hover:underline">Requested To Join</div>
                 </div>
             </div>
