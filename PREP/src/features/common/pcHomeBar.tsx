@@ -3,9 +3,13 @@ import { BookAlert, CreativeCommonsIcon, PlaneLanding } from "lucide-react";
 export function PcHomeBar(){
     return(
         <div className="min-w-[15%] flex flex-col ">
-            <div className="*:flex *:items-center *:gap-5 *:mt-7 font-Saira font-semibold ">
+            <div className="*:flex *:items-center *:gap-5 *:mt-7 font-Saira font-semibold *:group">
                 <div  >
-                    <CreativeCommonsIcon/>
+                    <CreativeCommonsIcon class name {
+                        constructor(parameters) {
+                            
+                        }
+                    }/>
                     <div>Submit Challenge</div>
                 </div>
                 <div>
