@@ -31,7 +31,7 @@ function ChallengeCard({
 
     return (
         <article
-            className="mt-2 currso rounded-xl flex flex-col border border-neutral-200 light:bg-white py-2 px-4
+            className="mt-2 cursor-pointer rounded-xl flex flex-col border border-neutral-200 light:bg-white py-2 px-4
         text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white"
         >
             <p className="text-xs h-[5%] text-neutral-500 dark:text-neutral-400">
