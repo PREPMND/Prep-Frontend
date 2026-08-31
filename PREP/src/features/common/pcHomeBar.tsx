@@ -11,12 +11,12 @@ export function PcHomeBar(){
                 <div className="group ">
                     <BookAlert
                     className="group-hover:text-amber-300 group-hover:scale-105"/>
-                    <div className="group-hover:underline">Existing Challenges</div>
+                    <div className="group-hover:underline text-lg">Existing Challenges</div>
                 </div>
                 <div className="group ">
                     <PlaneLanding
                     className="group-hover:text-amber-300 group-hover:scale-105"/>
-                    <div className="group-hover:underline">Requested To Join</div>
+                    <div className="group-hover:underline text-lg">Requested To Join</div>
                 </div>
             </div>
         </div>
