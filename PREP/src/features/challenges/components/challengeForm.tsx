@@ -10,7 +10,7 @@ import {
 } from "../types/challenge";
 import { CATEGORY_SUBCATEGORIES } from "../constants/challengeCategory";
 import { SimilarChallenges } from "./similarChallenge";
-
+import { generateChallengeImage } from "../services/generateChallengeImage";
 export function ChallengeForm() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
