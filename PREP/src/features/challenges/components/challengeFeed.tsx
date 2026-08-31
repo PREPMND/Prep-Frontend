@@ -13,7 +13,7 @@ export function ChallengeFeed() {
     }
 
     return (
-       
+
         <div className="flex h-screen w-screen overflow-hidden">
             <div className="flex-1 h-full overflow-y-auto scrollbar-none pt-3 pb-4 px-4 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
                 {challenges?.map((challenge) => (
@@ -44,11 +44,10 @@ function ChallengeCard({
                 <p className="text-xs text-center  font-semibold h-[5%] text-neutral-500 dark:text-mauve-300">
                     {challenge.category ? challenge.category?.replaceAll("_", " ").toUpperCase() : 'UNCLASSIFIED'}
                 </p>
-                <h2 className="mt-1 h-[16%] min-h-0 font-semibold text-[16px]! text-neutral-900 dark:text-white">
-                    <span className="block overflow-hidden break-words text-ellipsis [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
-                        {challenge.title.toUpperCase()}
-                    </span>
+                <h2 className="mt-1 h-[16%] min-h-0 font-semibold text-[16px]! text-neutral-900 dark:text-white line-clamp-2 break-words">
+                    {challenge.title.toUpperCase()}
                 </h2>
+>
                 {media.length > 0 && (
                     <div className="mt-1 overflow-x-auto snap-x snap-mandatory scrollbar-hide overflow-y-hidden scrollbar-thin scrollbar-thumb-amber-400">
                         <div className="flex">
