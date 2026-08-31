@@ -68,7 +68,7 @@ function ChallengeCard({
             </p>
 
             {challenge.location && (
-                <p className="group mt-2 place-content-end place-ite flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
+                <p className="group mt-2 place-content-end  flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
                     <MapPin
                         size={12}
                         className="transition-all duration-300 ease-in-out group-hover:scale-130 group-hover:text-amber-400"
