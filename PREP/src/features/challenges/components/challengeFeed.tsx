@@ -38,7 +38,7 @@ function ChallengeCard({
             </p>
 
             <h2 className="mt-1 line-clamp-2 h-[12%]  font-semibold text-lg! text-neutral-900 dark:text-white">
-                {challenge.title.}
+                {challenge.title.toUpperCase()}
             </h2>
 
             {media.length > 0 && (
