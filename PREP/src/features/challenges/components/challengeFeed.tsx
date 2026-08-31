@@ -68,7 +68,7 @@ function ChallengeCard({
                         }`}
                 >
                     <img
-                        src={item.url}
+                        src={}
                         alt={challenge.}
                         onLoad={() => setImageLoaded(true)}
                         className="h-40 w-full rounded-lg object-cover"
