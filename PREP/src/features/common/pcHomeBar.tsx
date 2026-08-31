@@ -10,7 +10,10 @@ export function PcHomeBar(){
                 </div>
                 <div>
                     <BookAlert/>
-                    <div>Ex</div>
+                    <div>Existing Challenges</div>
+                </div>
+                <div>
+                    <Req
                 </div>
             </div>
         </div>
