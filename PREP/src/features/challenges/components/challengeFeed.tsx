@@ -92,7 +92,7 @@ function ChallengeCard({
                     </p>
                 )}
             </article>
-            <PcHomeBar/>
+            
         </div>
     );
 }
