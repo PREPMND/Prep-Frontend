@@ -12,7 +12,7 @@ export function ChallengeFeed() {
       {challenges?.map((challenge) => (
         <article
           key={challenge.id}
-          className="h-full rounded-xl border border-neutral-200 bg-white p-5
+          className="h-full rounded-xl border border-neutral-200 light:bg-white p-5
             text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white"
         >
           <p className="text-xs text-neutral-500 dark:text-neutral-400">
