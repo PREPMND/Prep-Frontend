@@ -48,7 +48,7 @@ function ChallengeCard({
                     <div className="flex">
                         {media.map((item) => (
                             <div
-                                className={`h-40 w-full overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
+                                className={`h-40 w-full overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "" : "animate-pulse"
                                     }`}
                             >
                                 <img
