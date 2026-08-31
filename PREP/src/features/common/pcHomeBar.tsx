@@ -13,7 +13,7 @@ export function PcHomeBar(){
                     <div>Existing Challenges</div>
                 </div>
                 <div>
-                    <Req
+                    <Pendin
                 </div>
             </div>
         </div>
