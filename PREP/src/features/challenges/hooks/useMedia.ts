@@ -1,10 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import { getMediaById } from "../api/mediaApi";
 
-export function useMedia(mediaId?: string) {
+import { useQuery } from "@tanstack/react-query";
+import { getMediaByIds } from "../services/media";
+
+export function useMedia(mediaIds: string[] = []) {
   return useQuery({
-    queryKey: ["media", mediaId],
-    queryFn: () => getMediaById(mediaId!),
-    enabled: !!mediaId,
+    queryKey: ["media", mediaIds],
+    queryFn: () => getMediaByIds(mediaIds),
+    enabled: mediaIds.length > 0,
   });
 }
