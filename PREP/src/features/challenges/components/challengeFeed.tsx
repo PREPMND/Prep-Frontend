@@ -65,7 +65,7 @@ function ChallengeCard({
             </p>
 
             {challenge.location && (
-                <p className="mt-4 text-xs text-neutral-500 dark:text-neutral-400">
+                <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
                     {challenge.location}
                 </p>
             )}
