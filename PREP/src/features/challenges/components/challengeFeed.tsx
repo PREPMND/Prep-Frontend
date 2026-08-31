@@ -47,7 +47,7 @@ function ChallengeCard({
                 <h2 className="mt-1 h-[16%] min-h-0 font-semibold text-[16px]! text-neutral-900 dark:text-white line-clamp-2 break-words">
                     {challenge.title.toUpperCase()}
                 </h2>
->
+
                 {media.length > 0 && (
                     <div className="mt-1 overflow-x-auto snap-x snap-mandatory scrollbar-hide overflow-y-hidden scrollbar-thin scrollbar-thumb-amber-400">
                         <div className="flex">
