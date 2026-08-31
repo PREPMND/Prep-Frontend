@@ -22,7 +22,7 @@ export function ChallengeFeed() {
           <h2 className="mt-2 font-semibold text-md text-neutral-900 dark:text-white">
             {challenge.title}
           </h2>
-          <img src={challenge.mediaIds?}/>
+          <img src={challenge.mediaIds?challenge.mediaIds[0]:''}/>
 
           <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
             {challenge.description}
