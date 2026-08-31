@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getMediaById } from "../services/media";
+import { getMediaById } from "../api/mediaApi";
 
 export function useMedia(mediaId?: string) {
   return useQuery({
