@@ -6,7 +6,7 @@ export function PcHomeBar(){
             <div>
                 <div>
                     <CreativeCommonsIcon/>
-                    
+                    <div>Create</div>
                 </div>
             </div>
         </div>
