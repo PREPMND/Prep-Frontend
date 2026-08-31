@@ -67,7 +67,7 @@ function ChallengeCard({
 
             {challenge.location && (
                 <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
-                    <MapPin/>
+                    <MapPin size={16}/>
                     <div>{challenge.location}</div>
                 </p>
             )}
