@@ -1,1 +1,5 @@
-export function Home
+export function Home(){
+    return (
+        <
+    )
+}
