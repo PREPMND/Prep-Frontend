@@ -22,3 +22,11 @@ export async function getMediaById(
 
   return response.data;
 }
+
+export async function getMediaByIds(
+  mediaIds: string[],
+): Promise<Media[]> {
+  return Promise.all(
+    mediaIds.map((mediaId) => getMediaById(mediaId)),
+  );
+}
