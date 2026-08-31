@@ -18,6 +18,8 @@ export function ChallengeForm() {
     const [category, setCategory] = useState<ChallengeCategory | "">("");
     const [subcategory, setSubcategory] = useState<ChallengeSubcategory | "">("");
     const [files, setFiles] = useState<File[]>([]);
+    const [useGeneratedImage, setUseGeneratedImage] = useState(false);
+    const [isGeneratingImage, setIsGeneratingImage] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submittedChallenge, setSubmittedChallenge] =
         useState<CreateChallengeResponse | null>(null);
@@ -61,7 +63,7 @@ export function ChallengeForm() {
         ? CATEGORY_SUBCATEGORIES[category]
         : [];
 
-    const style='mt-2 w-full rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-800 px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800'
+    const style = 'mt-2 w-full rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-800 px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800'
     if (submittedChallenge) {
         return (
             <div className="space-y-5 ">
