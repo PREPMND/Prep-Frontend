@@ -12,6 +12,7 @@ import { ChallengePage } from "../features/challenges/pages/challengePage";
 import OrganizationDetailPage from "../features/organizations/pages/organizationDetailPage";
 import CreateOrganizationPage from "../features/organizations/pages/createOrganizationPage";
 import OrganizationsPage from "../features/organizations/pages/organizationsPage";
+import { ChallengeFeed } from "../features/challenges/components/challengeFeed";
 
 export const router = createBrowserRouter([
   {
@@ -47,7 +48,7 @@ export const router = createBrowserRouter([
           },
           {
             path:"/",
-            element:<C
+            element:<ChallengeFeed/>
           }
 
         ],
