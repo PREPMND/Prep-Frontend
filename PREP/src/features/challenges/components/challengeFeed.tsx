@@ -62,9 +62,17 @@ function ChallengeCard({
                     </div>
                 </div>
             )}
-            {media.length==0 && (
-                <div>
-                    
+            {media.length == 0 && (
+                <div
+                    className={`h-40 w-full shrink-0 overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
+                        }`}
+                >
+                    <img
+                        src={item.url}
+                        alt={item.originalName}
+                        onLoad={() => setImageLoaded(true)}
+                        className="h-40 w-full rounded-lg object-cover"
+                    />
                 </div>
             )}
 
