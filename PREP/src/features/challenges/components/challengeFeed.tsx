@@ -45,7 +45,7 @@ function ChallengeCard({
                     {challenge.category ? challenge.category?.replaceAll("_", " ").toUpperCase() : 'UNCLASSIFIED'}
                 </p>
                 <h2 className="mt-1 h-[16%] min-h-0 font-semibold text-[16px]! text-neutral-900 dark:text-white">
-                    <span className="block overflow-hidden text-ellipsis [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
+                    <span className="block overflow-hidden break-words text-ellipsis [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2]">
                         {challenge.title.toUpperCase()}
                     </span>
                 </h2>
