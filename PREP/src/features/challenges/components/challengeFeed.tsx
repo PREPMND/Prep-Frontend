@@ -37,12 +37,12 @@ function ChallengeCard({
                 {challenge.category?.replaceAll("_", " ")}
             </p>
 
-            <h2 className="mt-2 font-semibold text-[20px] text-neutral-900 dark:text-white">
+            <h2 className="mt- font-semibold text-[20px] text-neutral-900 dark:text-white">
                 {challenge.title}
             </h2>
 
             {media.length > 0 && (
-                <div className="mt-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide scrollbar-thin scrollbar-thumb-amber-400">
+                <div className="mt-1 overflow-x-auto snap-x snap-mandatory scrollbar-hide scrollbar-thin scrollbar-thumb-amber-400">
                     <div className="flex">
                         {media.map((item) => (
                             <div
