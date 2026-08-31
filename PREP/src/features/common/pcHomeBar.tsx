@@ -7,7 +7,7 @@ export function PcHomeBar(){
         <div className="min-w-[15%] flex flex-col ">
             <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 font-Saira font-semibold ">
                 <div 
-                onClick={()=>navigate("/challenge/submit")}
+                onClick={()=>navigate("/challenges/submit")}
                 className="group " >
                     <CreativeCommonsIcon className="group-hover:text-green-300 group-hover:scale-110"/>
                     <div className="group-hover:underline text-lg">Submit Challenge</div>
