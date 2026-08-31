@@ -35,7 +35,7 @@ function ChallengeCard({
             className="mt-2 cursor-pointer rounded-xl flex flex-col border border-neutral-200 light:bg-white py-2 px-4
         text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white h-[400px]"
         >
-            <p className="text-xs text-center tent font-semibold h-[5%] text-neutral-500 dark:text-neutral-200">
+            <p className="text-xs text-center  font-semibold h-[5%] text-neutral-500 dark:text-">
                 {challenge.category ? challenge.category?.replaceAll("_", " ").toUpperCase() : 'UNCLASSIFIED'}
             </p>
 
