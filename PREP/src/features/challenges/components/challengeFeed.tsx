@@ -36,7 +36,7 @@ function ChallengeCard({
         text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white"
         >
             <p className="text-xs h-[5%] text-neutral-500 dark:text-neutral-400">
-                {challenge.category?.replaceAll("_", " ")}
+                {challenge.category?.replaceAll("_", " ").}
             </p>
 
             <h2 className="mt-1 line-clamp-2 h-[16%]  font-semibold text-lg! text-neutral-900 dark:text-white">
