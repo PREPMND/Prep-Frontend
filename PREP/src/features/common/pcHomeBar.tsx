@@ -2,7 +2,7 @@ import { BookAlert, CreativeCommonsIcon, PlaneLanding } from "lucide-react";
 
 export function PcHomeBar(){
     return(
-        <div className="min-w-[15%] flex flex-col justify-evenly h-screen static">
+        <div className="min-w-[15%] flex flex-col justify-evenly ">
             <div className="*:flex *:items-center">
                 <div>
                     <CreativeCommonsIcon/>
