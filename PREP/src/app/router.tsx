@@ -46,7 +46,8 @@ export const router = createBrowserRouter([
             element: <ChallengePage />,
           },
           {
-            path:
+            path:"/",
+            element:<C
           }
 
         ],
