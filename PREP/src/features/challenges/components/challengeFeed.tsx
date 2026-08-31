@@ -52,7 +52,7 @@ function ChallengeCard({
                                 <img
                                     src={item.url}
                                     alt={item.originalName}
-                                    className="h-64 w-full rounded-lg object-cover"
+                                    className="h-40 w-full rounded-lg object-cover"
                                 />
                             </div>
                         ))}
