@@ -42,7 +42,7 @@ function ChallengeCard({
             </h2>
 
             {media.length > 0 && (
-                <div className="mt-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+                <div className="mt-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide over">
                     <div className="flex">
                         {media.map((item) => (
                             <div
