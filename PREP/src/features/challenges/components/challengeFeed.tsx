@@ -33,7 +33,7 @@ function ChallengeCard({
             className=" rounded-xl flex flex-col border border-neutral-200 light:bg-white py-2 px-4
         text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white"
         >
-            <p className="text-xs text-neutral-500 dark:text-neutral-400">
+            <p className="text-xs h-[10%] text-neutral-500 dark:text-neutral-400">
                 {challenge.category?.replaceAll("_", " ")}
             </p>
 
