@@ -36,7 +36,7 @@ function ChallengeCard({
         text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white"
         >
             <p className="text-xs font-semibold h-[5%] text-neutral-500 dark:text-neutral-200">
-                {challenge.category?challenge.category?.replaceAll("_", " ").toUpperCase():'UNCLASSIFIED'}
+                {challenge.category ? challenge.category?.replaceAll("_", " ").toUpperCase() : 'UNCLASSIFIED'}
             </p>
 
             <h2 className="mt-1 line-clamp-2 h-[16%]  font-semibold text-lg! text-neutral-900 dark:text-white">
@@ -68,9 +68,14 @@ function ChallengeCard({
             </p>
 
             {challenge.location && (
-                <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400 flex gap-2 items-center ">
-                    <MapPin size={12} />
-                    <div className="hover:underline transition-colors duration-300 ease-in-out hover:text-amber-50 ">{challenge.location}</div>
+                <p className="group mt-2 flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
+                    <MapPin
+                        size={12}
+                        className="transition-colors duration-300 ease-in-out group-hover:text-amber-400"
+                    />
+                    <span className="transition-colors duration-300 ease-in-out group-hover:text-amber-400 group-hover:underline">
+                        {challenge.location}
+                    </span>
                 </p>
             )}
         </article>
