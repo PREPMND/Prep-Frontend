@@ -1,3 +1,4 @@
+import { Locate } from "lucide-react";
 import { useChallenges } from "../hooks/useChallenges";
 import { useMedia } from "../hooks/useMedia";
 import type { Challenge } from "../types/challenge";
@@ -66,7 +67,7 @@ function ChallengeCard({
 
             {challenge.location && (
                 <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
-                    <
+                    <Locate/>
                     <div>{challenge.location}</div>
                 </p>
             )}
