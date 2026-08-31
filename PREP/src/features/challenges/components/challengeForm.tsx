@@ -221,6 +221,27 @@ export function ChallengeForm() {
             </div>
 
             <div>
+                {files.length === 0 && (
+                    <label className="mt-4 flex cursor-pointer items-center gap-3 rounded-xl border border-neutral-200 light:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-800/50 p-4">
+                        <input
+                            type="checkbox"
+                            checked={useGeneratedImage}
+                            onChange={(event) =>
+                                setUseGeneratedImage(event.target.checked)
+                            }
+                        />
+
+                        <div>
+                            <p className="text-sm font-medium light:text-neutral-900 dark:text-white">
+                                Generate a visual for this challenge
+                            </p>
+
+                            <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                                Create a visual based on your challenge description.
+                            </p>
+                        </div>
+                    </label>
+                )}
                 <label htmlFor="evidence" className="text-sm font-medium">
                     Add evidence <span className="text-neutral-400">(optional)</span>
                 </label>
