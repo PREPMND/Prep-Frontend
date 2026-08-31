@@ -71,7 +71,7 @@ function ChallengeCard({
                 <p className="group mt-2 flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
                     <MapPin
                         size={12}
-                        className="transition-all duration-300 ease-in-out group-hover:scale-[1.02] group-hover:text-amber-400"
+                        className="transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:text-amber-400"
                     />
                     <span className="transition-colors duration-300 ease-in-out group-hover:text-amber-400 group-hover:underline">
                         {challenge.location}
