@@ -2,7 +2,7 @@ import { useChallenges } from "../hooks/useChallenges";
 
 export function ChallengeFeed() {
   const { data: challenges, isLoading } = useChallenges();
-
+  console.log(data)
   if (isLoading) {
     return <div>Loading challenges...</div>;
   }
