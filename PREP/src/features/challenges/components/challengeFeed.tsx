@@ -2,6 +2,7 @@ import { Locate, MapPin } from "lucide-react";
 import { useChallenges } from "../hooks/useChallenges";
 import { useMedia } from "../hooks/useMedia";
 import type { Challenge } from "../types/challenge";
+import { useState } from "react";
 
 export function ChallengeFeed() {
     const { data: challenges, isLoading } = useChallenges();
@@ -28,7 +29,7 @@ function ChallengeCard({
     challenge: Challenge;
 }) {
     const { data: media = [] } = useMedia(challenge.mediaIds ?? []);
-
+    const [imageLoaded, setImageLoaded] = useState(false);
     return (
         <article
             className="mt-2 cursor-pointer rounded-xl flex flex-col border border-neutral-200 light:bg-white py-2 px-4
