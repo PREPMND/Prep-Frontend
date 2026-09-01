@@ -8,7 +8,7 @@ export function PcHomeBar(){
     return(
         <div className="min-w-[15%] flex flex-col ">
             <div>
-                <div>{user?.firstName.}</div>
+                <div>{user?.firstName?.slice(0,1)}</div>
                 <div className="font-semibold text-2xl">{user?.firstName} {user?.lastName}</div>
                 
             </div>
