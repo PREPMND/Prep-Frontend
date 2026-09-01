@@ -28,7 +28,7 @@ export function PcHomeBar() {
                         : undefined;
 
                     return (
-                        <div>
+                        <div className="">
                         <div key={role.id} className="">
                             <div className={`text-sm  dark:text-neutral-400 ${organization?.name?"text-[14px] text-neutral-500 font-[500]":"text-[14px] text-mauve-400! font-[600]"}`}>
                                 {organization?.name ?? "Platform"}
@@ -37,6 +37,7 @@ export function PcHomeBar() {
                             <div className={`${organization?.name?"text-[14px]  font-[500]":"text-[16px] text-amber-300 font-[600]"}`}>
                                 {role.role.name.replaceAll("_", " ")}
                             </div>
+                        </div>
                         </div>
                     );
                 })}
