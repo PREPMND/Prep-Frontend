@@ -1,4 +1,4 @@
-import { BookAlert, CreativeCommonsIcon, PlaneLanding } from "lucide-react";
+import { BookAlert, Building2, CreativeCommonsIcon, PlaneLanding } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../auth/store/authStore";
 
@@ -19,7 +19,7 @@ export function PcHomeBar(){
                 <div 
                 onClick={()=>navigate("/challenges/submit")}
                 className="group " >
-                    <CreativeCommonsIcon className="group-hover:text-green-300 group-hover:scale-110"/>
+                    <Building2 className="group-hover:text-green-300 group-hover:scale-110"/>
                     <div className="group-hover:underline text-md">Submit Challenge</div>
                 </div>
                 <div className="group ">
