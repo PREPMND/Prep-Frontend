@@ -9,7 +9,7 @@ export function PcHomeBar(){
         <div className="min-w-[15%] flex flex-col ">
             <div>
                 <div>{user?.firstName} {user?.lastName}</div>
-                <div>{user?.avatar || ''}</div>
+                <div className="">{}</div>
             </div>
             <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 font-Saira font-semibold ">
                 <div 
