@@ -2,11 +2,13 @@ import { Building2, Factory, Feather, } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../auth/store/authStore";
 import { useMyRole } from "../profile/hooks/useMyRole";
+import { useOrganizations } from "../organizations/hooks/useOrganization";
 
 export function PcHomeBar() {
     const navigate = useNavigate();
     const user = useAuthStore((state) => state.user);
     const { data: roleData } = useMyRole(user?.id);
+    const { data: organizations = [] } = useOrganizations();
     return (
         <div className="min-w-[15%] flex flex-col shadow-lime-200 shadow-lg">
             <div className="flex gap-2 my-4">
