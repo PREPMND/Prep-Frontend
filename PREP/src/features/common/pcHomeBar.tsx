@@ -10,7 +10,7 @@ export function PcHomeBar(){
             <div>
                 <div 
                 className="w-12 h-12 bg-amber-200  rounded-[50%]">
-                    <div className="h-full flex justify-center items-center text">{user?.firstName?.slice(0,1)}</div>
+                    <div className="h-full flex justify-center items-center text-[24px]">{user?.firstName?.slice(0,1)}</div>
                 </div>
                 <div className="font-semibold text-2xl">{user?.firstName} {user?.lastName}</div>
                 
