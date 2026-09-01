@@ -1,11 +1,13 @@
 import { BookAlert, CreativeCommonsIcon, PlaneLanding } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "../auth/store/authStore";
 
 export function PcHomeBar(){
     const navigate=useNavigate();
     const user = useAuthStore((state) => state.user);
     return(
         <div className="min-w-[15%] flex flex-col ">
+            
             <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 font-Saira font-semibold ">
                 <div 
                 onClick={()=>navigate("/challenges/submit")}
