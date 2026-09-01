@@ -1,4 +1,4 @@
-import { BookAlert, Building2, CreativeCommonsIcon, Factory, Feather, PlaneLanding, Store } from "lucide-react";
+import { BookAlert, Building2 Factory, Feather, } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../auth/store/authStore";
 
