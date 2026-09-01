@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 export function PcHomeBar(){
     const navigate=useNavigate();
-    
+    const user = useAuthStore((state) => state.user);
     return(
         <div className="min-w-[15%] flex flex-col ">
             <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 font-Saira font-semibold ">
