@@ -20,7 +20,7 @@ export function PcHomeBar(){
             <div>
                 {roleData?.map((role)=>(
                     <div>
-                        <div></div>
+                        <div>{role.role}</div>
                     </div>
                 ))}
             </div>
