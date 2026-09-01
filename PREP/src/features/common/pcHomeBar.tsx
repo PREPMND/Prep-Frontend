@@ -8,7 +8,7 @@ export function PcHomeBar(){
     return(
         <div className="min-w-[15%] flex flex-col ">
             <div>
-                <img/>
+                <img src=""/>
                 <div className="font-semibold text-2xl">{user?.firstName} {user?.lastName}</div>
                 
             </div>
