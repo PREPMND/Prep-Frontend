@@ -1,4 +1,4 @@
-import { BookAlert, Building2, CreativeCommonsIcon, Factory, PlaneLanding, Store } from "lucide-react";
+import { BookAlert, Building2, CreativeCommonsIcon, Factory, Feather, PlaneLanding, Store } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../auth/store/authStore";
 
@@ -28,7 +28,7 @@ export function PcHomeBar(){
                     <div className="group-hover:underline text-md">Existing Challenges</div>
                 </div>
                 <div className="group ">
-                    <PlaneLanding
+                    <Feather
                     className="group-hover:text-amber-300 group-hover:scale-110"/>
                     <div className="group-hover:underline text-md">Requested To Join</div>
                 </div>
