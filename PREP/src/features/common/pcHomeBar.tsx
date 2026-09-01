@@ -9,7 +9,7 @@ export function PcHomeBar(){
         <div className="min-w-[15%] flex flex-col ">
             <div>
                 <div 
-                className="w-12 h-12 bg-amber-200 m-auto rounded-[50%]">
+                className="w-12 h-12 bg-amber-200  rounded-[50%]">
                     <div>{user?.firstName?.slice(0,1)}</div>
                 </div>
                 <div className="font-semibold text-2xl">{user?.firstName} {user?.lastName}</div>
