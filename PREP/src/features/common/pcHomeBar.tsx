@@ -33,7 +33,7 @@ export function PcHomeBar() {
                                 {organization?.name ?? "Platform"}
                             </div>
 
-                            <div className={`${organization?.name?"":"shadow-amber-200 shadow-lg text-blue-100"}`}>
+                            <div className={`${organization?.name?"":"glow-"}`}>
                                 {role.role.name.replaceAll("_", " ")}
                             </div>
                         </div>
