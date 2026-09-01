@@ -17,6 +17,9 @@ export function PcHomeBar(){
                 <div className="font-semibold text-2xl">{user?.firstName} {user?.lastName}</div>
                 
             </div>
+            <div>
+                {}
+            </div>
             <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 font-Saira font-semibold ml-2">
                 <div 
                 onClick={()=>navigate("/challenges/submit")}
