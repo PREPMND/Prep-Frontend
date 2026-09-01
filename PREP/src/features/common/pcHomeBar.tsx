@@ -30,7 +30,7 @@ export function PcHomeBar() {
                     return (
                         <div
                             key={role.id}
-                            className="px-4 py-2"
+                            className=""
                         >
                             <div className="text-sm text-neutral-500 dark:text-neutral-400">
                                 {organization?.name ?? "Platform"}
