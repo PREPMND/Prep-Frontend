@@ -29,7 +29,7 @@ export function PcHomeBar() {
 
                     return (
                         <div key={role.id} className="">
-                            <div className={`text-sm text-neutral-500 dark:text-neutral-400 ${}`}>
+                            <div className={`text-sm text-neutral-500 dark:text-neutral-400 ${organization?.name?}`}>
                                 {organization?.name ?? "Platform"}
                             </div>
 
