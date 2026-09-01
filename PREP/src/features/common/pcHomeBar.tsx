@@ -6,7 +6,7 @@ export function PcHomeBar(){
     const navigate=useNavigate();
     const user = useAuthStore((state) => state.user);
     return(
-        <div className="min-w-[15%] flex flex-col ">
+        <div className="min-w-[15%] flex flex-col rounded-l-3xl">
             <div className="flex gap-2 my-4">
                 <div 
                 className="w-8 h-8 bg-amber-500  rounded-[50%]">
