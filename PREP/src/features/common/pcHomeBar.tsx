@@ -18,9 +18,9 @@ export function PcHomeBar(){
                 
             </div>
             <div>
-                {roleData?.map(()=>(
+                {roleData?.map((role)=>(
                     <div>
-                        <div>
+                        <div></div>
                     </div>
                 ))}
             </div>
