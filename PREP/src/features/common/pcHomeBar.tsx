@@ -12,7 +12,7 @@ export function PcHomeBar(){
                 className="w-8 h-8 bg-amber-500  rounded-[50%]">
                     <div className="h-full flex justify-center items-center text-[18px] font-bold">{user?.firstName?.slice(0,1)}</div>
                 </div>
-                <div className="font-semibold text-2xl">{user?.firstName} {user?.lastName}</div>
+                <div className="font-semibold text-3xl">{user?.firstName} {user?.lastName}</div>
                 
             </div>
             <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 font-Saira font-semibold ml-1">
