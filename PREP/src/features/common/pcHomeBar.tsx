@@ -1,10 +1,9 @@
 import { BookAlert, CreativeCommonsIcon, PlaneLanding } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { useMyRole } from "../profile/hooks/useMyRole";
 
 export function PcHomeBar(){
     const navigate=useNavigate();
-    const { data: roleData } = useMyRole(user?.id);
+    
     return(
         <div className="min-w-[15%] flex flex-col ">
             <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 font-Saira font-semibold ">
