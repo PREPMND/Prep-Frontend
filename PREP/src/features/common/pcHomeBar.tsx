@@ -7,10 +7,10 @@ export function PcHomeBar(){
     const user = useAuthStore((state) => state.user);
     return(
         <div className="min-w-[15%] flex flex-col ">
-            <div>
+            <div className="flex">
                 <div 
                 className="w-8 h-8 bg-amber-500  rounded-[50%]">
-                    <div className="h-full flex justify-center items-center text-[18px]">{user?.firstName?.slice(0,1)}</div>
+                    <div className="h-full flex justify-center items-center text-[18px] font-bold">{user?.firstName?.slice(0,1)}</div>
                 </div>
                 <div className="font-semibold text-2xl">{user?.firstName} {user?.lastName}</div>
                 
