@@ -47,9 +47,13 @@ export const router = createBrowserRouter([
             element: <ChallengePage />,
           },
           {
-            path:"/",
-            element:<ChallengeFeed/>
-          }
+            path: "/",
+            element: <ChallengeFeed />
+          },
+          {
+            path: "/challenge/:id",
+            element: <OrganizationDetailPage />,
+          },
 
         ],
       },
@@ -74,7 +78,7 @@ export const router = createBrowserRouter([
         path: "/organizations/:id",
         element: <OrganizationDetailPage />,
       },
-      
+
     ],
   },
 
