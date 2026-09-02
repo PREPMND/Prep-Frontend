@@ -35,10 +35,7 @@ export const router = createBrowserRouter([
       {
         element: <ProfileLayout />,
         children: [
-          {
-            path: "/dashboard",
-            element: <DashboardPage />,
-          },
+          
           {
             path: "/profile",
             element: <ProfilePage />,
@@ -55,7 +52,10 @@ export const router = createBrowserRouter([
             path: "/challenge/:id",
             element: <ChallengeDetailPage />,
           },
-
+          {
+            path: "/dashboard",
+            element: <DashboardPage />,
+          },
         ],
       },
     ],
