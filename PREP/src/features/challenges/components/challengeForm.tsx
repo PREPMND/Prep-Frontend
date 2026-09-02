@@ -142,7 +142,7 @@ export function ChallengeForm() {
             </div>
 
             <div>
-                <label htmlFor="description" className="text-sm font-medium">
+                <label htmlFor="description" className="text-sm pl-2 font-medium">
                     Describe the challenge
                 </label>
                 <textarea
@@ -157,7 +157,7 @@ export function ChallengeForm() {
             </div>
 
             <div>
-                <label htmlFor="location" className="text-sm font-medium">
+                <label htmlFor="location" className="text-sm pl-2 font-medium">
                     Where is this happening?
                 </label>
                 <input
@@ -170,7 +170,7 @@ export function ChallengeForm() {
             </div>
 
             <div>
-                <label htmlFor="category" className="text-sm font-medium">
+                <label htmlFor="category" className="text-sm pl-2 font-medium">
                     Category <span className="text-neutral-400">(optional)</span>
                 </label>
                 <select
@@ -192,7 +192,7 @@ export function ChallengeForm() {
             </div>
 
             <div>
-                <label htmlFor="subcategory" className="text-sm font-medium">
+                <label htmlFor="subcategory" className="text-sm pl-2 font-medium">
                     Subcategory <span className="text-neutral-400">(optional)</span>
                 </label>
 
