@@ -22,6 +22,6 @@ export function useCurrentUser() {
       }
     },
 
-    retry: false,
+    retry: true,
   });
 }
