@@ -151,7 +151,7 @@ export function ChallengeForm() {
                     required
                     rows={6}
                     placeholder="Describe what is happening, who is affected, and any important details."
-                    className="mt-2 w-full resize-none rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-3 text-sm outline-none focus:border-neutral-400 dark:border-neutral-800"
+                    className="mt-2 w-full resize-none rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-[10px] text-sm outline-none focus:border-neutral-400 dark:border-neutral-800"
                 />
             </div>
 
