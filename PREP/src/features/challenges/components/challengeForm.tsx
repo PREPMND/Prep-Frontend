@@ -242,7 +242,7 @@ export function ChallengeForm() {
                         </div>
                     </label>
                 )}
-                <label htmlFor="evidence" className="text-sm font-medium">
+                <label htmlFor="evidence" className="text-sm mt-2 font-medium">
                     Add evidence <span className="text-neutral-400">(optional)</span>
                 </label>
                 <p className="mt-1 text-xs text-neutral-500">
