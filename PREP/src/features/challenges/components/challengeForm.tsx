@@ -125,7 +125,7 @@ export function ChallengeForm() {
         );
     }
     return (
-        <form onSubmit={handleSubmit} className=" w-full space-y-6 ">
+        <form onSubmit={handleSubmit} className=" w-full z-50 space-y-6 ">
             <div className="">
                 <label htmlFor="title" className="text-sm font-medium">
                     What is the problem?
