@@ -18,7 +18,7 @@ export function ChallengePage() {
         </p>
       </div>
 
-      <section className="rounded-2xl relative border border-neutral-200 light:bg-white dark:bg-neutral-950 px-2 py-4 md:p-5 shadow-sm dark:border-neutral-800 dark:bg-neutral-950 sm:p-7">
+      <section className="rounded-2xl relative border border-neutral-200 light:bg-white dark:bg-neutral-950 px-3 py-4 md:p-5 shadow-sm dark:border-neutral-800 dark:bg-neutral-950 sm:p-7">
         <ChallengeForm />
       </section>
     </main>
