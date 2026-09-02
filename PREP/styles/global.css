@@ -11,7 +11,7 @@
 :root {
   /* Breakpoints */
   --bp-xs: 420px;
-  --bp-xss: 510px;
+  --bp-xss: 540px;
   --bp-sm: 640px;
   --bp-md: 768px;
   --bp-lg: 1024px;
