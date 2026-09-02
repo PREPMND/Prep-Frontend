@@ -56,6 +56,7 @@ export default function ChallengeDetailPage() {
               ))}
             </div>
             <div>
+              Request to Join
             </div>
           </div>
         )}
