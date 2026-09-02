@@ -6,7 +6,9 @@ export function AuthGuard() {
     isAuthenticated,
     isLoading,
   } = useAuthStore();
-
+  if (!isAuthenticated) {
+    return <Navigate to="/login" replace />;
+  }
   if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
@@ -15,9 +17,7 @@ export function AuthGuard() {
     );
   }
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
-  }
+  
 
   return <Outlet />;
 }
