@@ -5,6 +5,6 @@ export function useChallenges() {
   return useQuery({
     queryKey: ["challenges"],
     queryFn: getChallenges,
-    staleTime: 1000
+    staleTime: 1
   });
 }
