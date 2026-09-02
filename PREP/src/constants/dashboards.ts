@@ -1,4 +1,4 @@
-const dashboards = [
+export const dashboards = [
   {
     role: "SUPER_ADMIN",
     label: "Super Admin Dashboard!",
