@@ -62,7 +62,7 @@ export function PcHomeBar() {
                     <div className="group-hover:underline text-md">Requested To Join</div>
                 </div>
             </div>
-            {roleData.(<div>
+            {roleData?.find('')&&(<div>
                 <div>
                     Super Admin DashBoard!
                 </div>
