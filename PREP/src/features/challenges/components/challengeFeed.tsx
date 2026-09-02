@@ -71,6 +71,7 @@ function ChallengeCard({
                 )}
                 {media.length == 0 && (
                     <div
+                        onClick={()=>navigate(`challenge/${challenge.id}`)}
                         className={`h-40 w-full shrink-0 overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
                             }`}
                     >
