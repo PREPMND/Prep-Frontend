@@ -40,7 +40,7 @@ function ChallengeCard({
     const [imageLoaded, setImageLoaded] = useState(false);
     const navigate=useNavigate();
     return (
-        <div>
+        <div onClick={()=>navigate(`/challenge/${challenge.id}`)}>
             <article
                
                 className="mt-2 cursor-pointer rounded-xl flex flex-col border border-neutral-200 light:bg-white py-2 px-4
