@@ -62,6 +62,11 @@ export function PcHomeBar() {
                     <div className="group-hover:underline text-md">Requested To Join</div>
                 </div>
             </div>
+            <div>
+                <div>
+                    Requ
+                </div>
+            </div>
         </div>
     )
 
