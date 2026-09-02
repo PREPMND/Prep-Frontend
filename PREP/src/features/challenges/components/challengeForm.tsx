@@ -267,7 +267,7 @@ export function ChallengeForm() {
                     onChange={(event) =>
                         setFiles(Array.from(event.target.files ?? []))
                     }
-                    className="mt-2 pl-2 block text-sm"
+                    className="mt-2 pl-2 block text-[10px]"
                 />
             </div>
 
