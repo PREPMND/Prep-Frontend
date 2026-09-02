@@ -55,7 +55,7 @@ export default function ChallengeDetailPage() {
                 </div>
               ))}
             </div>
-            <div className="w-[60%] md:w-[30%] mx-auto mt-2 rounded-3xl bg-emerald-500-200 text-lg font-semibold ">
+            <div className="w-[60%] md:w-[30%] mx-auto mt-2 rounded-3xl bg-emerald-500 text-lg font-semibold  ">
               Request to Join
             </div>
           </div>
