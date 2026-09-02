@@ -241,14 +241,11 @@ export function ChallengeForm() {
                                 Create a visual based on your challenge description.
                             </p>
                         </div>
-                        <div className="flex items-center justify-between mt-3">
-                            <div className="border-b-2 border-fuchsia-100 w-[45%]"></div>
-                            <div>OR</div>
-                            <div className="border-b-2 border-fuchsia-100 w-[45%]"></div>
-                        </div>
+                        
                     </label>
 
                 )}
+                {files.length!=0}
 
                 <label htmlFor="evidence" className="text-sm mt-2 font-medium">
                     Add evidence <span className="text-neutral-400">(optional)</span>
