@@ -17,7 +17,10 @@ export function ChallengeFeed() {
         <div className="flex h-screen w-screen overflow-hidden">
             <div className="flex-1 h-full overflow-y-auto scrollbar-none pt-3 pb-4 px-4 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
                 {challenges?.map((challenge) => (
-                    <ChallengeCard key={challenge.id} challenge={challenge} />
+
+                    <ChallengeCard
+                    onClick={()=>navigate(`/challenge/${challenge.id}`)}
+                    key={challenge.id} challenge={challenge} />
                 ))}
             </div>
             <div className=" md:w-64 hidden md:block h-full bg-gradient-to-r border-l-2 border-l-lime-200 rounded-l-3xl from-neutral-950 via-neutral-950 to-neutral-900 dark:text-white text-mist-50  overflow-y-auto pt-3 pb-4 px-4 border-gray-200">
