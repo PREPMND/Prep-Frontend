@@ -33,7 +33,7 @@ export default function ChallengeDetailPage() {
         </p>
 
         {challenge.location && (
-          <p className="mt-8 text-sm xss:text-[30px]! text-neutral-500">
+          <p className="mt-8 text-sm xss:text-blue-400 text-neutral-500">
             📍 {challenge.location}
           </p>
         )}
