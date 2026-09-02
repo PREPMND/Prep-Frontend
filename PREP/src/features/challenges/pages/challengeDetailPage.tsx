@@ -55,7 +55,7 @@ export default function ChallengeDetailPage() {
                 </div>
               ))}
             </div>
-            <div>
+            <div className="w-[60%]">
               Request to Join
             </div>
           </div>
