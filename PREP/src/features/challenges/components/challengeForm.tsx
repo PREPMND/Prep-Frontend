@@ -242,7 +242,7 @@ export function ChallengeForm() {
                         </div>
                     </label>
                 )}
-                <div className="flex items-center">
+                <div className="flex items-center justify-between mt-2">
                     <div className="border-b-1 border-amber-200 w-[45%]"></div>
                     <div>OR</div>
                     <div className="border-b-1 border-amber-200 w-[45%]"></div>
