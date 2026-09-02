@@ -64,7 +64,7 @@ export function PcHomeBar() {
             </div>
             <div>
                 <div>
-                    Requ
+                    
                 </div>
             </div>
         </div>
