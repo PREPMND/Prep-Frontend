@@ -5,7 +5,7 @@ export default function ChallengeDetailPage() {
   const { id } = useParams();
 
   const { data: media = [] } = useMedia(challenge.mediaIds ?? []);
-      const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   console.log(challenge);
 
   if (isLoading) return <div>Loading...</div>;
