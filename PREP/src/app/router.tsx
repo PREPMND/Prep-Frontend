@@ -14,6 +14,7 @@ import CreateOrganizationPage from "../features/organizations/pages/createOrgani
 import OrganizationsPage from "../features/organizations/pages/organizationsPage";
 import { ChallengeFeed } from "../features/challenges/components/challengeFeed";
 import ChallengeDetailPage from "../features/challenges/pages/challengeDetailPage";
+import ChallengeLayout from "../layouts/challengeLayout";
 
 export const router = createBrowserRouter([
   {
@@ -33,7 +34,7 @@ export const router = createBrowserRouter([
     element: <AuthGuard />,
     children: [
       {
-        element: <C />,
+        element: <ChallengeLayout />,
         children: [
           
           {
