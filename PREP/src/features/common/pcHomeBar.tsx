@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../auth/store/authStore";
 import { useMyRole } from "../profile/hooks/useMyRole";
 import { useOrganizations } from "../organizations/hooks/useOrganization";
+import { dashboards } from "../../constants/dashboards";
 
 export function PcHomeBar() {
     const navigate = useNavigate();
@@ -61,14 +62,23 @@ export function PcHomeBar() {
                         className="group-hover:text-amber-300 group-hover:scale-110" />
                     <div className="group-hover:underline text-md">Requested To Join</div>
                 </div>
-                {roleData?.some((role) => role.role.name === "SUPER_ADMIN") && (
-                    <div className="">
-                        <div 
-                        className="rounded-2xl bg-amber-50 px-3 py-2 text-[14px] text-amber-600 font-[600]">
-                            Super Admin Dashboard!
-                        </div>
-                    </div>
-                )}
+                <div className="space-y-2">
+                    {dashboards
+                        .filter((dashboard) =>
+                            roleData?.some(
+                                (role) => role.role.name === dashboard.role,
+                            ),
+                        )
+                        .map((dashboard) => (
+                            <div key={dashboard.role}>
+                                <div
+                                    className={`rounded-2xl px-3 py-2 text-[14px] font-[600] ${dashboard.className}`}
+                                >
+                                    {dashboard.label}
+                                </div>
+                            </div>
+                        ))}
+                </div>
             </div>
 
         </div>
