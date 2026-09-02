@@ -11,7 +11,7 @@ export function PcHomeBar() {
     const { data: roleData } = useMyRole(user?.id);
     const { data: organizations = [] } = useOrganizations();
     return (
-        <div className="min-w-[15%] flex flex-col shadow-lime-200 shadow-lg">
+        <div className="min-w-[15%] flex flex-col shadow-lime-200 shadow-lg cursor-default">
             <div aria-label="profile" onClick={()=>navigate("/profile")} className="flex gap-2 my-4">
                 <div
                     className="w-8 h-8 bg-amber-500  rounded-[50%]">
