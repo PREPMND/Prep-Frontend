@@ -18,11 +18,11 @@ export default function ChallengeDetailPage() {
         </p>
 
         <h1 className="mt-2 text-3xl font-bold">
-          {challenge.title}
+          {challenge.title.toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase())}
         </h1>
 
         <p className="mt-6 text-neutral-700 dark:text-neutral-300">
-          {challenge.description}
+          {challenge.description.toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase())}
         </p>
 
         {challenge.location && (
