@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useChallengeDetails } from "../hooks/useChallengeDetails";
-import { useMedia } from "../../media/hooks/useMedia";
+import { useMedia } from "../hooks/useMedia";
 export default function ChallengeDetailPage() {
   const { id } = useParams();
 
