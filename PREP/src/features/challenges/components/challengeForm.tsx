@@ -242,7 +242,7 @@ export function ChallengeForm() {
                         </div>
                     </label>
                 )}
-                <div className="flex flex-col">
+                <div className="flex">
                     <div className="border-1 border-amber-200 w-[48%]"></div>
                     <div>OR</div>
                     <div className="border-1 border-amber-200 w-[48%]"></div>
