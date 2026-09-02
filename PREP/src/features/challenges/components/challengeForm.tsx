@@ -245,7 +245,7 @@ export function ChallengeForm() {
                 <div className="flex items-center justify-between mt-3">
                     <div className="border-b-2 border-amber-200 w-[45%]"></div>
                     <div>OR</div>
-                    <div className="border-b-2 border-amber-200 w-[45%]"></div>
+                    <div className="border-b-2 border-fuchsia-100 w-[45%]"></div>
                 </div>
                 <label htmlFor="evidence" className="text-sm mt-2 font-medium">
                     Add evidence <span className="text-neutral-400">(optional)</span>
