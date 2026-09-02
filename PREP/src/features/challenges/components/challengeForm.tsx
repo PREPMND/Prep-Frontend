@@ -232,7 +232,7 @@ export function ChallengeForm() {
                         />
 
                         <div>
-                            <p className="text-sm font-medium light:text-neutral-900 dark:text-white">
+                            <p className="text-sm mt-1 font-medium light:text-neutral-900 dark:text-white">
                                 Generate a visual for this challenge
                             </p>
 
