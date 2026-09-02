@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import { useChallenge } from "../hooks/useChallenge";
+import { useChallengeDetails } from "../hooks/useChallengeDetails";
 
 export default function ChallengePage() {
   const { id } = useParams();
 
-  const { data: challenge, isLoading } = useChallenge(id);
+  const { data: challenge, isLoading } = useChallengeDetails(id);
 
   if (isLoading) return <div>Loading...</div>;
   if (!challenge) return <div>Challenge not found.</div>;
