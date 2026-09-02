@@ -4,7 +4,8 @@ import { useChallengeDetails } from "../hooks/useChallengeDetails";
 export default function ChallengeDetailPage() {
   const { id } = useParams();
 
-  const { data: challenge, isLoading } = useChallengeDetails(id);
+  const { data: media = [] } = useMedia(challenge.mediaIds ?? []);
+      const [imageLoaded, setImageLoaded] = useState(false);
   console.log(challenge);
 
   if (isLoading) return <div>Loading...</div>;
