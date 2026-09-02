@@ -62,7 +62,7 @@ export function PcHomeBar() {
                     <div className="group-hover:underline text-md">Requested To Join</div>
                 </div>
                 {roleData?.some((role) => role.role.name === "SUPER_ADMIN") && (
-                    <div>
+                    <div className="">
                         <div>
                             Super Admin Dashboard!
                         </div>
