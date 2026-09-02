@@ -62,7 +62,7 @@ export function PcHomeBar() {
                         className="group-hover:text-amber-300 group-hover:scale-110" />
                     <div className="group-hover:underline text-md">Requested To Join</div>
                 </div>
-                <div className="space-y-2 flex flex-col">
+                <div className="space-y-2 flex flex-col items-start">
                     {dashboards
                         .filter((dashboard) =>
                             roleData?.some(
