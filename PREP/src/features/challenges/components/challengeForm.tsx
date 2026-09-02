@@ -81,7 +81,7 @@ export function ChallengeForm() {
     const style = 'mt-2 w-full rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-800 px-4 py-[10px] text-sm outline-none focus:border-neutral-400 dark:border-neutral-800'
     if (submittedChallenge) {
         return (
-            
+
             <div className="space-y-5 ">
                 <div className="rounded-xl light:bg-white light:text-neutral-900 dark:bg-neutral-700 dark:text-white border border-neutral-200 p-5 dark:border-neutral-800">
                     <p className="text-sm font-medium text-neutral-900 dark:text-white">
@@ -242,14 +242,14 @@ export function ChallengeForm() {
                             </p>
                         </div>
                         <div className="flex items-center justify-between mt-3">
-                    <div className="border-b-2 border-fuchsia-100 w-[45%]"></div>
-                    <div>OR</div>
-                    <div className="border-b-2 border-fuchsia-100 w-[45%]"></div>
-                </div>
+                            <div className="border-b-2 border-fuchsia-100 w-[45%]"></div>
+                            <div>OR</div>
+                            <div className="border-b-2 border-fuchsia-100 w-[45%]"></div>
+                        </div>
                     </label>
-                    
+
                 )}
-                
+
                 <label htmlFor="evidence" className="text-sm mt-2 font-medium">
                     Add evidence <span className="text-neutral-400">(optional)</span>
                 </label>
