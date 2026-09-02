@@ -74,6 +74,7 @@ export const router = createBrowserRouter([
         path: "/organizations/:id",
         element: <OrganizationDetailPage />,
       },
+      
     ],
   },
 
