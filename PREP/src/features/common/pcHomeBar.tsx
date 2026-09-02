@@ -64,7 +64,7 @@ export function PcHomeBar() {
             </div>
             <div>
                 <div>
-                    
+                    Super Admin DashBoard!
                 </div>
             </div>
         </div>
