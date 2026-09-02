@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getChallengeById } from "../services/challenge";
+import { getChallengeById } from "../api/challengeApi";
 
 export function useChallengeDetails(challengeId?: string) {
   return useQuery({
