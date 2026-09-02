@@ -49,7 +49,7 @@ export default function ChallengeDetailPage() {
                     src={item.url}
                     alt={item.originalName}
                     onLoad={() => setImageLoaded(true)}
-                    className="h-40 w-full rounded-lg object-cover"
+                    className="h-52 w-full rounded-lg object-cover"
                   />
                 </div>
               ))}
