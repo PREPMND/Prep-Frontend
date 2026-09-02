@@ -61,14 +61,15 @@ export function PcHomeBar() {
                         className="group-hover:text-amber-300 group-hover:scale-110" />
                     <div className="group-hover:underline text-md">Requested To Join</div>
                 </div>
-            </div>
-            {roleData?.some((role) => role.role.name === "SUPER_ADMIN") && (
-                <div>
+                {roleData?.some((role) => role.role.name === "SUPER_ADMIN") && (
                     <div>
-                        Super Admin Dashboard!
+                        <div>
+                            Super Admin Dashboard!
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
+            </div>
+
         </div>
     )
 
