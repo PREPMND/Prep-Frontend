@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
           },
           {
             path: "/challenge/:id",
-            element: <OrganizationDetailPage />,
+            element: <CPage />,
           },
 
         ],
