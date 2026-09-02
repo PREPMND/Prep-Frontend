@@ -7,7 +7,7 @@ import { PcHomeBar } from "../../common/pcHomeBar";
 import { useNavigate } from "react-router-dom";
 export function ChallengeFeed() {
     const { data: challenges, isLoading } = useChallenges();
-    const navigate=useNavigate();
+    
     if (isLoading) {
         return <div>Loading challenges...</div>;
     }
@@ -35,6 +35,7 @@ function ChallengeCard({
 }) {
     const { data: media = [] } = useMedia(challenge.mediaIds ?? []);
     const [imageLoaded, setImageLoaded] = useState(false);
+    const navigate=useNavigate();
     return (
         <div>
             <article
