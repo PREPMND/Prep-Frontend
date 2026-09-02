@@ -55,7 +55,7 @@ export default function ChallengeDetailPage() {
                 </div>
               ))}
             </div>
-            <div className="w-[60%]">
+            <div className="w-[60%] md:w-[30%] mx-auto mt-2 ">
               Request to Join
             </div>
           </div>
