@@ -253,10 +253,10 @@ export function ChallengeForm() {
                     </div>
                 )}
 
-                <label htmlFor="evidence" className="text-sm mt-2 pl-2 font-medium">
+                <label htmlFor="evidence" className="text-sm mt-2 pl-1 font-medium">
                     Add evidence <span className="text-neutral-400">(optional)</span>
                 </label>
-                <p className="mt-1 text-xs text-neutral-500">
+                <p className="mt-1 pl-1 text-xs text-neutral-500">
                     Photos, documents, or videos can help explain the challenge.
                 </p>
                 <input
