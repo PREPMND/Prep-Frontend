@@ -2,7 +2,7 @@ export const dashboards = [
   {
     role: "SUPER_ADMIN",
     label: "Super Admin Dashboard!",
-    className: "bg-amber-50 text-amber-600",
+    className: "bg-amber-50 hover: text-amber-600",
   },
   {
     role: "ADMIN",
