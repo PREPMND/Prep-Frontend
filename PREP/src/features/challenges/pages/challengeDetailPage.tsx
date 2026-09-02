@@ -41,7 +41,7 @@ export default function ChallengeDetailPage() {
             <div className="flex">
               {media.map((item) => (
                 <div
-                key={item}
+                key={item | }
                   className={`h-40 w-full shrink-0 overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
                     }`}
                 >
