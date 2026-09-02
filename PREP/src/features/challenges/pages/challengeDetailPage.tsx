@@ -14,7 +14,7 @@ export default function ChallengeDetailPage() {
     <main className="app-container py-10">
       <div className="mx-auto max-w-4xl">
         <p className="text-sm text-neutral-500">
-          {challenge.category?.replaceAll("_", " ")}
+          {challenge.category?.replaceAll("_", " ").toUpperCase()}
         </p>
 
         <h1 className="mt-2 text-3xl font-bold">
