@@ -72,7 +72,7 @@ export function PcHomeBar() {
                         .map((dashboard) => (
                             <div key={dashboard.role}>
                                 <div
-                                    className={`rounded-2xl w-48 text-center px-3 py-2 text-[14px] transition-colors duration-300 ease-in-out font-[600] ${dashboard.className}`}
+                                    className={`rounded-2xl w-48 text-center px-3 py-2 text-[14px] transition-colors duration-400 ease-in-out font-[600] ${dashboard.className}`}
                                 >
                                     {dashboard.label}
                                 </div>
