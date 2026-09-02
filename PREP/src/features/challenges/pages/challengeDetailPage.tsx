@@ -42,7 +42,7 @@ export default function ChallengeDetailPage() {
               {media.map((item) => (
                 <div
                 key={item.id }
-                  className={`h-40 object-cover w-full shrink-0 overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
+                  className={`h- object-cover w-full shrink-0 overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
                     }`}
                 >
                   <img
