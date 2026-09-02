@@ -8,7 +8,7 @@ export default function ChallengeLayout() {
             <div className="pointer-events-none fixed inset-0 overflow-hidden">
                 <div className="absolute -top-40 right-[-10rem] h-96 w-96 rounded-full light:bg-amber-200/20 dark:bg-amber-400 blur-3xl" />
 
-                <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full light:bg-fuchsia-400/20 dark:bg-emerald-300 blur-3xl" />
+                <div className="absolute -bottom-40 -left-40 h-44 w-96 rounded-full light:bg-fuchsia-400/20 dark:bg-emerald-100 blur-3xl" />
             </div>
 
             <main className="relative">
