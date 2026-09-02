@@ -19,7 +19,7 @@ export default function ChallengeDetailPage() {
 
   return (
     <main className="app-container py-10">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-4xl select-none">
         <p className="text-sm text-neutral-500">
           {challenge.category?.replaceAll("_", " ").toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase())}
         </p>
