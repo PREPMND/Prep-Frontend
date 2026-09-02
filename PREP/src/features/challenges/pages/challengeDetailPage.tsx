@@ -39,7 +39,7 @@ export default function ChallengeDetailPage() {
         {media.length > 0 && (
           <div className="mt-1 overflow-x-auto snap-x snap-mandatory scrollbar-hide overflow-y-hidden scrollbar-thin scrollbar-thumb-amber-400">
             <div className="flex">
-              {media.map((item:) => (
+              {media.map((item) => (
                 <div
                 key={item}
                   className={`h-40 w-full shrink-0 overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
