@@ -45,7 +45,7 @@ export function PcHomeBar() {
                     );
                 })}
             </div>
-            <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 font-Saira font-semibold ml-2">
+            <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 mt-3 font-Saira font-semibold ml-2">
                 <div
                     onClick={() => navigate("/challenges/submit")}
                     className="group " >
