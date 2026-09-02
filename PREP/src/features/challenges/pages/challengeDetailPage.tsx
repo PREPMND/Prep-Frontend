@@ -59,7 +59,7 @@ export default function ChallengeDetailPage() {
           </div>
         )}
       </div>
-      <div className="w-[60%] md:w-[30%] px-3 py-2 text-center mx-auto mt-2 rounded-3xl bg-emerald-500 text-lg font-semibold  ">
+      <div className="w-[60%] md:w-[30%] px-3 py-2 text-center mx-auto mt-5 rounded-3xl bg-emerald-500 text-lg font-semibold  ">
               Request to Join
             </div>
     </main>
