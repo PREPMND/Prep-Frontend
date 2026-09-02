@@ -1,4 +1,4 @@
-import { Locate, MapPin } from "lucide-react";
+import {MapPin } from "lucide-react";
 import { useChallenges } from "../hooks/useChallenges";
 import { useMedia } from "../hooks/useMedia";
 import type { Challenge } from "../types/challenge";
