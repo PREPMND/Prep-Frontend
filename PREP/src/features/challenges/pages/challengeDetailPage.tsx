@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useChallengeDetails } from "../hooks/useChallengeDetails";
 
-export default function ChallengePage() {
+export default function ChallengeDetailPage() {
   const { id } = useParams();
 
   const { data: challenge, isLoading } = useChallengeDetails(id);
