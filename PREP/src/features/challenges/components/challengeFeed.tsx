@@ -4,7 +4,7 @@ import { useMedia } from "../hooks/useMedia";
 import type { Challenge } from "../types/challenge";
 import { useState } from "react";
 import { PcHomeBar } from "../../common/pcHomeBar";
-
+import { useNavigate } from "react-router-dom";
 export function ChallengeFeed() {
     const { data: challenges, isLoading } = useChallenges();
 
