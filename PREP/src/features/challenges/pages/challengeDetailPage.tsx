@@ -5,7 +5,8 @@ export default function ChallengeDetailPage() {
   const { id } = useParams();
 
   const { data: challenge, isLoading } = useChallengeDetails(id);
-
+  console.log(challenge);
+  
   if (isLoading) return <div>Loading...</div>;
   if (!challenge) return <div>Challenge not found.</div>;
 
