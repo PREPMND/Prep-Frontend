@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
     element: <AuthGuard />,
     children: [
       {
-        element: <ProfileLayout />,
+        element: <C />,
         children: [
           
           {
