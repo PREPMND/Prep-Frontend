@@ -6,7 +6,7 @@ export default function ChallengeDetailPage() {
 
   const { data: challenge, isLoading } = useChallengeDetails(id);
   console.log(challenge);
-  
+
   if (isLoading) return <div>Loading...</div>;
   if (!challenge) return <div>Challenge not found.</div>;
 
@@ -29,6 +29,25 @@ export default function ChallengeDetailPage() {
           <p className="mt-8 text-sm text-neutral-500">
             📍 {challenge.location}
           </p>
+        )}
+        {media.length > 0 && (
+          <div className="mt-1 overflow-x-auto snap-x snap-mandatory scrollbar-hide overflow-y-hidden scrollbar-thin scrollbar-thumb-amber-400">
+            <div className="flex">
+              {media.map((item) => (
+                <div
+                  className={`h-40 w-full shrink-0 overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
+                    }`}
+                >
+                  <img
+                    src={item.url}
+                    alt={item.originalName}
+                    onLoad={() => setImageLoaded(true)}
+                    className="h-40 w-full rounded-lg object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         )}
       </div>
     </main>
