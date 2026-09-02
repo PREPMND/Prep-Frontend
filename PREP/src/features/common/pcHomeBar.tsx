@@ -14,7 +14,7 @@ export function PcHomeBar() {
             <div className="flex gap-2 my-4">
                 <div
                     className="w-8 h-8 bg-amber-500  rounded-[50%]">
-                    <div className="h-full flex justify-center items-center text-[18px] font-bold">{user?.firstName?.slice(0, 1)}</div>
+                    <div className="h-full flex justify-center items-center text-[18px] font-bold">{user?.firstName?.slice(0, 1).toUpperCase()}</div>
                 </div>
                 <div className="font-semibold text-2xl">{user?.firstName} {user?.lastName}</div>
 
