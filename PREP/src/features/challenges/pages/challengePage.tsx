@@ -2,7 +2,7 @@ import { ChallengeForm } from "../components/challengeForm";
 
 export function ChallengePage() {
   return (
-    <main >
+    <main className="mx-auto w-full max-w-2xl px-4 py-10 sm:px-6">
       <div className="mb-8">
         <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
           Societal Innovation Portal
