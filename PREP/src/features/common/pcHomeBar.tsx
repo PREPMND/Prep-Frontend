@@ -29,17 +29,17 @@ export function PcHomeBar() {
 
                     return (
                         <div className="flex items-center gap-2">
-                            <div 
-                            className="w-4 h-4 bg-amber-200 animate-pulse duration-1000 rounded-full"></div>
-                        <div key={role.id} className="">
-                            <div className={`text-sm  dark:text-neutral-400 ${organization?.name?"text-[14px] text-neutral-500 font-[500]":"text-[14px] text-mauve-400! font-[600]"}`}>
-                                {organization?.name ?? "Platform"}
-                            </div>
+                            <div
+                                className="w-4 h-4 bg-amber-200 animate-pulse duration-1000 rounded-full"></div>
+                            <div key={role.id} className="">
+                                <div className={`text-sm  dark:text-neutral-400 ${organization?.name ? "text-[14px] text-neutral-500 font-[500]" : "text-[14px] text-mauve-400! font-[600]"}`}>
+                                    {organization?.name ?? "Platform"}
+                                </div>
 
-                            <div className={`${organization?.name?"text-[14px]  font-[500]":"text-[16px] text-amber-300 font-[600]"}`}>
-                                {role.role.name.replaceAll("_", " ")}
+                                <div className={`${organization?.name ? "text-[14px]  font-[500]" : "text-[16px] text-amber-300 font-[600]"}`}>
+                                    {role.role.name.replaceAll("_", " ")}
+                                </div>
                             </div>
-                        </div>
                         </div>
                     );
                 })}
@@ -62,11 +62,13 @@ export function PcHomeBar() {
                     <div className="group-hover:underline text-md">Requested To Join</div>
                 </div>
             </div>
-            {roleData?.find('SUPER_ADMIN')&&(<div>
+            {roleData?.some((role) => role.role.name === "SUPER_ADMIN") && (
                 <div>
-                    Super Admin DashBoard!
+                    <div>
+                        Super Admin Dashboard!
+                    </div>
                 </div>
-            </div>)}
+            )}
         </div>
     )
 
