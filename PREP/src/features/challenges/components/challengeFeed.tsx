@@ -19,7 +19,7 @@ export function ChallengeFeed() {
                 {challenges?.map((challenge) => (
 
                     <ChallengeCard
-                    onClick={()=>navigate(`/challenge/${challenge.id}`)}
+                    
                     key={challenge.id} challenge={challenge} />
                 ))}
             </div>
