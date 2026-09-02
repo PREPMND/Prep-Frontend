@@ -63,7 +63,7 @@ export function PcHomeBar() {
                 </div>
                 {roleData?.some((role) => role.role.name === "SUPER_ADMIN") && (
                     <div className="">
-                        <div>
+                        <div className="text-[16px] text-amber-300 font-[600]">
                             Super Admin Dashboard!
                         </div>
                     </div>
