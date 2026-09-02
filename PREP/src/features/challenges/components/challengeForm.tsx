@@ -81,59 +81,46 @@ export function ChallengeForm() {
     const style = 'mt-2 w-full rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-800 px-4 py-[10px] text-sm outline-none focus:border-neutral-400 dark:border-neutral-800'
     if (submittedChallenge) {
         return (
-
-            <div>
-                <div className="mb-8">
-                    <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400">
-                        Societal Innovation Portal
+            
+            <div className="space-y-5 ">
+                <div className="rounded-xl light:bg-white light:text-neutral-900 dark:bg-neutral-700 dark:text-white border border-neutral-200 p-5 dark:border-neutral-800">
+                    <p className="text-sm font-medium text-neutral-900 dark:text-white">
+                        Challenge submitted successfully
                     </p>
-
-                    <h1 className="mt-2 text-3xl font-semibold tracking-tight text-neutral-900 dark:text-white">
-                        Submit a challenge
-                    </h1>
-
-                    <p className="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">
-                        Tell us about a problem affecting your community. The platform will
-                        help organize it and connect it with the right people over time.
+                    <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                        Your challenge has been submitted and will enter the review workflow.
                     </p>
                 </div>
-                <div className="space-y-5 ">
-                    <div className="rounded-xl light:bg-white light:text-neutral-900 dark:bg-neutral-700 dark:text-white border border-neutral-200 p-5 dark:border-neutral-800">
-                        <p className="text-sm font-medium text-neutral-900 dark:text-white">
-                            Challenge submitted successfully
-                        </p>
-                        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-                            Your challenge has been submitted and will enter the review workflow.
-                        </p>
-                    </div>
-                    {submittedChallenge.possibleDuplicates.length > 0 && (
-                        <SimilarChallenges
-                            challenges={submittedChallenge.possibleDuplicates}
-                            isLinking={isLinkingDuplicate}
-                            onSelectSameIssue={async (originalChallengeId) => {
-                                try {
-                                    setIsLinkingDuplicate(true);
-                                    await linkChallengeDuplicate(
-                                        submittedChallenge.challenge.id,
-                                        originalChallengeId,
-                                    );
-                                    setSubmittedChallenge((current) =>
-                                        current
-                                            ? {
-                                                ...current,
-                                                possibleDuplicates: [],
-                                            }
-                                            : null,
-                                    );
-                                } catch (error) {
-                                    console.error("Failed to link duplicate challenge:", error);
-                                } finally {
-                                    setIsLinkingDuplicate(false);
-                                }
-                            }}
-                        />
-                    )}
-                </div>
+
+                {submittedChallenge.possibleDuplicates.length > 0 && (
+                    <SimilarChallenges
+                        challenges={submittedChallenge.possibleDuplicates}
+                        isLinking={isLinkingDuplicate}
+                        onSelectSameIssue={async (originalChallengeId) => {
+                            try {
+                                setIsLinkingDuplicate(true);
+
+                                await linkChallengeDuplicate(
+                                    submittedChallenge.challenge.id,
+                                    originalChallengeId,
+                                );
+
+                                setSubmittedChallenge((current) =>
+                                    current
+                                        ? {
+                                            ...current,
+                                            possibleDuplicates: [],
+                                        }
+                                        : null,
+                                );
+                            } catch (error) {
+                                console.error("Failed to link duplicate challenge:", error);
+                            } finally {
+                                setIsLinkingDuplicate(false);
+                            }
+                        }}
+                    />
+                )}
             </div>
         );
     }
