@@ -43,14 +43,14 @@ export default function ChallengeDetailPage() {
               {media.map((item) => (
                 <div
                 key={item.id }
-                  className={`h-52 md:h-[40%] w-full md:w-[70%] shrink-0 overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
+                  className={`h-52 md:h-[40%] w-full  shrink-0 overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
                     }`}
                 >
                   <img
                     src={item.url}
                     alt={item.originalName}
                     onLoad={() => setImageLoaded(true)}
-                    className="h-52 md:h-[40%] w-full md:w-[%] rounded-lg object-cover"
+                    className="h-52 md:h-[40%] w-full md:w-[70%] rounded-lg object-cover"
                   />
                 </div>
               ))}
