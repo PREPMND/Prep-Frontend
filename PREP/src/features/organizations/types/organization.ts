@@ -56,8 +56,7 @@ export const ORGANIZATION_MEMBER_ROLES = {
 export type OrganizationMemberRole =
   (typeof ORGANIZATION_MEMBER_ROLES)[keyof typeof ORGANIZATION_MEMBER_ROLES];
 
-export type OrganizationMemberRole =
-  (typeof ORGANIZATION_MEMBER_ROLES)[keyof typeof ORGANIZATION_MEMBER_ROLES];
+
 
 export const ORGANIZATION_MEMBERSHIP_STATUSES = {
   PENDING: "pending",
