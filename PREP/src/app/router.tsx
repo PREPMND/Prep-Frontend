@@ -89,9 +89,9 @@ export const router = createBrowserRouter([
       {
         path: "/organizations/:id/membership-requests",
         element: (
-          <OrganizationAdminGuard organizationId={???}>
+          <OrganizationAdminRoute>
             <OrganizationMembershipRequests />
-          </OrganizationAdminGuard>
+          </OrganizationAdminRoute>
         ),
       },
 
