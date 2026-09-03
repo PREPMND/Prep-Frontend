@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InstitutionalAdminDashBoard = () => {
+export function  InstitutionalAdminDashBoard  () {
   return (
     <div>
       institutional admin
