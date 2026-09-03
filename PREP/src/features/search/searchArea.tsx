@@ -59,7 +59,7 @@ export function SearchArea({ onClose }: SearchAreaProps) {
 
   function handleOrganizationClick(organizationId: string) {
     onClose();
-    navigate(`/organizations/${organizationId}`);
+    navigate(`/organization/${organizationId}`);
   }
 
   return (
