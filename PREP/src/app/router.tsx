@@ -17,6 +17,7 @@ import ChallengeDetailPage from "../features/challenges/pages/challengeDetailPag
 import ChallengeLayout from "../layouts/challengeLayout";
 import { RoleGuard } from "../features/common/gaurds/roleGuards";
 import { StudentDashboard } from "../features/dashboard/student";
+import { InstitutionalAdminDashBoard } from "../features/dashboard/institutionalAdmin";
 
 export const router = createBrowserRouter([
   {
@@ -97,7 +98,7 @@ export const router = createBrowserRouter([
     path: "/dashboard/university",
     element: (
       <RoleGuard allowedRoles={["UNIVERSITY_ADMIN"]}>
-        <UniversityAdminDashboard />
+        <InstitutionalAdminDashBoard/>
       </RoleGuard>
     ),
   },
