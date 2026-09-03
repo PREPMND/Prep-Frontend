@@ -10,12 +10,23 @@ export function PcHomeBar() {
     const user = useAuthStore((state) => state.user);
     const { data: roleData } = useMyRole(user?.id);
     console.log(roleData);
-    
+
     const { data: organizations = [] } = useOrganizations();
     return (
         <div className="min-w-[15%] flex flex-col shadow-lime-200 shadow-lg cursor-default select-none *:select-none">
             
-            <div aria-label="profile" onClick={()=>navigate("/profile")} className="flex gap-2 my-4">
+
+            <SearchBox onClick={() => setIsSearchOpen(true)} />
+
+            {isSearchOpen && (
+                <SearchArea
+                    onClose={() => setIsSearchOpen(false)}
+                    onSearch={(query) => {
+                        console.log(query);
+                    }}
+                />
+            )}
+            <div aria-label="profile" onClick={() => navigate("/profile")} className="flex gap-2 my-4">
                 <div
                     className="w-8 h-8 bg-amber-500  rounded-[50%]">
                     <div className="h-full flex justify-center items-center text-[18px] font-bold">{user?.firstName?.slice(0, 1).toUpperCase()}</div>
@@ -36,9 +47,9 @@ export function PcHomeBar() {
                             <div
                                 className="w-4 h-4 bg-amber-200 animate-pulse duration-1000 rounded-full"></div>
                             <div key={role.id} className="">
-                                <div 
-                                onClick={()=>navigate(`/organization/${organization?.id}`)}
-                                className={`text-sm  dark:text-neutral-400 ${organization?.name ? "text-[14px] text-neutral-500 font-[500]" : "text-[14px] text-mauve-400! font-[600]"}`}>
+                                <div
+                                    onClick={() => navigate(`/organization/${organization?.id}`)}
+                                    className={`text-sm  dark:text-neutral-400 ${organization?.name ? "text-[14px] text-neutral-500 font-[500]" : "text-[14px] text-mauve-400! font-[600]"}`}>
                                     {organization?.name ?? "Platform"}
                                 </div>
 
