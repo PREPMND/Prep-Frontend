@@ -1,6 +1,5 @@
 import React from 'react'
-
-const StudentDashboard = () => {
+ StudentDashboard = () => {
   return (
     <div>
       student
