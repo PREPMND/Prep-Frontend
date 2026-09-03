@@ -279,7 +279,7 @@ export function ChallengeForm() {
                 {isGeneratingImage
                     ? "Generating visual..."
                     : isSubmitting
-                        ? "Submitting challenge..."
+                        ? "Submitting challenge...<div>
                         : "Submit challenge"}
             </button>
         </form>
