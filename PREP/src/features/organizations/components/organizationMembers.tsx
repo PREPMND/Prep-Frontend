@@ -114,7 +114,7 @@ export function OrganizationMembers({
                   {member.status}
                 </p>
               </div>
-
+              
               <div className="flex items-center gap-3">
                 <select
                   value={member.role}
