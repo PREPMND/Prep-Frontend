@@ -1,9 +1,7 @@
-// SearchArea.tsx
-
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getOrganizations } from "../organizations/services/organization";
-import type { Organization } from "../organizations/types/organization";
+import { getOrganizations } from "../services/organization";
+import type { Organization } from "../types/organization";
 
 interface SearchAreaProps {
   onClose: () => void;
@@ -51,7 +49,7 @@ export function SearchArea({ onClose }: SearchAreaProps) {
     const value = query.trim().toLowerCase();
 
     if (!value) return organizations.slice(0, 6);
-    console.log(organizations);
+
     return organizations
       .filter((organization) =>
         organization.name.toLowerCase().includes(value),
