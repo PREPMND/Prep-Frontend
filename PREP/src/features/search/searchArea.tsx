@@ -51,7 +51,7 @@ export function SearchArea({ onClose }: SearchAreaProps) {
     const value = query.trim().toLowerCase();
 
     if (!value) return organizations.slice(0, 6);
-
+    console.log(organizations);
     return organizations
       .filter((organization) =>
         organization.name.toLowerCase().includes(value),
