@@ -1,6 +1,6 @@
 import React from 'react'
 
-const institutionalAdmin = () => {
+const institutionalAdminDashBoard = () => {
   return (
     <div>
       institutional admin
