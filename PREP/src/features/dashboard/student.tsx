@@ -1,5 +1,5 @@
 import React from 'react'
- StudentDashboard = () => {
+export function StudentDashboard () {
   return (
     <div>
       student
@@ -8,4 +8,3 @@ import React from 'react'
   )
 }
 
-export default student
