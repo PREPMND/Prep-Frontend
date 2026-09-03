@@ -34,7 +34,7 @@ export function PcHomeBar() {
                                 className="w-4 h-4 bg-amber-200 animate-pulse duration-1000 rounded-full"></div>
                             <div key={role.id} className="">
                                 <div 
-                                
+                                onClick={()=>navigate()}
                                 className={`text-sm  dark:text-neutral-400 ${organization?.name ? "text-[14px] text-neutral-500 font-[500]" : "text-[14px] text-mauve-400! font-[600]"}`}>
                                     {organization?.name ?? "Platform"}
                                 </div>
