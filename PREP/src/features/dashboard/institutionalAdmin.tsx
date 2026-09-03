@@ -8,4 +8,3 @@ export function  InstitutionalAdminDashBoard  () {
   )
 }
 
-export default institutionalAdmin
