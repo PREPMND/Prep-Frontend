@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SuperAdminDashboard = () => {
+export function SuperAdminDashboard  ()  {
   return (
     <div>
       super admin
