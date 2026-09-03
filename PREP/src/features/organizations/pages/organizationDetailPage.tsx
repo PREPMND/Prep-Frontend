@@ -13,7 +13,7 @@ import { OrganizationMembers } from "../components/organizationMembers";
 import { Link } from "react-router-dom";
 export default function OrganizationDetailPage() {
   const { id } = useParams<{ id: string }>();
-  
+
   const {
     data: organization,
     isLoading,
@@ -86,7 +86,7 @@ export default function OrganizationDetailPage() {
                   .replace(/\b\w/g, (letter) => letter.toUpperCase())}
               </p>
             </div>
-            
+
           </div>
 
           {!membership && (
@@ -170,6 +170,12 @@ export default function OrganizationDetailPage() {
           </div>
         )}
       </div>
+      <Link
+        to={`/organizations/${organization.id}/membership-requests`}
+        className="..."
+      >
+        Manage membership requests
+      </Link>
     </div>
   );
 }
