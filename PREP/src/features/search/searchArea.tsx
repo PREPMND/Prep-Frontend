@@ -93,7 +93,7 @@ export function SearchArea({ onClose }: SearchAreaProps) {
           <button
             type="button"
             onClick={onClose}
-            className="rounded-md px-2 py-1 text-xs text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+            className="rounded-md px-2 py-1 text-xs text-neutral-500 light:hover:bg-neutral-100 dark:hover:bg-neutral-900"
           >
             ESC
           </button>
@@ -101,11 +101,11 @@ export function SearchArea({ onClose }: SearchAreaProps) {
 
         <div className="max-h-80 overflow-y-auto p-2">
           {isLoading ? (
-            <p className="px-3 py-6 text-center text-sm text-neutral-500 dark:text-neutral-400">
+            <p className="px-3 py-6 text-center text-sm light:text-neutral-500 dark:text-neutral-400">
               Loading organizations...
             </p>
           ) : filteredOrganizations.length === 0 ? (
-            <p className="px-3 py-6 text-center text-sm text-neutral-500 dark:text-neutral-400">
+            <p className="px-3 py-6 text-center text-sm light:text-neutral-500 dark:text-neutral-400">
               No organizations found.
             </p>
           ) : (
