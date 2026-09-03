@@ -1,10 +1,10 @@
 import React from 'react'
 
-const student = () => {
+const StudentDashboard = () => {
   return (
     <div>
       student
-      
+
     </div>
   )
 }
