@@ -13,7 +13,7 @@ export function PcHomeBar() {
     const user = useAuthStore((state) => state.user);
     const { data: roleData } = useMyRole(user?.id);
     console.log(roleData);
-    useOrganizations();
+    
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const { data: organizations = [] } = useOrganizations();
     return (
