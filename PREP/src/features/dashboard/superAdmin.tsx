@@ -3,7 +3,7 @@ import React from 'react'
 const superAdmin = () => {
   return (
     <div>
-      hry
+      super admin
     </div>
   )
 }
