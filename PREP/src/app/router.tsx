@@ -15,6 +15,7 @@ import OrganizationsPage from "../features/organizations/pages/organizationsPage
 import { ChallengeFeed } from "../features/challenges/components/challengeFeed";
 import ChallengeDetailPage from "../features/challenges/pages/challengeDetailPage";
 import ChallengeLayout from "../layouts/challengeLayout";
+import { RoleGuard } from "../features/common/gaurds/roleGuards";
 
 export const router = createBrowserRouter([
   {
