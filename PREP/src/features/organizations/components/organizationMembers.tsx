@@ -114,7 +114,7 @@ export function OrganizationMembers({
                   {member.status}
                 </p>
               </div>
-              <div>{member.}</div>
+              <div>{member.role}</div>
               
               <div className=" items-center hidden gap-3">
                 <select
