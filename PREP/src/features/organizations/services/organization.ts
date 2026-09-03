@@ -24,7 +24,7 @@ export async function createOrganization(
 export async function getOrganizations(): Promise<Organization[]> {
   const response =
     await apiClientOrganization.get<Organization[]>("/organizations");
-
+  console.log(response.data);
   return response.data;
 }
 
