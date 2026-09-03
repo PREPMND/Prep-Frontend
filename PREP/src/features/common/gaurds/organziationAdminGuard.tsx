@@ -3,30 +3,31 @@ import { useAuthStore } from "../../auth/store/authStore";
 import { useMyRole } from "../../profile/hooks/useMyRole";
 
 interface OrganizationAdminGuardProps {
-  organizationId: string;
-  children: React.ReactNode;
+    organizationId: string;
+    children: React.ReactNode;
 }
 
 export function OrganizationAdminGuard({
-  organizationId,
-  children,
+    organizationId,
+    children,
 }: OrganizationAdminGuardProps) {
-  const user = useAuthStore((state) => state.user);
-  const { data: roleData, isLoading } = useMyRole(user?.id);
+    const user = useAuthStore((state) => state.user);
+    const { data: roleData, isLoading } = useMyRole(user?.id);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
 
-  const hasAccess = roleData?.some(
-    (role) =>
-      role.role.name === "UNIVERSITY_ADMIN" &&
-      role.organizationId === organizationId,
-  );
+    const hasAccess = roleData?.some(
+        (role) =>
+            role.role.name === "SUPER_ADMIN" ||
+            (role.role.name === "UNIVERSITY_ADMIN" &&
+                role.organizationId === organizationId),
+    );
 
-  if (!hasAccess) {
-    return <Navigate to="/" replace />;
-  }
+    if (!hasAccess) {
+        return <Navigate to="/" replace />;
+    }
 
-  return children;
+    return children;
 }
