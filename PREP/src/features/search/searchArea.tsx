@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getOrganizations } from "../services/organization";
-import type { Organization } from "../organizations/";
+import type { Organization } from "../organizations/types/organization";
 
 interface SearchAreaProps {
   onClose: () => void;
