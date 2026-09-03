@@ -2,7 +2,7 @@ export function SearchBox(){
     return (
         <>
         <div>
-            <button className="bg-neutral-600 px-">
+            <button className="bg-neutral-600 px-2 py-[6px] ">
                 Search
             </button>
         </div>
