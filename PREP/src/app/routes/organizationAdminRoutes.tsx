@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { OrganizationAdminGuard } from "../";
+import { OrganizationAdminGuard } from "../../features/";
 
 interface OrganizationAdminRouteProps {
   children: React.ReactNode;
