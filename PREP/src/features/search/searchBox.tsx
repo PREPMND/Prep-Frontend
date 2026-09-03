@@ -2,8 +2,8 @@ export function SearchBox(){
     return (
         <>
         <div>
-            <button>
-                
+            <button className="bg-">
+                Search
             </button>
         </div>
         </>
