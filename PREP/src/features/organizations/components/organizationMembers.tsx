@@ -127,8 +127,35 @@ export function OrganizationMembers({
                   }
                   className="rounded-lg border light:border-neutral-300 dark:border-neutral-700 light:bg-white dark:bg-neutral-900 px-3 py-2 text-sm"
                 >
-                  <option value="owner">Owner</option>
-                  <option value="admin">Admin</option>
+                  <option value="student">Student</option>
+                  <option value="researcher">Researcher</option>
+                  <option value="faculty">Faculty</option>
+                  <option value="university_admin">University Admin</option>
+                  <option value="institutional_admin">Institutional Admin</option>
+
+                  <option value="industry_member">Industry Member</option>
+                  <option value="industry_mentor">Industry Mentor</option>
+                  <option value="industry_admin">Industry Admin</option>
+
+                  <option value="ngo_member">NGO Member</option>
+                  <option value="ngo_admin">NGO Admin</option>
+
+                  <option value="community_member">Community Member</option>
+                  <option value="volunteer">Volunteer</option>
+
+                  <option value="expert">Expert</option>
+                  <option value="mentor">Mentor</option>
+                  <option value="solution_reviewer">Solution Reviewer</option>
+                  <option value="evaluator">Evaluator</option>
+
+                  <option value="officer">Officer</option>
+                  <option value="department_officer">Department Officer</option>
+                  <option value="field_officer">Field Officer</option>
+                  <option value="government_reviewer">Government Reviewer</option>
+
+                  <option value="project_lead">Project Lead</option>
+                  <option value="event_manager">Event Manager</option>
+
                   <option value="member">Member</option>
                 </select>
 
