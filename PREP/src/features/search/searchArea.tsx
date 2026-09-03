@@ -114,13 +114,13 @@ export function SearchArea({ onClose }: SearchAreaProps) {
                 key={organization.id}
                 type="button"
                 onClick={() => handleOrganizationClick(organization.id)}
-                className="w-full rounded-xl px-3 py-3 text-left hover:bg-neutral-100 dark:hover:bg-neutral-900"
+                className="w-full rounded-xl px-3 py-3 text-left light:hover:bg-neutral-100 dark:hover:bg-neutral-900"
               >
-                <p className="text-sm font-medium text-neutral-900 dark:text-white">
+                <p className="text-sm font-medium light:text-neutral-900 dark:text-white">
                   {organization.name}
                 </p>
 
-                <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                <p className="mt-1 text-xs light:text-neutral-500 dark:text-neutral-400">
                   {organization.type}
                 </p>
               </button>
