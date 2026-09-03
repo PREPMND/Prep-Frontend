@@ -115,7 +115,7 @@ export function OrganizationMembers({
                 </p>
               </div>
               
-              <div className="flex items-center gap-3">
+              <div className=" items-center hidden gap-3">
                 <select
                   value={member.role}
                   disabled={updatingUserId === member.userId}
