@@ -274,7 +274,7 @@ export function ChallengeForm() {
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-[70%] md:w-[50%] mx-auto rounded-2xl! light:bg-neutral-800 bg-neutral-900 px-3 py-[10px] text-sm font-medium light:text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-white dark:text-neutral-900"
+                className="w-[70%] md:w-[50%] rounded-2xl! light:bg-neutral-800 bg-neutral-900 px-3 py-[10px] text-sm font-medium light:text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-white dark:text-neutral-900"
             >
                 {isGeneratingImage
                     ? "Generating visual..."
