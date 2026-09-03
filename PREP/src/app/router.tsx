@@ -20,6 +20,7 @@ import { StudentDashboard } from "../features/dashboard/student";
 import { InstitutionalAdminDashBoard } from "../features/dashboard/institutionalAdmin";
 import { SuperAdminDashboard } from "../features/dashboard/superAdmin";
 import { OrganizationAdminGuard } from "../features/common/gaurds/organziationAdminGuard";
+import { OrganizationMembershipRequests } from "../features/organizations/components/organizationMembershipRequest";
 
 export const router = createBrowserRouter([
   {
