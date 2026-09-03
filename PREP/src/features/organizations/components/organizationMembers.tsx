@@ -114,7 +114,7 @@ export function OrganizationMembers({
                   {member.status}
                 </p>
               </div>
-              
+
               <div className="flex items-center gap-3">
                 <select
                   value={member.role}
@@ -158,7 +158,21 @@ export function OrganizationMembers({
 
                   <option value="member">Member</option>
                 </select>
+                <div>
+                  <p className="font-medium text-neutral-900 dark:text-white">
+                    {request.userId}
+                  </p>
 
+                  <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+                    Role: {request.role}
+                  </p>
+
+                  {request.message && (
+                    <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                      {request.message}
+                    </p>
+                  )}
+                </div>
                 <button
                   type="button"
                   disabled={removingUserId === member.userId}
