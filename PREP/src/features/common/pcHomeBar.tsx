@@ -4,6 +4,7 @@ import { useAuthStore } from "../auth/store/authStore";
 import { useMyRole } from "../profile/hooks/useMyRole";
 import { useOrganizations } from "../organizations/hooks/useOrganization";
 import { dashboards } from "../../constants/dashboards";
+import { SearchBox } from "../search/searchBox";
 
 export function PcHomeBar() {
     const navigate = useNavigate();
