@@ -19,7 +19,7 @@ export function PcHomeBar() {
         <div className="min-w-[15%] flex flex-col shadow-lime-200 shadow-lg cursor-default select-none *:select-none">
             
 
-            <SearchBox onClick={() => setIsSearchOpen(true)} />
+            <SearchBox onClick={(prev) => setIsSearchOpen(!prev)} />
 
             {isSearchOpen && (
                 <SearchArea
