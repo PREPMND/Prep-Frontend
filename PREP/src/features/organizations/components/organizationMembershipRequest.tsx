@@ -12,10 +12,8 @@ export function OrganizationMembershipRequests() {
 
   const { data: members = [], isLoading } =
     useOrganizationMembers(organizationId);
-  console.log(members);
-  const pendingRequests = members.filter(
-    (member) => member.status === "pending",
-  );
+    console.log(members);
+    
   const approveMutation = useApproveMembershipRequest(
     organizationId!,
   );
