@@ -109,7 +109,7 @@ export async function approveMembershipRequest(
   const response = await apiClientOrganization.patch<OrganizationMembership>(
     `/organizations/${organizationId}/members/${userId}/approve`,
   );
-
+  console.log(res)
   return response.data;
 }
 
