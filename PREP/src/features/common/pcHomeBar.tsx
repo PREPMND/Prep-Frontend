@@ -9,6 +9,8 @@ export function PcHomeBar() {
     const navigate = useNavigate();
     const user = useAuthStore((state) => state.user);
     const { data: roleData } = useMyRole(user?.id);
+    console.log(roleData);
+    
     const { data: organizations = [] } = useOrganizations();
     return (
         <div className="min-w-[15%] flex flex-col shadow-lime-200 shadow-lg cursor-default select-none *:select-none">
