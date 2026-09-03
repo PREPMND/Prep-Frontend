@@ -87,7 +87,7 @@ export function SearchArea({ onClose }: SearchAreaProps) {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search organizations..."
-            className="w-full bg-transparent text-sm text-neutral-900 outline-none placeholder:text-neutral-400 dark:text-white"
+            className="w-full bg-transparent text-sm light:text-neutral-900 outline-none placeholder:text-neutral-400 dark:text-white"
           />
 
           <button
