@@ -5,13 +5,14 @@ import { useMyRole } from "../profile/hooks/useMyRole";
 import { useOrganizations } from "../organizations/hooks/useOrganization";
 import { dashboards } from "../../constants/dashboards";
 import { SearchBox } from "../search/searchBox";
+import { useState } from "react";
 
 export function PcHomeBar() {
     const navigate = useNavigate();
     const user = useAuthStore((state) => state.user);
     const { data: roleData } = useMyRole(user?.id);
     console.log(roleData);
-
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
     const { data: organizations = [] } = useOrganizations();
     return (
         <div className="min-w-[15%] flex flex-col shadow-lime-200 shadow-lg cursor-default select-none *:select-none">
