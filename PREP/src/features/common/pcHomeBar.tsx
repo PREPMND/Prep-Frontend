@@ -6,6 +6,7 @@ import { useOrganizations } from "../organizations/hooks/useOrganization";
 import { dashboards } from "../../constants/dashboards";
 import { SearchBox } from "../search/searchBox";
 import { useState } from "react";
+import { SearchArea } from "../search/searchArea";
 
 export function PcHomeBar() {
     const navigate = useNavigate();
