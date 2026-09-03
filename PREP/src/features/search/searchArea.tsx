@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getOrganizations } from "../services/organization";
+import { getOrganizations } from "../organizations";
 import type { Organization } from "../organizations/types/organization";
 
 interface SearchAreaProps {
