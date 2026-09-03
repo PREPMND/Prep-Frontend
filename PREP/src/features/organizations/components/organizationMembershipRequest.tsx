@@ -28,7 +28,7 @@ export function OrganizationMembershipRequests() {
   }
 
   const pendingRequests = members.filter(
-    (member) => member.status === "PENDING",
+    (member) => member.status === "pending",
   );
 
   const handleApprove = async (userId: string) => {
