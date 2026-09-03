@@ -17,7 +17,7 @@ export function PcHomeBar() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const { data: organizations = [] } = useOrganizations();
     return (
-        <div className="min-w-[15%] flex flex-col scrollbar-none shadow-lime-200 shadow-lg cursor-default select-none *:select-none">
+        <div className="min-w-[15%] flex flex-col scrollbar-gutter-stable shadow-lime-200 shadow-lg cursor-default select-none *:select-none">
             
 
             <div onClick={() => setIsSearchOpen(true)}>
