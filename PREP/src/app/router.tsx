@@ -21,6 +21,7 @@ import { InstitutionalAdminDashBoard } from "../features/dashboard/institutional
 import { SuperAdminDashboard } from "../features/dashboard/superAdmin";
 import { OrganizationAdminGuard } from "../features/common/gaurds/organziationAdminGuard";
 import { OrganizationMembershipRequests } from "../features/organizations/components/organizationMembershipRequest";
+import { OrganizationAdminRoute } from "./routes/organizationAdminRoutes";
 
 export const router = createBrowserRouter([
   {
