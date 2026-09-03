@@ -12,7 +12,8 @@ export function OrganizationMembershipRequests() {
 
   const { data: members = [], isLoading } =
     useOrganizationMembers(organizationId);
-    log
+    console.log(data);
+    
   const approveMutation = useApproveMembershipRequest(
     organizationId!,
   );
