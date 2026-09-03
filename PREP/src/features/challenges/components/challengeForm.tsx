@@ -279,8 +279,8 @@ export function ChallengeForm() {
                 {isGeneratingImage
                     ? "Generating visual..."
                     : isSubmitting
-                        ? <div className="text-center m-auto">Submitting challenge...</div>
-                        : <div className="m-auto text-center">Submit challenge</div>}
+                        ? <div className="text-center m-auto w-full">Submitting challenge...</div>
+                        : <div className="mx-auto text-center">Submit challenge</div>}
             </button>
         </form>
     );
