@@ -68,7 +68,7 @@ export function SearchArea({ onClose }: SearchAreaProps) {
     <div className="fixed inset-0 z-50 light:bg-black/20 backdrop-blur-sm dark:bg-black/40">
       <div
         ref={searchRef}
-        className="absolute left-1/2 top-24 w-[min(700px,calc(100%-2rem))] -translate-x-1/2 overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-2xl dark:border-neutral-800 dark:bg-neutral-950"
+        className="absolute left-1/2 top-24 w-[min(700px,calc(100%-2rem))] -translate-x-1/2 overflow-hidden rounded-2xl border border-neutral-200 light:bg-white shadow-2xl dark:border-neutral-800 dark:bg-neutral-950"
       >
         <div className="flex items-center gap-3 border-b border-neutral-200 px-4 py-3 dark:border-neutral-800">
           <svg
