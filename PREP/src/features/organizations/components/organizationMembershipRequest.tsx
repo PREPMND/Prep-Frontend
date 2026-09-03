@@ -12,7 +12,7 @@ export function OrganizationMembershipRequests() {
 
   const { data: members = [], isLoading } =
     useOrganizationMembers(organizationId);
-
+    log
   const approveMutation = useApproveMembershipRequest(
     organizationId!,
   );
