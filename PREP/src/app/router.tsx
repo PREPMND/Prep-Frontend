@@ -19,6 +19,7 @@ import { RoleGuard } from "../features/common/gaurds/roleGuards";
 import { StudentDashboard } from "../features/dashboard/student";
 import { InstitutionalAdminDashBoard } from "../features/dashboard/institutionalAdmin";
 import { SuperAdminDashboard } from "../features/dashboard/superAdmin";
+import { OrganizationAdminGuard } from "../features/common/gaurds/organziationAdminGuard";
 
 export const router = createBrowserRouter([
   {
@@ -84,6 +85,14 @@ export const router = createBrowserRouter([
         path: "/organizations/:id",
         element: <OrganizationDetailPage />,
       },
+      {
+        path: "/organizations/:id/membership-requests",
+        element: (
+          <OrganizationAdminGuard organizationId={???}>
+            <OrganizationMembershipRequests />
+          </OrganizationAdminGuard>
+        ),
+      },
 
     ],
   },
@@ -99,7 +108,7 @@ export const router = createBrowserRouter([
     path: "/dashboard/university",
     element: (
       <RoleGuard allowedRoles={["UNIVERSITY_ADMIN"]}>
-        <InstitutionalAdminDashBoard/>
+        <InstitutionalAdminDashBoard />
       </RoleGuard>
     ),
   },
