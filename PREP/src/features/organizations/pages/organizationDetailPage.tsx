@@ -10,10 +10,10 @@ import {
   ORGANIZATION_MEMBERSHIP_STATUSES,
 } from "../types/organization";
 import { OrganizationMembers } from "../components/organizationMembers";
-
+import { Link } from "react-router-dom";
 export default function OrganizationDetailPage() {
   const { id } = useParams<{ id: string }>();
-
+  
   const {
     data: organization,
     isLoading,
