@@ -26,9 +26,7 @@ export function PcHomeBar() {
             {isSearchOpen && (
                 <SearchArea
                     onClose={() => setIsSearchOpen(false)}
-                    onSearch={(query) => {
-                        console.log(query);
-                    }}
+                    
                 />
             )}
             <div aria-label="profile" onClick={() => navigate("/profile")} className="flex gap-2 my-4">
