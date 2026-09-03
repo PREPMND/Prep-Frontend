@@ -280,7 +280,7 @@ export function ChallengeForm() {
                     ? "Generating visual..."
                     : isSubmitting
                         ? <div className="text-center m-auto w-full">Submitting challenge...</div>
-                        : <div className="mx-auto text-center">Submit challenge</div>}
+                        : <div className="mx-auto text-center flex">Submit challenge</div>}
             </button>
         </form>
     );
