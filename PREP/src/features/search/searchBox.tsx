@@ -1,1 +1,3 @@
-export function Search
+export function SearchBox(){
+    
+}
