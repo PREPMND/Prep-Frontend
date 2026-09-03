@@ -84,7 +84,7 @@ export const router = createBrowserRouter([
         element: <CreateOrganizationPage />,
       },
       {
-        path: "/organizations/:id",
+        path: "/organization/:id",
         element: <OrganizationDetailPage />,
       },
       {
