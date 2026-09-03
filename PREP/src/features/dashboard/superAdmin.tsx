@@ -8,4 +8,3 @@ export function SuperAdminDashboard  ()  {
   )
 }
 
-export default superAdmin
