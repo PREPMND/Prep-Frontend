@@ -18,6 +18,7 @@ import ChallengeLayout from "../layouts/challengeLayout";
 import { RoleGuard } from "../features/common/gaurds/roleGuards";
 import { StudentDashboard } from "../features/dashboard/student";
 import { InstitutionalAdminDashBoard } from "../features/dashboard/institutionalAdmin";
+import { SuperAdminDashboard } from "../features/dashboard/superAdmin";
 
 export const router = createBrowserRouter([
   {
