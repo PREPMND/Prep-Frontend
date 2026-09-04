@@ -79,27 +79,10 @@ export const router = createBrowserRouter([
     children: [
       {element:<InfoLayout />,
         children:[
+
+        ]
       }
-      {
-        path: "/organizations",
-        element: <OrganizationsPage />,
-      },
-      {
-        path: "/organizations/create",
-        element: <CreateOrganizationPage />,
-      },
-      {
-        path: "/organization/:id",
-        element: <OrganizationDetailPage />,
-      },
-      {
-        path: "/organizations/:id/membership-requests",
-        element: (
-          <OrganizationAdminRoute>
-            <OrganizationMembershipRequests />
-          </OrganizationAdminRoute>
-        ),
-      },
+      
 
     ],
   },
