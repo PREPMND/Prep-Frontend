@@ -8,7 +8,6 @@ import type {
   OrganizationMemberRole,
   OrganizationMembership,
 } from "../types/organization";
-import { useToast } from "../../common/toastProvider";
 
 interface OrganizationMembersProps {
   organizationId: string;
@@ -21,12 +20,6 @@ export function OrganizationMembers({
   const [isLoading, setIsLoading] = useState(true);
   const [updatingUserId, setUpdatingUserId] = useState<string | null>(null);
   const [removingUserId, setRemovingUserId] = useState<string | null>(null);
-  const [isJoinOpen, setIsJoinOpen] = useState(false);
-  const [joinRole, setJoinRole] =
-    useState<OrganizationMemberRole>("student");
-  const [joinMessage, setJoinMessage] = useState("");
-
-  const { showToast } = useToast();
   useEffect(() => {
     async function loadMembers() {
       try {
@@ -203,15 +196,6 @@ export function OrganizationMembers({
             </div>
           ))}
         </div>
-      )}
-      {!membership && (
-        <button
-          type="button"
-          onClick={handleJoin}
-          className="shrink-0 rounded-xl bg-neutral-900 px-4 py-2.5 text-sm font-medium text-white dark:bg-white dark:text-neutral-900"
-        >
-          Request to join
-        </button>
       )}
     </section>
   );
