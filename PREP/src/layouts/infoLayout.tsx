@@ -6,7 +6,7 @@ export default function InfoLayout() {
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 light:bg-[radial-gradient(circle_at_20%_20%,rgba(163,230,53,0.08),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(96,165,250,0.07),transparent_35%),radial-gradient(circle_at_50%_90%,rgba(167,139,250,0.07),transparent_40%)] dark:bg-[radial-gradient(circle_at_20%_20%,rgba(163,230,53,0.05),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.05),transparent_35%),radial-gradient(circle_at_50%_90%,rgba(139,92,246,0.05),transparent_40%)]" />
 
-        <div className="absolute left-1/2 top-[-12rem] h-[30rem] w-[30rem] -translate-x-1/2 rounded-full blur-[120px] light:bg-emerald-300/15 dark:bg-emerald-400/10 animate-pulse" />
+        <div className="absolute left-1/2 top-[-12rem] h-[30rem] w-[30rem] -translate-x-1/2 rounded-full blur-[120px] light:bg-emerald-300/15 dark:bg-emerald-400 animate-pulse" />
 
         <div className="absolute right-[-8rem] top-[20%] h-[24rem] w-[24rem] rounded-full blur-[120px] light:bg-blue-300/10 dark:bg-blue-500/10 animate-[float_12s_ease-in-out_infinite]" />
 
