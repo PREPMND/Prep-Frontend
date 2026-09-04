@@ -13,11 +13,11 @@ export default function InfoLayout() {
 
         <div className="absolute bottom-[-10rem] left-[-8rem] h-[26rem] w-[26rem] rounded-full light:bg-violet-300/15 dark:bg-violet-500/10 blur-[120px] animate-[float_12s_ease-in-out_infinite_reverse]" />
 
-        <div className="absolute left-[15%] top-[35%] h-2 w-2 rounded-full bg-emerald-400/60 shadow-[0_0_25px_rgba(52,211,153,0.8)] animate-pulse" />
+        <div className="absolute left-[15%] top-[35%] h-2 w-2 rounded-full light:bg-emerald-400/60 dark:bg-emerald-400/60 shadow-[0_0_25px_rgba(52,211,153,0.8)] animate-pulse" />
 
-        <div className="absolute right-[20%] top-[25%] h-1.5 w-1.5 rounded-full bg-blue-400/60 shadow-[0_0_20px_rgba(96,165,250,0.8)] animate-pulse [animation-delay:1s]" />
+        <div className="absolute right-[20%] top-[25%] h-1.5 w-1.5 rounded-full light:bg-blue-400/60 dark:bg-blue-400/60 shadow-[0_0_20px_rgba(96,165,250,0.8)] animate-pulse [animation-delay:1s]" />
 
-        <div className="absolute bottom-[25%] left-[30%] h-1.5 w-1.5 rounded-full bg-violet-400/60 shadow-[0_0_20px_rgba(167,139,250,0.8)] animate-pulse [animation-delay:2s]" />
+        <div className="absolute bottom-[25%] left-[30%] h-1.5 w-1.5 rounded-full light:bg-violet-400/60 dark:bg-violet-400/60 shadow-[0_0_20px_rgba(167,139,250,0.8)] animate-pulse [animation-delay:2s]" />
 
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-50/80 dark:to-[#050505]/90" />
       </div>
