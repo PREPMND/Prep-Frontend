@@ -44,7 +44,10 @@ function ChallengeCard({
     const { data: media = [] } = useMedia(challenge.mediaIds ?? []);
     const [imageLoaded, setImageLoaded] = useState(false);
     const navigate = useNavigate();
-    c
+    const { showToast } = useToast();
+    useEffect(() => {
+        showToast("Click on a challenge to view details and participate!");
+    }, [showToast]);
     const imageWidth=window.innerWidth < 640 ? 320 : 640;
     return (
         <div onClick={() => navigate(`/challenge/${challenge.id}`)}>
@@ -69,7 +72,7 @@ function ChallengeCard({
                                         }`}
                                 >
                                     <img
-                                        src={getCloudinaryUrl(item.url, imageWidth)}
+                                        src={getCloudinaryUrl(item.url, 640)}
                                         alt={item.originalName}
                                         onLoad={() => setImageLoaded(true)}
                                         loading={index === 0 ? "eager" : "lazy"}
