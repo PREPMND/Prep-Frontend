@@ -99,7 +99,7 @@ function RoleCard({
 
           {organizationName && (
             <p className="mt-3 text-sm font-medium text-neutral-700 dark:text-neutral-300">
-              {organizationName}
+              {organizationName.replace(/\b\w/g, (letter) => letter.toUpperCase())}
             </p>
           )}
         </div>
