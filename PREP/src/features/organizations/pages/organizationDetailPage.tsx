@@ -184,12 +184,12 @@ export default function OrganizationDetailPage() {
         <OrganizationMembers organizationId={organization.id} />
 
         {isActive && (
-          <div className="mt-8 border-t pt-6 light:border-pink-200 dark:border-pink-800">
+          <div className="mt-8 border-t pt-6 mx-auto light:border-pink-200 dark:border-pink-800">
             <button
               type="button"
               onClick={handleLeave}
               disabled={leaveMutation.isPending}
-              className="text-sm font-medium px-3 bg-neutral-800 py-3 hover:bg-pink-100 hover:text-red-800 transition-all duration-300 ease-in-out rounded-lg!  light:text-red-600 border border-red-500! disabled:opacity-50 dark:text-red-400"
+              className="text-sm font-medium px-3 bg-neutral-800 py-2 hover:bg-pink-100 hover:text-red-800 transition-all duration-300 ease-in-out rounded-lg!  light:text-red-600 border border-red-500! disabled:opacity-50 dark:text-red-400"
             >
               {leaveMutation.isPending
                 ? "Leaving..."
