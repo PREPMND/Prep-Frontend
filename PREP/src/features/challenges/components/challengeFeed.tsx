@@ -41,7 +41,7 @@ function ChallengeCard({
 }: {
     challenge: Challenge;
 }) {
-    const { data: media = [] } = useMedia(challenge.mediaIds ?? []);
+    const media = challenge.media ?? [];
     const [imageLoaded, setImageLoaded] = useState(false);
     const navigate = useNavigate();
     const { showToast } = useToast();
