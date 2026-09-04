@@ -9,7 +9,6 @@ import { useToast } from "../../common/toastProvider";
 export function ChallengeFeed() {
     const { data: challenges, isLoading } = useChallenges();
     const navigate = useNavigate();
-    const { showToast } = useToast();
 
     return (
 
@@ -44,8 +43,9 @@ function ChallengeCard({
     const { data: media = [] } = useMedia(challenge.mediaIds ?? []);
     const [imageLoaded, setImageLoaded] = useState(false);
     const navigate = useNavigate();
+    const { showToast } = useToast();
     useState(() => {
-        showToast("info", "Click on a challenge to view details and participate!");
+        useToast("info", "Click on a challenge to view details and participate!");
     })
     return (
         <div onClick={() => navigate(`/challenge/${challenge.id}`)}>
