@@ -10,7 +10,7 @@ import type {
 } from "../types/organization";
 import { useAuthStore } from "../../auth/store/authStore";
 import { useMyRole } from "../../profile/hooks/useMyRole";
-
+import { useMyMemberships } from "../hooks/useOrganization";
 interface OrganizationMembersProps {
   organizationId: string;
 }
