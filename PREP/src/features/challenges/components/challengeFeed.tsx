@@ -54,9 +54,9 @@ function ChallengeCard({
         typeof window !== "undefined" && window.innerWidth < 640
             ? 320
             : 640;
-
+    console.log("Challenge media:", challenge.media);
     const media = challenge.media ?? [];
-    
+
     return (
         <div onClick={() => navigate(`/challenge/${challenge.id}`)}>
             <article
