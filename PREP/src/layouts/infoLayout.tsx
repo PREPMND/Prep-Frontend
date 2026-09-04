@@ -24,7 +24,7 @@ export default function InfoLayout() {
 
       {/* Content */}
       <main className="relative z-10 mx-auto min-h-screen w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="animate-[fadeIn_0.5s_ease-out]">
+        <div className="animate-[fadeIn_1.0s_ease-out]">
           <Outlet />
         </div>
       </main>
