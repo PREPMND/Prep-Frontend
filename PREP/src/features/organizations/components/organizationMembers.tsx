@@ -8,6 +8,7 @@ import type {
   OrganizationMemberRole,
   OrganizationMembership,
 } from "../types/organization";
+import { useToast } from "../../common/toastProvider";
 
 interface OrganizationMembersProps {
   organizationId: string;
@@ -20,7 +21,12 @@ export function OrganizationMembers({
   const [isLoading, setIsLoading] = useState(true);
   const [updatingUserId, setUpdatingUserId] = useState<string | null>(null);
   const [removingUserId, setRemovingUserId] = useState<string | null>(null);
+  const [isJoinOpen, setIsJoinOpen] = useState(false);
+  const [joinRole, setJoinRole] =
+    useState<OrganizationMemberRole>("student");
+  const [joinMessage, setJoinMessage] = useState("");
 
+  const { showToast } = useToast();
   useEffect(() => {
     async function loadMembers() {
       try {
