@@ -42,7 +42,8 @@ export interface Challenge {
   location: string | null;
   latitude?: number | null;
   longitude?: number | null;
-  media: string[];
+  mediaIds: string[];
+  media: ChallengeMedia[];
   status: string;
   duplicateOfId?: string | null;
   aiSuggestedCategory?: ChallengeCategory | null;
