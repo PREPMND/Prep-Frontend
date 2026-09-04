@@ -20,7 +20,7 @@ export function Providers({ children }: ProvidersProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <ToastProvider
+        <ToastProvider>
         {children}
       </AuthProvider>
     </QueryClientProvider>
