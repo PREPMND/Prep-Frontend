@@ -1,4 +1,4 @@
-import {MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { useChallenges } from "../hooks/useChallenges";
 import { useMedia } from "../hooks/useMedia";
 import type { Challenge } from "../types/challenge";
@@ -7,7 +7,7 @@ import { PcHomeBar } from "../../common/pcHomeBar";
 import { useNavigate } from "react-router-dom";
 export function ChallengeFeed() {
     const { data: challenges, isLoading } = useChallenges();
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     if (isLoading) {
         return <div>Loading challenges...</div>;
     }
@@ -16,12 +16,18 @@ export function ChallengeFeed() {
 
         <div className="flex h-screen w-screen overflow-hidden">
             <div className="flex-1 h-full overflow-y-auto scrollbar-none pt-3 pb-4 px-4 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-                {challenges?.map((challenge) => (
-
-                    <ChallengeCard
-                    
-                    key={challenge.id} challenge={challenge} />
-                ))}
+                {isLoading ? (
+                    <div className="col-span-full flex items-center justify-center">
+                        Loading challenges...
+                    </div>
+                ) : (
+                    challenges?.map((challenge) => (
+                        <ChallengeCard
+                            key={challenge.id}
+                            challenge={challenge}
+                        />
+                    ))
+                )}
             </div>
             <div className=" md:w-64 hidden md:block scrollbar-none h-full bg-gradient-to-r border-l-2 border-l-lime-200 rounded-l-3xl from-neutral-950 via-neutral-950 to-neutral-900 dark:text-white text-mist-50  overflow-y-auto pt-3 pb-4 px-4 border-gray-200">
                 <PcHomeBar />
@@ -38,11 +44,11 @@ function ChallengeCard({
 }) {
     const { data: media = [] } = useMedia(challenge.mediaIds ?? []);
     const [imageLoaded, setImageLoaded] = useState(false);
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     return (
-        <div onClick={()=>navigate(`/challenge/${challenge.id}`)}>
+        <div onClick={() => navigate(`/challenge/${challenge.id}`)}>
             <article
-               
+
                 className="mt-2 cursor-pointer rounded-xl flex flex-col border border-neutral-200 light:bg-white py-2 px-4
             text-neutral-900 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white h-[400px]"
             >
@@ -74,7 +80,7 @@ function ChallengeCard({
                 )}
                 {media.length == 0 && (
                     <div
-                        
+
                         className={`h-40 w-full shrink-0 overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
                             }`}
                     >
