@@ -65,6 +65,14 @@ export const router = createBrowserRouter([
             path: "/dashboard",
             element: <DashboardPage />,
           },
+          {
+            path: "/organizations/:id/membership-requests",
+            element: (
+              <OrganizationAdminRoute>
+                <OrganizationMembershipRequests />
+              </OrganizationAdminRoute>
+            ),
+          },
         ],
       },
     ],
