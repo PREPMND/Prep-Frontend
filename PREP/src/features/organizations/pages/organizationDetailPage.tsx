@@ -283,17 +283,9 @@ export default function OrganizationDetailPage() {
             </div>
           </div>
         </div>
-        {isJoinOpen && (
-        <div className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm">
-          <Link
-            to={`/organizations/${organization.id}/membership-requests`}
-            className="..."
-          >
-            Manage membership requests
-          </Link></div>
+        {()}
       )}
-      )}
-
+      
     </div>
   );
 }
