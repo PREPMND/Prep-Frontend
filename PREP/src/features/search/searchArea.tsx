@@ -118,7 +118,7 @@ export function SearchArea({ onClose }: SearchAreaProps) {
                   {organization.name}
                 </p>
 
-                <p className="mt-1 text-xs light:text-neutral-500 dark:text-neutral-400">
+                <p className=" text-xs light:text-neutral-500 dark:text-neutral-400">
                   {organization.type}
                 </p>
               </button>
