@@ -91,14 +91,7 @@ export const router = createBrowserRouter([
             path: "/organization/:id",
             element: <OrganizationDetailPage />,
           },
-          {
-            path: "/organizations/:id/membership-requests",
-            element: (
-              <OrganizationAdminRoute>
-                <OrganizationMembershipRequests />
-              </OrganizationAdminRoute>
-            ),
-          },
+          
         ]
       }
 
