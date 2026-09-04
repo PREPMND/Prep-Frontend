@@ -2,7 +2,7 @@ import { MapPin } from "lucide-react";
 import { useChallenges } from "../hooks/useChallenges";
 import { useMedia } from "../hooks/useMedia";
 import type { Challenge } from "../types/challenge";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PcHomeBar } from "../../common/pcHomeBar";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "../../common/toastProvider";
