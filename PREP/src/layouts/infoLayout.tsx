@@ -5,9 +5,9 @@ export default function InfoLayout() {
     <div className="relative min-h-screen overflow-hidden bg-neutral-50 text-neutral-900 dark:bg-[#050505] dark:text-neutral-100">
       {/* Animated ambient background */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.035)_1px,transparent_1px)] bg-[size:42px_42px] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)]" />
+        <div className="absolute inset-0 light:bg-[linear-gradient(to_right,rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.035)_1px,transparent_1px)] bg-[size:42px_42px] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)]" />
 
-        <div className="absolute left-1/2 top-[-12rem] h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-emerald-300/15 blur-[120px] animate-pulse dark:bg-emerald-400/10" />
+        <div className="absolute left-1/2 top-[-12rem] h-[30rem] w-[30rem] -translate-x-1/2 rounded-full light:bg-emerald-300/15 dark:bg-emerald-400/10 blur-[120px] animate-pulse" />
 
         <div className="absolute right-[-8rem] top-[15%] h-[24rem] w-[24rem] rounded-full bg-blue-300/15 blur-[120px] animate-[float_10s_ease-in-out_infinite] dark:bg-blue-500/10" />
 
