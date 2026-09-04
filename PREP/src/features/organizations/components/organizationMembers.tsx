@@ -104,7 +104,27 @@ export function OrganizationMembers({
   }
 
   if (!canManageMembers) {
-    return null;
+    if (!myMembership) return null;
+
+    return (
+      <section className="mt-8 border-t light:border-neutral-200 dark:border-neutral-800 pt-6">
+        <div className="mb-5">
+          <h2 className="font-medium light:text-neutral-900 dark:text-white">
+            Your membership
+          </h2>
+        </div>
+
+        <div className="rounded-xl border light:border-neutral-200 dark:border-neutral-800 p-4">
+          <p className="text-sm font-medium light:text-neutral-900 dark:text-white">
+            {myMembership.role.replaceAll("_", " ")}
+          </p>
+
+          <p className="mt-1 text-xs light:text-neutral-500 dark:text-neutral-400">
+            {myMembership.status}
+          </p>
+        </div>
+      </section>
+    );
   }
   if (isLoading) {
     return (
