@@ -278,7 +278,7 @@ export default function OrganizationDetailPage() {
                 onChange={(event) => setJoinMessage(event.target.value)}
                 placeholder="Why do you want to join?"
                 rows={4}
-                className="mt-2 w-full resize-none rounded-xl border border-neutral-300 bg-white px-3 py-3 text-sm dark:border-neutral-700 dark:bg-neutral-900"
+                className="mt-2 w-full resize-none rounded-xl border border-neutral-300 light:bg-white px-3 py-3 text-sm dark:border-neutral-700 dark:bg-neutral-900"
               />
             </div>
 
