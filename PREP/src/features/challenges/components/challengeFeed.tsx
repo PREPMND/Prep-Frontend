@@ -56,7 +56,7 @@ function ChallengeCard({
             : 640;
 
     const media = challenge.media ?? [];
-
+    
     return (
         <div onClick={() => navigate(`/challenge/${challenge.id}`)}>
             <article
