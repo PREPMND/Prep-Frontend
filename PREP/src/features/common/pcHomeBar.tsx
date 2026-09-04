@@ -56,7 +56,7 @@ export function PcHomeBar() {
                                         navigate(`/organization/${organization?.id}`)
                                     }
                                     className={`text-sm dark:text-neutral-400 ${organization?.name
-                                            ? "text-[14px] text-neutral-500 font-[500]"
+                                            ? "text-[14px] text-neutral-500 font-[500] line-clamp-2"
                                             : "text-[14px] text-mauve-400! font-[600]"
                                         }`}
                                 >
