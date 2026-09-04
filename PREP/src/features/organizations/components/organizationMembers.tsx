@@ -204,6 +204,15 @@ export function OrganizationMembers({
           ))}
         </div>
       )}
+      {!membership && (
+        <button
+          type="button"
+          onClick={handleJoin}
+          className="shrink-0 rounded-xl bg-neutral-900 px-4 py-2.5 text-sm font-medium text-white dark:bg-white dark:text-neutral-900"
+        >
+          Request to join
+        </button>
+      )}
     </section>
   );
 }
