@@ -189,7 +189,7 @@ export default function OrganizationDetailPage() {
               type="button"
               onClick={handleLeave}
               disabled={leaveMutation.isPending}
-              className="text-sm font-medium px-3 flex just bg-neutral-800 py-2 hover:bg-pink-100 hover:text-red-800 transition-all duration-300 ease-in-out rounded-lg!  light:text-red-600 border border-red-500! disabled:opacity-50 dark:text-red-400"
+              className="text-sm font-medium px-3 flex justify-center mx-auto bg-neutral-800 py-2 hover:bg-pink-100 hover:text-red-800 transition-all duration-300 ease-in-out rounded-lg!  light:text-red-600 border border-red-500! disabled:opacity-50 dark:text-red-400"
             >
               {leaveMutation.isPending
                 ? "Leaving..."
