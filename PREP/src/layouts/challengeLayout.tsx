@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 
 export default function ChallengeLayout() {
-    
+
     return (
         <div className="min-h-screen light:bg-neutral-50 light:text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
             {/* Subtle background */}
@@ -11,10 +11,12 @@ export default function ChallengeLayout() {
                 <div className="absolute -bottom-40 -left-40 h-44 w-64 rounded-full light:bg-fuchsia-400/20 dark:bg-emerald-300 blur-3xl" />
             </div>
 
-            <main className="relative">
-                <Outlet />
+            <main className="relative z-10 min-h-screen">
+                <div className="animate-[fadeIn_1s_ease-out]">
+                    <Outlet />
+                </div>
             </main>
         </div>
     );
-  
+
 }
