@@ -7,7 +7,6 @@ import { PcHomeBar } from "../../common/pcHomeBar";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "../../common/toastProvider";
 import { getCloudinaryUrl } from "../services/cloudinaryHelper";
-import { getCloudinaryUrl } from "../services/cloudinaryHelper";
 export function ChallengeFeed() {
     const { data: challenges, isLoading } = useChallenges();
     const navigate = useNavigate();
