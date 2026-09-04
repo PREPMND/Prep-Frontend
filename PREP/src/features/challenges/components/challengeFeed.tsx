@@ -10,7 +10,7 @@ import { getCloudinaryUrl } from "../services/cloudinaryHelper";
 export function ChallengeFeed() {
     const { data: challenges, isLoading } = useChallenges();
     const navigate = useNavigate();
-    console.log(challenge);
+    console.log(challenges);
     return (
 
         <div className="flex h-screen w-screen overflow-hidden">
