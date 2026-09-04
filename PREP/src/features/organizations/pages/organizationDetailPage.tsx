@@ -229,7 +229,7 @@ export default function OrganizationDetailPage() {
             </p>
 
             <div className="mt-6">
-              <label className="text-sm font-medium text-neutral-900 dark:text-white">
+              <label className="text-sm font-medium light:text-neutral-900 dark:text-white">
                 Join as
               </label>
 
