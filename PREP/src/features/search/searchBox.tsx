@@ -8,6 +8,7 @@ export function SearchBox(){
                 <Search/>
                 <div>Search</div>
                 
+                
             </button>
         </div>
         </>
