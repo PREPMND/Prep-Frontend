@@ -9,9 +9,9 @@ export default function InfoLayout() {
 
         <div className="absolute left-1/2 top-[-12rem] h-[30rem] w-[30rem] -translate-x-1/2 rounded-full light:bg-emerald-300/15 dark:bg-emerald-400/10 blur-[120px] animate-pulse" />
 
-        <div className="absolute right-[-8rem] top-[15%] h-[24rem] w-[24rem] rounded-full bg-blue-300/15 blur-[120px] animate-[float_10s_ease-in-out_infinite] dark:bg-blue-500/10" />
+        <div className="absolute right-[-8rem] top-[15%] h-[24rem] w-[24rem] rounded-full light:bg-blue-300/15 dark:bg-blue-500/10 blur-[120px] animate-[float_10s_ease-in-out_infinite]" />
 
-        <div className="absolute bottom-[-10rem] left-[-8rem] h-[26rem] w-[26rem] rounded-full bg-violet-300/15 blur-[120px] animate-[float_12s_ease-in-out_infinite_reverse] dark:bg-violet-500/10" />
+        <div className="absolute bottom-[-10rem] left-[-8rem] h-[26rem] w-[26rem] rounded-full light:bg-violet-300/15 dark:bg-violet-500/10 blur-[120px] animate-[float_12s_ease-in-out_infinite_reverse]" />
 
         <div className="absolute left-[15%] top-[35%] h-2 w-2 rounded-full bg-emerald-400/60 shadow-[0_0_25px_rgba(52,211,153,0.8)] animate-pulse" />
 
