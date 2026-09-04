@@ -52,7 +52,7 @@ export function PcHomeBar() {
                                 Loading profile...
                             </div>
                         ) : (
-                            <>
+                            
                                 <div className="space-y-3">
                                     {roleData?.map((role) => {
                                         const organization = role.organizationId
