@@ -41,6 +41,11 @@ export function OrganizationMembers({
     );
   });
   useEffect(() => {
+    if (!canManageMembers) {
+      setIsLoading(false);
+      return;
+    }
+
     async function loadMembers() {
       try {
         const response = await getOrganizationMembers(organizationId);
@@ -51,7 +56,7 @@ export function OrganizationMembers({
     }
 
     loadMembers();
-  }, [organizationId]);
+  }, [organizationId, canManageMembers]);
 
   async function handleRoleChange(
     memberUserId: string,
