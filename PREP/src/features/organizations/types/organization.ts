@@ -18,7 +18,10 @@ export const ORGANIZATION_VERIFICATION_STATUSES = {
 
 export type OrganizationVerificationStatus =
   (typeof ORGANIZATION_VERIFICATION_STATUSES)[keyof typeof ORGANIZATION_VERIFICATION_STATUSES];
-
+export interface RequestOrganizationMembershipPayload {
+  role: OrganizationMemberRole;
+  message?: string;
+}
 export const ORGANIZATION_MEMBER_ROLES = {
   STUDENT: 'student',
   RESEARCHER: 'researcher',
