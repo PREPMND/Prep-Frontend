@@ -284,12 +284,14 @@ export default function OrganizationDetailPage() {
           </div>
         </div>
       )}
-      <Link
-        to={`/organizations/${organization.id}/membership-requests`}
-        className="..."
-      >
-        Manage membership requests
-      </Link>
+      {canManageMembers && (
+        <Link
+          to={`/organizations/${organization.id}/membership-requests`}
+          className="..."
+        >
+          Manage membership requests
+        </Link>
+      )}
     </div>
   );
 }
