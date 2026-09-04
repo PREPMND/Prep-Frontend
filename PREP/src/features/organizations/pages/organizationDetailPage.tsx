@@ -37,8 +37,28 @@ export default function OrganizationDetailPage() {
   );
 
   function handleJoin() {
+    setIsJoinOpen(true);
+  }
+
+  function submitJoinRequest() {
     if (!id) return;
-    joinMutation.mutate({});
+
+    joinMutation.mutate(
+      {
+        role: joinRole,
+        message: joinMessage.trim() || undefined,
+      },
+      {
+        onSuccess: () => {
+          setIsJoinOpen(false);
+          setJoinMessage("");
+          showToast("Membership request sent");
+        },
+        onError: () => {
+          showToast("Failed to send membership request");
+        },
+      },
+    );
   }
 
   function handleLeave() {
