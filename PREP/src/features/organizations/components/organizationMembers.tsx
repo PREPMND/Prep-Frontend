@@ -20,6 +20,20 @@ export function OrganizationMembers({
   const [isLoading, setIsLoading] = useState(true);
   const [updatingUserId, setUpdatingUserId] = useState<string | null>(null);
   const [removingUserId, setRemovingUserId] = useState<string | null>(null);
+  const user = useAuthStore((state) => state.user);
+  const { data: roleData, isLoading: isRoleLoading } = useMyRole(user?.id);
+
+  const canManageMembers = roleData?.some((role) => {
+    if (role.role.name === "SUPER_ADMIN" && role.organizationId === null) {
+      return true;
+    }
+
+    return (
+      (role.role.name === "UNIVERSITY_ADMIN" ||
+        role.role.name === "INSTITUTIONAL_ADMIN") &&
+      role.organizationId === organizationId
+    );
+  });
   useEffect(() => {
     async function loadMembers() {
       try {
@@ -74,7 +88,7 @@ export function OrganizationMembers({
       setRemovingUserId(null);
     }
   }
-  
+
   if (isLoading) {
     return (
       <p className="text-sm light:text-neutral-500 dark:text-neutral-400">
