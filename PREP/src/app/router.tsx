@@ -22,7 +22,6 @@ import { SuperAdminDashboard } from "../features/dashboard/superAdmin";
 import { OrganizationAdminGuard } from "../features/common/gaurds/organziationAdminGuard";
 import { OrganizationMembershipRequests } from "../features/organizations/components/organizationMembershipRequest";
 import { OrganizationAdminRoute } from "./routes/organizationAdminRoutes";
-import { Info } from "lucide-react";
 import InfoLayout from "../layouts/infoLayout";
 
 export const router = createBrowserRouter([
