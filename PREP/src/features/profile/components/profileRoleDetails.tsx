@@ -94,7 +94,7 @@ function RoleCard({
           </h2>
 
           <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">
-            {description}
+            {description.replace(/\b\w/g, (letter) => letter.toUpperCase())}
           </p>
 
           {organizationName && (
