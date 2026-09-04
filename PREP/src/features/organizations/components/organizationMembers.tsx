@@ -24,7 +24,11 @@ export function OrganizationMembers({
   const [removingUserId, setRemovingUserId] = useState<string | null>(null);
   const user = useAuthStore((state) => state.user);
   const { data: roleData, isLoading: isRoleLoading } = useMyRole(user?.id);
+  const { data: myMemberships = [] } = useMyMemberships();
 
+  const myMembership = myMemberships.find(
+    (membership) => membership.organizationId === organizationId,
+  );
   const canManageMembers = roleData?.some((role) => {
     if (role.role.name === "SUPER_ADMIN" && role.organizationId === null) {
       return true;
