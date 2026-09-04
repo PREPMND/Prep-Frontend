@@ -55,7 +55,7 @@ export function PcHomeBar() {
                                     onClick={() =>
                                         navigate(`/organization/${organization?.id}`)
                                     }
-                                    className={`text-sm max-w-[80%] dark:text-neutral-400 ${organization?.name
+                                    className={`text-sm max-w-[90%] dark:text-neutral-400 ${organization?.name
                                             ? "text-[14px] text-neutral-500 font-[500] line-clamp-2"
                                             : "text-[14px] text-mauve-400! font-[600]"
                                         }`}
