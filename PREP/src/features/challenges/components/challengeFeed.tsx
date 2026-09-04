@@ -72,7 +72,7 @@ function ChallengeCard({
                                         }`}
                                 >
                                     <img
-                                        src={getCloudinaryUrl(item.url, 640)}
+                                        src={getCloudinaryUrl(item.url, imageWidth)}
                                         alt={item.originalName}
                                         onLoad={() => setImageLoaded(true)}
                                         loading={index === 0 ? "eager" : "lazy"}
