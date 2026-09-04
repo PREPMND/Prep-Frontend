@@ -32,15 +32,7 @@ export interface ChallengeMedia {
   originalName: string;
 }
 
-export interface Challenge {
-  id: string;
-  title: string;
-  description: string;
-  category: string | null;
-  location: string | null;
-  mediaIds: string[];
-  media: ChallengeMedia[];
-}
+
 export interface Challenge {
   id: string;
   title: string;
