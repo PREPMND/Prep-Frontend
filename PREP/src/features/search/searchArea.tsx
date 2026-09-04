@@ -97,7 +97,7 @@ export function SearchArea({ onClose }: SearchAreaProps) {
           </button>
         </div>
 
-        <div className="max-h-80 overflow-y-auto scrollbar- p-2">
+        <div className="max-h-80 overflow-y-auto scrollbar-thumb-amber-400 p-2">
           {isLoading ? (
             <p className="px-3 py-6 text-center text-sm light:text-neutral-500 dark:text-neutral-400">
               Loading organizations...
