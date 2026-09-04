@@ -23,6 +23,7 @@ import { OrganizationAdminGuard } from "../features/common/gaurds/organziationAd
 import { OrganizationMembershipRequests } from "../features/organizations/components/organizationMembershipRequest";
 import { OrganizationAdminRoute } from "./routes/organizationAdminRoutes";
 import { Info } from "lucide-react";
+import InfoLayout from "../layouts/infoLayout";
 
 export const router = createBrowserRouter([
   {
@@ -76,7 +77,9 @@ export const router = createBrowserRouter([
   {
     element: <AuthGuard />,
     children: [
-      {element:<InfoLayout />}
+      {element:<InfoLayout />,
+        
+      }
       {
         path: "/organizations",
         element: <OrganizationsPage />,
