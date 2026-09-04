@@ -91,7 +91,7 @@ export function SearchArea({ onClose }: SearchAreaProps) {
           <button
             type="button"
             onClick={onClose}
-            className="rounded-md px-2 py-1 text-xs text-neutral-500 light:hover:bg-neutral-100 dark:hover:bg-neutral-900"
+            className="rounded-md px-1  py-[2px] text-xs text-neutral-500 light:hover:bg-neutral-100 dark:hover:bg-neutral-900"
           >
             ESC
           </button>
