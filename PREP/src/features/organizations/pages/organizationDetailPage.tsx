@@ -94,7 +94,7 @@ export default function OrganizationDetailPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10">
-      <div className="rounded-2xl border p-6 text-white light:border-neutral-200 light:bg-white dark:border-neutral-800 dark:bg-[#181a1f] sm:p-8">
+      <div className="rounded-2xl border p-6 text-white light:border-neutral-200 light:bg-white dark:border-neutral-900 dark:bg-[#181a1f] sm:p-8">
         <div className="flex items-start justify-between gap-6">
           <div className="flex items-start gap-4">
             <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl light:bg-neutral-100 dark:bg-neutral-800">
