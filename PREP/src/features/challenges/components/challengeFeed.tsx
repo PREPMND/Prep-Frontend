@@ -74,7 +74,8 @@ function ChallengeCard({
                                         src={getCloudinaryUrl(item.url, 640)}
                                         alt={item.originalName}
                                         onLoad={() => setImageLoaded(true)}
-                                        loading="lazy"
+                                        loading={index === 0 ? "eager" : "lazy"}
+                                        fetchPriority={index === 0 ? "high" : "auto"}
                                         decoding="async"
                                         className="h-40 w-full rounded-lg object-cover"
                                     />
