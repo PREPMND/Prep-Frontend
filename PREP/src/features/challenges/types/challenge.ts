@@ -26,7 +26,21 @@ export interface CreateChallengePayload {
   latitude?: number;
   longitude?: number;
 }
+export interface ChallengeMedia {
+  id: string;
+  url: string;
+  originalName: string;
+}
 
+export interface Challenge {
+  id: string;
+  title: string;
+  description: string;
+  category: string | null;
+  location: string | null;
+  mediaIds: string[];
+  media: ChallengeMedia[];
+}
 export interface Challenge {
   id: string;
   title: string;
