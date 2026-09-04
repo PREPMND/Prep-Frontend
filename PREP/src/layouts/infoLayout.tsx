@@ -8,7 +8,7 @@ export default function InfoLayout() {
 
         <div className="absolute left-1/2 top-[-12rem] h-[30rem] w-[30rem] -translate-x-1/2 rounded-full blur-[160px] light:bg-emerald-300/15 dark:bg-emerald-400 animate-pulse" />
 
-        <div className="absolute right-[-8rem] top-[20%] h-[14rem] w-[24rem] rounded-full blur-[120px] light:bg-blue-300/10 dark:bg-amber-200 animate-[float_12s_ease-in-out_infinite]" />
+        <div className="absolute right-[-8rem] top-[20%] h-[14rem] w-[14rem] rounded-full blur-[120px] light:bg-blue-300/10 dark:bg-amber-600 animate-[float_12s_ease-in-out_infinite]" />
 
         <div className="absolute bottom-[-10rem] left-[-8rem] h-[16rem] w-[16rem] rounded-full blur-[120px] light:bg-violet-300/10 dark:bg-violet-900 animate-[floatReverse_14s_ease-in-out_infinite]" />
       </div>
