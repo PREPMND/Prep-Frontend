@@ -90,7 +90,13 @@ export function OrganizationMembers({
       setRemovingUserId(null);
     }
   }
+  if (isRoleLoading) {
+    return null;
+  }
 
+  if (!canManageMembers) {
+    return null;
+  }
   if (isLoading) {
     return (
       <p className="text-sm light:text-neutral-500 dark:text-neutral-400">
