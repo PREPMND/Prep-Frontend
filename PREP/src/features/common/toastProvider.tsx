@@ -38,7 +38,7 @@ export function ToastProvider({
       {children}
 
       {message && (
-        <div className="fixed bottom-6 left-1/2 z-[100] -translate-x-1/2 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm font-medium light:text-neutral-900 shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-white">
+        <div className="fixed bottom-6 left-1/2 z-[100] -translate-x-1/2 rounded-xl border light:border-neutral-200 light:bg-white px-4 py-3 text-sm font-medium light:text-neutral-900 shadow-xl dark:border-neutral-800 dark:bg-neutral-900 dark:text-white">
           {message}
         </div>
       )}
