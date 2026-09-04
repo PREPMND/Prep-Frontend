@@ -283,7 +283,9 @@ export default function OrganizationDetailPage() {
             </div>
           </div>
         </div>
-        {()}
+        { isJoinOpen && (
+          
+        )}
       )}
       
     </div>
