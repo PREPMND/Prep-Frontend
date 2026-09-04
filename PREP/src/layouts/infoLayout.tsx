@@ -10,7 +10,7 @@ export default function InfoLayout() {
 
         <div className="absolute right-[-8rem] top-[20%] h-[24rem] w-[24rem] rounded-full blur-[120px] light:bg-blue-300/10 dark:bg-blue-500/10 animate-[float_12s_ease-in-out_infinite]" />
 
-        <div className="absolute bottom-[-10rem] left-[-8rem] h-[26rem] w-[26rem] rounded-full blur-[120px] light:bg-violet-300/10 dark:bg-violet-700 animate-[floatReverse_14s_ease-in-out_infinite]" />
+        <div className="absolute bottom-[-10rem] left-[-8rem] h-[26rem] w-[26rem] rounded-full blur-[120px] light:bg-violet-300/10 dark:bg-violet-900 animate-[floatReverse_14s_ease-in-out_infinite]" />
       </div>
 
       <main className="relative z-10 min-h-screen">
