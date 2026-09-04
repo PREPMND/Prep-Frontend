@@ -14,6 +14,7 @@ import { OrganizationMembers } from "../components/organizationMembers";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "../../common/toastProvider";
+import { useMyRole } from "../../profile/hooks/useMyRole";
 export default function OrganizationDetailPage() {
   const { id } = useParams<{ id: string }>();
 
@@ -30,7 +31,24 @@ export default function OrganizationDetailPage() {
   const [joinRole, setJoinRole] =
     useState<OrganizationMemberRole>("student");
   const [joinMessage, setJoinMessage] = useState("");
+  const user = useAuthStore((state) => state.user);
 
+  const { data: roleData } = useMyRole(user?.id);
+
+  const canManageMembers = roleData?.some((role) => {
+    if (
+      role.role.name === "SUPER_ADMIN" &&
+      role.organizationId === null
+    ) {
+      return true;
+    }
+
+    return (
+      (role.role.name === "UNIVERSITY_ADMIN" ||
+        role.role.name === "INSTITUTIONAL_ADMIN") &&
+      role.organizationId === id
+    );
+  });
   const { showToast } = useToast();
   const membership = memberships.find(
     (item) => item.organizationId === id,
