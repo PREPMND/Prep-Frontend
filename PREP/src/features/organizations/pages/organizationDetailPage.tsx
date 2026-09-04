@@ -269,7 +269,7 @@ export default function OrganizationDetailPage() {
             </div>
 
             <div className="mt-5">
-              <label className="text-sm font-medium text-neutral-900 dark:text-white">
+              <label className="text-sm font-medium light:text-neutral-900 dark:text-white">
                 Message
               </label>
 
