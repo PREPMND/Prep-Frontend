@@ -44,9 +44,9 @@ function ChallengeCard({
     const [imageLoaded, setImageLoaded] = useState(false);
     const navigate = useNavigate();
     const { showToast } = useToast();
-    useState(() => {
+    useEffect(() => {
         showToast("Click on a challenge to view details and participate!");
-    })
+    }, [showToast]);
     return (
         <div onClick={() => navigate(`/challenge/${challenge.id}`)}>
             <article
