@@ -65,7 +65,7 @@ export function PcHomeBar() {
 
                                 <div
                                     className={`${organization?.name
-                                            ? "text-[14px] font-[500]"
+                                            ? "text-[14px] font-[500] line-clamp-2"
                                             : "text-[16px] text-amber-300 font-[600]"
                                         }`}
                                 >
