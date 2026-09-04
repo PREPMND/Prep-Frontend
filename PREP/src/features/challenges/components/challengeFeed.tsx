@@ -48,6 +48,7 @@ function ChallengeCard({
     useEffect(() => {
         showToast("Click on a challenge to view details and participate!");
     }, [showToast]);
+    const imageWidth=window.innerWidth < 640 ? 320 : 640;
     return (
         <div onClick={() => navigate(`/challenge/${challenge.id}`)}>
             <article
