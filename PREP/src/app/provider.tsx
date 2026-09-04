@@ -21,7 +21,8 @@ export function Providers({ children }: ProvidersProps) {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <ToastProvider>
-        {children}
+          {children}
+        </ToastProvider>
       </AuthProvider>
     </QueryClientProvider>
   );
