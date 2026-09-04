@@ -4,7 +4,7 @@ export function SearchBox(){
     return (
         <>
         <div>
-            <button className="bg-neutral-600 flex items-center justify-between rounded-3xl px-3 py-[6px] w-[80%]">
+            <button className="bg-neutral-600 flex items-center justify-between rounded-lg! px-3 py-[6px] w-[80%]">
                 <Search size={16}/>
                 <div className="text-[14px] font-semibold mr-5">Search</div>
                 <span>/</span>
