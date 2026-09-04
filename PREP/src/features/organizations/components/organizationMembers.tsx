@@ -75,7 +75,30 @@ export function OrganizationMembers({
       setRemovingUserId(null);
     }
   }
+  function handleJoin() {
+    setIsJoinOpen(true);
+  }
 
+  function submitJoinRequest() {
+    if (!id) return;
+
+    joinMutation.mutate(
+      {
+        role: joinRole,
+        message: joinMessage.trim() || undefined,
+      },
+      {
+        onSuccess: () => {
+          setIsJoinOpen(false);
+          setJoinMessage("");
+          showToast("Membership request sent");
+        },
+        onError: () => {
+          showToast("Failed to send membership request");
+        },
+      },
+    );
+  }
   if (isLoading) {
     return (
       <p className="text-sm light:text-neutral-500 dark:text-neutral-400">
@@ -115,7 +138,7 @@ export function OrganizationMembers({
                 </p>
               </div>
               <div>{member.role}</div>
-              
+
               <div className=" items-center hidden gap-3">
                 <select
                   value={member.role}
@@ -159,7 +182,7 @@ export function OrganizationMembers({
 
                   <option value="member">Member</option>
                 </select>
-                
+
                 <button
                   type="button"
                   disabled={removingUserId === member.userId}
