@@ -283,11 +283,16 @@ export default function OrganizationDetailPage() {
             </div>
           </div>
         </div>
-        { isJoinOpen && (
-          
-        )}
+        {isJoinOpen && (
+        <Link
+          to={`/organizations/${organization.id}/membership-requests`}
+          className="..."
+        >
+          Manage membership requests
+        </Link>
       )}
-      
+      )}
+
     </div>
   );
 }
