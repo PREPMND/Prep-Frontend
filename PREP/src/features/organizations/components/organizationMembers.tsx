@@ -8,6 +8,8 @@ import type {
   OrganizationMemberRole,
   OrganizationMembership,
 } from "../types/organization";
+import { useAuthStore } from "../../auth/store/authStore";
+import { useMyRole } from "../../profile/hooks/useMyRole";
 
 interface OrganizationMembersProps {
   organizationId: string;
