@@ -47,52 +47,33 @@ export function PcHomeBar() {
                         : undefined;
 
                     return (
-                        {
-                            isLoading?(
-  <div className = "mt-6 text-sm text-neutral-400" >
-                                    Loading profile...
-  </div>
-            ) : (
-            <>
-                <div className="space-y-3">
-                    {roleData?.map((role) => {
-                        const organization = role.organizationId
-                            ? organizations.find(
-                                (org) => org.id === role.organizationId,
-                            )
-                            : undefined;
+                        <div key={role.id} className="flex items-center gap-2">
+                            <div className="w-4 h-4 bg-amber-200 animate-pulse duration-1000 rounded-full" />
 
-                        return (
-                            <div key={role.id} className="flex items-center gap-2">
-                                <div className="w-4 h-4 bg-amber-200 animate-pulse duration-1000 rounded-full" />
+                            <div>
+                                <div
+                                    onClick={() =>
+                                        navigate(`/organization/${organization?.id}`)
+                                    }
+                                    className={`text-sm dark:text-neutral-400 ${organization?.name
+                                            ? "text-[14px] text-neutral-500 font-[500]"
+                                            : "text-[14px] text-mauve-400! font-[600]"
+                                        }`}
+                                >
+                                    {organization?.name ?? "Platform"}
+                                </div>
 
-                                <div>
-                                    <div
-                                        onClick={() =>
-                                            navigate(`/organization/${organization?.id}`)
-                                        }
-                                        className={`text-sm dark:text-neutral-400 ${organization?.name
-                                                ? "text-[14px] text-neutral-500 font-[500]"
-                                                : "text-[14px] text-mauve-400! font-[600]"
-                                            }`}
-                                    >
-                                        {organization?.name ?? "Platform"}
-                                    </div>
-
-                                    <div
-                                        className={`${organization?.name
-                                                ? "text-[14px] font-[500]"
-                                                : "text-[16px] text-amber-300 font-[600]"
-                                            }`}
-                                    >
-                                        {role.role.name.replaceAll("_", " ")}
-                                    </div>
+                                <div
+                                    className={`${organization?.name
+                                            ? "text-[14px] font-[500]"
+                                            : "text-[16px] text-amber-300 font-[600]"
+                                        }`}
+                                >
+                                    {role.role.name.replaceAll("_", " ")}
                                 </div>
                             </div>
-                        );
-                    })}
-                </div>
-                );
+                        </div>
+                    );
                 })}
             </div>
             <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 mt-3 font-Saira font-semibold ml-2">
