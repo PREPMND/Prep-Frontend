@@ -290,7 +290,8 @@ export default function OrganizationDetailPage() {
             className="..."
           >
             Manage membership requests
-          </Link></div>
+          </Link>
+          </div>
         )}
       )}
 
