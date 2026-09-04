@@ -7,7 +7,7 @@ export function SearchBox(){
             <button className="bg-neutral-600 flex items-center justify-between rounded-2xl! px-3 py-[6px] w-[80%]">
                 <Search size={16}/>
                 <div className="text-[14px] font-semibold mr-5">Search</div>
-                <span className="text-[14px] text-gray-600 font-semibold border border-neutral-700! rounded-md px-1 ">/</span>
+                <span className="text-[14px] text-neutral-400 font-semibold border border-neutral-700! rounded-md px-1 ">/</span>
                 
             </button>
         </div>
