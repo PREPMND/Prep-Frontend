@@ -184,7 +184,7 @@ export default function OrganizationDetailPage() {
         <OrganizationMembers organizationId={organization.id} />
 
         {isActive && (
-          <div className="mt-8 border-t pt-6 light:border-neutral-200 dark:border-neutral-800">
+          <div className="mt-8 border-t pt-6 light:border-neutral-200 dark:border-pink-800">
             <button
               type="button"
               onClick={handleLeave}
