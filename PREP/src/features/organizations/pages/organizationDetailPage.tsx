@@ -198,6 +198,92 @@ export default function OrganizationDetailPage() {
           </div>
         )}
       </div>
+      {isJoinOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-4 backdrop-blur-sm">
+          <div className="w-full max-w-lg rounded-2xl border border-neutral-200 bg-white p-6 shadow-2xl dark:border-neutral-800 dark:bg-neutral-950">
+            <h2 className="text-xl font-semibold text-neutral-900 dark:text-white">
+              Request to join
+            </h2>
+
+            <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+              Tell the organization how you want to participate.
+            </p>
+
+            <div className="mt-6">
+              <label className="text-sm font-medium text-neutral-900 dark:text-white">
+                Join as
+              </label>
+
+              <select
+                value={joinRole}
+                onChange={(event) =>
+                  setJoinRole(
+                    event.target.value as OrganizationMemberRole,
+                  )
+                }
+                className="mt-2 w-full rounded-xl border border-neutral-300 bg-white px-3 py-2.5 text-sm dark:border-neutral-700 dark:bg-neutral-900"
+              >
+                <option value="student">Student</option>
+                <option value="researcher">Researcher</option>
+                <option value="faculty">Faculty</option>
+                <option value="university_admin">University Admin</option>
+                <option value="institutional_admin">Institutional Admin</option>
+                <option value="industry_member">Industry Member</option>
+                <option value="industry_mentor">Industry Mentor</option>
+                <option value="industry_admin">Industry Admin</option>
+                <option value="ngo_member">NGO Member</option>
+                <option value="ngo_admin">NGO Admin</option>
+                <option value="community_member">Community Member</option>
+                <option value="volunteer">Volunteer</option>
+                <option value="expert">Expert</option>
+                <option value="mentor">Mentor</option>
+                <option value="solution_reviewer">Solution Reviewer</option>
+                <option value="evaluator">Evaluator</option>
+                <option value="officer">Officer</option>
+                <option value="department_officer">Department Officer</option>
+                <option value="field_officer">Field Officer</option>
+                <option value="government_reviewer">Government Reviewer</option>
+                <option value="project_lead">Project Lead</option>
+                <option value="event_manager">Event Manager</option>
+                <option value="member">Member</option>
+              </select>
+            </div>
+
+            <div className="mt-5">
+              <label className="text-sm font-medium text-neutral-900 dark:text-white">
+                Message
+              </label>
+
+              <textarea
+                value={joinMessage}
+                onChange={(event) => setJoinMessage(event.target.value)}
+                placeholder="Why do you want to join?"
+                rows={4}
+                className="mt-2 w-full resize-none rounded-xl border border-neutral-300 bg-white px-3 py-3 text-sm dark:border-neutral-700 dark:bg-neutral-900"
+              />
+            </div>
+
+            <div className="mt-6 flex justify-end gap-3">
+              <button
+                type="button"
+                onClick={() => setIsJoinOpen(false)}
+                className="rounded-xl px-4 py-2.5 text-sm"
+              >
+                Cancel
+              </button>
+
+              <button
+                type="button"
+                onClick={submitJoinRequest}
+                disabled={joinMutation.isPending}
+                className="rounded-xl bg-neutral-900 px-4 py-2.5 text-sm font-medium text-white disabled:opacity-50 dark:bg-white dark:text-neutral-900"
+              >
+                {joinMutation.isPending ? "Sending..." : "Send request"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <Link
         to={`/organizations/${organization.id}/membership-requests`}
         className="..."
