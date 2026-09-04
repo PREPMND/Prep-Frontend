@@ -20,6 +20,7 @@ export function OrganizationMembers({
 }: OrganizationMembersProps) {
   const [members, setMembers] = useState<OrganizationMembership[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); const [updatingUserId, setUpdatingUserId] = useState<string | null>(null); const [removingUserId, setRemovingUserId] = useState<string | null>(null);
   const [updatingUserId, setUpdatingUserId] = useState<string | null>(null);
   const [removingUserId, setRemovingUserId] = useState<string | null>(null);
   const user = useAuthStore((state) => state.user);
