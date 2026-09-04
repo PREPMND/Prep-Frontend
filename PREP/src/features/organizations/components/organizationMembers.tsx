@@ -107,7 +107,7 @@ export function OrganizationMembers({
     if (!myMembership) return null;
 
     return (
-      <section className="mt-8 border-t light:border-neutral-200 dark:border-neutral-800 pt-6">
+      <section className="mt-8 border-t bg-amber-100 light:border-neutral-200 dark:border-neutral-800 pt-6">
         <div className="mb-5">
           <h2 className="font-medium light:text-neutral-900 dark:text-white">
             Your membership
