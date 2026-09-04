@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { PcHomeBar } from "../../common/pcHomeBar";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "../../common/toastProvider";
+import { getCloudinaryUrl } from "../services/cloudinaryHelper";
 export function ChallengeFeed() {
     const { data: challenges, isLoading } = useChallenges();
     const navigate = useNavigate();
@@ -70,9 +71,11 @@ function ChallengeCard({
                                         }`}
                                 >
                                     <img
-                                        src={item.url}
+                                        src={getCloudinaryUrl(item.url, 640)}
                                         alt={item.originalName}
                                         onLoad={() => setImageLoaded(true)}
+                                        loading="lazy"
+                                        decoding="async"
                                         className="h-40 w-full rounded-lg object-cover"
                                     />
                                 </div>
