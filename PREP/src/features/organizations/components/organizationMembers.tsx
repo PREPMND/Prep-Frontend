@@ -116,7 +116,7 @@ export function OrganizationMembers({
 
         <div className="rounded-xl border light:border-neutral-200 dark:border-neutral-800 p-4">
           <p className="text-sm font-medium light:text-neutral-900 dark:text-white">
-            {myMembership.role.replaceAll("_", " ")}
+            {myMembership.role.replaceAll("_", " ").at(0)?.toUpperCase() + myMembership.role.replaceAll("_", " ").slice(1)}
           </p>
 
           <p className="mt-1 text-xs light:text-neutral-500 dark:text-neutral-400">
