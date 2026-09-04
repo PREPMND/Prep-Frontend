@@ -48,7 +48,7 @@ export function PcHomeBar() {
 
                     return (
                         <div key={role.id} className="flex items-center gap-2">
-                            <div className="w-4 h-4 bg-amber-200 animate-pulse duration-1000 rounded-full" />
+                            <div className="w-4 h-4 bg-amber-200 flex flex-shrink-0 animate-pulse duration-1000 rounded-full" />
 
                             <div>
                                 <div
