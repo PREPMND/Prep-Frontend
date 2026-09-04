@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useToast } from "../../common/toastProvider";
 import { useMyRole } from "../../profile/hooks/useMyRole";
+import { useAuthStore } from "../../auth/store/authStore";
 export default function OrganizationDetailPage() {
   const { id } = useParams<{ id: string }>();
 
