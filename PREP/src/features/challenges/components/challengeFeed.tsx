@@ -43,7 +43,9 @@ function ChallengeCard({
     const { data: media = [] } = useMedia(challenge.mediaIds ?? []);
     const [imageLoaded, setImageLoaded] = useState(false);
     const navigate = useNavigate();
-    useState(() => {}
+    useState(() => {
+        
+    })
     return (
         <div onClick={() => navigate(`/challenge/${challenge.id}`)}>
             <article
