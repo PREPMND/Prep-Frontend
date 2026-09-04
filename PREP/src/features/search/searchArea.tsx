@@ -119,7 +119,7 @@ export function SearchArea({ onClose }: SearchAreaProps) {
                 </p>
 
                 <p className=" text-xs light:text-neutral-500 dark:text-neutral-400">
-                  {organization.type.replaceAll("_", " ")}
+                  {organization.type.replaceAll("_", " ").replace(/\b\w/g, (letter) => letter.toUpperCase())}
                 </p>
               </button>
             ))
