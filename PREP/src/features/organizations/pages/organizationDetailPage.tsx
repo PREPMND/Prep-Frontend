@@ -219,7 +219,7 @@ export default function OrganizationDetailPage() {
       </div>
       {isJoinOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-4 backdrop-blur-sm">
-          <div className="w-full max-w-lg rounded-2xl border border-neutral-200 bg-white p-6 shadow-2xl dark:border-neutral-800 dark:bg-neutral-950">
+          <div className="w-full max-w-lg rounded-2xl border border-neutral-200 light:bg-white p-6 shadow-2xl dark:border-neutral-800 dark:bg-neutral-950">
             <h2 className="text-xl font-semibold text-neutral-900 dark:text-white">
               Request to join
             </h2>
