@@ -240,7 +240,7 @@ export default function OrganizationDetailPage() {
                     event.target.value as OrganizationMemberRole,
                   )
                 }
-                className="mt-2 w-full rounded-xl border border-neutral-300 bg-white px-3 py-2.5 text-sm dark:border-neutral-700 dark:bg-neutral-900"
+                className="mt-2 w-full rounded-xl border border-neutral-300 light:bg-white px-3 py-2.5 text-sm dark:border-neutral-700 dark:bg-neutral-900"
               >
                 <option value="student">Student</option>
                 <option value="researcher">Researcher</option>
