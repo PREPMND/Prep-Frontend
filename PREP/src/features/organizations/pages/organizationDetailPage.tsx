@@ -291,7 +291,7 @@ export default function OrganizationDetailPage() {
           >
             Manage membership requests
           </Link></div>
-      )}
+        )}
       )}
 
     </div>
