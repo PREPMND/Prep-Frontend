@@ -10,7 +10,7 @@ import { getCloudinaryUrl } from "../services/cloudinaryHelper";
 export function ChallengeFeed() {
     const { data: challenges, isLoading } = useChallenges();
     const navigate = useNavigate();
-
+    console.log(challenge);
     return (
 
         <div className="flex h-screen w-screen overflow-hidden">
@@ -42,7 +42,7 @@ function ChallengeCard({
     challenge: Challenge;
 }) {
     const media = challenge.media ?? [];
-    console.log(challenge);
+    
     const [imageLoaded, setImageLoaded] = useState(false);
     const navigate = useNavigate();
     const { showToast } = useToast();
