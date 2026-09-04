@@ -11,6 +11,7 @@ import {
 } from "../types/organization";
 import { OrganizationMembers } from "../components/organizationMembers";
 import { Link } from "react-router-dom";
+import { useToast } from "../../common/toastProvider";
 export default function OrganizationDetailPage() {
   const { id } = useParams<{ id: string }>();
 
@@ -23,7 +24,12 @@ export default function OrganizationDetailPage() {
 
   const joinMutation = useRequestToJoinOrganization(id ?? "");
   const leaveMutation = useLeaveOrganization(id ?? "");
+  const [isJoinOpen, setIsJoinOpen] = useState(false);
+  const [joinRole, setJoinRole] =
+    useState<OrganizationMemberRole>("student");
+  const [joinMessage, setJoinMessage] = useStats("");
 
+  const { showToast } = useToast();
   const membership = memberships.find(
     (item) => item.organizationId === id,
   );
