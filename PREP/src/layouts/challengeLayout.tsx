@@ -13,7 +13,7 @@ export default function ChallengeLayout() {
       <main className="relative z-10 min-h-screen scrollbar-none">
         <div
           key={location.pathname}
-          className="animate-[fadeIn_1s_ease-out]"
+          className="animate-[fadeIn_1s_ease-out] scrollbar-none"
         >
           <Outlet />
         </div>
