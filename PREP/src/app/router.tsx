@@ -55,6 +55,13 @@ export const router = createBrowserRouter([
           },
           {
             path: "/",
+            <style>
+              {`
+                .scrollbar-none::-webkit-scrollbar {
+                  display: none;
+                }
+              `}
+            </style>
             element: <ChallengeFeed />
           },
           {
