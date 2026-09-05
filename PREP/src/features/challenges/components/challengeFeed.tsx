@@ -5,11 +5,9 @@ import type { Challenge } from "../types/challenge";
 import { useEffect, useState } from "react";
 import { PcHomeBar } from "../../common/pcHomeBar";
 import { useNavigate } from "react-router-dom";
-import { useToast } from "../../common/toastProvider";
 import { getCloudinaryUrl } from "../services/cloudinaryHelper";
 export function ChallengeFeed() {
     const { data: challenges, isLoading } = useChallenges();
-    const navigate = useNavigate();
     console.log(challenges);
     return (
 
