@@ -21,7 +21,7 @@ export function PcHomeBar() {
 
 
             <div onClick={() => setIsSearchOpen(true)}  className="cursor-pointer">
-                <SearchBox onKeyDown={(e) => e.key === "/" && setIsSearchOpen(true)}/>
+                <SearchBox />
             </div>
 
             {isSearchOpen && (
