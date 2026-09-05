@@ -20,8 +20,8 @@ export function PcHomeBar() {
         <div className="min-w-[15%] flex flex-col shadow-lime-200 shadow-lg cursor-default select-none *:select-none">
 
 
-            <div onClick={() => setIsSearchOpen(true)} onKeyDown={(e) => e.key === "/" && setIsSearchOpen(true)} className="cursor-pointer">
-                <SearchBox />
+            <div onClick={() => setIsSearchOpen(true)}  className="cursor-pointer">
+                <SearchBox onKeyDown={(e) => e.key === "/" && setIsSearchOpen(true)}/>
             </div>
 
             {isSearchOpen && (
