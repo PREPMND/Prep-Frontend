@@ -11,7 +11,7 @@ export function ChallengeFeed() {
     return (
 
         <div className="flex h-screen h-screen max-w-screen overflow-hidden scrollbar-none! overflow-x-hidden">
-            <div className="flex-1 h-full overflow-y-auto min-h-screen scrollbar-none pt-3 pb-4 px-4 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+            <div className="flex-1 h-full  overflow-y-auto min-h-screen scrollbar-none! pt-3 pb-4 px-4 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
                 {isLoading ? (
                     <div className="col-span-full flex items-center justify-center">
                         Loading challenges...
