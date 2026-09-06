@@ -175,7 +175,7 @@ export function ChallengeForm() {
                 </label>
                 <select
                     id="category"
-                    value={category}
+                    value={category.}
                     onChange={(event) => {
                         setCategory(event.target.value as ChallengeCategory | "");
                         setSubcategory("");
