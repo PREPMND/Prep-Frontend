@@ -21,9 +21,8 @@ export function Providers({ children }: ProvidersProps) {
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <ToastProvider>
-          <div className="scrollbar-thumb-amber-400">
+          
           {children}
-          </div>
         </ToastProvider>
       </AuthProvider>
     </QueryClientProvider>
