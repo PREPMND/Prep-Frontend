@@ -35,8 +35,9 @@ export async function generateMedia(
     title: string,
     description: string,
 ): Promise<Media> {
+    console.log("Generating media with title:", title, "and description:", description);
     const response = await apiClientMedia.post<Media>(
-        
+
         "/media/generate",
         {
             title,
