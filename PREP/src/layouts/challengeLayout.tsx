@@ -24,13 +24,13 @@ export default function ChallengeLayout() {
           from {
             opacity: 0;
             transform: translateY(10px);
-            scrollbar-none;
+            scrollbar:none;
           }
 
           to {
             opacity: 1;
             transform: translateY(0);
-            scrollbar-none;
+            scrollbar:none;
           }
         }
       `}</style>
