@@ -175,7 +175,7 @@ export function ChallengeForm() {
                 </label>
                 <select
                     id="category"
-                    value={category.}
+                    value={category.toLowerCase().at(0) + category.slice(1) || ""}
                     onChange={(event) => {
                         setCategory(event.target.value as ChallengeCategory | "");
                         setSubcategory("");
