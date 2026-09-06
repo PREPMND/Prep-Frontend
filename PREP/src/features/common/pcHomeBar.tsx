@@ -17,7 +17,7 @@ export function PcHomeBar() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const { data: organizations = [] } = useOrganizations();
     return (
-        <div className="min-w-[15%] flex flex-col shadow-lime-200 shadow-lg cursor-default select-none *:select-none s">
+        <div className="min-w-[15%] flex flex-col shadow-lime-200 shadow-lg cursor-default select-none *:select-none *::-webkit-scrollbar *::-webkit-scrollbar-track *::-webkit-scrollbar-thumb *::-webkit-scrollbar-corner scrollbar-none">
 
 
             <div onClick={() => setIsSearchOpen(true)}  className="cursor-pointer">
