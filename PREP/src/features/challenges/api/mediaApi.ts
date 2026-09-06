@@ -32,21 +32,23 @@ export async function getMediaByIds(
 }
 
 export async function generateMedia(
-  title: string,
-  description: string,
+    title: string,
+    description: string,
 ): Promise<Media> {
-  console.log("SENDING:", {
-    title,
-    description,
-  });
+    console.log("Generating media:", { title, description });
 
-  const response = await apiClientMedia.post<Media>(
-    "/media/generate",
-    {
-      title,
-      description,
-    },
-  );
+    const response = await apiClientMedia.post<Media>(
+        "/media/generate",
+        {
+            title,
+            description,
+        },
+        {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        },
+    );
 
-  return response.data;
+    return response.data;
 }
