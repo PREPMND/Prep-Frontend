@@ -223,7 +223,9 @@ export function ChallengeForm() {
                     ))}
                 </select>
             </div>
-
+            <div>
+                <
+            </div>
             <div className="flex flex-col">
                 {files.length === 0 && (
                     <label className="mt-4 md:w-[70%] w-full flex cursor-pointer items-center gap-3 rounded-xl border border-neutral-200 light:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-800/50 p-3">
