@@ -227,7 +227,8 @@ export function ChallengeForm() {
                 <div>Visibility</div>
                 <div>{visibility}</div>
                 <select 
-                id=''></select>
+                id='visibiltiy'
+                value={visibility}></select>
             </div>
             <div className="flex flex-col">
                 {files.length === 0 && (
