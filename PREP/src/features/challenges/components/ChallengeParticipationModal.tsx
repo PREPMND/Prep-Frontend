@@ -203,7 +203,7 @@ export default function ChallengeParticipationModal({
             }
             placeholder="Tell them briefly how you can contribute..."
             rows={3}
-            className="mt-2 w-full resize-none rounded-xl border border-neutral-200 bg-transparent px-4 py-3 text-sm outline-none focus:border-emerald-500 dark:border-neutral-700"
+            className="mt-2 w-full resize-none rounded-xl border border-neutral-200 light:bg-transparent px-4 py-3 text-sm outline-none focus:border-emerald-500 dark:border-neutral-700"
           />
         </div>
 
