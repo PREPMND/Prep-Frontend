@@ -236,7 +236,7 @@ export function ChallengeForm() {
                     <option value="Public">Public</option>
                     <option value="Restricted">Restricted</option>
                 </select>
-                <div>{visibility==='PUBLIC'?""}</div>
+                <div>{visibility==='PUBLIC'?<div>:""}</div>
                 
             </div>
             <div className="flex flex-col">
