@@ -19,7 +19,7 @@ export function ChallengeForm() {
     const [category, setCategory] = useState<ChallengeCategory | "">("");
     const [subcategory, setSubcategory] = useState<ChallengeSubcategory | "">("");
     const [files, setFiles] = useState<File[]>([]);
-    const [visibility,setVisibility] = useState<ChallengeVisibility>('Public');
+    const [visibility, setVisibility] = useState<ChallengeVisibility>('Public');
     const [useGeneratedImage, setUseGeneratedImage] = useState(false);
     const [isGeneratingImage, setIsGeneratingImage] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -224,15 +224,16 @@ export function ChallengeForm() {
                     ))}
                 </select>
             </div>
-            <div >
-                <div>Visibility</div>
+            <div>
+                <label htmlFor="visibility">Visibility</label>
                 <div>{visibility}</div>
-                <select 
-                id='visibiltiy'
-                value={visibility}
+                <select
+                    id="visibility"
+                    value={visibility}
+                    onChange={(e) => setVisibility(e.target.value as ChallengeVisibility)}
                 >
-                    <option>Public</option>
-                    <option>Restricted</option>
+                    <option value="Public">Public</option>
+                    <option value="Restricted">Restricted</option>
                 </select>
             </div>
             <div className="flex flex-col">
