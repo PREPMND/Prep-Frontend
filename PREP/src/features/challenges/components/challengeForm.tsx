@@ -185,9 +185,9 @@ export function ChallengeForm() {
                         setCategory(event.target.value as ChallengeCategory | "");
                         setSubcategory("");
                     }}
-                    className="mt-2 w-full rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-[10px] text-sm outline-none dark:border-neutral-800 scrollbar-thumb-amber-400"
+                    className="mt-2 w-full rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-[10px] text-sm outline-none dark:border-neutral-800 "
                 >
-                    <option value="">Let the platform categorize it</option>
+                    <option value="" className="scrollbar-thumb-amber-400">Let the platform categorize it</option>
                     {Object.values(CHALLENGE_CATEGORIES).map((value) => (
                         <option key={value} value={value}>
                             {value.replaceAll("_", " ")}
