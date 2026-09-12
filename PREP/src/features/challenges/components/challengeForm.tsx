@@ -63,6 +63,7 @@ export function ChallengeForm() {
                 category: category || undefined,
                 subcategory: subcategory || undefined,
                 mediaIds: mediaIds.length ? mediaIds : undefined,
+                visibiltiy
             };
 
             const response = await createChallenge(payload);
