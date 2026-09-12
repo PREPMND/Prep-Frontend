@@ -1,4 +1,19 @@
-import {  apiClientChallenge } from "../../../services/api/apiClient";
+impor
+
+
+export async function requestChallengeParticipation(
+  challengeId: string,
+  payload: CreateChallengeParticipationPayload,
+): Promise<ChallengeParticipation> {
+  const response =
+    await apiClientChallenge.post<ChallengeParticipation>(
+      `/challenges/${challengeId}/participations`,
+      payload,
+    );
+
+  return response.data;
+}
+t {  apiClientChallenge } from "../../../services/api/apiClient";
 import type {
   Challenge,
   ChallengeParticipation,
@@ -41,16 +56,34 @@ export async function getChallengeById(
 
     return response.data;
 }
-
-
-export async function requestChallengeParticipation(
+export async function getChallengeParticipations(
   challengeId: string,
-  payload: CreateChallengeParticipationPayload,
+): Promise<ChallengeParticipation[]> {
+  const response =
+    await apiClientChallenge.get<ChallengeParticipation[]>(
+      `/challenges/${challengeId}/participations`,
+    );
+
+  return response.data;
+}
+
+export async function acceptChallengeParticipation(
+  participationId: string,
 ): Promise<ChallengeParticipation> {
   const response =
-    await apiClientChallenge.post<ChallengeParticipation>(
-      `/challenges/${challengeId}/participations`,
-      payload,
+    await apiClientChallenge.patch<ChallengeParticipation>(
+      `/challenges/participations/${participationId}/accept`,
+    );
+
+  return response.data;
+}
+
+export async function rejectChallengeParticipation(
+  participationId: string,
+): Promise<ChallengeParticipation> {
+  const response =
+    await apiClientChallenge.patch<ChallengeParticipation>(
+      `/challenges/participations/${participationId}/reject`,
     );
 
   return response.data;
