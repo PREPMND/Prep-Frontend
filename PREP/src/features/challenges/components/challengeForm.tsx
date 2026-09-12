@@ -232,6 +232,7 @@ export function ChallengeForm() {
                 value={visibility}
                 >
                     <option>Public</option>
+                    <option>Restricted</option>
                 </select>
             </div>
             <div className="flex flex-col">
