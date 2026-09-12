@@ -7,6 +7,7 @@ import {
     type ChallengeSubcategory,
     type CreateChallengePayload,
     type CreateChallengeResponse,
+    type ChallengeVisibility,
 } from "../types/challenge";
 import { CATEGORY_SUBCATEGORIES } from "../constants/challengeCategory";
 import { SimilarChallenges } from "./similarChallenge";
