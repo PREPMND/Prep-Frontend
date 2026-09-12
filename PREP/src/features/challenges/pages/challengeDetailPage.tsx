@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useChallengeDetails } from "../hooks/useChallengeDetails";
 import { useMedia } from "../hooks/useMedia";
+import type { ChallengeParticipationStatus } from "../types/challenge";
 export default function ChallengeDetailPage() {
   const { id } = useParams();
 
@@ -11,9 +12,20 @@ export default function ChallengeDetailPage() {
     challenge?.mediaIds ?? [],
   );
   console.log(challenge);
-  
-  const [imageLoaded, setImageLoaded] = useState(false);
 
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [isJoinModalOpen, setIsJoinModalOpen] =
+    useState(false);
+
+  const [participationStatus, setParticipationStatus] =
+    useState<ChallengeParticipationStatus | null>(
+      null,
+    );
+
+  const { showToast } = useToast();
+
+  const requestParticipation =
+    useRequestChallengeParticipation(id!);
   if (isLoading) return <div>Loading...</div>;
   if (!challenge) return <div>Challenge not found.</div>;
 
@@ -42,7 +54,7 @@ export default function ChallengeDetailPage() {
             <div className="flex">
               {media.map((item) => (
                 <div
-                key={item.id }
+                  key={item.id}
                   className={`h-52 md:h-[380px] mx-auto w-full xss:w-[70%] shrink-0 overflow-y-hidden rounded-lg light:bg-neutral-200 dark:bg-neutral-800 ${!imageLoaded ? "animate-pulse" : ""
                     }`}
                 >
@@ -55,13 +67,13 @@ export default function ChallengeDetailPage() {
                 </div>
               ))}
             </div>
-            
+
           </div>
         )}
       </div>
       <div className="w-[60%] md:w-[30%] px-3 py-2 cursor-pointer text-center mx-auto mt-5 rounded-3xl bg-emerald-500 text-lg font-semibold  ">
-              Request to Join
-            </div>
+        Request to Join
+      </div>
     </main>
   );
 }
