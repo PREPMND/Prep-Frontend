@@ -5,6 +5,7 @@ import { useMedia } from "../hooks/useMedia";
 import { ChallengeParticipationStatusConst, type ChallengeParticipationStatus, type CreateChallengeParticipationPayload } from "../types/challenge";
 import { useToast } from "../../common/toastProvider";
 import { useRequestChallengeParticipation } from "../hooks/useChallengeParticipation";
+import ChallengeParticipationModal from "../components/ChallengeParticipationModal";
 export default function ChallengeDetailPage() {
   const { id } = useParams();
 
@@ -114,12 +115,12 @@ export default function ChallengeDetailPage() {
           ChallengeParticipationStatusConst.APPROVED
         }
         className={`w-[60%] md:w-[30%] px-3 py-2 text-center mx-auto mt-5 block rounded-3xl text-lg font-semibold transition ${participationStatus ===
-            ChallengeParticipationStatusConst.APPROVED
-            ? "cursor-default bg-emerald-600 text-white"
-            : participationStatus ===
-              ChallengeParticipationStatusConst.PENDING
-              ? "cursor-default bg-amber-500 text-white"
-              : "cursor-pointer bg-emerald-500 text-white hover:bg-emerald-600"
+          ChallengeParticipationStatusConst.APPROVED
+          ? "cursor-default bg-emerald-600 text-white"
+          : participationStatus ===
+            ChallengeParticipationStatusConst.PENDING
+            ? "cursor-default bg-amber-500 text-white"
+            : "cursor-pointer bg-emerald-500 text-white hover:bg-emerald-600"
           }`}
       >
         {participationStatus ===
@@ -130,6 +131,13 @@ export default function ChallengeDetailPage() {
             ? "Request Pending"
             : "Request to Join"}
       </button>
+      <ChallengeParticipationModal
+        isOpen={isJoinModalOpen}
+        isSubmitting={requestParticipation.isPending}
+        hasOrganization={false}
+        onClose={() => setIsJoinModalOpen(false)}
+        onSubmit={handleParticipationRequest}
+      />
     </main>
   );
 }
