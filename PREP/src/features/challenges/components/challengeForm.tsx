@@ -239,7 +239,8 @@ export function ChallengeForm() {
                     </select>
                 </div>
                 <div>
-                    {visibility.}
+                    {visibility==='PUBLIC'?
+                    <div>}
                 </div>
                 
                 
