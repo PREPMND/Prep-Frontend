@@ -7,7 +7,7 @@ import { useToast } from "../../common/toastProvider";
 import { useAcceptChallengeParticipation, useChallengeParticipations, useRejectChallengeParticipation, useRequestChallengeParticipation } from "../hooks/useChallengeParticipation";
 import ChallengeParticipationModal from "../components/challengeParticipationModal"
 import { useQueryClient } from "@tanstack/react-query";
-import ChallengeParticipations from "../components/ChallengeParticipations";
+import ChallengeParticipations from "../components/challengeParticipations";
 export default function ChallengeDetailPage() {
   const { id } = useParams();
 
@@ -26,7 +26,7 @@ export default function ChallengeDetailPage() {
     useState<ChallengeParticipationStatus | null>(
       null,
     );
-
+  
   const { showToast } = useToast();
 
   const requestParticipation =
@@ -71,6 +71,8 @@ export default function ChallengeDetailPage() {
     data: participations = [],
     isLoading: isParticipationsLoading,
   } = useChallengeParticipations(id!);
+
+
   const acceptParticipation =
     useAcceptChallengeParticipation();
   const rejectParticipation =
@@ -173,7 +175,7 @@ export default function ChallengeDetailPage() {
             participationStatus ===
             ChallengeParticipationStatusConst.APPROVED
           }
-          className={`w-[60%] md:w-[30%] px-3 py-2 text-center mx-auto mt-5 block rounded-3xl text-lg font-semibold transition ${participationStatus ===
+          className={`w-[60%] md:w-[30%] px-3 py-2 text-center mx-auto mt-5 block rounded-3xl text-lg font-semibold transition ${participations.status ===
             ChallengeParticipationStatusConst.APPROVED
             ? "cursor-default bg-emerald-600 text-white"
             : participationStatus ===

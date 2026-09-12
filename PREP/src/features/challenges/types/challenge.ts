@@ -70,6 +70,7 @@ export interface CreateChallengeParticipationPayload {
   organizationId?: string;
   role: ChallengeParticipationRole;
   message?: string;
+  status:ChallengeParticipationStatus;
 }
 
 export interface ChallengeParticipation {
