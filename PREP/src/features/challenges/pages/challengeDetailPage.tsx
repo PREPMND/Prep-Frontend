@@ -126,7 +126,7 @@ export default function ChallengeDetailPage() {
           ChallengeParticipationStatusConst.APPROVED
           ? "✓ Participating"
           : participationStatus ===
-            ChallengeParticipationStatus.PENDING
+            ChallengeParticipationStatusConst.PENDING
             ? "Request Pending"
             : "Request to Join"}
       </button>
