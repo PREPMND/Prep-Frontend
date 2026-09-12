@@ -240,7 +240,8 @@ export function ChallengeForm() {
                 </div>
                 <div>
                     {visibility==='PUBLIC'?
-                    <div>}
+                    <div></div>:
+                    <div></div>}
                 </div>
                 
                 
