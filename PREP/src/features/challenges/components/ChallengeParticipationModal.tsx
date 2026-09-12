@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import {
   ChallengeParticipationRole,
+  ChallengeParticipationRoleConst,
   type CreateChallengeParticipationPayload,
 } from "../types/challenge";
 
@@ -159,7 +160,7 @@ export default function ChallengeParticipationModal({
               },
               {
                 value:
-                  ChallengeParticipationRole.EXPERTISE,
+                  ChallengeParticipationRoleConst.EXPERTISE,
                 label: "Expertise",
               },
               {
