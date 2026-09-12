@@ -13,7 +13,7 @@ export default function InfoLayout() {
         <div className="absolute bottom-[-10rem] h-[10rem] w-[10rem] left-[-8rem] md:h-[16rem] md:w-[16rem] rounded-full blur-[120px] light:bg-violet-300/10 dark:bg-violet-900 animate-[floatReverse_14s_ease-in-out_infinite]" />
       </div>
 
-      <main className="relative z-10 min-h-screen overflow-y-!">
+      <main className="relative z-10 min-h-screen overflow-y-clip!">
         <div className="animate-[fadeIn_1s_ease-out]">
           <Outlet />
         </div>
