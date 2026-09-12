@@ -68,6 +68,7 @@ export interface CreateChallengeResponse {
   possibleDuplicates: PossibleDuplicate[];
 }
 
+export interface Challenge
 export const CHALLENGE_SUBCATEGORIES = {
   ROADS: "roads",
   BRIDGES: "bridges",
