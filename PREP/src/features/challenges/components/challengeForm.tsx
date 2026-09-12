@@ -18,7 +18,7 @@ export function ChallengeForm() {
     const [category, setCategory] = useState<ChallengeCategory | "">("");
     const [subcategory, setSubcategory] = useState<ChallengeSubcategory | "">("");
     const [files, setFiles] = useState<File[]>([]);
-    const [visibility,setVisibility] = useState()
+    const [visibility,setVisibility] = useState('Public')
     const [useGeneratedImage, setUseGeneratedImage] = useState(false);
     const [isGeneratingImage, setIsGeneratingImage] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
