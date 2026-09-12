@@ -46,7 +46,7 @@ export interface Challenge {
   mediaIds: string[];
   media: ChallengeMedia[];
   status: string;
-  visibility:ChallengeVisibility | 'PUBLIC',
+  visibility:ChallengeVisibilityType | 'PUBLIC',
   duplicateOfId?: string | null;
   aiSuggestedCategory?: ChallengeCategory | null;
   aiSuggestedSubcategory?: string | null;
@@ -74,6 +74,8 @@ export const ChallengeVisibility={
   PUBLIC:'PUBLIC',
   RESTRICTED:'RESTRICTED'
 } as const 
+
+export type ChallengeVisibilityType = typeof ChallengeVisibility[keyof typeof ChallengeVisibility];
 export const CHALLENGE_SUBCATEGORIES = {
   ROADS: "roads",
   BRIDGES: "bridges",
