@@ -1,19 +1,4 @@
-impor
-
-
-export async function requestChallengeParticipation(
-  challengeId: string,
-  payload: CreateChallengeParticipationPayload,
-): Promise<ChallengeParticipation> {
-  const response =
-    await apiClientChallenge.post<ChallengeParticipation>(
-      `/challenges/${challengeId}/participations`,
-      payload,
-    );
-
-  return response.data;
-}
-t {  apiClientChallenge } from "../../../services/api/apiClient";
+import {  apiClientChallenge } from "../../../services/api/apiClient";
 import type {
   Challenge,
   ChallengeParticipation,
@@ -56,6 +41,21 @@ export async function getChallengeById(
 
     return response.data;
 }
+
+
+export async function requestChallengeParticipation(
+  challengeId: string,
+  payload: CreateChallengeParticipationPayload,
+): Promise<ChallengeParticipation> {
+  const response =
+    await apiClientChallenge.post<ChallengeParticipation>(
+      `/challenges/${challengeId}/participations`,
+      payload,
+    );
+
+  return response.data;
+}
+
 export async function getChallengeParticipations(
   challengeId: string,
 ): Promise<ChallengeParticipation[]> {
