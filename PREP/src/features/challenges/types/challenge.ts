@@ -65,6 +65,27 @@ export interface PossibleDuplicate {
   submittedBy: string;
 }
 
+export interface CreateChallengeParticipationPayload {
+  participantType: string;
+  organizationId?: string;
+  role: ChallengeParticipationRole;
+  message?: string;
+}
+
+export interface ChallengeParticipation {
+  id: string;
+  challengeId: string;
+  participantType: string;
+  userId: string | null;
+  organizationId: string | null;
+  role: ChallengeParticipationRole;
+  status: ChallengeParticipationStatus;
+  message: string | null;
+  decidedBy: string | null;
+  decisionReason: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
 export interface CreateChallengeResponse {
   challenge: Challenge;
   possibleDuplicates: PossibleDuplicate[];
