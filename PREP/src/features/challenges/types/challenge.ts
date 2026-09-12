@@ -75,9 +75,9 @@ export const ChallengeVisibility={
   RESTRICTED:'RESTRICTED'
 } as const 
 export const ChallengeParticipationStatusConst= {
-  PENDING = 'pending',
-  APPROVED = 'approved',
-  REJECTED = 'rejected',
+  PENDING : 'pending',
+  APPROVED : 'approved',
+  REJECTED : 'rejected',
   WITHDRAWN = 'withdrawn',
 }
 
