@@ -224,7 +224,7 @@ export function ChallengeForm() {
                 </select>
             </div>
             <div>
-                <
+                <div></div>
             </div>
             <div className="flex flex-col">
                 {files.length === 0 && (
