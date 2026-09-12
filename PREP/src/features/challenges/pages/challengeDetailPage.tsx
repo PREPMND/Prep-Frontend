@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useChallengeDetails } from "../hooks/useChallengeDetails";
 import { useMedia } from "../hooks/useMedia";
 import type { ChallengeParticipationStatus } from "../types/challenge";
+import { useToast } from "../../common/toastProvider";
 export default function ChallengeDetailPage() {
   const { id } = useParams();
 
