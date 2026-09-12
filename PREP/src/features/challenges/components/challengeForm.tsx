@@ -231,7 +231,7 @@ export function ChallengeForm() {
                 <select
                     id="visibility"
                     value={visibility}
-                    onChange={(e) => setVisibility(e.target.value as ChallengeVisibility)}
+                    onChange={(e) => setVisibility(e.target.value as ChallengeVisibilityType)}
                 >
                     <option value="Public">Public</option>
                     <option value="Restricted">Restricted</option>
