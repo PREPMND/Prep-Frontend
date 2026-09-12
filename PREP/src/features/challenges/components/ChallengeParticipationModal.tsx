@@ -53,7 +53,7 @@ export default function ChallengeParticipationModal({
 
   return (
     <div
-      className="fixed inset-0 z-[90] flex items-end justify-center bg-black/50 px-4 py-4 sm:items-center"
+      className="fixed inset-0 z-[90] overflow-y-auto flex items-end justify-center bg-black/50 px-4 py-4 sm:items-center"
       onClick={handleBackdropClick}
     >
       <div
