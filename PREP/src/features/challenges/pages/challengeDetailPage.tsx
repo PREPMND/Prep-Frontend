@@ -7,6 +7,7 @@ import { useToast } from "../../common/toastProvider";
 import { useAcceptChallengeParticipation, useChallengeParticipations, useRejectChallengeParticipation, useRequestChallengeParticipation } from "../hooks/useChallengeParticipation";
 import ChallengeParticipationModal from "../components/challengeParticipationModal"
 import { useQueryClient } from "@tanstack/react-query";
+import ChallengeParticipations from "../components/ChallengeParticipations";
 export default function ChallengeDetailPage() {
   const { id } = useParams();
 
@@ -199,6 +200,16 @@ export default function ChallengeDetailPage() {
         hasOrganization={false}
         onClose={() => setIsJoinModalOpen(false)}
         onSubmit={handleParticipationRequest}
+      />
+      <ChallengeParticipations
+        participations={participations}
+        isLoading={isParticipationsLoading}
+        isUpdating={
+          acceptParticipation.isPending ||
+          rejectParticipation.isPending
+        }
+        onAccept={handleAcceptParticipation}
+        onReject={handleRejectParticipation}
       />
     </div>
 
