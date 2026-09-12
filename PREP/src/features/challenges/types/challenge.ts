@@ -89,7 +89,7 @@ export const  ChallengeParticipationRoleConst = {
   VALIDATION : 'validation',
 }
 
-export enum ChallengeStatus {
+export const ChallengeStatus {
   SUBMITTED = 'submitted',
   UNDER_REVIEW = 'under_review',
   VALIDATED = 'validated',
