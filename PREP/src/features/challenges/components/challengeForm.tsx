@@ -231,13 +231,7 @@ export function ChallengeForm() {
                 id='visibiltiy'
                 value={visibility}
                 >
-                    {Object.values(Ch).map((value) => (
-                        <option key={value} value={value}>
-                            {value
-                                .replaceAll("_", " ")
-                                .replace(/\b\w/g, (letter) => letter.toUpperCase())}
-                        </option>
-                    ))}
+                    
                 </select>
             </div>
             <div className="flex flex-col">
