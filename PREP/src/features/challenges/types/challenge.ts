@@ -78,10 +78,10 @@ export const ChallengeParticipationStatusConst= {
   PENDING : 'pending',
   APPROVED : 'approved',
   REJECTED : 'rejected',
-  WITHDRAWN = 'withdrawn',
+  WITHDRAWN : 'withdrawn',
 }
 
-export enum ChallengeParticipationRole {
+export enum ChallengeParticipationRoleConst  {
   SOLUTION_DEVELOPMENT = 'solution_development',
   FUNDING = 'funding',
   IMPLEMENTATION = 'implementation',
