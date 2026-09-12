@@ -231,7 +231,7 @@ export function ChallengeForm() {
                 id='visibiltiy'
                 value={visibility}
                 >
-                    {Object.values(Challe).map((value) => (
+                    {Object.values().map((value) => (
                         <option key={value} value={value}>
                             {value
                                 .replaceAll("_", " ")
