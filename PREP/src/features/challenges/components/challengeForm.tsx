@@ -231,6 +231,7 @@ export function ChallengeForm() {
                     
                 </div>
                 <div className="ml-2 mt-2 text-[13px]">
+                    
                     {visibility==='PUBLIC'?
                     <div className="dark:text-gray-300 light:text-gray-700">Any one can join.</div>:
                     <div className="dark:text-gray-300 light:text-gray-700 ">Approved members can join.</div>}
