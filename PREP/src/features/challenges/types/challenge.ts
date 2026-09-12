@@ -25,6 +25,7 @@ export interface CreateChallengePayload {
   location?: string;
   latitude?: number;
   longitude?: number;
+  visibility: ChallengeVisibility,
 }
 export interface ChallengeMedia {
   id: string;
