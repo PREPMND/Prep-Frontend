@@ -4,6 +4,7 @@ import { useChallengeDetails } from "../hooks/useChallengeDetails";
 import { useMedia } from "../hooks/useMedia";
 import type { ChallengeParticipationStatus } from "../types/challenge";
 import { useToast } from "../../common/toastProvider";
+import { useRequestChallengeParticipation } from "../hooks/useChallengeParticipation";
 export default function ChallengeDetailPage() {
   const { id } = useParams();
 
@@ -27,6 +28,39 @@ export default function ChallengeDetailPage() {
 
   const requestParticipation =
     useRequestChallengeParticipation(id!);
+
+  function handleParticipationRequest(
+    payload: CreateChallengeParticipationPayload,
+  ) {
+    requestParticipation.mutate(payload, {
+      onSuccess: (participation) => {
+        setParticipationStatus(
+          participation.status,
+        );
+
+        setIsJoinModalOpen(false);
+
+        if (
+          participation.status ===
+          ChallengeParticipationStatusC.APPROVED
+        ) {
+          showToast(
+            "You successfully joined this challenge",
+          );
+        } else {
+          showToast(
+            "Your participation request has been sent",
+          );
+        }
+      },
+
+      onError: () => {
+        showToast(
+          "Unable to send participation request",
+        );
+      },
+    });
+  }
   if (isLoading) return <div>Loading...</div>;
   if (!challenge) return <div>Challenge not found.</div>;
 
