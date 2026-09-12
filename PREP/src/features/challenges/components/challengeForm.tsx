@@ -225,7 +225,7 @@ export function ChallengeForm() {
                     ))}
                 </select>
             </div>
-            <div>
+            <div className="flex items-center gap-5">
                 <label htmlFor="visibility">Visibility</label>
                 <div>{visibility}</div>
                 <select
