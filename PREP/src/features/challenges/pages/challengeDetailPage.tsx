@@ -4,7 +4,7 @@ import { useChallengeDetails } from "../hooks/useChallengeDetails";
 import { useMedia } from "../hooks/useMedia";
 import { ChallengeParticipationStatusConst, type ChallengeParticipationStatus, type CreateChallengeParticipationPayload } from "../types/challenge";
 import { useToast } from "../../common/toastProvider";
-import { useRequestChallengeParticipation } from "../hooks/useChallengeParticipation";
+import { useAcceptChallengeParticipation, useChallengeParticipations, useRequestChallengeParticipation } from "../hooks/useChallengeParticipation";
 import ChallengeParticipationModal from "../components/challengeParticipationModal"
 import { useQueryClient } from "@tanstack/react-query";
 export default function ChallengeDetailPage() {
