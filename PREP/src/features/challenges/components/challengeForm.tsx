@@ -223,7 +223,7 @@ export function ChallengeForm() {
                     ))}
                 </select>
             </div>
-            <div>
+            <div >
                 <div>Visibility</div>
                 <div>{visibility}</div>
             </div>
