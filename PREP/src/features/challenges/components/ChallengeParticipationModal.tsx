@@ -86,7 +86,7 @@ export default function ChallengeParticipationModal({
               }
               className={`rounded-2xl border p-4 text-left transition ${
                 participantType === "individual"
-                  ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-950/30"
+                  ? "border-emerald-500 light:bg-emerald-50 dark:bg-emerald-950/30"
                   : "border-neutral-200 dark:border-neutral-700"
               }`}
             >
