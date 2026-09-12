@@ -76,6 +76,55 @@ export default function ChallengeDetailPage() {
 
   const rejectParticipation =
     useRejectChallengeParticipation();
+  function handleAcceptParticipation(
+    participationId: string,
+  ) {
+    acceptParticipation.mutate(participationId, {
+      onSuccess: () => {
+        queryClient.invalidateQueries({
+          queryKey: [
+            "challenge-participations",
+            id,
+          ],
+        });
+
+        showToast(
+          "Participation request approved",
+        );
+      },
+
+      onError: () => {
+        showToast(
+          "Unable to approve participation request",
+        );
+      },
+    });
+  }
+
+  function handleRejectParticipation(
+    participationId: string,
+  ) {
+    rejectParticipation.mutate(participationId, {
+      onSuccess: () => {
+        queryClient.invalidateQueries({
+          queryKey: [
+            "challenge-participations",
+            id,
+          ],
+        });
+
+        showToast(
+          "Participation request rejected",
+        );
+      },
+
+      onError: () => {
+        showToast(
+          "Unable to reject participation request",
+        );
+      },
+    });
+  }
   if (isLoading) return <div>Loading...</div>;
   if (!challenge) return <div>Challenge not found.</div>;
 
