@@ -69,8 +69,8 @@ export interface CreateChallengeResponse {
 }
 
 export interface ChallengeVisibility{
-  PUBLIC:'Public',
-  RESTRICTED:'Restricted'
+  PUBLIC:'PUBLIC',
+  RESTRICTED:'RESTRICTED'
 }
 export const CHALLENGE_SUBCATEGORIES = {
   ROADS: "roads",
