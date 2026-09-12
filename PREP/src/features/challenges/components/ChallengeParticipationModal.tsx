@@ -107,7 +107,7 @@ export default function ChallengeParticipationModal({
               }
               className={`rounded-2xl border p-4 text-left transition ${
                 participantType === "organization"
-                  ? "border-emerald-500 loigbg-emerald-50 dark:bg-emerald-950/30"
+                  ? "border-emerald-500 light:bg-emerald-50 dark:bg-emerald-950/30"
                   : "border-neutral-200 dark:border-neutral-700"
               } ${
                 !hasOrganization
@@ -175,7 +175,7 @@ export default function ChallengeParticipationModal({
                 onClick={() => setRole(item.value)}
                 className={`rounded-xl border px-4 py-3 text-left text-sm transition ${
                   role === item.value
-                    ? "border-emerald-500 bg-emerald-50 font-semibold dark:bg-emerald-950/30"
+                    ? "border-emerald-500 light:bg-emerald-50 font-semibold dark:bg-emerald-950/30"
                     : "border-neutral-200 dark:border-neutral-700"
                 }`}
               >
