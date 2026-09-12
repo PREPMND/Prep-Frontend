@@ -30,7 +30,7 @@ export default function ChallengeParticipationModal({
 
   const [role, setRole] =
     useState<ChallengeParticipationRole>(
-      ChallengeParticipationRole.SOLUTION_DEVELOPMENT,
+      ChallengeParticipationRoleConst.SOLUTION_DEVELOPMENT,
     );
 
   const [message, setMessage] = useState("");
