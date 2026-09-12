@@ -71,10 +71,8 @@ export default function ChallengeDetailPage() {
     data: participations = [],
     isLoading: isParticipationsLoading,
   } = useChallengeParticipations(id!);
-
   const acceptParticipation =
     useAcceptChallengeParticipation();
-
   const rejectParticipation =
     useRejectChallengeParticipation();
   function handleAcceptParticipation(
@@ -128,7 +126,7 @@ export default function ChallengeDetailPage() {
   }
   if (isLoading) return <div>Loading...</div>;
   if (!challenge) return <div>Challenge not found.</div>;
-
+  console.log()
   return (
     <div>
       <main className="app-container py-10">
