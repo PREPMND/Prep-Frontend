@@ -227,7 +227,6 @@ export function ChallengeForm() {
             </div>
             <div className="flex items-center gap-5">
                 <label htmlFor="visibility">Visibility</label>
-                <div>{visibility}</div>
                 <select
                     id="visibility"
                     value={visibility}
@@ -237,6 +236,8 @@ export function ChallengeForm() {
                     <option value="Public">Public</option>
                     <option value="Restricted">Restricted</option>
                 </select>
+                <div>{visibility}</div>
+                
             </div>
             <div className="flex flex-col">
                 {files.length === 0 && (
