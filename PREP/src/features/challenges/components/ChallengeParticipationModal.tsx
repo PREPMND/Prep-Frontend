@@ -65,7 +65,7 @@ export default function ChallengeParticipationModal({
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 z-[90] overflow-y-auto bg-black/50 light:bg-black/50 dark:bg-black/70"
+      className="fixed inset-0 z-[90] overflow-y-auto bg-black/50 light:bg-black/50 dark:bg-black/70 scrollbar-thumb-amber-400"
     >
       <div className="flex min-h-full items-end justify-center px-4 py-4 sm:items-center sm:py-8">
         <div
