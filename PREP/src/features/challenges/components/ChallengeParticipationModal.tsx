@@ -159,7 +159,7 @@ export default function ChallengeParticipationModal({
               },
               {
                 value:
-                  <ChallengeParticipationRole></ChallengeParticipationRole>.EXPERTISE,
+                  ChallengeParticipationRole.EXPERTISE,
                 label: "Expertise",
               },
               {
