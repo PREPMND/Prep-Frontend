@@ -81,7 +81,7 @@ export const ChallengeParticipationStatusConst= {
   WITHDRAWN : 'withdrawn',
 }
 
-export enum ChallengeParticipationRoleConst = {
+export const  ChallengeParticipationRoleConst = {
   SOLUTION_DEVELOPMENT : 'solution_development',
   FUNDING : 'funding',
   IMPLEMENTATION : 'implementation',
