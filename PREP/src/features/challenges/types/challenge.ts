@@ -25,7 +25,7 @@ export interface CreateChallengePayload {
   location?: string;
   latitude?: number;
   longitude?: number;
-  visibility: ChallengeVisibility,
+  visibility: ChallengeVisibilityType,
 }
 export interface ChallengeMedia {
   id: string;
@@ -46,7 +46,7 @@ export interface Challenge {
   mediaIds: string[];
   media: ChallengeMedia[];
   status: string;
-  visibility:ChallengeVisibilityType | 'PUBLIC',
+  visibility:ChallengeVisibilityType ;
   duplicateOfId?: string | null;
   aiSuggestedCategory?: ChallengeCategory | null;
   aiSuggestedSubcategory?: string | null;
