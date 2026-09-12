@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useChallengeDetails } from "../hooks/useChallengeDetails";
 import { useMedia } from "../hooks/useMedia";
-import type { ChallengeParticipationStatus } from "../types/challenge";
+import { ChallengeParticipationStatusConst, type ChallengeParticipationStatus, type CreateChallengeParticipationPayload } from "../types/challenge";
 import { useToast } from "../../common/toastProvider";
 import { useRequestChallengeParticipation } from "../hooks/useChallengeParticipation";
 export default function ChallengeDetailPage() {
@@ -42,7 +42,7 @@ export default function ChallengeDetailPage() {
 
         if (
           participation.status ===
-          ChallengeParticipationStatusC.APPROVED
+          ChallengeParticipationStatusConst.APPROVED
         ) {
           showToast(
             "You successfully joined this challenge",
