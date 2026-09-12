@@ -46,7 +46,7 @@ export interface Challenge {
   mediaIds: string[];
   media: ChallengeMedia[];
   status: string;
-  visibility:ChallengeVisibilityType ;
+  visibility: ChallengeVisibilityType;
   duplicateOfId?: string | null;
   aiSuggestedCategory?: ChallengeCategory | null;
   aiSuggestedSubcategory?: string | null;
@@ -70,34 +70,43 @@ export interface CreateChallengeResponse {
   possibleDuplicates: PossibleDuplicate[];
 }
 
-export const ChallengeVisibility={
-  PUBLIC:'PUBLIC',
-  RESTRICTED:'RESTRICTED'
-} as const 
-export const ChallengeParticipationStatusConst= {
-  PENDING : 'pending',
-  APPROVED : 'approved',
-  REJECTED : 'rejected',
-  WITHDRAWN : 'withdrawn',
-}
+export const ChallengeVisibility = {
+  PUBLIC: 'PUBLIC',
+  RESTRICTED: 'RESTRICTED'
+} as const
+export const ChallengeParticipationStatusConst = {
+  PENDING: 'pending',
+  APPROVED: 'approved',
+  REJECTED: 'rejected',
+  WITHDRAWN: 'withdrawn',
+} as const; // as const preserves exact literal string types
 
-export const  ChallengeParticipationRoleConst = {
-  SOLUTION_DEVELOPMENT : 'solution_development',
-  FUNDING : 'funding',
-  IMPLEMENTATION : 'implementation',
-  EXPERTISE : 'expertise',
-  VALIDATION : 'validation',
-}
+export type ChallengeParticipationStatus = typeof ChallengeParticipationStatusConst[keyof typeof ChallengeParticipationStatusConst];
 
-export const ChallengeStatus {
-  SUBMITTED = 'submitted',
-  UNDER_REVIEW = 'under_review',
-  VALIDATED = 'validated',
-  ASSIGNED = 'assigned',
-  IN_PROGRESS = 'in_progress',
-  RESOLVED = 'resolved',
-  REJECTED = 'rejected',
-}
+
+export const ChallengeParticipationRoleConst = {
+  SOLUTION_DEVELOPMENT: 'solution_development',
+  FUNDING: 'funding',
+  IMPLEMENTATION: 'implementation',
+  EXPERTISE: 'expertise',
+  VALIDATION: 'validation',
+} as const;
+
+export type ChallengeParticipationRole = typeof ChallengeParticipationRoleConst[keyof typeof ChallengeParticipationRoleConst];
+
+
+export const ChallengeStatusConst = { // Fixed syntax error (=) and unified naming
+  SUBMITTED: 'submitted',
+  UNDER_REVIEW: 'under_review',
+  VALIDATED: 'validated',
+  ASSIGNED: 'assigned',
+  IN_PROGRESS: 'in_progress',
+  RESOLVED: 'resolved',
+  REJECTED: 'rejected',
+} as const;
+
+export type ChallengeStatus = typeof ChallengeStatusConst[keyof typeof ChallengeStatusConst];
+
 export type ChallengeVisibilityType = typeof ChallengeVisibility[keyof typeof ChallengeVisibility];
 export const CHALLENGE_SUBCATEGORIES = {
   ROADS: "roads",
