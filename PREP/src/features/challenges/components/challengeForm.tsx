@@ -230,12 +230,16 @@ export function ChallengeForm() {
                     <label htmlFor="visibility" className="text-sm pl-2 font-medium ">Visibility</label>
                     
                 </div>
-                <div className="ml-2 mt-2 text-[13px]">
-                    
-                    {visibility==='PUBLIC'?
-                    <div className="dark:text-gray-300 light:text-gray-700">Any one can join.</div>:
-                    <div className="dark:text-gray-300 light:text-gray-700 ">Approved members can join.</div>}
-                </div>
+                <select
+                        id="visibility"
+                        value={visibility}
+                        onChange={(e) => setVisibility(e.target.value as ChallengeVisibilityType)}
+                        className="ml-2 mt-2 w-[30%] rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-700 dark:text-white px-4 py-[10px] text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800"
+                    >
+                        <option value="PUBLIC">Public</option>
+                        <option value="RESTRICTED">Restricted</option>
+                    </select>
+                
                 
                 
             </div>
