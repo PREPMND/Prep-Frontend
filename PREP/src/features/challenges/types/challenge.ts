@@ -45,6 +45,7 @@ export interface Challenge {
   mediaIds: string[];
   media: ChallengeMedia[];
   status: string;
+  visibility:
   duplicateOfId?: string | null;
   aiSuggestedCategory?: ChallengeCategory | null;
   aiSuggestedSubcategory?: string | null;
