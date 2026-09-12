@@ -145,7 +145,7 @@ export default function ChallengeParticipationModal({
             {[
               {
                 value:
-                  ChallengeParticipationRole.SOLUTION_DEVELOPMENT,
+                  ChallengeParticipationRoleConst.SOLUTION_DEVELOPMENT,
                 label: "Solution Development",
               },
               {
@@ -165,7 +165,7 @@ export default function ChallengeParticipationModal({
               },
               {
                 value:
-                  ChallengeParticipationRole.VALIDATION,
+                  ChallengeParticipationRoleConst.VALIDATION,
                 label: "Validation",
               },
             ].map((item) => (
