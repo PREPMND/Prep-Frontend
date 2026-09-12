@@ -233,7 +233,7 @@ export function ChallengeForm() {
                     onChange={(e) => setVisibility(e.target.value as ChallengeVisibilityType)}
                     className="mt-2 w-[30%] rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-700 dark:text-white px-4 py-[10px] text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800"
                 >
-                    <option value="Public">Public</option>
+                    <option value="PUBLIC">Public</option>
                     <option value="Restricted">Restricted</option>
                 </select>
                 <div>{visibility==='PUBLIC'?<div>hey</div>
