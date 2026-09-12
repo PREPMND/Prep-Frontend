@@ -74,7 +74,30 @@ export const ChallengeVisibility={
   PUBLIC:'PUBLIC',
   RESTRICTED:'RESTRICTED'
 } as const 
+export enum ChallengeParticipationStatus {
+  PENDING = 'pending',
+  APPROVED = 'approved',
+  REJECTED = 'rejected',
+  WITHDRAWN = 'withdrawn',
+}
 
+export enum ChallengeParticipationRole {
+  SOLUTION_DEVELOPMENT = 'solution_development',
+  FUNDING = 'funding',
+  IMPLEMENTATION = 'implementation',
+  EXPERTISE = 'expertise',
+  VALIDATION = 'validation',
+}
+
+export enum ChallengeStatus {
+  SUBMITTED = 'submitted',
+  UNDER_REVIEW = 'under_review',
+  VALIDATED = 'validated',
+  ASSIGNED = 'assigned',
+  IN_PROGRESS = 'in_progress',
+  RESOLVED = 'resolved',
+  REJECTED = 'rejected',
+}
 export type ChallengeVisibilityType = typeof ChallengeVisibility[keyof typeof ChallengeVisibility];
 export const CHALLENGE_SUBCATEGORIES = {
   ROADS: "roads",
