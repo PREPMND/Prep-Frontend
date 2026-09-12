@@ -32,25 +32,19 @@ export default function ChallengeDetailPage() {
     payload: CreateChallengeParticipationPayload,
   ) {
     requestParticipation.mutate(payload, {
-      onSuccess: (participation) => {
-        setParticipationStatus(
-          participation.status,
-        );
+      onSuccess: () => {
+        queryClient.invalidateQueries({
+          queryKey: [
+            "challenge-participations",
+            id,
+          ],
+        });
 
         setIsJoinModalOpen(false);
 
-        if (
-          participation.status ===
-          ChallengeParticipationStatusConst.APPROVED
-        ) {
-          showToast(
-            "You successfully joined this challenge",
-          );
-        } else {
-          showToast(
-            "Your participation request has been sent",
-          );
-        }
+        showToast(
+          "Your participation request has been sent",
+        );
       },
 
       onError: () => {
