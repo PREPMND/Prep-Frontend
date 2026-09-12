@@ -85,8 +85,8 @@ export enum ChallengeParticipationRoleConst = {
   SOLUTION_DEVELOPMENT : 'solution_development',
   FUNDING : 'funding',
   IMPLEMENTATION : 'implementation',
-  EXPERTISE = 'expertise',
-  VALIDATION = 'validation',
+  EXPERTISE : 'expertise',
+  VALIDATION : 'validation',
 }
 
 export enum ChallengeStatus {
