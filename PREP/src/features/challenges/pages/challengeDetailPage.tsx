@@ -5,7 +5,7 @@ import { useMedia } from "../hooks/useMedia";
 import { ChallengeParticipationStatusConst, type ChallengeParticipationStatus, type CreateChallengeParticipationPayload } from "../types/challenge";
 import { useToast } from "../../common/toastProvider";
 import { useRequestChallengeParticipation } from "../hooks/useChallengeParticipation";
-import { ChallengesMo}
+import { ChallengeParticipationModal} from "../components/"
 export default function ChallengeDetailPage() {
   const { id } = useParams();
 
