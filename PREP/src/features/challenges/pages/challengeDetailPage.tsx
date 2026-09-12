@@ -131,13 +131,8 @@ export default function ChallengeDetailPage() {
             ? "Request Pending"
             : "Request to Join"}
       </button>
-      <ChallengeParticipationModal
-        isOpen={isJoinModalOpen}
-        isSubmitting={requestParticipation.isPending}
-        hasOrganization={false}
-        onClose={() => setIsJoinModalOpen(false)}
-        onSubmit={handleParticipationRequest}
-      />
+      
     </main>
+    
   );
 }
