@@ -152,9 +152,9 @@ export default function ChallengeParticipationModal({
                     key={item.value}
                     type="button"
                     onClick={() => setRole(item.value)}
-                    className={`rounded-xl border px-4 py-3 text-left text-sm transition ${
+                    className={`rounded-xl border px-4 py-[10px] rounded-2xl! text-left text-sm transition ${
                       role === item.value
-                        ? "border-emerald-500 font-semibold light:bg-emerald-50 dark:bg-emerald-950/40"
+                        ? "border-emerald-500 font-[600] light:bg-emerald-50 dark:bg-emerald-950/40"
                         : "light:border-neutral-200 light:bg-white light:hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800"
                     }`}
                   >
