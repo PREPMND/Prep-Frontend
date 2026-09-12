@@ -238,10 +238,10 @@ export function ChallengeForm() {
                         <option value="RESTRICTED">Restricted</option>
                     </select>
                 </div>
-                <div>
+                <div className="ml-4">
                     {visibility==='PUBLIC'?
                     <div className="dark:text-gray-300 light:text-gray-700">Any one can join.</div>:
-                    <div>Approved members can join.</div>}
+                    <div className="dark:text-gray-300 light:text-gray-700 ">Approved members can join.</div>}
                 </div>
                 
                 
