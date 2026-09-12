@@ -106,9 +106,30 @@ export default function ChallengeDetailPage() {
           </div>
         )}
       </div>
-      <div className="w-[60%] md:w-[30%] px-3 py-2 cursor-pointer text-center mx-auto mt-5 rounded-3xl bg-emerald-500 text-lg font-semibold  ">
-        Request to Join
-      </div>
+      <button
+        type="button"
+        onClick={() => setIsJoinModalOpen(true)}
+        disabled={
+          participationStatus ===
+          ChallengeParticipationStatus.APPROVED
+        }
+        className={`w-[60%] md:w-[30%] px-3 py-2 text-center mx-auto mt-5 block rounded-3xl text-lg font-semibold transition ${participationStatus ===
+            ChallengeParticipationStatus.APPROVED
+            ? "cursor-default bg-emerald-600 text-white"
+            : participationStatus ===
+              ChallengeParticipationStatus.PENDING
+              ? "cursor-default bg-amber-500 text-white"
+              : "cursor-pointer bg-emerald-500 text-white hover:bg-emerald-600"
+          }`}
+      >
+        {participationStatus ===
+          ChallengeParticipationStatus.APPROVED
+          ? "✓ Participating"
+          : participationStatus ===
+            ChallengeParticipationStatus.PENDING
+            ? "Request Pending"
+            : "Request to Join"}
+      </button>
     </main>
   );
 }
