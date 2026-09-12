@@ -22,11 +22,7 @@ export default function ChallengeDetailPage() {
   const [isJoinModalOpen, setIsJoinModalOpen] =
     useState(false);
 
-  const [participationStatus, setParticipationStatus] =
-    useState<ChallengeParticipationStatus | null>(
-      null,
-    );
-  
+
   const { showToast } = useToast();
 
   const requestParticipation =
@@ -71,7 +67,12 @@ export default function ChallengeDetailPage() {
     data: participations = [],
     isLoading: isParticipationsLoading,
   } = useChallengeParticipations(id!);
+  const currentUserParticipation = participations.find(
+    (participation) => participation.userId === user.id,
+  );
 
+  const participationStatus =
+    currentUserParticipation?.status ?? null;
 
   const acceptParticipation =
     useAcceptChallengeParticipation();
