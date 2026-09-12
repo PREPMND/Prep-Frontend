@@ -167,10 +167,10 @@ export default function ChallengeParticipationModal({
             {/* MESSAGE */}
             <div className="mt-6">
               <label className="text-sm font-semibold">
-                Message hey
+                Message
 
                 <span className="ml-1 font-normal light:text-neutral-500 dark:text-neutral-400">
-                  (optionalss)
+                  (optional)
                 </span>
               </label>
 
