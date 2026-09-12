@@ -8,15 +8,16 @@ import { useAcceptChallengeParticipation, useChallengeParticipations, useRejectC
 import ChallengeParticipationModal from "../components/challengeParticipationModal"
 import { useQueryClient } from "@tanstack/react-query";
 import ChallengeParticipations from "../components/challengeParticipations";
+import { useAuthStore } from "../../auth/store/authStore";
 export default function ChallengeDetailPage() {
   const { id } = useParams();
 
   const { data: challenge, isLoading } = useChallengeDetails(id);
-
+  const user = useAuthStore((state) => state.user);
   const { data: media = [] } = useMedia(
     challenge?.mediaIds ?? [],
   );
-  console.log(challenge);
+
 
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isJoinModalOpen, setIsJoinModalOpen] =
@@ -62,12 +63,14 @@ export default function ChallengeDetailPage() {
     isLoading: isParticipationsLoading,
   } = useChallengeParticipations(id!);
   const currentUserParticipation = participations.find(
-    (participation) => participation.userId === user.id,
+    (participation) => participation.userId === user?.id,
   );
+
+
 
   const participationStatus =
     currentUserParticipation?.status ?? null;
-
+      console.log(participationStatus)
   const acceptParticipation =
     useAcceptChallengeParticipation();
   const rejectParticipation =
