@@ -238,7 +238,9 @@ export function ChallengeForm() {
                         <option value="RESTRICTED">Restricted</option>
                     </select>
                 </div>
-                flex items-center gap-3
+                <div>
+                    {visibility.}
+                </div>
                 
                 
             </div>
