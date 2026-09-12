@@ -70,7 +70,7 @@ export interface CreateChallengeResponse {
   possibleDuplicates: PossibleDuplicate[];
 }
 
-export interface ChallengeVisibility{
+export const ChallengeVisibility{
   PUBLIC:'PUBLIC',
   RESTRICTED:'RESTRICTED'
 }
