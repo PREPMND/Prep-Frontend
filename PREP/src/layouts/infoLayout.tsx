@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 export default function InfoLayout() {
   return (
-    <div className="relative min-h-screen bg-neutral-50 text-neutral-900 dark:bg-[#050505] dark:text-neutral-100">
+    <div className="relative min-h-screen bg-neutral-50 text-neutral-900 dark:bg-[#050505] dark:text-neutral-100 overflow-hidden!">
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 light:bg-[radial-gradient(circle_at_20%_20%,rgba(163,230,53,0.08),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(96,165,250,0.07),transparent_35%),radial-gradient(circle_at_50%_90%,rgba(167,139,250,0.07),transparent_40%)] dark:bg-[radial-gradient(circle_at_20%_20%,rgba(163,230,53,0.05),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.05),transparent_35%),radial-gradient(circle_at_50%_90%,rgba(139,92,246,0.05),transparent_40%)]" />
 
