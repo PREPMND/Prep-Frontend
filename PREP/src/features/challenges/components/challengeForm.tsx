@@ -226,7 +226,7 @@ export function ChallengeForm() {
                 </select>
             </div>
             <div className="flex items-center gap-3">
-                <label htmlFor="visibility" className="text-sm pl-2 font-medium">Visibility</label>
+                <label htmlFor="visibility" className="text-sm pl-2 font-medium ">Visibility</label>
                 <select
                     id="visibility"
                     value={visibility}
