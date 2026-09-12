@@ -5,7 +5,7 @@ export default function ChallengeLayout() {
 
   return (
     <div className="min-h-screen light:bg-neutral-50 light:text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
-      <div className="pointer-events-none fixed inset-0 overflow-hidden">
+      <div className="pointer-events-none fixed inset-0 ">
         <div className="absolute -top-40 right-[-10rem] h-64 w-44 rounded-full light:bg-amber-200/20 dark:bg-amber-400 blur-3xl" />
         <div className="absolute -bottom-40 -left-40 h-44 w-64 rounded-full light:bg-fuchsia-400/20 dark:bg-emerald-300 blur-3xl" />
       </div>
