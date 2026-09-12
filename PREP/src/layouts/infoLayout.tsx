@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 export default function InfoLayout() {
   return (
-    <div className="relative min-h-screen bg-neutral-50 text-neutral-900 dark:bg-[#050505] dark:text-neutral-100 overflow-hidden!">
+    <div className="relative min-h-screen bg-neutral-50 text-neutral-900 dark:bg-[#050505] dark:text-neutral-100 ">
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 light:bg-[radial-gradient(circle_at_20%_20%,rgba(163,230,53,0.08),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(96,165,250,0.07),transparent_35%),radial-gradient(circle_at_50%_90%,rgba(167,139,250,0.07),transparent_40%)] dark:bg-[radial-gradient(circle_at_20%_20%,rgba(163,230,53,0.05),transparent_35%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.05),transparent_35%),radial-gradient(circle_at_50%_90%,rgba(139,92,246,0.05),transparent_40%)]" />
 
@@ -13,7 +13,7 @@ export default function InfoLayout() {
         <div className="absolute bottom-[-10rem] h-[10rem] w-[10rem] left-[-8rem] md:h-[16rem] md:w-[16rem] rounded-full blur-[120px] light:bg-violet-300/10 dark:bg-violet-900 animate-[floatReverse_14s_ease-in-out_infinite]" />
       </div>
 
-      <main className="relative z-10 min-h-screen overflow-y-clip!">
+      <main className="relative z-10 min-h-screen ">
         <div className="animate-[fadeIn_1s_ease-out]">
           <Outlet />
         </div>
