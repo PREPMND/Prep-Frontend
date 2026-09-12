@@ -10,10 +10,10 @@ export default function ChallengeLayout() {
         <div className="absolute -bottom-40 -left-40 h-44 w-64 rounded-full light:bg-fuchsia-400/20 dark:bg-emerald-300 blur-3xl" />
       </div>
 
-      <main className="relative z-10 min-h-screen scrollbar-none">
+      <main className="relative z-10 min-h-screen ">
         <div
           key={location.pathname}
-          className="animate-[fadeIn_1s_ease-out] scrollbar-none"
+          className="animate-[fadeIn_1s_ease-out]"
         >
           <Outlet />
         </div>
