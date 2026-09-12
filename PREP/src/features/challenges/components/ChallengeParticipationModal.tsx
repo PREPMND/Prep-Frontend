@@ -155,7 +155,7 @@ export default function ChallengeParticipationModal({
               },
               {
                 value:
-                  ChallengeParticipationRole.IMPLEMENTATION,
+                  ChallengeParticipationRoleConst.IMPLEMENTATION,
                 label: "Implementation",
               },
               {
