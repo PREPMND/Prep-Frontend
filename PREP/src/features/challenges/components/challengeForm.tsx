@@ -21,6 +21,7 @@ export function ChallengeForm() {
     const [useGeneratedImage, setUseGeneratedImage] = useState(false);
     const [isGeneratingImage, setIsGeneratingImage] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    
     const [submittedChallenge, setSubmittedChallenge] =
         useState<CreateChallengeResponse | null>(null);
 
