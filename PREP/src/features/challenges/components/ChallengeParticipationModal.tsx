@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import {
-  ChallengeParticipationRole,
+  type ChallengeParticipationRole,
   ChallengeParticipationRoleConst,
   type CreateChallengeParticipationPayload,
 } from "../types/challenge";
