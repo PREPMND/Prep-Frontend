@@ -2,7 +2,7 @@ import { useMutation } from '@tanstack/react-query';
 
 import {
   requestChallengeParticipation,
-} from '../api/challenge.api';
+} from '../api/challengeApi';
 
 import type {
   CreateChallengeParticipationPayload,
