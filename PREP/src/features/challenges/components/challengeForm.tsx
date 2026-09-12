@@ -228,7 +228,12 @@ export function ChallengeForm() {
             <div className="">
                 <div className="flex items-center gap-5">
                     <label htmlFor="visibility" className="text-sm pl-2 font-medium ">Visibility</label>
+                    <div className="ml-2 text-[13px]">
                     
+                    {visibility==='PUBLIC'?
+                    <div className="dark:text-gray-300 light:text-gray-700">Any one can join.</div>:
+                    <div className="dark:text-gray-300 light:text-gray-700 ">Approved members can join.</div>}
+                </div>
                 </div>
                 <select
                         id="visibility"
