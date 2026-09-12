@@ -74,7 +74,7 @@ export const ChallengeVisibility={
   PUBLIC:'PUBLIC',
   RESTRICTED:'RESTRICTED'
 } as const 
-export enum ChallengeParticipationStatus {
+export const ChallengeParticipationStatusConst= {
   PENDING = 'pending',
   APPROVED = 'approved',
   REJECTED = 'rejected',
