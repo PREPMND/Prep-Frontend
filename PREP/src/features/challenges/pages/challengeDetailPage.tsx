@@ -104,6 +104,7 @@ export default function ChallengeDetailPage() {
             </div>
           )}
         </div>
+        <div>hey</div>
         <button
           type="button"
           onClick={() => setIsJoinModalOpen(true)}
