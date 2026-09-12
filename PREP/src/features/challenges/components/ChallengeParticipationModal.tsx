@@ -170,7 +170,7 @@ export default function ChallengeParticipationModal({
                 Message hey
 
                 <span className="ml-1 font-normal light:text-neutral-500 dark:text-neutral-400">
-                  (optional)
+                  (optionalss)
                 </span>
               </label>
 
