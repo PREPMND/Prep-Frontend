@@ -111,7 +111,7 @@ export default function ChallengeDetailPage() {
         onClick={() => setIsJoinModalOpen(true)}
         disabled={
           participationStatus ===
-          ChallengeParticipationStatus.APPROVED
+          ChallengeParticipationStatusConst.APPROVED
         }
         className={`w-[60%] md:w-[30%] px-3 py-2 text-center mx-auto mt-5 block rounded-3xl text-lg font-semibold transition ${participationStatus ===
             ChallengeParticipationStatusConst.APPROVED
@@ -123,7 +123,7 @@ export default function ChallengeDetailPage() {
           }`}
       >
         {participationStatus ===
-          ChallengeParticipationStatus.APPROVED
+          ChallengeParticipationStatusConst.APPROVED
           ? "✓ Participating"
           : participationStatus ===
             ChallengeParticipationStatus.PENDING
