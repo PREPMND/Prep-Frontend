@@ -224,6 +224,7 @@ export function ChallengeForm() {
                 </select>
             </div>
             <div>
+                <div>Visibility</div>
                 <div></div>
             </div>
             <div className="flex flex-col">
