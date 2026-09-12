@@ -236,7 +236,7 @@ export function ChallengeForm() {
                     <option value="PUBLIC">Public</option>
                     <option value="RESTRICTED">Restricted</option>
                 </select>
-                <div>{visibility==='PUBLIC'?<div>Any one can join the challenge</div>
+                <div>{visibility==='PUBLIC'?<div>Anyone can join this challenge instantly.</div>
                 :<div>Only approved ppl can join</div>}</div>
                 
             </div>
