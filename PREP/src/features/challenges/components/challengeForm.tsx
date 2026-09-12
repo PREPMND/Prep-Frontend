@@ -226,7 +226,7 @@ export function ChallengeForm() {
                 </select>
             </div>
             <div className="">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-4">
                     <label htmlFor="visibility" className="text-sm pl-2 font-medium ">Visibility</label>
                     <div className="text-[13px]">
                     
@@ -239,7 +239,7 @@ export function ChallengeForm() {
                         id="visibility"
                         value={visibility}
                         onChange={(e) => setVisibility(e.target.value as ChallengeVisibilityType)}
-                        className="ml-2 mt-2 w-[30%] rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-700 dark:text-white px-4 py-[10px] text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800"
+                        className="ml-2 mt-2 w-[50%] rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-700 dark:text-white px-4 py-[10px] text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800"
                     >
                         <option value="PUBLIC">Public</option>
                         <option value="RESTRICTED">Restricted</option>
