@@ -47,7 +47,7 @@ export default function ChallengeParticipationModal({
 
   return (
     <div className="fixed inset-0 z-[90] flex items-end justify-center bg-black/50 px-4 sm:items-center">
-      <div className="w-full max-w-md rounded-t-3xl bg-white p-6 shadow-2xl dark:bg-neutral-900 sm:rounded-3xl">
+      <div className="w-full max-w-md rounded-t-3xl light:bg-white p-6 shadow-2xl dark:bg-neutral-900 sm:rounded-3xl">
 
         <div className="flex items-start justify-between">
           <div>
