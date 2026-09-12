@@ -101,7 +101,7 @@ export default function ChallengeDetailPage() {
       },
     });
   }
-
+  console.log(participations)
   function handleRejectParticipation(
     participationId: string,
   ) {
@@ -175,7 +175,7 @@ export default function ChallengeDetailPage() {
             participationStatus ===
             ChallengeParticipationStatusConst.APPROVED
           }
-          className={`w-[60%] md:w-[30%] px-3 py-2 text-center mx-auto mt-5 block rounded-3xl text-lg font-semibold transition ${participations.status ===
+          className={`w-[60%] md:w-[30%] px-3 py-2 text-center mx-auto mt-5 block rounded-3xl text-lg font-semibold transition ${participationStatus ===
             ChallengeParticipationStatusConst.APPROVED
             ? "cursor-default bg-emerald-600 text-white"
             : participationStatus ===
