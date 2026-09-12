@@ -6,6 +6,7 @@ import { ChallengeParticipationStatusConst, type ChallengeParticipationStatus, t
 import { useToast } from "../../common/toastProvider";
 import { useRequestChallengeParticipation } from "../hooks/useChallengeParticipation";
 import ChallengeParticipationModal from "../components/challengeParticipationModal"
+import { useQueryClient } from "@tanstack/react-query";
 export default function ChallengeDetailPage() {
   const { id } = useParams();
 
@@ -62,6 +63,19 @@ export default function ChallengeDetailPage() {
       },
     });
   }
+
+  const queryClient = useQueryClient();
+
+  const {
+    data: participations = [],
+    isLoading: isParticipationsLoading,
+  } = useChallengeParticipations(id!);
+
+  const acceptParticipation =
+    useAcceptChallengeParticipation();
+
+  const rejectParticipation =
+    useRejectChallengeParticipation();
   if (isLoading) return <div>Loading...</div>;
   if (!challenge) return <div>Challenge not found.</div>;
 
@@ -128,7 +142,7 @@ export default function ChallengeDetailPage() {
               ? "Request Pending"
               : "Request to Join"}
         </button>
-      
+
       </main>
       <ChallengeParticipationModal
         isOpen={isJoinModalOpen}
@@ -138,6 +152,6 @@ export default function ChallengeDetailPage() {
         onSubmit={handleParticipationRequest}
       />
     </div>
-    
+
   );
 }
