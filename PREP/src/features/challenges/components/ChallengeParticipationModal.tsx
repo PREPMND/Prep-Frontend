@@ -150,7 +150,7 @@ export default function ChallengeParticipationModal({
               },
               {
                 value:
-                  ChallengeParticipationRole.FUNDING,
+                  ChallengeParticipationRoleConst.FUNDING,
                 label: "Funding",
               },
               {
