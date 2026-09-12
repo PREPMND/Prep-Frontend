@@ -167,7 +167,7 @@ export default function ChallengeParticipationModal({
             {/* MESSAGE */}
             <div className="mt-6">
               <label className="text-sm font-semibold">
-                Message
+                Message hey
 
                 <span className="ml-1 font-normal light:text-neutral-500 dark:text-neutral-400">
                   (optional)
