@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useChallengeDetails } from "../hooks/useChallengeDetails";
 import { useMedia } from "../hooks/useMedia";
 import { ChallengeParticipationStatusConst, type ChallengeParticipationStatus, type CreateChallengeParticipationPayload } from "../types/challenge";
@@ -9,6 +9,7 @@ import ChallengeParticipationModal from "../components/challengeParticipationMod
 import { useQueryClient } from "@tanstack/react-query";
 import ChallengeParticipations from "../components/challengeParticipations";
 import { useAuthStore } from "../../auth/store/authStore";
+import { useChallengeSolutions } from "../../solutions/api/solutionApi";
 
 export default function ChallengeDetailPage() {
   const { id } = useParams();
@@ -20,6 +21,7 @@ export default function ChallengeDetailPage() {
   const { showToast } = useToast();
   const requestParticipation = useRequestChallengeParticipation(id!);
 
+  const navigate = useNavigate();
   function handleParticipationRequest(payload: CreateChallengeParticipationPayload) {
     requestParticipation.mutate(payload, {
       onSuccess: () => {
@@ -37,8 +39,12 @@ export default function ChallengeDetailPage() {
   const { data: participations = [], isLoading: isParticipationsLoading } = useChallengeParticipations(id!);
   const currentUserParticipation = participations.find((participation) => participation.userId === user?.id);
   const participationStatus = currentUserParticipation?.status ?? null;
-  console.log(participationStatus);
 
+  const {
+    data: solutions = [],
+    isLoading: isSolutionsLoading,
+  } = useChallengeSolutions(id);
+  console.log(solutions)
   const acceptParticipation = useAcceptChallengeParticipation();
   const rejectParticipation = useRejectChallengeParticipation();
 
@@ -54,7 +60,6 @@ export default function ChallengeDetailPage() {
     });
   }
 
-  console.log(participations);
 
   function handleRejectParticipation(participationId: string) {
     rejectParticipation.mutate(participationId, {
@@ -152,7 +157,7 @@ export default function ChallengeDetailPage() {
         onClose={() => setIsJoinModalOpen(false)}
         onSubmit={handleParticipationRequest}
       />
-      <ChallengeParticipations
+      {/* <ChallengeParticipations
         participations={participations}
         isLoading={isParticipationsLoading}
         isUpdating={
@@ -161,7 +166,27 @@ export default function ChallengeDetailPage() {
         }
         onAccept={handleAcceptParticipation}
         onReject={handleRejectParticipation}
-      />
+      /> */}
+      {participationStatus ===
+        ChallengeParticipationStatusConst.APPROVED && (
+          <section className="app-container mt-6">
+            <div className="mx-auto max-w-4xl">
+              <h2 className="text-2xl font-bold">
+                Solutions
+              </h2>
+
+              <button
+                type="button"
+                onClick={() =>
+                  navigate(`/challenges/${id}/solutions`)
+                }
+                className="mt-4 rounded-3xl bg-emerald-500 px-5 py-2 font-semibold text-white hover:bg-emerald-600"
+              >
+                View Solutions
+              </button>
+            </div>
+          </section>
+        )}
     </div>
   );
 }

@@ -96,3 +96,11 @@ export async function getChallenges(): Promise<Challenge[]> {
 
   return response.data;
 }
+
+export async function getMyChallengeParticipations() {
+    const response = await apiClientChallenge.get(
+        "/challenges/my-participations",
+    );
+
+    return response.data;
+}

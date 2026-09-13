@@ -1,3 +1,4 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiClientMedia } from "./apiClient";
 
 export async function uploadMedia(
@@ -15,4 +16,17 @@ formData,
 );
 
 return response.data;
+}
+
+export function useUploadMediaMutation() {
+    const queryClient = useQueryClient();
+
+    return useMutation({
+        mutationFn: ({ file, purpose }: { file: File; purpose?: string }) => 
+            uploadMedia(file, purpose),
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["media"] });
+            queryClient.invalidateQueries({ queryKey: ["my-challenge-participations"] });
+        },
+    });
 }

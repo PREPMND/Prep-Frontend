@@ -5,6 +5,7 @@ import {
   getChallengeParticipations,
   acceptChallengeParticipation,
   rejectChallengeParticipation,
+  getMyChallengeParticipations,
 } from "../api/challengeApi";
 
 import type {
@@ -38,7 +39,16 @@ export function useChallengeParticipations(
     enabled: !!challengeId,
   });
 }
+export function useMyChallengeParticipations() {
+  return useQuery({
+    queryKey: ["my-challenge-participations"],
 
+    queryFn: () =>
+      getMyChallengeParticipations(),
+    staleTime: 5 * 60 * 1000, 
+    gcTime: 10 * 60 * 1000,
+  });
+}
 export function useAcceptChallengeParticipation() {
   return useMutation({
     mutationFn: (

@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { getCloudinaryUrl } from "../services/cloudinaryHelper";
 export function ChallengeFeed() {
     const { data: challenges, isLoading } = useChallenges();
-    console.log(challenges);
     return (
 
         <div className="flex h-screen h-screen max-w-screen overflow-hidden scrollbar-none! overflow-x-hidden">

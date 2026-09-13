@@ -1,12 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
-import {  getMediaByIds } from "../api/mediaApi";
-
-
+import { getMediaByIds } from "../api/mediaApi";
 
 export function useMedia(mediaIds: string[] = []) {
+  const hasItems = mediaIds.length > 0;
+
   return useQuery({
-    queryKey: ["media", mediaIds],
+    queryKey: ["media", hasItems ? mediaIds.join(",") : "empty"],
     queryFn: () => getMediaByIds(mediaIds),
-    enabled: mediaIds.length > 0,
+    enabled: hasItems,
+    staleTime: 5 * 60 * 1000, 
+    refetchOnWindowFocus: false, 
   });
 }

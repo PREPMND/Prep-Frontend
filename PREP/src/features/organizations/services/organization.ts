@@ -24,7 +24,6 @@ export async function createOrganization(
 export async function getOrganizations(): Promise<Organization[]> {
   const response =
     await apiClientOrganization.get<Organization[]>("/organizations");
-  console.log(response.data);
   return response.data;
 }
 
@@ -109,7 +108,6 @@ export async function approveMembershipRequest(
   const response = await apiClientOrganization.patch<OrganizationMembership>(
     `/organizations/${organizationId}/members/${userId}/approve`,
   );
-  console.log(response)
   return response.data;
 }
 
