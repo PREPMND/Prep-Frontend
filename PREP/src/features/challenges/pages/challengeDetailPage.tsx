@@ -9,134 +9,84 @@ import ChallengeParticipationModal from "../components/challengeParticipationMod
 import { useQueryClient } from "@tanstack/react-query";
 import ChallengeParticipations from "../components/challengeParticipations";
 import { useAuthStore } from "../../auth/store/authStore";
+
 export default function ChallengeDetailPage() {
   const { id } = useParams();
-
   const { data: challenge, isLoading } = useChallengeDetails(id);
   const user = useAuthStore((state) => state.user);
-  const { data: media = [] } = useMedia(
-    challenge?.mediaIds ?? [],
-  );
-
-
+  const { data: media = [] } = useMedia(challenge?.mediaIds ?? []);
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [isJoinModalOpen, setIsJoinModalOpen] =
-    useState(false);
-
-
+  const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
   const { showToast } = useToast();
+  const requestParticipation = useRequestChallengeParticipation(id!);
 
-  const requestParticipation =
-    useRequestChallengeParticipation(id!);
-
-  function handleParticipationRequest(
-    payload: CreateChallengeParticipationPayload,
-  ) {
+  function handleParticipationRequest(payload: CreateChallengeParticipationPayload) {
     requestParticipation.mutate(payload, {
       onSuccess: () => {
-        queryClient.invalidateQueries({
-          queryKey: [
-            "challenge-participations",
-            id,
-          ],
-        });
-
+        queryClient.invalidateQueries({ queryKey: ["challenge-participations", id] });
         setIsJoinModalOpen(false);
-
-        showToast(
-          "Your participation request has been sent",
-        );
+        showToast("Your participation request has been sent");
       },
-
       onError: () => {
-        showToast(
-          "Unable to send participation request",
-        );
+        showToast("Unable to send participation request");
       },
     });
   }
 
   const queryClient = useQueryClient();
+  const { data: participations = [], isLoading: isParticipationsLoading } = useChallengeParticipations(id!);
+  const currentUserParticipation = participations.find((participation) => participation.userId === user?.id);
+  const participationStatus = currentUserParticipation?.status ?? null;
+  console.log(participationStatus);
 
-  const {
-    data: participations = [],
-    isLoading: isParticipationsLoading,
-  } = useChallengeParticipations(id!);
-  const currentUserParticipation = participations.find(
-    (participation) => participation.userId === user?.id,
-  );
+  const acceptParticipation = useAcceptChallengeParticipation();
+  const rejectParticipation = useRejectChallengeParticipation();
 
-
-
-  const participationStatus =
-    currentUserParticipation?.status ?? null;
-      console.log(participationStatus)
-  const acceptParticipation =
-    useAcceptChallengeParticipation();
-  const rejectParticipation =
-    useRejectChallengeParticipation();
-  function handleAcceptParticipation(
-    participationId: string,
-  ) {
+  function handleAcceptParticipation(participationId: string) {
     acceptParticipation.mutate(participationId, {
       onSuccess: () => {
-        queryClient.invalidateQueries({
-          queryKey: [
-            "challenge-participations",
-            id,
-          ],
-        });
-
-        showToast(
-          "Participation request approved",
-        );
+        queryClient.invalidateQueries({ queryKey: ["challenge-participations", id] });
+        showToast("Participation request approved");
       },
-
       onError: () => {
-        showToast(
-          "Unable to approve participation request",
-        );
+        showToast("Unable to approve participation request");
       },
     });
   }
-  console.log(participations)
-  function handleRejectParticipation(
-    participationId: string,
-  ) {
+
+  console.log(participations);
+
+  function handleRejectParticipation(participationId: string) {
     rejectParticipation.mutate(participationId, {
       onSuccess: () => {
-        queryClient.invalidateQueries({
-          queryKey: [
-            "challenge-participations",
-            id,
-          ],
-        });
-
-        showToast(
-          "Participation request rejected",
-        );
+        queryClient.invalidateQueries({ queryKey: ["challenge-participations", id] });
+        showToast("Participation request rejected");
       },
-
       onError: () => {
-        showToast(
-          "Unable to reject participation request",
-        );
+        showToast("Unable to reject participation request");
       },
     });
   }
+
   if (isLoading) return <div>Loading...</div>;
   if (!challenge) return <div>Challenge not found.</div>;
-  console.log()
+  console.log();
+
   return (
-    <div>
+    <div className="mb-5">
       <main className="app-container py-10">
         <div className="mx-auto max-w-4xl select-none">
-          <p className="text-lg font-semibold text-neutral-400">
-            {challenge.category?.replaceAll("_", " ").toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase())}
-          </p>
-          <p className="text-sm font-semibold text-neutral-400">
-            {challenge.subcategory?.replaceAll("_", " ").toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase())}
-          </p>
+          <div className="flex flex-wrap items-center gap-2 text-sm font-semibold text-neutral-400">
+            {challenge.category && (
+              <span className="capitalize">{challenge.category.replaceAll("_", " ").toLowerCase()}</span>
+            )}
+            {challenge.category && challenge.subcategory && (
+              <span className="text-neutral-300 dark:text-neutral-600 font-normal">/</span>
+            )}
+            {challenge.subcategory && (
+              <span className="capitalize text-neutral-500 dark:text-neutral-400">{challenge.subcategory.replaceAll("_", " ").toLowerCase()}</span>
+            )}
+          </div>
 
           <h1 className="mt-2 text-3xl font-bold">
             {challenge.title.toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase())}
@@ -194,7 +144,6 @@ export default function ChallengeDetailPage() {
               ? "Request Pending"
               : "Request to Join"}
         </button>
-
       </main>
       <ChallengeParticipationModal
         isOpen={isJoinModalOpen}
@@ -214,6 +163,5 @@ export default function ChallengeDetailPage() {
         onReject={handleRejectParticipation}
       />
     </div>
-
   );
 }
