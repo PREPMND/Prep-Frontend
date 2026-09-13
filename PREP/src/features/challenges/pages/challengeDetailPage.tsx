@@ -131,9 +131,13 @@ export default function ChallengeDetailPage() {
     <div>
       <main className="app-container py-10">
         <div className="mx-auto max-w-4xl select-none">
-          <p className="text-sm text-neutral-500">
+          <p className="text-lg font-semibold text-neutral-400">
             {challenge.category?.replaceAll("_", " ").toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase())}
           </p>
+          <p className="text-sm font-semibold text-neutral-400">
+            {challenge.subcategory?.replaceAll("_", " ").toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase())}
+          </p>
+
           <h1 className="mt-2 text-3xl font-bold">
             {challenge.title.toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase())}
           </h1>
@@ -173,7 +177,7 @@ export default function ChallengeDetailPage() {
             participationStatus ===
             ChallengeParticipationStatusConst.APPROVED
           }
-          className={`w-[60%] md:w-[30%] px-3 py-2 text-center mx-auto mt-5 block rounded-3xl text-lg font-semibold transition ${participationStatus ===
+          className={`w-[60%] md:w-[20%] px-3 py-[10px] text-center mx-auto mt-5 block rounded-3xl! text-lg font-semibold transition ${participationStatus ===
             ChallengeParticipationStatusConst.APPROVED
             ? "cursor-default bg-emerald-600 text-white"
             : participationStatus ===

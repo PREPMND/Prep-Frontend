@@ -152,7 +152,7 @@ export default function ChallengeParticipationModal({
                     key={item.value}
                     type="button"
                     onClick={() => setRole(item.value)}
-                    className={`rounded-xl border px-4 py-[10px] rounded-2xl! text-left text-sm transition ${
+                    className={`rounded-xl border font-[400]! px-4 py-[10px] rounded-2xl! text-left text-[16px]! transition ${
                       role === item.value
                         ? "border-emerald-500 font-[600] light:bg-emerald-50 dark:bg-emerald-950/40"
                         : "light:border-neutral-200 light:bg-white light:hover:bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800"
@@ -165,8 +165,8 @@ export default function ChallengeParticipationModal({
             </div>
 
             {/* MESSAGE */}
-            <div className="mt-6">
-              <label className="text-sm font-semibold">
+            <div className="mt-6 ">
+              <label className="text-sm  font-semibold">
                 Message
 
                 <span className="ml-1 font-normal light:text-neutral-500 dark:text-neutral-400">
@@ -179,19 +179,21 @@ export default function ChallengeParticipationModal({
                 onChange={(event) => setMessage(event.target.value)}
                 placeholder="Tell them briefly how you can contribute..."
                 rows={3}
-                className="mt-2 w-full resize-none rounded-xl border px-4 py-3 text-sm outline-none transition light:border-neutral-200 light:bg-white light:text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white focus:border-emerald-500"
+                className="mt-2 min-h-36 max-h-64 w-full resize-none rounded-xl border px-4 py-3 text-sm outline-none transition light:border-neutral-200 light:bg-white light:text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white focus:border-emerald-500"
               />
             </div>
 
             {/* SUBMIT */}
-            <button
-              type="button"
-              disabled={isSubmitting}
-              onClick={handleSubmit}
-              className="mt-6 w-full rounded-2xl bg-emerald-500 px-4 py-3 font-semibold text-white transition hover:bg-emerald-600 disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {isSubmitting ? "Joining..." : "Request to Join"}
-            </button>
+            <div className="w-full flex justify-center mx-auto mt-2">
+                <button
+                  type="button"
+                  disabled={isSubmitting}
+                  onClick={handleSubmit}
+                  className="mt-6 w-[70%] rounded-3xl! font-semibold! bg-emerald-500 px-4 py-3  text-white transition hover:bg-emerald-600 disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {isSubmitting ? "Joining..." : "Request to Join"}
+                </button>
+            </div>
 
           </div>
         </div>
