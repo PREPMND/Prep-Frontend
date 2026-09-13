@@ -193,45 +193,25 @@ a {
 }
 
 
-.notion-select__menu {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+.custom-dropdown-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: #fbbf24 transparent;
-  animation: domEnter 0.15s cubic-bezier(0, 0, 0.2, 1) forwards;
 }
 
-.notion-select__menu-list::-webkit-scrollbar {
+.custom-dropdown-scrollbar::-webkit-scrollbar {
   width: 6px;
-  height: 6px;
 }
 
-.notion-select__menu-list::-webkit-scrollbar-track {
-  background: transparent; 
+.custom-dropdown-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.notion-select__menu-list::-webkit-scrollbar-thumb {
-  background-color: #fbbf24; 
+.custom-dropdown-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #fbbf24;
   border-radius: 9999px;
 }
 
-.notion-select__menu-list::-webkit-scrollbar-thumb:hover {
-  background-color: #f59e0b; 
+.custom-dropdown-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #f59e0b;
 }
 
-.notion-select__option {
-  padding: 8px 12px;
-  cursor: pointer;
-}
-
-.notion-select__option--is-focused {
-  background-color: #fef3c7 !important;
-  color: #78350f !important;
-}
-
-.notion-select__option--is-selected {
-  background-color: #fbbf24 !important;
-  color: #ffffff !important;
-}
