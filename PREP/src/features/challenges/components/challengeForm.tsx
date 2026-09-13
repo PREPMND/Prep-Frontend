@@ -178,23 +178,43 @@ export function ChallengeForm() {
                 <label htmlFor="category" className="text-sm pl-2 font-medium">
                     Category <span className="text-neutral-400">(optional)</span>
                 </label>
-                <select
-                    id="category"
-                    value={category.toLowerCase().at(0) + category.slice(1) || ""}
-                    onChange={(event) => {
-                        setCategory(event.target.value as ChallengeCategory | "");
-                        setSubcategory("");
-                    }}
-                    className="mt-2 w-full rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-[10px] text-sm outline-none dark:border-neutral-800 scrollbar-thumb-amber-400!"
-                >
-                    <option value="" className="scrollbar-thumb-amber-400!">Let the platform categorize it</option>
-                    {Object.values(CHALLENGE_CATEGORIES).map((value) => (
-                        <option key={value} value={value} className="scrollbar-thumb-amber-400!">
-                            {value.replaceAll("_", " ")}
-                        </option>
-                    ))}
-                </select>
+                <div className="relative group">
+                    {/* Exact same classes, heights, padding, and colors as your original select */}
+                    <div className="mt-2 w-full rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-[10px] text-sm outline-none dark:border-neutral-800 cursor-pointer flex justify-between items-center text-neutral-900 dark:text-white">
+                        <span>
+                            {category ? category.replaceAll("_", " ") : "Let the platform categorize it"}
+                        </span>
+                        <span className="text-neutral-400 text-xs pl-2">▼</span>
+                    </div>
+
+                    {/* Options list layout container */}
+                    <div className="absolute left-0 right-0 mt-1 max-h-48 overflow-y-auto hidden group-focus-within:block group-hover:block hover:block z-50 rounded-xl border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800 bg-white shadow-lg custom-dropdown-scrollbar">
+                        <div
+                            onClick={() => {
+                                setCategory("");
+                                setSubcategory("");
+                            }}
+                            className="px-4 py-[10px] text-sm cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-700 text-neutral-400"
+                        >
+                            Let the platform categorize it
+                        </div>
+                        {Object.values(CHALLENGE_CATEGORIES).map((value) => (
+                            <div
+                                key={value}
+                                onClick={() => {
+                                    setCategory(value as ChallengeCategory);
+                                    setSubcategory("");
+                                }}
+                                className={`px-4 py-[10px] text-sm cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-700 ${category === value ? "bg-amber-400 text-white hover:bg-amber-400" : "text-neutral-900 dark:text-neutral-200"
+                                    }`}
+                            >
+                                {value.replaceAll("_", " ")}
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
+
 
             <div>
                 <label htmlFor="subcategory" className="text-sm pl-2 font-medium">
@@ -229,24 +249,24 @@ export function ChallengeForm() {
                 <div className="flex items-center gap-4">
                     <label htmlFor="visibility" className="text-sm pl-2 font-medium ">Visibility</label>
                     <div className="text-[13px]">
-                    
-                    {visibility==='PUBLIC'?
-                    <div className="dark:text-gray-300 light:text-gray-700">Any one can join.</div>:
-                    <div className="dark:text-gray-300 light:text-gray-700 ">Approved members can join.</div>}
-                </div>
+
+                        {visibility === 'PUBLIC' ?
+                            <div className="dark:text-gray-300 light:text-gray-700">Any one can join.</div> :
+                            <div className="dark:text-gray-300 light:text-gray-700 ">Approved members can join.</div>}
+                    </div>
                 </div>
                 <select
-                        id="visibility"
-                        value={visibility}
-                        onChange={(e) => setVisibility(e.target.value as ChallengeVisibilityType)}
-                        className="ml-2 mt-2 w-[50%] rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-700 dark:text-white px-4 py-[10px] text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800"
-                    >
-                        <option value="PUBLIC">Public</option>
-                        <option value="RESTRICTED">Restricted</option>
-                    </select>
-                
-                
-                
+                    id="visibility"
+                    value={visibility}
+                    onChange={(e) => setVisibility(e.target.value as ChallengeVisibilityType)}
+                    className="ml-2 mt-2 w-[50%] rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-700 dark:text-white px-4 py-[10px] text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800"
+                >
+                    <option value="PUBLIC">Public</option>
+                    <option value="RESTRICTED">Restricted</option>
+                </select>
+
+
+
             </div>
             <div className="flex flex-col">
                 {files.length === 0 && (
