@@ -181,8 +181,8 @@ export function ChallengeForm() {
                 <div className="relative group">
                     {/* Exact same classes, heights, padding, and colors as your original select */}
                     <div className="mt-2! w-full rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-[14px] text-sm outline-none dark:border-neutral-700 cursor-pointer flex justify-between items-center text-neutral-900 dark:text-white">
-                        <span className="font-semibold text-sm">
-                            {category ? category.replaceAll("_", " "). : "Let the platform categorize it"}
+                        <span className="font-semibold text-sm capitalize">
+                            {category ? category.replaceAll("_", " ") : "Let the platform categorize it"}
                         </span>
                         <span className="text-neutral-400 text-md pl-2">▼</span>
                     </div>

@@ -215,3 +215,6 @@ a {
   background-color: #f59e0b;
 }
 
+.capitalize-text {
+  text-transform: capitalize;
+}
