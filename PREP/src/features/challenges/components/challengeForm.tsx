@@ -180,7 +180,7 @@ export function ChallengeForm() {
                 </label>
                 <div className="relative group">
                     {/* Exact same classes, heights, padding, and colors as your original select */}
-                    <div className="mt-2! w-full rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-[14px] text-sm outline-none dark:border-neutral-700 cursor-pointer flex justify-between items-center text-neutral-900 dark:text-white">
+                    <div className="mt-2! w-full rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-[13px] text-sm outline-none dark:border-neutral-700 cursor-pointer flex justify-between items-center text-neutral-900 dark:text-white">
                         <span className="font-semibold text-sm capitalize">
                             {category ? category.replaceAll("_", " ") : "Let the platform categorize it"}
                         </span>
@@ -188,13 +188,13 @@ export function ChallengeForm() {
                     </div>
 
                     {/* Options list layout container */}
-                    <div className="absolute left-0 right-0 mt-2 max-h-48 overflow-y-auto hidden group-focus-within:block group-hover:block hover:block z-50 rounded-xl border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800 light:bg-white shadow-lg custom-dropdown-scrollbar">
+                    <div className="absolute left-0 right-0 mt-2 max-h-52 overflow-y-auto hidden group-focus-within:block group-hover:block hover:block z-50 rounded-xl border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800 light:bg-white shadow-lg custom-dropdown-scrollbar">
                         <div
                             onClick={() => {
                                 setCategory("");
                                 setSubcategory("");
                             }}
-                            className="px-4 py-[10px] text-sm font-semibold! cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-700 text-neutral-400"
+                            className="px-4 py-[12px] text-sm font-semibold! cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-700 text-neutral-400"
                         >
                             Let the platform categorize it
                         </div>
@@ -220,31 +220,39 @@ export function ChallengeForm() {
                 <label htmlFor="subcategory" className="text-sm pl-2 font-medium">
                     Subcategory <span className="text-neutral-400">(optional)</span>
                 </label>
-
-                <select
-                    id="subcategory"
-                    value={subcategory}
-                    disabled={!category}
-                    onChange={(event) =>
-                        setSubcategory(event.target.value as ChallengeSubcategory | "")
-                    }
-                    className="mt-2 w-full rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-700 dark:text-white px-4 py-[10px] text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800 "
-                >
-                    <option value="">
-                        {category
-                            ? "Select a subcategory"
-                            : "Select a category first"}
-                    </option>
-
-                    {availableSubcategories.map((value) => (
-                        <option key={value} value={value}>
-                            {value
-                                .replaceAll("_", " ")
-                                .replace(/\b\w/g, (letter) => letter.toUpperCase())}
-                        </option>
-                    ))}
-                </select>
+                <div className={`relative ${!category ? "pointer-events-none opacity-50 cursor-not-allowed" : "group"}`}>
+                    <div className="mt-2 w-full rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-700 dark:text-white px-4 py-[13px] text-sm outline-none dark:border-neutral-800 flex justify-between items-center capitalize">
+                        <span className="font-semibold text-sm capitalize">
+                            {subcategory
+                                ? subcategory.replaceAll("_", " ")
+                                : (category ? "Select a subcategory" : "Select a category first")
+                            }
+                        </span>
+                        <span className="text-neutral-400 text-xs pl-2">▼</span>
+                    </div>
+                    {category && (
+                        <div className="absolute left-0 right-0 mt-1 max-h-52 overflow-y-auto hidden group-focus-within:block group-hover:block hover:block z-50 rounded-xl border light:border-neutral-200 dark:border-neutral-800 dark:bg-neutral-700 light:bg-white shadow-lg custom-dropdown-scrollbar">
+                            <div
+                                onClick={() => setSubcategory("")}
+                                className="px-4 py-[10px]  text-sm cursor-pointer light:hover:bg-neutral-100 dark:hover:bg-neutral-600 capitalize text-neutral-400"
+                            >
+                                Select a subcategory
+                            </div>
+                            {availableSubcategories.map((value) => (
+                                <div
+                                    key={value}
+                                    onClick={() => setSubcategory(value as ChallengeSubcategory)}
+                                    className={`px-4 capitalize py-[10px] font-[500] text-sm cursor-pointer light:hover:bg-neutral-100 dark:hover:bg-neutral-600 capitalize ${subcategory === value ? "bg-amber-400 text-black  hover:bg-amber-400" : "light:text-neutral-900 dark:text-neutral-200"
+                                        }`}
+                                >
+                                    {value.replaceAll("_", " ")}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
             </div>
+
             <div className="">
                 <div className="flex items-center gap-4">
                     <label htmlFor="visibility" className="text-sm pl-2 font-medium ">Visibility</label>
