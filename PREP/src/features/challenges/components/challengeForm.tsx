@@ -184,7 +184,7 @@ export function ChallengeForm() {
                         <span className="font-semibold text-sm capitalize">
                             {category ? category.replaceAll("_", " ") : "Let the platform categorize it"}
                         </span>
-                        <span className="text-neutral-400 text-md pl-2">▼</span>
+                        <span className="text-neutral-500 text-sm pl-2">▼</span>
                     </div>
 
                     {/* Options list layout container */}
@@ -205,7 +205,7 @@ export function ChallengeForm() {
                                     setCategory(value as ChallengeCategory);
                                     setSubcategory("");
                                 }}
-                                className={`px-4 py-[10px] text-sm cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-700 ${category === value ? "bg-amber-400 text-white hover:bg-amber-400" : "text-neutral-900 dark:text-neutral-200"
+                                className={`capitalize font-[500] px-4 py-[10px] text-sm cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-700 ${category === value ? "bg-amber-400 text-black hover:bg-amber-400" : "text-neutral-900 dark:text-neutral-200"
                                     }`}
                             >
                                 {value.replaceAll("_", " ")}
