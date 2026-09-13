@@ -180,7 +180,7 @@ export function ChallengeForm() {
                 </label>
                 <div className="relative group">
                     {/* Exact same classes, heights, padding, and colors as your original select */}
-                    <div className="mt-2 w-full rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-[10px] text-sm outline-none dark:border-neutral-800 cursor-pointer flex justify-between items-center text-neutral-900 dark:text-white">
+                    <div className="mt-2! w-full rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-[10px] text-sm outline-none dark:border-neutral-700 cursor-pointer flex justify-between items-center text-neutral-900 dark:text-white">
                         <span>
                             {category ? category.replaceAll("_", " ") : "Let the platform categorize it"}
                         </span>
@@ -188,7 +188,7 @@ export function ChallengeForm() {
                     </div>
 
                     {/* Options list layout container */}
-                    <div className="absolute left-0 right-0 mt-1 max-h-48 overflow-y-auto hidden group-focus-within:block group-hover:block hover:block z-50 rounded-xl border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800 bg-white shadow-lg custom-dropdown-scrollbar">
+                    <div className="absolute left-0 right-0 mt-2 max-h-48 overflow-y-auto hidden group-focus-within:block group-hover:block hover:block z-50 rounded-xl border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800 bg-white shadow-lg custom-dropdown-scrollbar">
                         <div
                             onClick={() => {
                                 setCategory("");
