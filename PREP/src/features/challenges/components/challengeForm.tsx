@@ -257,25 +257,36 @@ export function ChallengeForm() {
                 <div className="flex items-center gap-4">
                     <label htmlFor="visibility" className="text-sm pl-2 font-medium ">Visibility</label>
                     <div className="text-[13px]">
-
                         {visibility === 'PUBLIC' ?
                             <div className="dark:text-gray-300 light:text-gray-700">Any one can join.</div> :
                             <div className="dark:text-gray-300 light:text-gray-700 ">Approved members can join.</div>}
                     </div>
                 </div>
-                <select
-                    id="visibility"
-                    value={visibility}
-                    onChange={(e) => setVisibility(e.target.value as ChallengeVisibilityType)}
-                    className="ml-2 mt-2 w-[50%] rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-700 dark:text-white px-4 py-[10px] text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-800"
-                >
-                    <option value="PUBLIC">Public</option>
-                    <option value="RESTRICTED">Restricted</option>
-                </select>
-
-
-
+                <div className="ml-2 mt-2 flex w-[50%] overflow-hidden gap-1 rounded-xl border light:border-neutral-200 light:bg-transparent dark:bg-neutral-800 dark:border-neutral-800 text-sm">
+                    <button
+                        type="button"
+                        onClick={() => setVisibility('PUBLIC')}
+                        className={`flex-1 text-center py-[10px] font-[600]! rounded-lg transition-all  duration-200 ${visibility === 'PUBLIC'
+                                ? "bg-amber-400 text-black  font-medium shadow-sm"
+                                : "light:text-neutral-500 dark:text-neutral-400 light:hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                            }`}
+                    >
+                        Public
+                    </button>
+                    <button
+                        type="button"
+                        onClick={() => setVisibility('RESTRICTED')}
+                        className={`flex-1 text-center py-[10px]  font-semibold! rounded-lg transition-all duration-200 ${visibility === 'RESTRICTED'
+                                ? "bg-amber-400 text-black shadow-sm"
+                                : "light:text-neutral-500 dark:text-neutral-400 light:hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                            }`}
+                    >
+                        Restricted
+                    </button>
+                </div>
             </div>
+
+
             <div className="flex flex-col">
                 {files.length === 0 && (
                     <label className="mt-4 md:w-[70%] w-full flex cursor-pointer items-center gap-3 rounded-xl border border-neutral-200 light:bg-neutral-50 dark:border-neutral-800 dark:bg-neutral-800/50 p-3">
