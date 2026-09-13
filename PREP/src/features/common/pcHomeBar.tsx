@@ -1,4 +1,4 @@
-import { Building2, Factory, Feather, } from "lucide-react";
+import { Building2, Factory, Feather } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../auth/store/authStore";
 import { useMyRole } from "../profile/hooks/useMyRole";
@@ -19,7 +19,6 @@ export function PcHomeBar() {
     return (
         <div className="min-w-[15%] flex flex-col shadow-lime-200 shadow-lg cursor-default select-none *:select-none ">
 
-
             <div onClick={() => setIsSearchOpen(true)}  className="cursor-pointer">
                 <SearchBox />
             </div>
@@ -27,54 +26,71 @@ export function PcHomeBar() {
             {isSearchOpen && (
                 <SearchArea
                     onClose={() => setIsSearchOpen(false)}
-
                 />
             )}
             <div aria-label="profile" onClick={() => navigate("/profile")} className="flex gap-2 my-4">
-                <div
-                    className="w-8 h-8 bg-amber-500  rounded-[50%]">
-                    <div className="h-full flex justify-center items-center text-[18px] font-bold">{user?.firstName?.slice(0, 1).toUpperCase()}</div>
-                </div>
-                <div className="font-semibold text-2xl">{user?.firstName} {user?.lastName}</div>
-
+                {!user ? (
+                    <>
+                        <div className="w-8 h-8 bg-neutral-200 dark:bg-neutral-800 animate-pulse rounded-[50%]" />
+                        <div className="h-8 w-32 bg-neutral-200 dark:bg-neutral-800 animate-pulse rounded-xl" />
+                    </>
+                ) : (
+                    <>
+                        <div
+                            className="w-8 h-8 bg-amber-500  rounded-[50%]">
+                            <div className="h-full flex justify-center items-center text-[18px] font-bold">{user?.firstName?.slice(0, 1).toUpperCase()}</div>
+                        </div>
+                        <div className="font-semibold text-2xl">{user?.firstName} {user?.lastName}</div>
+                    </>
+                )}
             </div>
             <div className="space-y-3">
-                {roleData?.map((role) => {
-                    const organization = role.organizationId
-                        ? organizations.find(
-                            (org) => org.id === role.organizationId,
-                        )
-                        : undefined;
+                {!roleData ? (
+                    <div className="flex items-center gap-2">
+                        <div className="w-4 h-4 bg-neutral-200 dark:bg-neutral-800 flex flex-shrink-0 animate-pulse rounded-full" />
+                        <div className="space-y-1">
+                            <div className="h-[14px] w-16 bg-neutral-200 dark:bg-neutral-800 animate-pulse rounded" />
+                            <div className="h-[14px] w-24 bg-neutral-200 dark:bg-neutral-800 animate-pulse rounded" />
+                        </div>
+                    </div>
+                ) : (
+                    roleData?.map((role) => {
+                        const organization = role.organizationId
+                            ? organizations.find(
+                                (org) => org.id === role.organizationId,
+                            )
+                            : undefined;
 
-                    return (
-                        <div key={role.id} className="flex items-center gap-2">
-                            <div className="w-4 h-4 bg-amber-200 flex flex-shrink-0 animate-pulse duration-1000 rounded-full" />
+                        return (
+                            <div key={role.id} className="flex items-center gap-2">
+                                <div className="w-4 h-4 bg-amber-200 flex flex-shrink-0 animate-pulse duration-1000 rounded-full" />
 
-                            <div>
-                                <div
-                                    onClick={() =>
-                                        navigate(`/organization/${organization?.id}`)
-                                    }
-                                    className={`text-sm dark:text-neutral-400 ${organization?.name
-                                            ? "text-[14px] text-neutral-500 font-[500] line-clamp-2"
-                                            : "text-[14px] text-mauve-400! font-[600]"
-                                        }`}
-                                >
-                                    {organization?.name ?? "Platform"}
-                                </div>
+                                <div>
+                                    <div
+                                        onClick={() =>
+                                            navigate(`/organization/${organization?.id}`)
+                                        }
+                                        className={`text-sm dark:text-neutral-400 ${organization?.name
+                                                ? "text-[14px] text-neutral-500 font-[500] line-clamp-2"
+                                                : "text-[14px] text-mauve-400! font-[600]"
+                                            }`}
+                                    >
+                                        {organization?.name ?? "Platform"}
+                                    </div>
 
-                                <div
-                                    className={`${organization?.name
-                                            ? "text-[14px] font-[500] line-clamp-2 "
-                                            : "text-[16px] text-amber-300 font-[600]"
-                                        }`}
-                                >
-                                    {role.role.name.replaceAll("_", " ")}
+                                    <div
+                                        className={`${organization?.name
+                                                ? "text-[14px] font-[500] line-clamp-2 "
+                                                : "text-[16px] text-amber-300 font-[600]"
+                                            }`}
+                                    >
+                                        {role.role.name.replaceAll("_", " ")}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    );
-                })}
+                        );
+                    })
+                )}
             </div>
             <div className="*:flex *:items-center cursor-default *:gap-5 *:mt-7 mt-3 font-Saira font-semibold ml-2">
                 <div
@@ -94,25 +110,28 @@ export function PcHomeBar() {
                     <div className="group-hover:underline text-md">Requested To Join</div>
                 </div>
                 <div className="mt-5 gap-4 flex-col place-items-start ">
-                    {dashboards
-                        .filter((dashboard) =>
-                            roleData?.some(
-                                (role) => role.role.name === dashboard.role,
-                            ),
-                        )
-                        .map((dashboard) => (
-                            <div key={dashboard.role}>
-                                <div
-                                    className={`rounded-2xl w-48 text-center px-3 py-2 text-[14px] transition-all duration-400 ease-in-out font-[600] ${dashboard.className}`}
-                                >
-                                    {dashboard.label}
+                    {!roleData ? (
+                        <div className="rounded-2xl w-48 h-[37px] bg-neutral-200 dark:bg-neutral-800 animate-pulse" />
+                    ) : (
+                        dashboards
+                            .filter((dashboard) =>
+                                roleData?.some(
+                                    (role) => role.role.name === dashboard.role,
+                                ),
+                            )
+                            .map((dashboard) => (
+                                <div key={dashboard.role}>
+                                    <div
+                                        className={`rounded-2xl w-48 text-center px-3 py-2 text-[14px] transition-all duration-400 ease-in-out font-[600] ${dashboard.className}`}
+                                    >
+                                        {dashboard.label}
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))
+                    )}
                 </div>
             </div>
 
         </div>
     )
-
 }
