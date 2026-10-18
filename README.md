@@ -9,7 +9,17 @@ PREP is built around a simple idea:
 Most grievance systems stop when a complaint receives a ticket number. PREP is designed to close the loop by connecting the people who experience problems with the institutions, researchers, social organizations, and government bodies capable of solving them.
 
 ---
+**Tiny Fish — turning unstructured web context into structured signal.**
+Rather than hand-coding scrapers per source, Tiny Fish's agentic extraction is pointed at
+a page and asked for the fields that matter, returning structured data even as layouts
+change. In our pipeline that context feeds two steps: it sharpens **problem
+classification** by grounding a report in real-world detail beyond the reporter's own
+wording, and it informs **image generation**, so generated visuals reflect the actual
+subject matter instead of a generic prompt.
 
+**Why it earned its place:** the alternative was a brittle per-source parser that breaks
+the first time a page is redesigned. Tiny Fish made an unreliable input into a dependable
+one, which is the difference between a demo and something you'd run twice.
 ## 🌍 The Idea
 
 ```text
@@ -128,7 +138,7 @@ Challenges are persisted independently from the AI layer, so an AI failure does 
 
 ---
 
-### 🤖 AI-Assisted Classification
+### 🤖 AI-Assisted Classification Using Tiny-Fish
 
 PREP can analyze a challenge and suggest:
 
@@ -248,9 +258,9 @@ This creates the foundation for institution-driven problem solving rather than p
 
 ---
 
-# 📍 Grounded in Jharkhand
+# 📍 Grounded in India
 
-The initial ecosystem is being built around a researched Jharkhand organization directory covering:
+The initial ecosystem is being built around a researched India organization directory covering:
 
 - Educational institutions
 - R&D organizations
