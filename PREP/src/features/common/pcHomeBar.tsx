@@ -17,7 +17,6 @@ export function PcHomeBar() {
     const { data: roleData } = useMyRole(user?.id);
 
     const { data: existingChallenges = [] } = useMyChallengeParticipations()
-    console.log(existingChallenges);
 
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const { data: organizations = [] } = useOrganizations();
@@ -64,13 +63,16 @@ export function PcHomeBar() {
                         <div className="h-8 w-32 bg-neutral-200 dark:bg-neutral-800 animate-pulse rounded-xl" />
                     </>
                 ) : (
-                    <>
-                        <div
+                    <div className="flex items-center gap-4 line-clamp-1">
+                        {!user?.avatar && (<div
                             className="w-8 h-8 bg-amber-500  rounded-[50%]">
                             <div className="h-full flex justify-center items-center text-[18px] font-bold">{user?.firstName?.slice(0, 1).toUpperCase()}</div>
-                        </div>
+                        </div>)}
+                        {user?.avatar && (<div>
+                            <img className="w-10 h-10 rounded-[50%]" src={user?.avatar}/>
+                        </div>)}
                         <div className="font-semibold text-2xl">{user?.firstName} {user?.lastName}</div>
-                    </>
+                    </div>
                 )}
             </div>
             <div className="space-y-3">
@@ -91,30 +93,36 @@ export function PcHomeBar() {
                             : undefined;
 
                         return (
-                            <div key={role.id} className="flex items-center gap-2">
-                                <div className="w-4 h-4 bg-amber-200 flex flex-shrink-0 animate-pulse duration-1000 rounded-full" />
+                            <div key={role.id} className="flex items-center gap-2 group/role py-0.5">
+                                {/* Role Status Dot indicator */}
+                                <div className="w-2 h-2 ml-1 bg-amber-400 dark:bg-amber-300 flex flex-shrink-0 rounded-full shadow-[0_0_8px_rgba(251,191,36,0.5)]" />
 
-                                <div>
-                                    <div
+                                {/* Inline Content Row - Keeps everything tight and compact */}
+                                <div className="flex items-baseline gap-1.5 min-w-0 flex-1 flex-wrap">
+                                    {/* Role Title takes natural precedence */}
+                                    <span
+                                        className={`capitalize truncate ${organization?.name
+                                            ? "text-[14px] font-[500]"
+                                            : "text-[15px] text-amber-300 font-[600]"
+                                            }`}
+                                    >
+                                        {role.role.name.replaceAll("_", " ")}
+                                    </span>
+
+                                    {organization?.name && <span className="text-neutral-600 text-xs select-none">at</span>}
+
+                                    {/* Organization Anchor link */}
+                                    <span
                                         onClick={() =>
                                             navigate(`/organization/${organization?.id}`)
                                         }
-                                        className={`text-sm dark:text-neutral-400 ${organization?.name
-                                            ? "text-[14px] text-neutral-500 font-[500] line-clamp-2"
+                                        className={`cursor-pointer transition-colors hover:text-amber-400 hover:underline ${organization?.name
+                                            ? "text-[13px] text-neutral-400 font-[500] line-clamp-1"
                                             : "text-[14px] text-mauve-400! font-[600]"
                                             }`}
                                     >
                                         {organization?.name ?? "Platform"}
-                                    </div>
-
-                                    <div
-                                        className={`${organization?.name
-                                            ? "text-[14px] font-[500] line-clamp-2 "
-                                            : "text-[16px] text-amber-300 font-[600]"
-                                            }`}
-                                    >
-                                        {role.role.name.replaceAll("_", " ")}
-                                    </div>
+                                    </span>
                                 </div>
                             </div>
                         );
@@ -137,7 +145,7 @@ export function PcHomeBar() {
                 <div className="mt-2 flex flex-col justify-items-start w-full -ml-2 pl-2">
                     {!existingChallenges && (
                         <>
-                            
+
                             <div className="h-10 mt-1 w-32 bg-neutral-200 dark:bg-neutral-800 animate-pulse rounded-xl" />
                             <div className="h-10 mt-1 w-32 bg-neutral-200 dark:bg-neutral-800 animate-pulse rounded-xl" />
                         </>

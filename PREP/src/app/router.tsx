@@ -19,10 +19,15 @@ import { RoleGuard } from "../features/common/gaurds/roleGuards";
 import { StudentDashboard } from "../features/dashboard/student";
 import { InstitutionalAdminDashBoard } from "../features/dashboard/institutionalAdmin";
 import { SuperAdminDashboard } from "../features/dashboard/superAdmin";
-import { OrganizationAdminGuard } from "../features/common/gaurds/organziationAdminGuard";
 import { OrganizationMembershipRequests } from "../features/organizations/components/organizationMembershipRequest";
 import { OrganizationAdminRoute } from "./routes/organizationAdminRoutes";
 import InfoLayout from "../layouts/infoLayout";
+import ChallengeSolutionsPage from "../features/solutions/pages/ChallengeSolutionsPage";
+import CreateSolutionPage from "../features/solutions/pages/createSolutionPage";
+import ApplyOrganizationPage from "../features/organizationApplications/pages/applyOrganizationPage";
+import MyApplicationsPage from "../features/organizationApplications/pages/myApplicationsPage";
+import ApplicationDetailPage from "../features/organizationApplications/pages/applicationDetailPage";
+import ApplicationReviewQueuePage from "../features/organizationApplications/pages/applicationReviewQueuePage";
 
 export const router = createBrowserRouter([
   {
@@ -73,6 +78,15 @@ export const router = createBrowserRouter([
               </OrganizationAdminRoute>
             ),
           },
+
+          {
+            path: "/challenge/:id/solutions",
+            element: <ChallengeSolutionsPage />,
+          },
+          {
+            path: "/challenge/:id/solutions/create",
+            element: <CreateSolutionPage />,
+          },
         ],
       },
     ],
@@ -99,7 +113,30 @@ export const router = createBrowserRouter([
             path: "/organization/:id",
             element: <OrganizationDetailPage />,
           },
-          
+
+          // Organization onboarding: applicant journey.
+          {
+            path: "/organization-applications",
+            element: <MyApplicationsPage />,
+          },
+          {
+            path: "/organization-applications/new",
+            element: <ApplyOrganizationPage />,
+          },
+          {
+            path: "/organization-applications/:applicationId",
+            element: <ApplicationDetailPage />,
+          },
+
+          // Reviewer journey. The route is behind authentication only; the
+          // review permission itself is enforced by the backend, and the page
+          // renders a permission-denied state on 403. A route guard here would
+          // be cosmetic.
+          {
+            path: "/admin/organization-applications",
+            element: <ApplicationReviewQueuePage />,
+          },
+
         ]
       }
 

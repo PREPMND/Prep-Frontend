@@ -10,6 +10,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import ChallengeParticipations from "../components/challengeParticipations";
 import { useAuthStore } from "../../auth/store/authStore";
 import { useChallengeSolutions } from "../../solutions/api/solutionApi";
+import CreateSolutionForm from "../../solutions/components/createSolutionForm";
 
 export default function ChallengeDetailPage() {
   const { id } = useParams();
@@ -169,21 +170,33 @@ export default function ChallengeDetailPage() {
       /> */}
       {participationStatus ===
         ChallengeParticipationStatusConst.APPROVED && (
-          <section className="app-container mt-6">
+          <section className="app-container mt-10">
             <div className="mx-auto max-w-4xl">
+
               <h2 className="text-2xl font-bold">
-                Solutions
+                Submit a Solution
               </h2>
 
-              <button
-                type="button"
-                onClick={() =>
-                  navigate(`/challenges/${id}/solutions`)
-                }
-                className="mt-4 rounded-3xl bg-emerald-500 px-5 py-2 font-semibold text-white hover:bg-emerald-600"
-              >
-                View Solutions
-              </button>
+              <p className="mt-2 text-neutral-500">
+                Share your proposed solution for this challenge.
+              </p>
+
+              <div className="mt-6">
+                <CreateSolutionForm />
+              </div>
+
+              {solutions.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    navigate(`/challenge/${id}/solutions`)
+                  }
+                  className="mt-6 rounded-3xl border border-emerald-500 px-5 py-2 font-semibold text-emerald-600"
+                >
+                  View Existing Solutions ({solutions.length})
+                </button>
+              )}
+
             </div>
           </section>
         )}

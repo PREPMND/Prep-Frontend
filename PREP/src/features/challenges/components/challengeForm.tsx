@@ -29,6 +29,11 @@ export function ChallengeForm() {
         useState<CreateChallengeResponse | null>(null);
 
     const [isLinkingDuplicate, setIsLinkingDuplicate] = useState(false);
+
+
+    const [categoryOpen, setCategoryOpen] = useState(false);
+    const [subCategoryOpen, setSubCategoryOpen] = useState(false);
+
     const handleSubmit = async (
         event: React.FormEvent<HTMLFormElement>,
     ) => {
@@ -174,13 +179,14 @@ export function ChallengeForm() {
                 />
             </div>
 
-            <div>
+            <div onClick={()=>setCategoryOpen((prev)=>!prev)} >
                 <label htmlFor="category" className="text-sm pl-2 font-medium">
                     Category <span className="text-neutral-400">(optional)</span>
                 </label>
-                <div className="relative group">
-                    {/* Exact same classes, heights, padding, and colors as your original select */}
-                    <div className="mt-2! w-full rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-[13px] text-sm outline-none dark:border-neutral-700 cursor-pointer flex justify-between items-center text-neutral-900 dark:text-white">
+                <div
+                    
+                    className="relative ">
+                    <div className="mt-2!  w-full rounded-xl border border-neutral-200 dark:bg-neutral-800 light:bg-transparent px-4 py-[13px] text-sm outline-none dark:border-neutral-700 cursor-pointer flex justify-between items-center text-neutral-900 dark:text-white">
                         <span className="font-semibold text-sm capitalize">
                             {category ? category.replaceAll("_", " ") : "Let the platform categorize it"}
                         </span>
@@ -188,11 +194,14 @@ export function ChallengeForm() {
                     </div>
 
                     {/* Options list layout container */}
-                    <div className="absolute left-0 right-0 mt-2 max-h-52 overflow-y-auto hidden group-focus-within:block group-hover:block hover:block z-50 rounded-xl border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800 light:bg-white shadow-lg custom-dropdown-scrollbar">
+                    {categoryOpen && <div className={`absolute mt-2 left-0 right-0  max-h-52 overflow-y-auto  z-50 rounded-xl border border-neutral-200 dark:border-neutral-800 dark:bg-neutral-800 light:bg-white shadow-lg custom-dropdown-scrollbar 
+                       
+                        `}>
                         <div
                             onClick={() => {
                                 setCategory("");
                                 setSubcategory("");
+                                setCategoryOpen(false);
                             }}
                             className="px-4 py-[12px] text-sm font-semibold! cursor-pointer hover:bg-neutral-100 dark:hover:bg-neutral-700 text-neutral-400"
                         >
@@ -211,17 +220,27 @@ export function ChallengeForm() {
                                 {value.replaceAll("_", " ")}
                             </div>
                         ))}
-                    </div>
+                    </div>}
                 </div>
             </div>
 
 
-            <div>
+            <div onClick={() => {
+                
+                setSubCategoryOpen((prev) => !prev); 
+            }}
+
+            >
                 <label htmlFor="subcategory" className="text-sm pl-2 font-medium">
                     Subcategory <span className="text-neutral-400">(optional)</span>
                 </label>
-                <div className={`relative ${!category ? "pointer-events-none opacity-50 cursor-not-allowed" : "group"}`}>
-                    <div className="mt-2 w-full rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-700 dark:text-white px-4 py-[13px] text-sm outline-none dark:border-neutral-800 flex justify-between items-center capitalize">
+                <div
+
+                    className={`relative ${!category ? "pointer-events-none opacity-50 cursor-not-allowed" : ""}`}>
+                    <div
+
+                        className={`mt-2 w-full rounded-xl border border-neutral-200 light:bg-transparent dark:bg-neutral-700 dark:text-white px-4 py-[13px] text-sm outline-none dark:border-neutral-800 flex justify-between items-center capitalize  
+                        `}>
                         <span className="font-semibold text-sm capitalize">
                             {subcategory
                                 ? subcategory.replaceAll("_", " ")
@@ -230,8 +249,8 @@ export function ChallengeForm() {
                         </span>
                         <span className="text-neutral-400 text-xs pl-2">▼</span>
                     </div>
-                    {category && (
-                        <div className="absolute left-0 right-0 mt-1 max-h-52 overflow-y-auto hidden group-focus-within:block group-hover:block hover:block z-50 rounded-xl border light:border-neutral-200 dark:border-neutral-800 dark:bg-neutral-700 light:bg-white shadow-lg custom-dropdown-scrollbar">
+                    {(category && subCategoryOpen) && (
+                        <div className="absolute left-0 right-0 mt-1 max-h-52 overflow-y-auto  z-50 rounded-xl border light:border-neutral-200 dark:border-neutral-800 dark:bg-neutral-700 light:bg-white shadow-lg custom-dropdown-scrollbar">
                             <div
                                 onClick={() => setSubcategory("")}
                                 className="px-4 py-[10px]  text-sm cursor-pointer light:hover:bg-neutral-100 dark:hover:bg-neutral-600 capitalize text-neutral-400"
@@ -267,8 +286,8 @@ export function ChallengeForm() {
                         type="button"
                         onClick={() => setVisibility('PUBLIC')}
                         className={`flex-1 text-center py-[10px] font-[600]! rounded-lg transition-all  duration-200 ${visibility === 'PUBLIC'
-                                ? "bg-amber-400 text-black  font-medium shadow-sm"
-                                : "light:text-neutral-500 dark:text-neutral-400 light:hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                            ? "bg-amber-400 text-black  font-medium shadow-sm"
+                            : "light:text-neutral-500 dark:text-neutral-400 light:hover:bg-neutral-100 dark:hover:bg-neutral-700"
                             }`}
                     >
                         Public
@@ -277,8 +296,8 @@ export function ChallengeForm() {
                         type="button"
                         onClick={() => setVisibility('RESTRICTED')}
                         className={`flex-1 text-center py-[10px]  font-semibold! rounded-lg transition-all duration-200 ${visibility === 'RESTRICTED'
-                                ? "bg-amber-400 text-black shadow-sm"
-                                : "light:text-neutral-500 dark:text-neutral-400 light:hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                            ? "bg-amber-400 text-black shadow-sm"
+                            : "light:text-neutral-500 dark:text-neutral-400 light:hover:bg-neutral-100 dark:hover:bg-neutral-700"
                             }`}
                     >
                         Restricted
@@ -348,6 +367,6 @@ export function ChallengeForm() {
                         ? <div className="text-center m-auto w-full">Submitting challenge...</div>
                         : <div className="mx-auto text-center flex">Submit challenge</div>}
             </button>
-        </form>
+        </form >
     );
 }

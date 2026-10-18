@@ -20,7 +20,7 @@ export function LoginForm() {
         password,
       });
 
-      navigate("/");
+      navigate("/", { replace: true });
     } catch {
       // Error handling later
     }
@@ -47,7 +47,7 @@ export function LoginForm() {
 
       <div>
         <label htmlFor="password" className="mb-[6px] ml-2 block text-sm font-medium light:text-neutral-700 dark:text-neutral-300">
-          Password
+          Password shit
         </label>
 
         <input

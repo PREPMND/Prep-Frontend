@@ -19,7 +19,16 @@
     /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
+    /**
+     * Off because the shared contracts in `src/contracts` are TypeScript
+     * `enum`s, synced verbatim from PREP/shared/prep-contracts so the frontend
+     * and the backend cannot disagree about a status or role string.
+     * `erasableSyntaxOnly` exists for runtimes that only strip types (bare
+     * Node); Vite/esbuild compiles enums fine, so this costs nothing here.
+     * Rewriting the enums as const objects on the way in would mean a
+     * code generator between the two copies -- more to go wrong than this.
+     */
+    "erasableSyntaxOnly": false,
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"]

@@ -2,6 +2,7 @@ import {  apiClientChallenge } from "../../../services/api/apiClient";
 import type {
   Challenge,
   ChallengeParticipation,
+  ChallengeParticipationWithChallenge,
   CreateChallengeParticipationPayload,
   CreateChallengePayload,
   CreateChallengeResponse,
@@ -97,10 +98,12 @@ export async function getChallenges(): Promise<Challenge[]> {
   return response.data;
 }
 
-export async function getMyChallengeParticipations() {
-    const response = await apiClientChallenge.get(
-        "/challenges/my-participations",
-    );
+export async function getMyChallengeParticipations(): Promise<
+    ChallengeParticipationWithChallenge[]
+> {
+    const response = await apiClientChallenge.get<
+        ChallengeParticipationWithChallenge[]
+    >("/challenges/my-participations");
 
     return response.data;
 }

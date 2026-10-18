@@ -87,6 +87,23 @@ export interface ChallengeParticipation {
   createdAt: string;
   updatedAt: string;
 }
+/**
+ * The challenge summary that `GET /challenges/my-participations` attaches to
+ * each participation. Fields are optional because the service builds it from a
+ * per-id lookup that can come back empty if the challenge is gone.
+ */
+export interface ParticipationChallengeSummary {
+  id?: string;
+  title?: string;
+  mediaIds?: string[];
+}
+
+/** A participation as returned by `my-participations`, challenge included. */
+export interface ChallengeParticipationWithChallenge
+  extends ChallengeParticipation {
+  challenge: ParticipationChallengeSummary;
+}
+
 export interface CreateChallengeResponse {
   challenge: Challenge;
   possibleDuplicates: PossibleDuplicate[];

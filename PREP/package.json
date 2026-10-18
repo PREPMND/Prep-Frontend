@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync:contracts": "node scripts/sync-contracts.mjs",
+    "check:contracts": "node scripts/sync-contracts.mjs --check"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
